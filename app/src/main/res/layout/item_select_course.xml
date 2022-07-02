@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="50dp"
-    android:layout_marginLeft="20dp"
+
     android:layout_marginBottom="20dp">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/item_album_cover_img_cardView"
+        android:id="@+id/custom_exercise_img_cardView"
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:cardCornerRadius="7dp"
@@ -27,7 +27,7 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/item_album_title_tv"
+        android:id="@+id/custom_exercise_title_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -37,24 +37,25 @@
         android:text="벤치 프레스 (덤벨)"
         android:textColor="@color/black"
         android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/item_album_singer_tv"
-        app:layout_constraintStart_toEndOf="@id/item_album_cover_img_cardView"
+        app:layout_constraintBottom_toTopOf="@+id/custom_exercise_description_tv"
+        app:layout_constraintStart_toEndOf="@id/custom_exercise_img_cardView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/item_album_singer_tv"
+        android:id="@+id/custom_exercise_description_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:text="볼륨감 있는 가슴 만들기"
         android:textColor="#333333"
         android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/custom_exercise_img_cardView"
+        app:layout_constraintTop_toBottomOf="@id/custom_exercise_title_tv"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/item_album_cover_img_cardView"
-        app:layout_constraintTop_toBottomOf="@id/item_album_title_tv" />
+        />
 
     <TextView
-        android:id="@+id/item_exercise_type"
+        android:id="@+id/custom_exercise_position_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"

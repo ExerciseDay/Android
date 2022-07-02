@@ -17,6 +17,7 @@ import kotlin.collections.ArrayList
 class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
     private var courseDatas = ArrayList<Course>()
+    private var userCourseDatas = ArrayList<UserCourse>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,6 +25,17 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
+
+        userCourseDatas.apply {
+            add(UserCourse("하체 운동 코스", 60, 120))
+            add(UserCourse("상체 운동 코스", 40, 180))
+            add(UserCourse("주말 운동 코스", 80, 250))
+            add(UserCourse("많이 먹은 날 운동 코스", 120, 400))
+        }
+
+        val homeCourseRVAdapter = HomeCourseRVAdapter(userCourseDatas)
+        binding.homeCourseListRv.layoutManager = LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false)
+        binding.homeCourseListRv.adapter = homeCourseRVAdapter
 
         // 데이터 리스트 생성 더머 데이터
         courseDatas.apply {

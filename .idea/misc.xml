@@ -3,6 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.24" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/ic_baseline_check_24.xml" value="0.1605" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/ic_baseline_clear_24.xml" value="0.1605" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/ic_home.xml" value="0.1605" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/textview_background_radius.xml" value="0.1605" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_select_course.xml" value="0.4" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/item_plus_course_dialog.xml" value="0.27395833333333336" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/item_select_course.xml" value="0.27395833333333336" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/item_user_course.xml" value="0.4" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/plus_course_dialog.xml" value="0.19270833333333334" />
       </map>
     </option>
   </component>
