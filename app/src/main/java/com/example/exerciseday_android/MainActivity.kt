@@ -1,14 +1,8 @@
 package com.example.exerciseday_android
 
-import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.exerciseday_android.databinding.ActivityMainBinding
-import com.example.exerciseday_android.databinding.PlusCourseDialogBinding
-import com.example.flo.PlusCourseDialogRVAdapter
-import kotlin.collections.ArrayList
 
 
 class MainActivity : AppCompatActivity() {
