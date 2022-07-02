@@ -3,14 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/android-sdk/AndroidStudioProjects/ExerciseDay_Android/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.1965" />
-        <entry key="..\:/android-sdk/AndroidStudioProjects/ExerciseDay_Android/app/src/main/res/layout/activity_main.xml" value="0.152" />
-        <entry key="..\:/android-sdk/AndroidStudioProjects/ExerciseDay_Android/app/src/main/res/layout/activity_select_course.xml" value="0.16" />
-        <entry key="..\:/android-sdk/AndroidStudioProjects/ExerciseDay_Android/app/src/main/res/layout/fragment_mvp.xml" value="0.16" />
-        <entry key="..\:/android-sdk/AndroidStudioProjects/ExerciseDay_Android/app/src/main/res/layout/item_music_file.xml" value="0.1" />
-        <entry key="..\:/android-sdk/AndroidStudioProjects/ExerciseDay_Android/app/src/main/res/layout/item_plus_course_dialog.xml" value="0.16" />
-        <entry key="..\:/android-sdk/AndroidStudioProjects/ExerciseDay_Android/app/src/main/res/layout/plus_course_dialog.xml" value="0.18854166666666666" />
-        <entry key="..\:/android-sdk/AndroidStudioProjects/ExerciseDay_Android/app/src/main/res/layout/plus_course_dialog_list.xml" value="0.4" />
       </map>
     </option>
   </component>

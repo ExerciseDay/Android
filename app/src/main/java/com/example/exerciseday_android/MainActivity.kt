@@ -64,5 +64,51 @@ class MainActivity : AppCompatActivity() {
 //        val intent = Intent(this, SelectCourseActivity::class.java)
 //        startActivity(intent)
 //    }
+
+        initBottomNavigation()
+    }
+
+    private fun initBottomNavigation(){
+
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.main_frm, HomeFragment())
+            .commitAllowingStateLoss()
+
+        binding.bottomNavV.setOnItemSelectedListener{ item ->
+            when (item.itemId) {
+                R.id.recordFragment -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.main_frm, RecordFragment())
+                        .commitAllowingStateLoss()
+                    return@setOnItemSelectedListener true
+                }
+
+                R.id.communityFragment -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.main_frm, CommunityFragment())
+                        .commitAllowingStateLoss()
+                    return@setOnItemSelectedListener true
+                }
+                R.id.homeFragment -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.main_frm, HomeFragment())
+                        .commitAllowingStateLoss()
+                    return@setOnItemSelectedListener true
+                }
+                R.id.mapFragment -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.main_frm, MapFragment())
+                        .commitAllowingStateLoss()
+                    return@setOnItemSelectedListener true
+                }
+                R.id.settingFragment -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.main_frm, SettingFragment())
+                        .commitAllowingStateLoss()
+                    return@setOnItemSelectedListener true
+                }
+            }
+            false
+        }
     }
 }
