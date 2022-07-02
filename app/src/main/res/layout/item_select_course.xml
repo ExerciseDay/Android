@@ -8,6 +8,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/custom_exercise_img_cardView"
+
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:cardCornerRadius="7dp"
@@ -15,14 +16,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-<!--        <ImageView-->
-<!--            android:id="@+id/item_album_cover_img_iv"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:scaleType="fitCenter"-->
-<!--            android:src="@drawable/img_album_exp"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent" />-->
+        <ImageView
+            android:id="@+id/item_exercise_cover_img_iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_exercise1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.cardview.widget.CardView>
 

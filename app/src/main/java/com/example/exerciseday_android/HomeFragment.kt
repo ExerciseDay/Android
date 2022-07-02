@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -46,17 +45,14 @@ class HomeFragment : Fragment() {
 
         binding.fabMain.setOnClickListener {
             var builder = AlertDialog.Builder(requireContext())
-            val bind: PlusCourseDialogBinding = PlusCourseDialogBinding.inflate(layoutInflater)
-            builder.setView(bind.root)
-            bind.plusCourseRecyclerView.layoutManager =
-                LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-
+            val dialogBinding: PlusCourseDialogBinding = PlusCourseDialogBinding.inflate(layoutInflater)
+            builder.setView(dialogBinding.root)
 
             // 어댑터와 데이터 리스트 연결
             val plusCourseDialogRVAdapter = PlusCourseDialogRVAdapter(courseDatas)
-            bind.plusCourseRecyclerView.adapter = plusCourseDialogRVAdapter
-            bind.plusCourseRecyclerView.layoutManager =
-                LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            dialogBinding.plusCourseRecyclerView.adapter = plusCourseDialogRVAdapter
+            dialogBinding.plusCourseRecyclerView.layoutManager =
+                LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
 
             plusCourseDialogRVAdapter.setMyItemClickListener(object :
