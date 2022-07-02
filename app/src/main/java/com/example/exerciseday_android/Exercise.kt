@@ -1,8 +1,8 @@
 package com.example.exerciseday_android
 
 data class Exercise(
-    var title: String = "",
-    var intro: String = "",
-    var type: String = "",
-    var coverImg: Int? = null
+
+    val title : String,
+    val description: String,
+    val position: String,
 )

@@ -8,10 +8,10 @@
 
     <ImageView
         android:id="@+id/select_course_close_iv"
-        android:layout_width="26dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="22dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="18dp"
         android:src="@drawable/ic_baseline_clear_24"
         app:layout_constraintBottom_toBottomOf="@+id/select_course_title_tv"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,9 +23,9 @@
         android:layout_height="wrap_content"
         android:layout_marginVertical="20dp"
         android:text="운동 선택"
-        android:textSize="24dp"
-        android:textColor="@color/black"
+        android:textSize="16dp"
         android:textStyle="bold"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -44,7 +44,7 @@
         tools:layout_editor_absoluteY="66dp" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/select_course_recyclerview"
+        android:id="@+id/exercise_list_rv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="26dp"
