@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/kotlin
-# Edit at https://www.toptal.com/developers/gitignore?templates=kotlin
+# Created by https://www.toptal.com/developers/gitignore/api/kotlin,androidstudio
+# Edit at https://www.toptal.com/developers/gitignore?templates=kotlin,androidstudio
 
 ### Kotlin ###
 # Compiled class file
@@ -27,10 +27,6 @@
 hs_err_pid*
 replay_pid*
 
-
-# Created by https://www.toptal.com/developers/gitignore/api/androidstudio
-# Edit at https://www.toptal.com/developers/gitignore?templates=androidstudio
-
 ### AndroidStudio ###
 # Covers files to be ignored for android development using Android Studio.
 
@@ -43,7 +39,6 @@ replay_pid*
 *.dex
 
 # Java class files
-*.class
 
 # Generated files
 bin/
@@ -65,7 +60,6 @@ local.properties
 proguard/
 
 # Log Files
-*.log
 
 # Android Studio
 /*/build/
@@ -133,14 +127,10 @@ obj/
 .settings/
 
 # Mobile Tools for Java (J2ME)
-.mtj.tmp/
 
 # Package Files #
-*.war
-*.ear
 
 # virtual machine crash logs (Reference: http://www.java.com/en/download/help/error_hotspot.xml)
-hs_err_pid*
 
 ## Plugin-specific files:
 
@@ -163,4 +153,4 @@ fabric.properties
 
 !/gradle/wrapper/gradle-wrapper.jar
 
-# End of https://www.toptal.com/developers/gitignore/api/androidstudio
+# End of https://www.toptal.com/developers/gitignore/api/kotlin,androidstudio
