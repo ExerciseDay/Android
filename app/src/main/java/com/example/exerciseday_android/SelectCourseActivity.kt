@@ -23,6 +23,10 @@ class SelectCourseActivity : AppCompatActivity() {
             add(Exercise("스쿼트", "하체 집중", "하체"))
             add(Exercise("와이드 스쿼트", "엉덩이 근육 및 힙업", "하체"))
             add(Exercise("레그 익스텐션", "허벅지 앞쪽", "하체"))
+            add(Exercise("레그 익스텐션", "허벅지 앞쪽", "하체"))
+            add(Exercise("레그 익스텐션", "허벅지 앞쪽", "하체"))
+            add(Exercise("레그 익스텐션", "허벅지 앞쪽", "하체"))
+            add(Exercise("레그 익스텐션", "허벅지 앞쪽", "하체"))
         }
 
         val customCourseRVAdapter = CustomCourseRVAdapter(exerciseDatas)
