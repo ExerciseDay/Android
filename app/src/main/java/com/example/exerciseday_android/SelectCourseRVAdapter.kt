@@ -53,10 +53,10 @@ class SelectCourseRVAdapter(private val exerciseList: ArrayList<Exercise>) :
     inner class ViewHolder(val binding: ItemSelectCourseBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(exercise: Exercise) {
-            binding.itemExerciseTitleTv.text = exercise.title
-            binding.itemExerciseIntroTv.text = exercise.intro
-            binding.itemExerciseType.text = exercise.type
-            binding.itemExerciseCoverImgIv.setImageResource(exercise.coverImg!!)
+            binding.customExerciseTitleTv.text = exercise.title
+            binding.customExerciseDescriptionTv.text = exercise.description
+            binding.customExercisePositionTv.text = exercise.position
+//            binding.itemExerciseCoverImgIv.setImageResource(exercise.coverImg!!)
         }
     }
 }
