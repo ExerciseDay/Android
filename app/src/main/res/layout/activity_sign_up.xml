@@ -123,7 +123,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="20dp"
         android:text="닉네임"
         android:textSize="18sp"
@@ -160,7 +160,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="20dp"
         android:text="비밀번호"
         android:textSize="18sp"
@@ -238,72 +238,6 @@
         app:layout_constraintBottom_toBottomOf="@+id/sign_up_password_check_et"
         app:layout_constraintEnd_toEndOf="@+id/sign_up_password_check_et"
         app:layout_constraintTop_toTopOf="@+id/sign_up_password_check_et" />
-
-    <TextView
-        android:id="@+id/sign_up_path_tv"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:text="가입경로"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_password_check_underscore_view" />
-
-    <CheckBox
-        android:id="@+id/sign_up_blog_cb"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:text="블로그"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_path_tv" />
-
-    <CheckBox
-        android:id="@+id/sign_up_sns_cb"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:text="SNS"
-        app:layout_constraintStart_toEndOf="@+id/sign_up_blog_cb"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_path_tv"
-        tools:layout_editor_absoluteX="143dp" />
-
-    <CheckBox
-        android:id="@+id/sign_up_ad_cb"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:text="광고"
-        app:layout_constraintStart_toEndOf="@+id/sign_up_sns_cb"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_path_tv"
-        tools:layout_editor_absoluteX="271dp" />
-
-    <CheckBox
-        android:id="@+id/sign_up_search_cb"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="검색"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_blog_cb"
-        tools:layout_editor_absoluteX="25dp" />
-
-    <CheckBox
-        android:id="@+id/sign_up_etc_cb"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="이외"
-        app:layout_constraintStart_toEndOf="@+id/sign_up_search_cb"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_sns_cb"
-        tools:layout_editor_absoluteX="132dp" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/sign_up_sign_up_btn"

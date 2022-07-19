@@ -21,30 +21,12 @@ class SignUpActivity : AppCompatActivity(), SignUpView {
     }
 
     private fun getUser(): User {
+        val nickname: String = binding.signUpNicknameEt.text.toString()
         val email: String =
             binding.signUpIdEt.text.toString() + "@" + binding.signUpDirectInputEt.text.toString()
         val pwd: String = binding.signUpPasswordEt.text.toString()
-        val nickname: String = binding.signUpNicknameEt.text.toString()
-        var path: String = ""
 
-        // 가입경로 체크박스 선택값에 따른 path 값 설정
-        if (binding.signUpBlogCb.isChecked) {
-            path = binding.signUpBlogCb.text.toString()
-        }
-        else if (binding.signUpSnsCb.isChecked) {
-            path = binding.signUpSnsCb.text.toString()
-        }
-        else if (binding.signUpAdCb.isChecked) {
-            path = binding.signUpAdCb.text.toString()
-        }
-        else if (binding.signUpSearchCb.isChecked) {
-            path = binding.signUpSearchCb.text.toString()
-        }
-        else if (binding.signUpEtcCb.isChecked) {
-            path = binding.signUpEtcCb.text.toString()
-        }
-
-        return User(email, pwd, nickname, path)
+        return User(nickname, email, pwd)
     }
 
     private fun signUp() {
@@ -56,7 +38,7 @@ class SignUpActivity : AppCompatActivity(), SignUpView {
         }
 
         if (binding.signUpNicknameEt.text.toString().isEmpty()) {
-            Toast.makeText(this, "이름 형식이 잘못되었습니다.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "닉네임 형식이 잘못되었습니다.", Toast.LENGTH_SHORT).show()
             return
         }
 
@@ -64,7 +46,6 @@ class SignUpActivity : AppCompatActivity(), SignUpView {
             Toast.makeText(this, "비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show()
             return
         }
-
 
         val authService = AuthService()
         authService.setSignUpView(this)
@@ -77,7 +58,7 @@ class SignUpActivity : AppCompatActivity(), SignUpView {
     }
 
     override fun onSignUpFailure(message: String) {
-//        binding.signUpEmailErrorTv.visibility = View.VISIBLE
-//        binding.signUpEmailErrorTv.text = message
+        binding.signUpEmailErrorTv.visibility = View.VISIBLE
+        binding.signUpEmailErrorTv.text = message
     }
 }
