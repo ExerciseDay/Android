@@ -3,7 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.exerciseday_android">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".GlobalApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -17,7 +20,22 @@
             android:name=".SelectCourseActivity"
             android:exported="false" />
         <activity
+            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="oauth"
+                    android:scheme="kakaoec9e0ae841a16206f3d0144f0b6b07f2" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".MainActivity"
+            android:exported="true">
+        </activity>
+        <activity android:name=".StartActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
