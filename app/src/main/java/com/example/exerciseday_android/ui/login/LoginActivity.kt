@@ -1,9 +1,12 @@
-package com.example.exerciseday_android
+package com.example.exerciseday_android.ui.login
 
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.exerciseday_android.APIS
+import com.example.exerciseday_android.LoginResponse
+import com.example.exerciseday_android.PostLogin
 import com.example.exerciseday_android.databinding.ActivityLoginBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -39,7 +42,7 @@ class LoginActivity : AppCompatActivity() {
         val password : String = binding.loginPwEt.text.toString()
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://3.39.184.186:8080/auth/login")
+            .baseUrl("http://3.39.184.186:8080")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 

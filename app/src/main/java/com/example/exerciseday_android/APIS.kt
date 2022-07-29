@@ -6,7 +6,7 @@ import retrofit2.http.*
 interface APIS {
 //    @FormUrlEncoded
 //    @Headers("accept: application/json", "content-type: application/json")
-    @POST("/login")
+    @POST("/auth/login")
     fun login(
         @Body postLogin: PostLogin
     ): Call<LoginResponse>

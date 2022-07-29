@@ -10,4 +10,14 @@
     <color name="gray_100">#FFF8F8F8</color>
     <color name="gray_300">#FFE4E4E4</color>
     <color name="gray_500">#FFCDCDCD</color>
+    <color name="pink_0">#FFFE395D</color>
+    <color name="pink_10">#FFFE6C87</color>
+    <color name="pink_20">#FFFF9EB0</color>
+    <color name="pink_30">#FFFFD1DA</color>
+    <color name="pink_35">#FFFFEBEE</color>
+    <color name="red_10">#FFFE0633</color>
+    <color name="red_20">#FFD00127</color>
+    <color name="red_30">#FF9D011D</color>
+    <color name="red_40">#FF6A0114</color>
+    <color name="red_50">#FF38000A</color>
 </resources>
