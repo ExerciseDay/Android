@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingHorizontal="25dp">
+
+    <ImageView
+        android:id="@+id/start_logo_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="64dp"
+        android:src="@drawable/logo_horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/start_intro_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="운동의 시작과\n꾸준한 지속을 도와주는\n헬스 어플리케이션"
+        android:fontFamily="@font/pretendard_2"
+        android:textSize="26sp"
+        android:textColor="@color/gray_950"
+        app:layout_constraintBottom_toTopOf="@id/start_kakao_btn"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginBottom="52dp"
+        />
+
+    <ImageButton
+        android:id="@+id/start_kakao_btn"
+        android:layout_width="match_parent"
+        android:layout_height="56sp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/kakao_login_btn"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toBottomOf="@id/start_logo_iv"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <Button
+        android:id="@+id/start_normal_login_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/start_another_login"
+        android:textSize="15sp"
+        android:textColor="@color/gray_950"
+        android:background="#00ff0000"
+        app:layout_constraintTop_toBottomOf="@id/start_kakao_btn"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/start_info_cl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+            android:id="@+id/start_info1_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="'시작하기'를 누르는 것으로 "
+            android:textSize="13sp"
+            android:fontFamily="@font/pretendard"
+            android:textColor="@color/gray_800"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/start_info3_tv"/>
+        <Button
+            android:id="@+id/start_info_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/start_info"
+            android:textSize="13sp"
+            android:fontFamily="@font/pretendard"
+            android:textColor="@color/gray_950"
+            android:background="#00ff0000"
+            app:layout_constraintLeft_toRightOf="@id/start_info1_tv"
+            app:layout_constraintTop_toTopOf="@id/start_info1_tv"
+            app:layout_constraintBottom_toBottomOf="@id/start_info1_tv"/>
+        <TextView
+            android:id="@+id/start_info2_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 에 동의하고"
+            android:textSize="13sp"
+            android:fontFamily="@font/pretendard"
+            android:textColor="@color/gray_800"
+            app:layout_constraintLeft_toRightOf="@id/start_info_btn"
+            app:layout_constraintBottom_toTopOf="@id/start_info3_tv"/>
+        <TextView
+            android:id="@+id/start_info3_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="서비스를 이용하는 것으로 간주합니다"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="44dp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
