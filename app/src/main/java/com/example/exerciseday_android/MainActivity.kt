@@ -1,9 +1,13 @@
 package com.example.exerciseday_android
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.example.exerciseday_android.databinding.ActivityLoginBinding
 import com.example.exerciseday_android.databinding.ActivityMainBinding
 
+import com.kakao.sdk.common.util.Utility
 
 class MainActivity : AppCompatActivity() {
 
