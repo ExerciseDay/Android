@@ -19,10 +19,12 @@ class AuthService {
                 Log.d("SIGNUP/SUCCESS", response.toString())
                 val resp: AuthResponse = response.body()!!
 
+                Log.d("SIGNUP/CODE", resp.code.toString())
+
                 // 서버 response 중 code값에 따른 결과
                 when (resp.code) {
                     1000 -> signUpView.onSignUpSuccess()
-                    else -> signUpView.onSignUpFailure(resp.message)
+                    else -> signUpView.onSignUpFailure(resp.code, resp.message)
                 }
             }
 

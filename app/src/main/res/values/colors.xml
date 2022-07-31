@@ -11,5 +11,5 @@
     <color name="gray_300">#FFE4E4E4</color>
     <color name="gray_500">#FFCDCDCD</color>
 
-    <color name="form_error">#F11818</color>
+    <color name="form_error">#ED022D</color>
 </resources>
