@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import com.example.exerciseday_android.databinding.ActivitySplashBinding
-import com.example.exerciseday_android.ui.login.LoginActivity
+import com.example.exerciseday_android.ui.login.LoginAccessActivity
 
 class SplashActivity : AppCompatActivity() {
     lateinit var binding: ActivitySplashBinding
@@ -20,8 +20,7 @@ class SplashActivity : AppCompatActivity() {
 
     private fun loadSplashScreen(){
         Handler().postDelayed({
-            // You can declare your desire activity here to open after finishing splash screen. Like MainActivity
-            val intent = Intent(this, LoginActivity::class.java)
+            val intent = Intent(this, LoginAccessActivity::class.java)
             startActivity(intent)
             finish()
         }, 3000)
