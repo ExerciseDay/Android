@@ -1,6 +1,8 @@
 package com.example.exerciseday_android.ui.login
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +10,7 @@ import com.example.exerciseday_android.APIS
 import com.example.exerciseday_android.LoginResponse
 import com.example.exerciseday_android.PostLogin
 import com.example.exerciseday_android.databinding.ActivityLoginBinding
+import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -22,24 +25,42 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.loginBtn.isEnabled = false
+
+        binding.loginBackBtn.setOnClickListener {
+            finish()
+        }
+
         binding.loginBtn.setOnClickListener {
             login()
         }
+
+        binding.loginPasswordEt.addTextChangedListener(object: TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                val msg = binding.loginPasswordEt.text.toString()
+                binding.loginBtn.isEnabled = msg.isNotEmpty()
+
+            }
+
+            override fun afterTextChanged(p0: Editable?) {
+
+            }
+        })
+
     }
 
     private fun login() {
-        if (binding.loginIdEt.text.toString().isEmpty() || binding.loginEmailEt.toString().isEmpty()) {
+        if (binding.loginEmailEt.text.toString().isEmpty() || binding.loginPasswordEt.text.toString().isEmpty()) {
             Toast.makeText(this, "이메일을 입력해주세요", Toast.LENGTH_SHORT).show()
             return
         }
 
-        if (binding.loginPwEt.text.toString().isEmpty()) {
-            Toast.makeText(this, "비밀번호를 입력해주세요", Toast.LENGTH_SHORT).show()
-            return
-        }
-
-        val email : String = binding.loginIdEt.text.toString() + "@" + binding.loginEmailEt.text.toString()
-        val password : String = binding.loginPwEt.text.toString()
+        val email : String = binding.loginEmailEt.text.toString()
+        val password : String = binding.loginPasswordEt.text.toString()
 
         val retrofit = Retrofit.Builder()
             .baseUrl("http://3.39.184.186:8080")

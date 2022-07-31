@@ -19,7 +19,8 @@ class LoginAccessActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.loginAccessCheckBtn.setOnClickListener {
-
+            val intent = Intent(this, StartActivity::class.java)
+            startActivity(intent)
         }
     }
 }

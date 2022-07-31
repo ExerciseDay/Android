@@ -1,4 +1,4 @@
-package com.example.exerciseday_android
+package com.example.exerciseday_android.ui.login
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -38,6 +38,11 @@ class StartActivity : AppCompatActivity() {
             } else {
                 Log.e("로그", "카카오 로그인이 불가합니다.")
             }
+        }
+
+        binding.startNormalLoginBtn.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
         }
     }
 }
