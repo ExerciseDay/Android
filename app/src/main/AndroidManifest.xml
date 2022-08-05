@@ -60,10 +60,10 @@
             android:name=".ui.login.LoginActivity"
             android:exported="true"/>
         <activity
-            android:name=".SelectCourseActivity"
-            android:exported="false" />
+            android:name=".ui.terms.TermLocationActivity"
+            android:exported="true"/>
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.terms.TermPersonalActivity"
             android:exported="true"/>
     </application>
 </manifest>

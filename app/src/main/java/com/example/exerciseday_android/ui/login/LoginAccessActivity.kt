@@ -1,14 +1,10 @@
 package com.example.exerciseday_android.ui.login
 
-import android.Manifest
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.os.Bundle
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import com.example.exerciseday_android.databinding.ActivityLoginAccessBinding
+import com.example.exerciseday_android.ui.terms.TermLocationActivity
 
 class LoginAccessActivity : AppCompatActivity() {
     lateinit var binding: ActivityLoginAccessBinding
@@ -20,6 +16,11 @@ class LoginAccessActivity : AppCompatActivity() {
 
         binding.loginAccessCheckBtn.setOnClickListener {
             val intent = Intent(this, StartActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.loginAccessLocationBtn.setOnClickListener {
+            val intent = Intent(this, TermLocationActivity::class.java)
             startActivity(intent)
         }
     }

@@ -6,6 +6,7 @@ import android.util.Log
 //import android.widget.ImageButton
 //import android.widget.Toast
 import com.example.exerciseday_android.databinding.ActivityStartBinding
+import com.example.exerciseday_android.ui.terms.TermPersonalActivity
 import com.kakao.sdk.common.util.Utility
 //import com.kakao.sdk.auth.LoginClient
 //import com.kakao.sdk.auth.model.OAuthToken
@@ -42,6 +43,11 @@ class StartActivity : AppCompatActivity() {
 
         binding.startNormalLoginBtn.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.startInfoBtn.setOnClickListener {
+            val intent = Intent(this, TermPersonalActivity::class.java)
             startActivity(intent)
         }
     }
