@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.exerciseday_android.APIS
@@ -42,21 +43,67 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.loginEmailEt.addTextChangedListener(object: TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                val email = binding.loginEmailEt.text.toString()
+                val password = binding.loginPasswordEt.text.toString()
+                if(email.isNotEmpty() && password.isNotEmpty()){
+                    binding.loginBtn.isEnabled = true
+                }
+            }
+
+            override fun afterTextChanged(p0: Editable?) {
+            }
+        })
+
         binding.loginPasswordEt.addTextChangedListener(object: TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                val msg = binding.loginPasswordEt.text.toString()
-                binding.loginBtn.isEnabled = msg.isNotEmpty()
-
+                val email = binding.loginEmailEt.text.toString()
+                val password = binding.loginPasswordEt.text.toString()
+                if(email.isNotEmpty() && password.isNotEmpty()){
+                    binding.loginBtn.isEnabled = true
+                }
             }
 
             override fun afterTextChanged(p0: Editable?) {
 
             }
         })
+
+        binding.loginEmailEt.setOnFocusChangeListener(object: View.OnFocusChangeListener{
+            override fun onFocusChange(v: View?, hasFocus: Boolean) {
+                if(hasFocus){
+                    binding.loginEmailDeleteBtn.visibility = View.VISIBLE
+                } else {
+                    binding.loginEmailDeleteBtn.visibility = View.INVISIBLE
+                }
+            }
+        })
+
+        binding.loginPasswordEt.setOnFocusChangeListener(object: View.OnFocusChangeListener{
+            override fun onFocusChange(v: View?, hasFocus: Boolean) {
+                if(hasFocus){
+                    binding.loginPasswordDeleteBtn.visibility = View.VISIBLE
+                } else {
+                    binding.loginPasswordDeleteBtn.visibility = View.INVISIBLE
+                }
+            }
+        })
+
+        binding.loginEmailDeleteBtn.setOnClickListener {
+            binding.loginEmailEt.setText("")
+        }
+
+        binding.loginPasswordDeleteBtn.setOnClickListener {
+            binding.loginPasswordEt.setText("")
+        }
 
     }
 
@@ -86,4 +133,6 @@ class LoginActivity : AppCompatActivity() {
             }
         })
     }
+
+
 }
