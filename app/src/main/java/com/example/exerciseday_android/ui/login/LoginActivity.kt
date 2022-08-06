@@ -1,5 +1,6 @@
 package com.example.exerciseday_android.ui.login
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -9,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.exerciseday_android.APIS
 import com.example.exerciseday_android.LoginResponse
 import com.example.exerciseday_android.PostLogin
+import com.example.exerciseday_android.ui.join.JoinInfoActivity
 import com.example.exerciseday_android.databinding.ActivityLoginBinding
 import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Call
@@ -33,6 +35,11 @@ class LoginActivity : AppCompatActivity() {
 
         binding.loginBtn.setOnClickListener {
             login()
+        }
+
+        binding.loginSignInBtn.setOnClickListener {
+            val intent = Intent(this, JoinInfoActivity::class.java)
+            startActivity(intent)
         }
 
         binding.loginPasswordEt.addTextChangedListener(object: TextWatcher{

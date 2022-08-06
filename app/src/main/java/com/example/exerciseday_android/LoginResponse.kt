@@ -4,9 +4,9 @@ data class LoginResponse(
     val isSuccess: Boolean,
     val code: Int,
     val message: String,
-    val result: Result,
+    val result: LoginResult,
 )
 
-data class Result(
+data class LoginResult(
     val userIdx: Int,
     val jwt: String)

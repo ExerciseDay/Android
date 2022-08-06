@@ -7,8 +7,8 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
-        android:usesCleartextTraffic="true"
         android:name=".GlobalApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -20,8 +20,12 @@
         android:theme="@style/Theme.ExerciseDay_Android"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-        <activity 
-            android:name=".SplashActivity" 
+        <activity
+            android:name=".ui.join.JoinPhoneActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.join.JoinInfoActivity" />
+        <activity
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,8 +34,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SignUpActivity"
-            android:exported="false" />
+            android:name=".ui.join.JoinInfoActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.login.LoginActivity" />
         <activity
             android:name=".SelectCourseActivity"
             android:exported="false" />
@@ -40,8 +45,10 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data
                     android:host="oauth"
                     android:scheme="kakaoec9e0ae841a16206f3d0144f0b6b07f2" />
@@ -49,22 +56,16 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-        </activity>
-        <activity android:name=".ui.login.StartActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
+        <activity
+            android:name=".ui.login.StartActivity"
+            android:exported="true" />
         <activity
             android:name=".ui.login.LoginAccessActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".ui.login.LoginActivity"
-            android:exported="true"/>
-        <activity
-            android:name=".SelectCourseActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"/>
+            android:exported="true" />
     </application>
+
 </manifest>
