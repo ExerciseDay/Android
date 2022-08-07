@@ -20,16 +20,12 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
 
     lateinit var binding: ActivityJoinInfoBinding
 
-    var emailPattern: Pattern = Patterns.EMAIL_ADDRESS
     var isEmailValid = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityJoinInfoBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        // TODO
-        // 이메일 중복 검사
 
 
         // 뒤로 가기
@@ -39,9 +35,7 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
         binding.joinNextBtn.setOnClickListener(this)
 
         // 이메일 중복 버튼 클릭 시
-        binding.joinEmailCheckBtn.setOnClickListener {
-            emailCheck()
-        }
+        binding.joinEmailCheckBtn.setOnClickListener(this)
 
         checkEmail()
         checkNickname()
@@ -65,19 +59,21 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
 
         binding.joinEmailErrorTv.text = "사용 가능한 이메일입니다."
         binding.joinEmailErrorTv.visibility = View.VISIBLE
-
         binding.joinEmailErrorTv.setTextColor(Color.parseColor("#000000"))
+        binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_shape)
+
+        isValidBtn()
     }
 
     override fun onEmailCheckFailure(message: String) {
-        Log.d("IDCHECK/FAILURE", "이미 회원가입된 이메일입니다.")
+        Log.d("EMAIL_CHECK/FAILURE", message)
 
         isEmailValid = false
 
-        binding.joinEmailErrorTv.text = message    // "이미 회원가입된 이메일입니다."
+        binding.joinEmailErrorTv.text = message
         binding.joinEmailErrorTv.visibility = View.VISIBLE
-
-//        binding.joinEmailErrorTv.setTextColor(Color.parseColor("#ED022D"))
+        binding.joinEmailErrorTv.setTextColor(Color.parseColor("#ED022D"))
+        binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
     }
 
 
@@ -88,13 +84,17 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
             binding.joinEmailErrorTv.visibility = View.VISIBLE
             // EditText border 색 변경
             binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
-        } else if (!emailPattern.matcher(binding.joinEmailEt.text)
-                .matches()
+            binding.joinEmailErrorTv.setTextColor(Color.parseColor("#ED022D"))
+        } else if (!Pattern.matches(
+                "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$",
+                binding.joinEmailEt.text.toString()
+            )
         ) {
             binding.joinEmailErrorTv.text = "이메일 형식을 확인해주세요."
             binding.joinEmailErrorTv.visibility = View.VISIBLE
             // EditText border 색 변경
             binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
+            binding.joinEmailErrorTv.setTextColor(Color.parseColor("#ED022D"))
 
         } else {
             if (!isEmailValid) {
@@ -102,14 +102,13 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
                 binding.joinEmailErrorTv.visibility = View.VISIBLE
                 // EditText border 색 변경
                 binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
+                binding.joinEmailErrorTv.setTextColor(Color.parseColor("#ED022D"))
             } else {
                 binding.joinEmailErrorTv.visibility = View.GONE
                 // EditText border 색 변경 (원래대로)
                 binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_shape)
+                binding.joinEmailErrorTv.setTextColor(Color.parseColor("#ED022D"))
             }
-
-            binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_shape)  // 이메일 중복 해결 시 삭제
-            binding.joinEmailErrorTv.visibility = View.GONE  // 이메일 중복 해결 시 삭제
         }
 
         // 닉네임 체크
@@ -159,7 +158,7 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
 
         // 모든 조건 충족 시
         if (binding.joinEmailEt.text.isNotEmpty() && binding.joinNicknameEt.text.isNotEmpty() && binding.joinPasswordEt.text.isNotEmpty() && binding.joinPasswordCheckEt.text.isNotEmpty() &&
-            binding.joinEmailErrorTv.visibility == View.GONE && binding.joinNicknameErrorTv.visibility == View.GONE
+            binding.joinEmailErrorTv.text == "사용 가능한 이메일입니다." && binding.joinNicknameErrorTv.visibility == View.GONE
             && binding.joinPasswordErrorTv.visibility == View.GONE && binding.joinPasswordCheckErrorTv.visibility == View.GONE
         ) {
             val email: String = binding.joinEmailEt.text.toString()
@@ -186,6 +185,7 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
         when (v?.id) {
             R.id.join_info_back_btn -> finish()
             R.id.join_next_btn -> allCheck()
+            R.id.join_email_check_btn -> emailCheck()
         }
     }
 
@@ -193,7 +193,7 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
     private fun isValidBtn() {
         if (binding.joinEmailEt.text.isNotEmpty() && binding.joinNicknameEt.text.isNotEmpty() &&
             binding.joinPasswordEt.text.isNotEmpty() && binding.joinPasswordCheckEt.text.isNotEmpty() &&
-            (binding.joinEmailErrorTv.visibility == View.GONE) && (binding.joinNicknameErrorTv.visibility == View.GONE) &&
+            (binding.joinEmailErrorTv.text == "사용 가능한 이메일입니다.") && (binding.joinNicknameErrorTv.visibility == View.GONE) &&
             (binding.joinPasswordErrorTv.visibility == View.GONE) && (binding.joinPasswordCheckErrorTv.visibility == View.GONE)
         ) {
             binding.joinNextBtn.setBackgroundResource(R.drawable.join_valid_btn_shape)
@@ -227,6 +227,7 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
                         count: Int,
                         after: Int
                     ) {
+                        isEmailValid = false
                     }
 
                     override fun onTextChanged(
@@ -251,33 +252,38 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
                             binding.joinEmailErrorTv.visibility = View.VISIBLE
                             // EditText border 색 변경
                             binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
+                            binding.joinEmailErrorTv.setTextColor(Color.parseColor("#ED022D"))
 
                             binding.joinNextBtn.setBackgroundResource(R.drawable.join_invalid_btn_shape)
                             binding.joinNextBtn.setTextColor(Color.parseColor("#909397"))
-                        } else if (!emailPattern.matcher(binding.joinEmailEt.text)
-                                .matches()
+                        } else if (!Pattern.matches(
+                                "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$",
+                                binding.joinEmailEt.text.toString()
+                            )
                         ) {
                             binding.joinEmailErrorTv.text = "이메일 형식을 확인해주세요."
                             binding.joinEmailErrorTv.visibility = View.VISIBLE
                             // EditText border 색 변경
                             binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
+                            binding.joinEmailErrorTv.setTextColor(Color.parseColor("#ED022D"))
 
                             binding.joinNextBtn.setBackgroundResource(R.drawable.join_invalid_btn_shape)
                             binding.joinNextBtn.setTextColor(Color.parseColor("#909397"))
                         } else {
-                            binding.joinEmailErrorTv.visibility = View.GONE
-                            // EditText border 색 변경 (원래대로)
-                            binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_shape)
-//                        if (!isEmailValid) {
-//                            binding.joinEmailErrorTv.text = "이메일 중복 확인을 해주세요."
-//                            binding.joinEmailErrorTv.visibility = View.VISIBLE
-//                            // EditText border 색 변경
-//                            binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
-//                        } else {
-//                            binding.joinEmailErrorTv.visibility = View.GONE
-//                            // EditText border 색 변경 (원래대로)
-//                            binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_shape)
-//                        }
+                            if (!isEmailValid) {
+                                binding.joinEmailErrorTv.text = "이메일 중복 확인을 해주세요."
+                                binding.joinEmailErrorTv.visibility = View.VISIBLE
+                                // EditText border 색 변경
+                                binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
+                                binding.joinEmailErrorTv.setTextColor(Color.parseColor("#ED022D"))
+                            } else {
+                                binding.joinEmailErrorTv.visibility = View.GONE
+                                // EditText border 색 변경 (원래대로)
+                                binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_shape)
+                                binding.joinEmailErrorTv.setTextColor(Color.parseColor("#ED022D"))
+                            }
+
+
 
                             isValidBtn()
                         }

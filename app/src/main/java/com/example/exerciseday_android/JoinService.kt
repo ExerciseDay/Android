@@ -52,23 +52,18 @@ class JoinService {
             ) {
                 Log.d("EMAIL_CHECK/SUCCESS", response.toString())
 
-                // https://week-year.tistory.com/181 참고
-//                Log.d("MAINACTIVITY", response.body().toString())
-//                val resp: EmailCheckResponse = response.body()!!
+                val resp: EmailCheckResponse = response.body()!!
 
-                if (response.isSuccessful) {
-                    when (response.body()?.result) {
-
+                if (resp.isSuccess) {
+                    when (resp.result) {
                         false -> emailCheckView.onEmailCheckSuccess()  // 중복 X
-                        true -> emailCheckView.onEmailCheckFailure(response.message())  // 중복 O
-                        else -> {}
+                        true -> emailCheckView.onEmailCheckFailure("이미 회원가입된 이메일입니다.")  // 중복 O
                     }
                 } else {
-                    when (response.code()) {
-                        404 -> Log.d("EMAIL_CHECK/FAILURE", response.code().toString())
+                    when (resp.code) {
+                        2015, 2016, 4000 -> emailCheckView.onEmailCheckFailure(resp.message)
                     }
                 }
-
             }
 
             override fun onFailure(call: Call<EmailCheckResponse>, t: Throwable) {
