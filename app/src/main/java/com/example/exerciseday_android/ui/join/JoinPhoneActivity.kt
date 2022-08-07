@@ -1,5 +1,6 @@
 package com.example.exerciseday_android.ui.join
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.telephony.PhoneNumberFormattingTextWatcher
@@ -14,6 +15,7 @@ import com.example.exerciseday_android.JoinView
 import com.example.exerciseday_android.R
 import com.example.exerciseday_android.User
 import com.example.exerciseday_android.databinding.ActivityJoinPhoneBinding
+import com.example.exerciseday_android.ui.login.LoginActivity
 import kotlinx.android.synthetic.main.dialog_custom_join_verification_code.view.*
 import java.util.regex.Pattern
 
@@ -21,7 +23,7 @@ class JoinPhoneActivity : AppCompatActivity(), JoinView, View.OnClickListener {
 
     lateinit var binding: ActivityJoinPhoneBinding
 
-    var focus = false
+    var isVerificated = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,11 +32,13 @@ class JoinPhoneActivity : AppCompatActivity(), JoinView, View.OnClickListener {
 
         // TODO
         // 시간 만료 다이얼로그 창
-        // 가입하기 버튼 클릭 시 조건 설정
+        // 인증번호 입력 시 포커스 이동, 재발송 버튼 custom
+
 
 
         // 인증번호 받기 버튼 클릭 시
         binding.joinVerificationCodeBtn.setOnClickListener {
+            isVerificated = true
             // 전화번호인지 검사
             if (binding.joinPhoneEt.text.isEmpty()) {
                 binding.joinPhoneErrorTv.text = "올바른 전화번호를 입력해주세요."
@@ -56,20 +60,44 @@ class JoinPhoneActivity : AppCompatActivity(), JoinView, View.OnClickListener {
 
                 // 다이얼로그 창
                 showVerificationCodeDialog()
-
             }
 
             checkVerificationCode()
-
-
         }
 
         // 회원가입 버튼 클릭 시
         binding.joinJoinBtn.setOnClickListener {
-//            if (binding.joinPhoneErrorTv.visibility == View.GONE) {
-//            }
+            // 전화번호 체크
+            if (binding.joinPhoneEt.text.isEmpty()) {
+                binding.joinPhoneErrorTv.text = "올바른 전화번호를 입력해주세요."
+                binding.joinPhoneErrorTv.visibility = View.VISIBLE
+                binding.joinPhoneEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
 
-            join()
+                binding.joinVerificationCodeBtn.setBackgroundResource(R.drawable.join_invalid_btn_shape)
+                binding.joinVerificationCodeBtn.setTextColor(Color.parseColor("#909397"))
+            } else if (!Pattern.matches(
+                    "^01(?:0|1|[6-9])-(?:\\d{3}|\\d{4})-\\d{4}$",
+                    binding.joinPhoneEt.text
+                )
+            ) {
+                binding.joinPhoneErrorTv.text = "올바른 전화번호를 입력해주세요."
+                binding.joinPhoneErrorTv.visibility = View.VISIBLE
+                binding.joinPhoneEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
+
+                binding.joinVerificationCodeBtn.setBackgroundResource(R.drawable.join_invalid_btn_shape)
+                binding.joinVerificationCodeBtn.setTextColor(Color.parseColor("#909397"))
+            } else {
+                binding.joinPhoneErrorTv.visibility = View.GONE
+                // EditText border 색 변경 (원래대로)
+                binding.joinPhoneEt.setBackgroundResource(R.drawable.join_edittext_shape)
+            }
+
+            // 모든 조건 충족 시
+            if (binding.joinPhoneEt.text.isNotEmpty() && binding.joinVerificationCodeEt.text.isNotEmpty() &&
+                (binding.joinPhoneErrorTv.visibility == View.GONE) && (binding.joinVerificationCodeErrorTv.visibility == View.GONE) &&
+                isVerificated) {
+                join()
+            }
         }
 
         checkPhone()
@@ -99,25 +127,14 @@ class JoinPhoneActivity : AppCompatActivity(), JoinView, View.OnClickListener {
 
     override fun onJoinSuccess() {
         // 로그인 화면으로 이동
-
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
         finish()
     }
 
     override fun onJoinFailure(code: Int, message: String) {
-//        binding.signUpEmailErrorTv.visibility = View.VISIBLE
-//        binding.signUpEmailErrorTv.text = message
-
-//        when (code) {
-////            2015, 2016 -> {
-////                binding.joinEmailErrorTv.visibility = View.VISIBLE
-////                binding.joinEmailErrorTv.text = message
-////            }
-//            }
-//            else -> {
-//                binding.joinEmailErrorTv.visibility = View.VISIBLE
-//                binding.joinEmailErrorTv.text = message
-//            }
-//        }
+        binding.joinVerificationCodeErrorTv.visibility = View.VISIBLE
+        binding.joinVerificationCodeErrorTv.text = message
     }
 
     override fun onClick(v: View?) {
@@ -129,8 +146,6 @@ class JoinPhoneActivity : AppCompatActivity(), JoinView, View.OnClickListener {
     private fun checkPhone(): Boolean {
         binding.joinPhoneEt.setOnFocusChangeListener { v, hasFocus ->
             if (hasFocus) {
-//                focus = true  // 한 번이라도 포커스를 가졌으면 true
-
                 if (binding.joinPhoneEt.text.isNotEmpty()) {
                     binding.joinPhoneRemoveBtn.visibility = View.VISIBLE
 
@@ -203,36 +218,9 @@ class JoinPhoneActivity : AppCompatActivity(), JoinView, View.OnClickListener {
                 })
 
             } else {
-//                if (focus) {
-//                    if (binding.joinPhoneEt.text.isEmpty()) {
-//                        binding.joinPhoneErrorTv.text = "올바른 전화번호를 입력해주세요."
-//                        binding.joinPhoneErrorTv.visibility = View.VISIBLE
-//                        // EditText border 색 변경
-//                        binding.joinPhoneEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
-//                    } else if (!Pattern.matches(
-//                            "^01(?:0|1|[6-9])-(?:\\d{3}|\\d{4})-\\d{4}$",
-//                            binding.joinPhoneEt.text
-//                        )
-//                    ) {
-//                        binding.joinPhoneErrorTv.text = "올바른 전화번호를 입력해주세요."
-//                        binding.joinPhoneErrorTv.visibility = View.VISIBLE
-//                        // EditText border 색 변경
-//                        binding.joinPhoneEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
-//                    } else {
-//                        binding.joinPhoneErrorTv.visibility = View.GONE
-//                        // EditText border 색 변경 (원래대로)
-//                        binding.joinPhoneEt.setBackgroundResource(R.drawable.join_edittext_shape)
-//
-//
-//                        binding.joinVerificationCodeBtn.setBackgroundResource(R.drawable.join_valid_btn_shape)
-//                        binding.joinVerificationCodeBtn.setTextColor(Color.parseColor("#ffffff"))
-//                    }
-//                }
-
                 binding.joinPhoneRemoveBtn.visibility = View.INVISIBLE
             }
         }
-
         return binding.joinPhoneErrorTv.visibility == View.GONE
     }
 
@@ -292,7 +280,6 @@ class JoinPhoneActivity : AppCompatActivity(), JoinView, View.OnClickListener {
                             binding.joinJoinBtn.setBackgroundResource(R.drawable.join_valid_btn_shape)
                             binding.joinJoinBtn.setTextColor(Color.parseColor("#ffffff"))
                         }
-
                     }
 
                     override fun afterTextChanged(s: Editable?) {
@@ -303,7 +290,6 @@ class JoinPhoneActivity : AppCompatActivity(), JoinView, View.OnClickListener {
                 binding.joinVerificationCodeRemoveBtn.visibility = View.INVISIBLE
             }
         }
-
         return binding.joinVerificationCodeErrorTv.visibility == View.GONE
     }
 
@@ -318,8 +304,7 @@ class JoinPhoneActivity : AppCompatActivity(), JoinView, View.OnClickListener {
         dialog.show()
 
         dialogView.join_verification_code_dialog_ok_btn.setOnClickListener {
-
-            // 인증번호 받기 버튼 안 보이게, 보여야 할 뷰 표시
+            // 인증번호 받기 버튼 숨김, 보여야 할 뷰 표시
             binding.joinVerificationCodeBtn.visibility = View.GONE
             binding.joinVerificationCodeEt.visibility = View.VISIBLE
             binding.joinVerificationCodeAgainBtn.visibility = View.VISIBLE

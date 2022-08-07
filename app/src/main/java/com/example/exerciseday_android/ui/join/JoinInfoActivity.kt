@@ -21,7 +21,6 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
     lateinit var binding: ActivityJoinInfoBinding
 
     var emailPattern: Pattern = Patterns.EMAIL_ADDRESS
-    var focus = false
     var isEmailValid = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +30,6 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
 
         // TODO
         // 이메일 중복 검사
-        // 버튼 색 변경
 
 
         // 뒤로 가기
@@ -49,21 +47,6 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
         checkNickname()
         checkPassword()
         checkPasswordCheck()
-
-        // 모든 조건 충족 시
-//        if (checkNickname()) {
-//            Log.d("Button", "true")
-//            // 다음 버튼 색 변경
-//            binding.joinNextBtn.setBackgroundResource(R.drawable.join_valid_btn_shape)
-//            binding.joinNextBtn.setTextColor(Color.parseColor("#ffffff"))
-//        }
-
-//        if (binding.joinEmailErrorTv.visibility == View.GONE && binding.joinNicknameErrorTv.visibility == View.GONE
-//            && binding.joinPasswordErrorTv.visibility == View.GONE && binding.joinPasswordCheckErrorTv.visibility == View.GONE
-//        ) {
-//            // 다음 버튼 색 변경
-//        }
-
     }
 
     private fun emailCheck() {
@@ -99,7 +82,6 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
 
 
     private fun allCheck(): Boolean {
-
         // 이메일 체크
         if (binding.joinEmailEt.text.isEmpty()) {
             binding.joinEmailErrorTv.text = "올바른 이메일을 입력해주세요."
@@ -125,6 +107,7 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
                 // EditText border 색 변경 (원래대로)
                 binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_shape)
             }
+
             binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_shape)  // 이메일 중복 해결 시 삭제
             binding.joinEmailErrorTv.visibility = View.GONE  // 이메일 중복 해결 시 삭제
         }
@@ -175,7 +158,8 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
         }
 
         // 모든 조건 충족 시
-        if (binding.joinEmailErrorTv.visibility == View.GONE && binding.joinNicknameErrorTv.visibility == View.GONE
+        if (binding.joinEmailEt.text.isNotEmpty() && binding.joinNicknameEt.text.isNotEmpty() && binding.joinPasswordEt.text.isNotEmpty() && binding.joinPasswordCheckEt.text.isNotEmpty() &&
+            binding.joinEmailErrorTv.visibility == View.GONE && binding.joinNicknameErrorTv.visibility == View.GONE
             && binding.joinPasswordErrorTv.visibility == View.GONE && binding.joinPasswordCheckErrorTv.visibility == View.GONE
         ) {
             val email: String = binding.joinEmailEt.text.toString()
@@ -206,11 +190,24 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
     }
 
 
+    private fun isValidBtn() {
+        if (binding.joinEmailEt.text.isNotEmpty() && binding.joinNicknameEt.text.isNotEmpty() &&
+            binding.joinPasswordEt.text.isNotEmpty() && binding.joinPasswordCheckEt.text.isNotEmpty() &&
+            (binding.joinEmailErrorTv.visibility == View.GONE) && (binding.joinNicknameErrorTv.visibility == View.GONE) &&
+            (binding.joinPasswordErrorTv.visibility == View.GONE) && (binding.joinPasswordCheckErrorTv.visibility == View.GONE)
+        ) {
+            binding.joinNextBtn.setBackgroundResource(R.drawable.join_valid_btn_shape)
+            binding.joinNextBtn.setTextColor(Color.parseColor("#ffffff"))
+        } else {
+            binding.joinNextBtn.setBackgroundResource(R.drawable.join_invalid_btn_shape)
+            binding.joinNextBtn.setTextColor(Color.parseColor("#909397"))
+        }
+    }
+
+
     private fun checkEmail(): Boolean {
         binding.joinEmailEt.setOnFocusChangeListener { v, hasFocus ->
             if (hasFocus) {
-                focus = true  // 한 번이라도 포커스를 가졌으면 true
-
                 if (binding.joinEmailEt.text.isNotEmpty()) {
                     binding.joinEmailRemoveBtn.visibility = View.VISIBLE
 
@@ -220,6 +217,8 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
                 } else {
                     binding.joinEmailRemoveBtn.visibility = View.INVISIBLE
                 }
+
+                isValidBtn()
 
                 binding.joinEmailEt.addTextChangedListener(object : TextWatcher {
                     override fun beforeTextChanged(
@@ -252,6 +251,9 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
                             binding.joinEmailErrorTv.visibility = View.VISIBLE
                             // EditText border 색 변경
                             binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
+
+                            binding.joinNextBtn.setBackgroundResource(R.drawable.join_invalid_btn_shape)
+                            binding.joinNextBtn.setTextColor(Color.parseColor("#909397"))
                         } else if (!emailPattern.matcher(binding.joinEmailEt.text)
                                 .matches()
                         ) {
@@ -260,6 +262,8 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
                             // EditText border 색 변경
                             binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
 
+                            binding.joinNextBtn.setBackgroundResource(R.drawable.join_invalid_btn_shape)
+                            binding.joinNextBtn.setTextColor(Color.parseColor("#909397"))
                         } else {
                             binding.joinEmailErrorTv.visibility = View.GONE
                             // EditText border 색 변경 (원래대로)
@@ -275,6 +279,7 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
 //                            binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_shape)
 //                        }
 
+                            isValidBtn()
                         }
                     }
 
@@ -283,6 +288,8 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
                 })
             } else {
                 binding.joinEmailRemoveBtn.visibility = View.INVISIBLE
+
+                isValidBtn()
             }
         }
 
@@ -292,8 +299,6 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
     private fun checkNickname(): Boolean {
         binding.joinNicknameEt.setOnFocusChangeListener { v, hasFocus ->
             if (hasFocus) {
-                focus = true  // 한 번이라도 포커스를 가졌으면 true
-
                 if (binding.joinNicknameEt.text.isNotEmpty()) {
                     binding.joinNicknameRemoveBtn.visibility = View.VISIBLE
 
@@ -303,6 +308,8 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
                 } else {
                     binding.joinNicknameRemoveBtn.visibility = View.INVISIBLE
                 }
+
+                isValidBtn()
 
                 binding.joinNicknameEt.addTextChangedListener(object : TextWatcher {
                     override fun beforeTextChanged(
@@ -335,10 +342,15 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
                             binding.joinNicknameErrorTv.visibility = View.VISIBLE
                             // EditText border 색 변경
                             binding.joinNicknameEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
+
+                            binding.joinNextBtn.setBackgroundResource(R.drawable.join_invalid_btn_shape)
+                            binding.joinNextBtn.setTextColor(Color.parseColor("#909397"))
                         } else {
                             binding.joinNicknameErrorTv.visibility = View.GONE
                             // EditText border 색 변경 (원래대로)
                             binding.joinNicknameEt.setBackgroundResource(R.drawable.join_edittext_shape)
+
+                            isValidBtn()
                         }
                     }
 
@@ -347,10 +359,11 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
                 })
             } else {
                 binding.joinNicknameRemoveBtn.visibility = View.INVISIBLE
+
+                isValidBtn()
             }
         }
 
-//        Log.d("nickname", binding.joinNicknameEt.text.toString())
         return binding.joinNicknameErrorTv.visibility == View.GONE
     }
 
@@ -358,8 +371,6 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
     private fun checkPassword(): Boolean {
         binding.joinPasswordEt.setOnFocusChangeListener { v, hasFocus ->
             if (hasFocus) {
-                focus = true  // 한 번이라도 포커스를 가졌으면 true
-
                 if (binding.joinPasswordEt.text.isNotEmpty()) {
                     binding.joinPasswordRemoveBtn.visibility = View.VISIBLE
 
@@ -369,6 +380,8 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
                 } else {
                     binding.joinPasswordRemoveBtn.visibility = View.INVISIBLE
                 }
+
+                isValidBtn()
 
                 binding.joinPasswordEt.addTextChangedListener(object : TextWatcher {
                     override fun beforeTextChanged(
@@ -401,6 +414,9 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
                             binding.joinPasswordErrorTv.visibility = View.VISIBLE
                             // EditText border 색 변경
                             binding.joinPasswordEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
+
+                            binding.joinNextBtn.setBackgroundResource(R.drawable.join_invalid_btn_shape)
+                            binding.joinNextBtn.setTextColor(Color.parseColor("#909397"))
                         } else if (!Pattern.matches(
                                 "^(?=.*\\d)(?=.*[~`!@#$%\\^&*()-])(?=.*[a-zA-Z]).{8,16}$",
                                 binding.joinPasswordEt.text.toString()
@@ -410,10 +426,15 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
                             binding.joinPasswordErrorTv.visibility = View.VISIBLE
                             // EditText border 색 변경
                             binding.joinPasswordEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
+
+                            binding.joinNextBtn.setBackgroundResource(R.drawable.join_invalid_btn_shape)
+                            binding.joinNextBtn.setTextColor(Color.parseColor("#909397"))
                         } else {
                             binding.joinPasswordErrorTv.visibility = View.GONE
                             // EditText border 색 변경 (원래대로)
                             binding.joinPasswordEt.setBackgroundResource(R.drawable.join_edittext_shape)
+
+                            isValidBtn()
                         }
                     }
 
@@ -422,6 +443,8 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
                 })
             } else {
                 binding.joinPasswordRemoveBtn.visibility = View.INVISIBLE
+
+                isValidBtn()
             }
         }
 
@@ -431,7 +454,6 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
     private fun checkPasswordCheck(): Boolean {
         binding.joinPasswordCheckEt.setOnFocusChangeListener { v, hasFocus ->
             if (hasFocus) {
-                focus = true  // 한 번이라도 포커스를 가졌으면 true
 
                 if (binding.joinPasswordCheckEt.text.isNotEmpty()) {
                     binding.joinPasswordCheckRemoveBtn.visibility = View.VISIBLE
@@ -442,6 +464,8 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
                 } else {
                     binding.joinPasswordCheckRemoveBtn.visibility = View.INVISIBLE
                 }
+
+                isValidBtn()
 
                 binding.joinPasswordCheckEt.addTextChangedListener(object : TextWatcher {
                     override fun beforeTextChanged(
@@ -474,10 +498,15 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
                             binding.joinPasswordCheckErrorTv.visibility = View.VISIBLE
                             // EditText border 색 변경
                             binding.joinPasswordCheckEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
+
+                            binding.joinNextBtn.setBackgroundResource(R.drawable.join_invalid_btn_shape)
+                            binding.joinNextBtn.setTextColor(Color.parseColor("#909397"))
                         } else {
                             binding.joinPasswordCheckErrorTv.visibility = View.GONE
                             // EditText border 색 변경 (원래대로)
                             binding.joinPasswordCheckEt.setBackgroundResource(R.drawable.join_edittext_shape)
+
+                            isValidBtn()
                         }
                     }
 
@@ -486,6 +515,8 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
                 })
             } else {
                 binding.joinPasswordCheckRemoveBtn.visibility = View.INVISIBLE
+
+                isValidBtn()
             }
         }
 
