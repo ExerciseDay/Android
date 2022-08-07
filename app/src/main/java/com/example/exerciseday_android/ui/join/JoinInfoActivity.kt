@@ -367,7 +367,6 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
         return binding.joinNicknameErrorTv.visibility == View.GONE
     }
 
-
     private fun checkPassword(): Boolean {
         binding.joinPasswordEt.setOnFocusChangeListener { v, hasFocus ->
             if (hasFocus) {

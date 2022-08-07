@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.join.PurposeSettingActivity">
+
+    <LinearLayout
+        android:id="@+id/purpose_setting_group_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="20dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="11dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/purpose_setting_back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@null"
+            android:src="@drawable/ic_back_arrow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/purpose_setting_title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="20dp"
+        android:lineHeight="34sp"
+        android:text="하루운동을 이용하는 목적이 \n무엇인가요?"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        android:fontFamily="@font/pretendard_2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/purpose_setting_group_layout" />
+
+    <TextView
+        android:id="@+id/purpose_setting_caption_tv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="10dp"
+        android:lineHeight="20sp"
+        android:text="이용하는 목적을 알려주시면 보다 쉽게 운동코스를 \n설정할 수 있어요!"
+        android:textAlignment="textStart"
+        android:textColor="@color/gray_700"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/purpose_setting_title_tv" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

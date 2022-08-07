@@ -41,6 +41,7 @@ class JoinService {
         Log.d("JOIN", "HELLO")
     }
 
+
     // 이메일 중복 확인
     fun emailCheck(email: String) {
         val joinService = getRetrofit().create(AuthRetrofitInterface::class.java)
@@ -52,8 +53,9 @@ class JoinService {
                 Log.d("EMAIL_CHECK/SUCCESS", response.toString())
 
                 // https://week-year.tistory.com/181 참고
-//                Log.e("MAINACTIVITY", response.body().toString())
+//                Log.d("MAINACTIVITY", response.body().toString())
 //                val resp: EmailCheckResponse = response.body()!!
+
                 if (response.isSuccessful) {
                     when (response.body()?.result) {
 
