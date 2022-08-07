@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:id="@+id/join_group_layout"
+        android:id="@+id/join_info_group_layout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginHorizontal="20dp"
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/join_back_btn"
+            android:id="@+id/join_info_back_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -29,7 +29,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/join_title_tv"
+        android:id="@+id/join_info_title_tv"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginHorizontal="25dp"
@@ -42,10 +42,10 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/join_group_layout" />
+        app:layout_constraintTop_toBottomOf="@+id/join_info_group_layout" />
 
     <TextView
-        android:id="@+id/join_caption_tv"
+        android:id="@+id/join_info_caption_tv"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginHorizontal="25dp"
@@ -57,7 +57,7 @@
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/join_title_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/join_info_title_tv" />
 
     <TextView
         android:id="@+id/join_email_tv"
@@ -72,13 +72,14 @@
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/join_caption_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/join_info_caption_tv" />
 
     <EditText
         android:id="@+id/join_email_et"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginHorizontal="25dp"
+        android:imeOptions="flagForceAscii"
         android:layout_marginTop="4dp"
         android:background="@drawable/join_edittext_shape"
         android:hint="example@haruwoundong.kr"

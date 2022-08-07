@@ -30,13 +30,12 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
         setContentView(binding.root)
 
         // TODO
-        // 뒤로가기 버튼
         // 이메일 중복 검사
         // 버튼 색 변경
 
 
         // 뒤로 가기
-        binding.joinBackBtn.setOnClickListener(this)
+        binding.joinInfoBackBtn.setOnClickListener(this)
 
         // 다음 버튼 클릭 시
         binding.joinNextBtn.setOnClickListener(this)
@@ -126,10 +125,9 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
                 // EditText border 색 변경 (원래대로)
                 binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_shape)
             }
-
+            binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_shape)  // 이메일 중복 해결 시 삭제
             binding.joinEmailErrorTv.visibility = View.GONE  // 이메일 중복 해결 시 삭제
         }
-
 
         // 닉네임 체크
         if (binding.joinNicknameEt.text.isEmpty()) {
@@ -202,12 +200,7 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
 
     override fun onClick(v: View?) {
         when (v?.id) {
-            R.id.join_back_btn -> {
-                // 뒤로 가기
-//                var intent = Intent(this, LoginActivity.class)
-//                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
-//                startActivity(Intent(this, LoginActivity::class.java))
-            }
+            R.id.join_info_back_btn -> finish()
             R.id.join_next_btn -> allCheck()
         }
     }
@@ -252,79 +245,48 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
                         } else {
                             binding.joinEmailRemoveBtn.visibility = View.INVISIBLE
                         }
+
+
+                        if (binding.joinEmailEt.text.isEmpty()) {
+                            binding.joinEmailErrorTv.text = "올바른 이메일을 입력해주세요."
+                            binding.joinEmailErrorTv.visibility = View.VISIBLE
+                            // EditText border 색 변경
+                            binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
+                        } else if (!emailPattern.matcher(binding.joinEmailEt.text)
+                                .matches()
+                        ) {
+                            binding.joinEmailErrorTv.text = "이메일 형식을 확인해주세요."
+                            binding.joinEmailErrorTv.visibility = View.VISIBLE
+                            // EditText border 색 변경
+                            binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
+
+                        } else {
+                            binding.joinEmailErrorTv.visibility = View.GONE
+                            // EditText border 색 변경 (원래대로)
+                            binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_shape)
+//                        if (!isEmailValid) {
+//                            binding.joinEmailErrorTv.text = "이메일 중복 확인을 해주세요."
+//                            binding.joinEmailErrorTv.visibility = View.VISIBLE
+//                            // EditText border 색 변경
+//                            binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
+//                        } else {
+//                            binding.joinEmailErrorTv.visibility = View.GONE
+//                            // EditText border 색 변경 (원래대로)
+//                            binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_shape)
+//                        }
+
+                        }
                     }
 
                     override fun afterTextChanged(s: Editable?) {
                     }
                 })
             } else {
-                if (focus) {
-                    if (binding.joinEmailEt.text.isEmpty()) {
-                        binding.joinEmailErrorTv.text = "올바른 이메일을 입력해주세요."
-                        binding.joinEmailErrorTv.visibility = View.VISIBLE
-                        // EditText border 색 변경
-                        binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
-                    } else if (!emailPattern.matcher(binding.joinEmailEt.text)
-                            .matches()
-                    ) {
-                        binding.joinEmailErrorTv.text = "이메일 형식을 확인해주세요."
-                        binding.joinEmailErrorTv.visibility = View.VISIBLE
-                        // EditText border 색 변경
-                        binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
-
-                    } else {
-                        binding.joinEmailErrorTv.visibility = View.GONE
-                        // EditText border 색 변경 (원래대로)
-                        binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_shape)
-//                        if (!isEmailValid) {
-//                            binding.joinEmailErrorTv.text = "이메일 중복 확인을 해주세요."
-//                            binding.joinEmailErrorTv.visibility = View.VISIBLE
-//                            // EditText border 색 변경
-//                            binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
-//                        } else {
-//                            binding.joinEmailErrorTv.visibility = View.GONE
-//                            // EditText border 색 변경 (원래대로)
-//                            binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_shape)
-//                        }
-                    }
-                } else {
-
-//                    if (binding.joinEmailEt.text.isEmpty()) {
-//                        binding.joinEmailErrorTv.text = "올바른 이메일을 입력해주세요."
-//                        binding.joinEmailErrorTv.visibility = View.VISIBLE
-//                        // EditText border 색 변경
-//                        binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
-//                    } else if (!emailPattern.matcher(binding.joinEmailEt.text)
-//                            .matches()
-//                    ) {
-//                        binding.joinEmailErrorTv.text = "이메일 형식을 확인해주세요."
-//                        binding.joinEmailErrorTv.visibility = View.VISIBLE
-//                        // EditText border 색 변경
-//                        binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
-//
-//                    } else {
-//                        binding.joinEmailErrorTv.visibility = View.GONE
-//                        // EditText border 색 변경 (원래대로)
-//                        binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_shape)
-//
-//                        if (!isEmailValid) {
-//                            binding.joinEmailErrorTv.text = "이메일 중복 확인을 해주세요."
-//                            binding.joinEmailErrorTv.visibility = View.VISIBLE
-//                            // EditText border 색 변경
-//                            binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
-//                        } else {
-//                            binding.joinEmailErrorTv.visibility = View.GONE
-//                            // EditText border 색 변경 (원래대로)
-//                            binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_shape)
-//                        }
-//                    }
-                }
-
                 binding.joinEmailRemoveBtn.visibility = View.INVISIBLE
             }
         }
 
-        return binding.joinEmailEt.text.isNotEmpty() && (binding.joinEmailErrorTv.visibility == View.GONE)
+        return binding.joinEmailErrorTv.visibility == View.GONE
     }
 
     private fun checkNickname(): Boolean {
@@ -366,25 +328,24 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
                         } else {
                             binding.joinNicknameRemoveBtn.visibility = View.INVISIBLE
                         }
+
+
+                        if (binding.joinNicknameEt.text.isEmpty()) {
+                            binding.joinNicknameErrorTv.text = "닉네임을 입력해주세요."
+                            binding.joinNicknameErrorTv.visibility = View.VISIBLE
+                            // EditText border 색 변경
+                            binding.joinNicknameEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
+                        } else {
+                            binding.joinNicknameErrorTv.visibility = View.GONE
+                            // EditText border 색 변경 (원래대로)
+                            binding.joinNicknameEt.setBackgroundResource(R.drawable.join_edittext_shape)
+                        }
                     }
 
                     override fun afterTextChanged(s: Editable?) {
                     }
                 })
             } else {
-                if (focus) {
-                    if (binding.joinNicknameEt.text.isEmpty()) {
-                        binding.joinNicknameErrorTv.text = "닉네임을 입력해주세요."
-                        binding.joinNicknameErrorTv.visibility = View.VISIBLE
-                        // EditText border 색 변경
-                        binding.joinNicknameEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
-                    } else {
-                        binding.joinNicknameErrorTv.visibility = View.GONE
-                        // EditText border 색 변경 (원래대로)
-                        binding.joinNicknameEt.setBackgroundResource(R.drawable.join_edittext_shape)
-                    }
-                }
-
                 binding.joinNicknameRemoveBtn.visibility = View.INVISIBLE
             }
         }
@@ -433,54 +394,33 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
                         } else {
                             binding.joinPasswordRemoveBtn.visibility = View.INVISIBLE
                         }
+
+
+                        if (binding.joinPasswordEt.text.isEmpty() || binding.joinPasswordEt.text.length < 8 || binding.joinPasswordEt.text.length > 16) {
+                            binding.joinPasswordErrorTv.text = "숫자/영문/특수문자를 포함해 8~16자로 입력해주세요."
+                            binding.joinPasswordErrorTv.visibility = View.VISIBLE
+                            // EditText border 색 변경
+                            binding.joinPasswordEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
+                        } else if (!Pattern.matches(
+                                "^(?=.*\\d)(?=.*[~`!@#$%\\^&*()-])(?=.*[a-zA-Z]).{8,16}$",
+                                binding.joinPasswordEt.text.toString()
+                            )
+                        ) {
+                            binding.joinPasswordErrorTv.text = "숫자/영문/특수문자를 포함해 8~16자로 입력해주세요."
+                            binding.joinPasswordErrorTv.visibility = View.VISIBLE
+                            // EditText border 색 변경
+                            binding.joinPasswordEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
+                        } else {
+                            binding.joinPasswordErrorTv.visibility = View.GONE
+                            // EditText border 색 변경 (원래대로)
+                            binding.joinPasswordEt.setBackgroundResource(R.drawable.join_edittext_shape)
+                        }
                     }
 
                     override fun afterTextChanged(s: Editable?) {
                     }
                 })
             } else {
-                if (focus) {
-                    if (binding.joinPasswordEt.text.isEmpty() || binding.joinPasswordEt.text.length < 8 || binding.joinPasswordEt.text.length > 16) {
-                        binding.joinPasswordErrorTv.text = "숫자/영문/특수문자를 포함해 8~16자로 입력해주세요."
-                        binding.joinPasswordErrorTv.visibility = View.VISIBLE
-                        // EditText border 색 변경
-                        binding.joinPasswordEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
-                    } else if (!Pattern.matches(
-                            "^(?=.*\\d)(?=.*[~`!@#$%\\^&*()-])(?=.*[a-zA-Z]).{8,16}$",
-                            binding.joinPasswordEt.text.toString()
-                        )
-                    ) {
-                        binding.joinPasswordErrorTv.text = "숫자/영문/특수문자를 포함해 8~16자로 입력해주세요."
-                        binding.joinPasswordErrorTv.visibility = View.VISIBLE
-                        // EditText border 색 변경
-                        binding.joinPasswordEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
-                    } else {
-                        binding.joinPasswordErrorTv.visibility = View.GONE
-                        // EditText border 색 변경 (원래대로)
-                        binding.joinPasswordEt.setBackgroundResource(R.drawable.join_edittext_shape)
-                    }
-                } else {
-                    if (binding.joinPasswordEt.text.isEmpty() || binding.joinPasswordEt.text.length < 8 || binding.joinPasswordEt.text.length > 16) {
-                        binding.joinPasswordErrorTv.text = "숫자/영문/특수문자를 포함해 8~16자로 입력해주세요."
-                        binding.joinPasswordErrorTv.visibility = View.VISIBLE
-                        // EditText border 색 변경
-                        binding.joinPasswordEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
-                    } else if (!Pattern.matches(
-                            "^(?=.*\\d)(?=.*[~`!@#$%\\^&*()-])(?=.*[a-zA-Z]).{8,16}$",
-                            binding.joinPasswordEt.text.toString()
-                        )
-                    ) {
-                        binding.joinPasswordErrorTv.text = "숫자/영문/특수문자를 포함해 8~16자로 입력해주세요."
-                        binding.joinPasswordErrorTv.visibility = View.VISIBLE
-                        // EditText border 색 변경
-                        binding.joinPasswordEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
-                    } else {
-                        binding.joinPasswordErrorTv.visibility = View.GONE
-                        // EditText border 색 변경 (원래대로)
-                        binding.joinPasswordEt.setBackgroundResource(R.drawable.join_edittext_shape)
-                    }
-                }
-
                 binding.joinPasswordRemoveBtn.visibility = View.INVISIBLE
             }
         }
@@ -527,37 +467,24 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
                         } else {
                             binding.joinPasswordCheckRemoveBtn.visibility = View.INVISIBLE
                         }
+
+
+                        if (binding.joinPasswordEt.text.toString() != binding.joinPasswordCheckEt.text.toString()) {
+                            binding.joinPasswordCheckErrorTv.text = "입력하신 비밀번호와 일치하지 않아요."
+                            binding.joinPasswordCheckErrorTv.visibility = View.VISIBLE
+                            // EditText border 색 변경
+                            binding.joinPasswordCheckEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
+                        } else {
+                            binding.joinPasswordCheckErrorTv.visibility = View.GONE
+                            // EditText border 색 변경 (원래대로)
+                            binding.joinPasswordCheckEt.setBackgroundResource(R.drawable.join_edittext_shape)
+                        }
                     }
 
                     override fun afterTextChanged(s: Editable?) {
                     }
                 })
-
             } else {
-                if (focus) {
-                    if (binding.joinPasswordEt.text.toString() != binding.joinPasswordCheckEt.text.toString()) {
-                        binding.joinPasswordCheckErrorTv.text = "입력하신 비밀번호와 일치하지 않아요."
-                        binding.joinPasswordCheckErrorTv.visibility = View.VISIBLE
-                        // EditText border 색 변경
-                        binding.joinPasswordCheckEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
-                    } else {
-                        binding.joinPasswordCheckErrorTv.visibility = View.GONE
-                        // EditText border 색 변경 (원래대로)
-                        binding.joinPasswordCheckEt.setBackgroundResource(R.drawable.join_edittext_shape)
-                    }
-                } else {
-                    if (binding.joinPasswordEt.text.toString() != binding.joinPasswordCheckEt.text.toString()) {
-                        binding.joinPasswordCheckErrorTv.text = "입력하신 비밀번호와 일치하지 않아요."
-                        binding.joinPasswordCheckErrorTv.visibility = View.VISIBLE
-                        // EditText border 색 변경
-                        binding.joinPasswordCheckEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
-                    } else {
-                        binding.joinPasswordCheckErrorTv.visibility = View.GONE
-                        // EditText border 색 변경 (원래대로)
-                        binding.joinPasswordCheckEt.setBackgroundResource(R.drawable.join_edittext_shape)
-                    }
-                }
-
                 binding.joinPasswordCheckRemoveBtn.visibility = View.INVISIBLE
             }
         }
