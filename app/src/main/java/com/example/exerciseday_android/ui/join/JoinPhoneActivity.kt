@@ -15,7 +15,6 @@ import com.example.exerciseday_android.JoinView
 import com.example.exerciseday_android.R
 import com.example.exerciseday_android.User
 import com.example.exerciseday_android.databinding.ActivityJoinPhoneBinding
-import com.example.exerciseday_android.ui.login.LoginActivity
 import kotlinx.android.synthetic.main.dialog_custom_join_verification_code.view.*
 import java.util.regex.Pattern
 
@@ -23,7 +22,7 @@ class JoinPhoneActivity : AppCompatActivity(), JoinView, View.OnClickListener {
 
     lateinit var binding: ActivityJoinPhoneBinding
 
-    var isVerificated = false
+    private var isVerified = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,14 +31,12 @@ class JoinPhoneActivity : AppCompatActivity(), JoinView, View.OnClickListener {
 
         // TODO
         // 시간 만료 다이얼로그 창
-        // 인증번호 입력 시 포커스 이동, 재발송 버튼 custom
-
 
 
         // 인증번호 받기 버튼 클릭 시
         binding.joinVerificationCodeBtn.setOnClickListener {
-            isVerificated = true
-            // 전화번호인지 검사
+            isVerified = true
+            // 전화번호 체크
             if (binding.joinPhoneEt.text.isEmpty()) {
                 binding.joinPhoneErrorTv.text = "올바른 전화번호를 입력해주세요."
                 binding.joinPhoneErrorTv.visibility = View.VISIBLE
@@ -95,7 +92,8 @@ class JoinPhoneActivity : AppCompatActivity(), JoinView, View.OnClickListener {
             // 모든 조건 충족 시
             if (binding.joinPhoneEt.text.isNotEmpty() && binding.joinVerificationCodeEt.text.isNotEmpty() &&
                 (binding.joinPhoneErrorTv.visibility == View.GONE) && (binding.joinVerificationCodeErrorTv.visibility == View.GONE) &&
-                isVerificated) {
+                isVerified
+            ) {
                 join()
             }
         }
@@ -126,10 +124,9 @@ class JoinPhoneActivity : AppCompatActivity(), JoinView, View.OnClickListener {
     }
 
     override fun onJoinSuccess() {
-        // 로그인 화면으로 이동
-        val intent = Intent(this, LoginActivity::class.java)
+        val intent = Intent(this, PurposeSettingActivity::class.java)
         startActivity(intent)
-        finish()
+        finishAffinity()
     }
 
     override fun onJoinFailure(code: Int, message: String) {
@@ -309,6 +306,7 @@ class JoinPhoneActivity : AppCompatActivity(), JoinView, View.OnClickListener {
             binding.joinVerificationCodeEt.visibility = View.VISIBLE
             binding.joinVerificationCodeAgainBtn.visibility = View.VISIBLE
 
+            binding.joinVerificationCodeEt.requestFocus()
             dialog.dismiss()
         }
     }

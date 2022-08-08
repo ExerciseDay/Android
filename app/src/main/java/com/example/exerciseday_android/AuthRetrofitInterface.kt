@@ -7,6 +7,6 @@ interface AuthRetrofitInterface {
     @POST("/users")
     fun join(@Body user: User): Call<JoinResponse>
 
-    @GET("/users/check/email/{email}")
-    fun emailCheck(@Path("email") email: String): Call<EmailCheckResponse>
+    @GET("/users/check/email")
+    fun emailCheck(@Query("email") email: String): Call<EmailCheckResponse>
 }

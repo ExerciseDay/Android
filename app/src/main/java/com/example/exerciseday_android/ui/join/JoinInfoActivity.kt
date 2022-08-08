@@ -104,10 +104,9 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
                 binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_error_shape)
                 binding.joinEmailErrorTv.setTextColor(Color.parseColor("#ED022D"))
             } else {
-                binding.joinEmailErrorTv.visibility = View.GONE
                 // EditText border 색 변경 (원래대로)
                 binding.joinEmailEt.setBackgroundResource(R.drawable.join_edittext_shape)
-                binding.joinEmailErrorTv.setTextColor(Color.parseColor("#ED022D"))
+                binding.joinEmailErrorTv.setTextColor(Color.parseColor("#000000"))
             }
         }
 
@@ -208,6 +207,7 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
     private fun checkEmail(): Boolean {
         binding.joinEmailEt.setOnFocusChangeListener { v, hasFocus ->
             if (hasFocus) {
+
                 if (binding.joinEmailEt.text.isNotEmpty()) {
                     binding.joinEmailRemoveBtn.visibility = View.VISIBLE
 

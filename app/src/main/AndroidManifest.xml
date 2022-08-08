@@ -21,8 +21,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ui.join.JoinCompleteActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.join.PurposeSettingActivity" />
+        <activity
             android:name=".ui.join.PurposeSettingActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ui.join.JoinPhoneActivity"
             android:exported="false"
