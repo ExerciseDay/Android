@@ -7,6 +7,8 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+
 
     <application
         android:name=".GlobalApplication"
@@ -23,13 +25,13 @@
         <activity
             android:name=".ui.join.JoinCompleteActivity"
             android:exported="false"
-            android:parentActivityName=".ui.join.PurposeSettingActivity" />
+            android:parentActivityName=".ui.join.JoinGoalActivity" />
         <activity
-            android:name=".ui.join.PurposeSettingActivity"
+            android:name=".ui.join.JoinGoalActivity"
             android:exported="true" />
         <activity
             android:name=".ui.join.JoinPhoneActivity"
-            android:exported="false"
+            android:exported="true"
             android:parentActivityName=".ui.join.JoinInfoActivity" />
         <activity
             android:name=".SplashActivity"

@@ -9,4 +9,7 @@ interface AuthRetrofitInterface {
 
     @GET("/users/check/email")
     fun emailCheck(@Query("email") email: String): Call<EmailCheckResponse>
+
+    @POST("/users/sms")
+    fun verificationCode(@Query("phone") phone: String): Call<VerificationCodeResponse>
 }

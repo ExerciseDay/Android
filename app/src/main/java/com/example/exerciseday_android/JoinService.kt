@@ -8,6 +8,7 @@ import retrofit2.Response
 class JoinService {
     private lateinit var joinView: JoinView
     private lateinit var emailCheckView: EmailCheckView
+    private lateinit var verificationCodeView: VerificationCodeView
 
     fun setJoinView(joinView: JoinView) {
         this.joinView = joinView
@@ -15,6 +16,10 @@ class JoinService {
 
     fun setEmailCheckView(emailCheckView: EmailCheckView) {
         this.emailCheckView = emailCheckView
+    }
+
+    fun setVerificationCodeView(verificationCodeView: VerificationCodeView) {
+        this.verificationCodeView = verificationCodeView
     }
 
     // 회원가입
@@ -61,13 +66,41 @@ class JoinService {
                     }
                 } else {
                     when (resp.code) {
-                        2015, 2016, 4000 -> emailCheckView.onEmailCheckFailure(resp.message)
+                        2015 -> emailCheckView.onEmailCheckFailure("올바른 이메일을 입력해주세요.")
+                        2016, 4000 -> emailCheckView.onEmailCheckFailure(resp.message)
                     }
                 }
             }
 
             override fun onFailure(call: Call<EmailCheckResponse>, t: Throwable) {
                 Log.d("EMAIL_CHECK/FAILURE", t.message.toString())
+            }
+        })
+    }
+
+
+    // 본인인증
+    fun verificationCode(phone: String) {
+        val joinService = getRetrofit().create(AuthRetrofitInterface::class.java)
+        joinService.verificationCode(phone).enqueue(object : Callback<VerificationCodeResponse> {
+            override fun onResponse(
+                call: Call<VerificationCodeResponse>,
+                response: Response<VerificationCodeResponse>
+            ) {
+                Log.d("VERIFICATION_CODE/SUCCESS", response.toString())
+
+                val resp: VerificationCodeResponse = response.body()!!
+
+                // 서버 response 중 code 값에 따른 결과
+                when (resp.code) {
+                    1000 -> verificationCodeView.onVerificationCodeSuccess(resp.result)
+                    else -> verificationCodeView.onVerificationCodeFailure(resp.message)
+                }
+
+            }
+
+            override fun onFailure(call: Call<VerificationCodeResponse>, t: Throwable) {
+                Log.d("VERIFICATION_CODE/FAILURE", t.message.toString())
             }
         })
     }

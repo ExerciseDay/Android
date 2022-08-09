@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.join.PurposeSettingActivity">
+    tools:context=".ui.join.JoinGoalActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <LinearLayout
-            android:id="@+id/purpose_setting_group_layout"
+            android:id="@+id/join_goal_group_layout"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginHorizontal="20dp"
@@ -22,7 +22,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageButton
-                android:id="@+id/purpose_setting_back_btn"
+                android:id="@+id/join_goal_back_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -34,7 +34,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/purpose_setting_title_tv"
+            android:id="@+id/join_goal_title_tv"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginHorizontal="25dp"
@@ -48,10 +48,10 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/purpose_setting_group_layout" />
+            app:layout_constraintTop_toBottomOf="@+id/join_goal_group_layout" />
 
         <TextView
-            android:id="@+id/purpose_setting_caption_tv"
+            android:id="@+id/join_goal_caption_tv"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginHorizontal="25dp"
@@ -63,7 +63,7 @@
             android:textSize="13sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/purpose_setting_title_tv" />
+            app:layout_constraintTop_toBottomOf="@+id/join_goal_title_tv" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -73,7 +73,7 @@
             android:layout_marginBottom="66dp"
             app:layout_constraintBottom_toBottomOf="parent"
             android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@+id/purpose_setting_caption_tv">
+            app:layout_constraintTop_toBottomOf="@+id/join_goal_caption_tv">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -81,35 +81,35 @@
                 android:orientation="horizontal">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/purpose_setting_first_btn_layout"
+                    android:id="@+id/join_goal_first_btn_layout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <View
-                        android:id="@+id/purpose_setting_home_training_view"
+                        android:id="@+id/join_goal_home_training_view"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginEnd="15dp"
                         android:background="@drawable/purpose_setting_btn_unselected"
                         android:clickable="true"
-                        app:layout_constraintBottom_toBottomOf="@+id/purpose_setting_first_btn_layout"
-                        app:layout_constraintEnd_toStartOf="@+id/purpose_setting_weight_control_view"
-                        app:layout_constraintStart_toStartOf="@+id/purpose_setting_first_btn_layout"
-                        app:layout_constraintTop_toTopOf="@+id/purpose_setting_first_btn_layout" />
+                        app:layout_constraintBottom_toBottomOf="@+id/join_goal_first_btn_layout"
+                        app:layout_constraintEnd_toStartOf="@+id/join_goal_weight_control_view"
+                        app:layout_constraintStart_toStartOf="@+id/join_goal_first_btn_layout"
+                        app:layout_constraintTop_toTopOf="@+id/join_goal_first_btn_layout" />
 
                     <View
-                        android:id="@+id/purpose_setting_weight_control_view"
+                        android:id="@+id/join_goal_weight_control_view"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:background="@drawable/purpose_setting_btn_unselected"
                         android:clickable="true"
-                        app:layout_constraintBottom_toBottomOf="@+id/purpose_setting_first_btn_layout"
-                        app:layout_constraintEnd_toEndOf="@+id/purpose_setting_first_btn_layout"
-                        app:layout_constraintStart_toEndOf="@+id/purpose_setting_home_training_view"
-                        app:layout_constraintTop_toTopOf="@+id/purpose_setting_first_btn_layout" />
+                        app:layout_constraintBottom_toBottomOf="@+id/join_goal_first_btn_layout"
+                        app:layout_constraintEnd_toEndOf="@+id/join_goal_first_btn_layout"
+                        app:layout_constraintStart_toEndOf="@+id/join_goal_home_training_view"
+                        app:layout_constraintTop_toTopOf="@+id/join_goal_first_btn_layout" />
 
                     <ImageView
-                        android:id="@+id/purpose_setting_home_training_iv"
+                        android:id="@+id/join_goal_home_training_iv"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="50dp"
@@ -119,13 +119,13 @@
                         android:padding="0dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/ic_home_training"
-                        app:layout_constraintBottom_toTopOf="@+id/purpose_setting_home_training_tv"
-                        app:layout_constraintEnd_toEndOf="@+id/purpose_setting_home_training_view"
-                        app:layout_constraintStart_toStartOf="@+id/purpose_setting_home_training_view"
-                        app:layout_constraintTop_toTopOf="@+id/purpose_setting_home_training_view" />
+                        app:layout_constraintBottom_toTopOf="@+id/join_goal_home_training_tv"
+                        app:layout_constraintEnd_toEndOf="@+id/join_goal_home_training_view"
+                        app:layout_constraintStart_toStartOf="@+id/join_goal_home_training_view"
+                        app:layout_constraintTop_toTopOf="@+id/join_goal_home_training_view" />
 
                     <TextView
-                        android:id="@+id/purpose_setting_home_training_tv"
+                        android:id="@+id/join_goal_home_training_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
@@ -134,13 +134,13 @@
                         android:text="#홈트레이닝"
                         android:textColor="#464646"
                         android:textSize="16sp"
-                        app:layout_constraintBottom_toBottomOf="@+id/purpose_setting_home_training_view"
-                        app:layout_constraintEnd_toEndOf="@+id/purpose_setting_home_training_view"
-                        app:layout_constraintStart_toStartOf="@+id/purpose_setting_home_training_view"
-                        app:layout_constraintTop_toBottomOf="@+id/purpose_setting_home_training_iv" />
+                        app:layout_constraintBottom_toBottomOf="@+id/join_goal_home_training_view"
+                        app:layout_constraintEnd_toEndOf="@+id/join_goal_home_training_view"
+                        app:layout_constraintStart_toStartOf="@+id/join_goal_home_training_view"
+                        app:layout_constraintTop_toBottomOf="@+id/join_goal_home_training_iv" />
 
                     <ImageView
-                        android:id="@+id/purpose_setting_weight_control_iv"
+                        android:id="@+id/join_goal_weight_control_iv"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="54dp"
@@ -149,13 +149,13 @@
                         android:background="@android:color/transparent"
                         android:scaleType="centerCrop"
                         android:src="@drawable/ic_weight_control"
-                        app:layout_constraintBottom_toTopOf="@+id/purpose_setting_weight_control_tv"
-                        app:layout_constraintEnd_toEndOf="@+id/purpose_setting_weight_control_view"
-                        app:layout_constraintStart_toStartOf="@+id/purpose_setting_weight_control_view"
-                        app:layout_constraintTop_toTopOf="@+id/purpose_setting_weight_control_view" />
+                        app:layout_constraintBottom_toTopOf="@+id/join_goal_weight_control_tv"
+                        app:layout_constraintEnd_toEndOf="@+id/join_goal_weight_control_view"
+                        app:layout_constraintStart_toStartOf="@+id/join_goal_weight_control_view"
+                        app:layout_constraintTop_toTopOf="@+id/join_goal_weight_control_view" />
 
                     <TextView
-                        android:id="@+id/purpose_setting_weight_control_tv"
+                        android:id="@+id/join_goal_weight_control_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="14dp"
@@ -164,10 +164,10 @@
                         android:text="#체중조절"
                         android:textColor="#464646"
                         android:textSize="16sp"
-                        app:layout_constraintBottom_toBottomOf="@+id/purpose_setting_weight_control_view"
-                        app:layout_constraintEnd_toEndOf="@+id/purpose_setting_weight_control_view"
-                        app:layout_constraintStart_toStartOf="@+id/purpose_setting_weight_control_view"
-                        app:layout_constraintTop_toBottomOf="@+id/purpose_setting_weight_control_iv" />
+                        app:layout_constraintBottom_toBottomOf="@+id/join_goal_weight_control_view"
+                        app:layout_constraintEnd_toEndOf="@+id/join_goal_weight_control_view"
+                        app:layout_constraintStart_toStartOf="@+id/join_goal_weight_control_view"
+                        app:layout_constraintTop_toBottomOf="@+id/join_goal_weight_control_iv" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -180,35 +180,35 @@
                 android:orientation="horizontal">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/purpose_setting_second_btn_layout"
+                    android:id="@+id/join_goal_second_btn_layout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <View
-                        android:id="@+id/purpose_setting_building_muscle_view"
+                        android:id="@+id/join_goal_building_muscle_view"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginEnd="15dp"
                         android:background="@drawable/purpose_setting_btn_unselected"
                         android:clickable="true"
-                        app:layout_constraintBottom_toBottomOf="@+id/purpose_setting_second_btn_layout"
-                        app:layout_constraintEnd_toStartOf="@+id/purpose_setting_trainer_preparation_view"
-                        app:layout_constraintStart_toStartOf="@+id/purpose_setting_second_btn_layout"
-                        app:layout_constraintTop_toTopOf="@+id/purpose_setting_second_btn_layout" />
+                        app:layout_constraintBottom_toBottomOf="@+id/join_goal_second_btn_layout"
+                        app:layout_constraintEnd_toStartOf="@+id/join_goal_trainer_preparation_view"
+                        app:layout_constraintStart_toStartOf="@+id/join_goal_second_btn_layout"
+                        app:layout_constraintTop_toTopOf="@+id/join_goal_second_btn_layout" />
 
                     <View
-                        android:id="@+id/purpose_setting_trainer_preparation_view"
+                        android:id="@+id/join_goal_trainer_preparation_view"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:background="@drawable/purpose_setting_btn_unselected"
                         android:clickable="true"
-                        app:layout_constraintBottom_toBottomOf="@+id/purpose_setting_second_btn_layout"
-                        app:layout_constraintEnd_toEndOf="@+id/purpose_setting_second_btn_layout"
-                        app:layout_constraintStart_toEndOf="@+id/purpose_setting_building_muscle_view"
-                        app:layout_constraintTop_toTopOf="@+id/purpose_setting_second_btn_layout" />
+                        app:layout_constraintBottom_toBottomOf="@+id/join_goal_second_btn_layout"
+                        app:layout_constraintEnd_toEndOf="@+id/join_goal_second_btn_layout"
+                        app:layout_constraintStart_toEndOf="@+id/join_goal_building_muscle_view"
+                        app:layout_constraintTop_toTopOf="@+id/join_goal_second_btn_layout" />
 
                     <ImageView
-                        android:id="@+id/purpose_setting_building_muscle_iv"
+                        android:id="@+id/join_goal_building_muscle_iv"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="52dp"
@@ -218,13 +218,13 @@
                         android:padding="0dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/ic_building_muscle"
-                        app:layout_constraintBottom_toTopOf="@+id/purpose_setting_building_muscle_tv"
-                        app:layout_constraintEnd_toEndOf="@+id/purpose_setting_building_muscle_view"
-                        app:layout_constraintStart_toStartOf="@+id/purpose_setting_building_muscle_view"
-                        app:layout_constraintTop_toTopOf="@+id/purpose_setting_building_muscle_view" />
+                        app:layout_constraintBottom_toTopOf="@+id/join_goal_building_muscle_tv"
+                        app:layout_constraintEnd_toEndOf="@+id/join_goal_building_muscle_view"
+                        app:layout_constraintStart_toStartOf="@+id/join_goal_building_muscle_view"
+                        app:layout_constraintTop_toTopOf="@+id/join_goal_building_muscle_view" />
 
                     <TextView
-                        android:id="@+id/purpose_setting_building_muscle_tv"
+                        android:id="@+id/join_goal_building_muscle_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="19dp"
@@ -233,13 +233,13 @@
                         android:text="#근력기르기"
                         android:textColor="#464646"
                         android:textSize="16sp"
-                        app:layout_constraintBottom_toBottomOf="@+id/purpose_setting_building_muscle_view"
-                        app:layout_constraintEnd_toEndOf="@+id/purpose_setting_building_muscle_view"
-                        app:layout_constraintStart_toStartOf="@+id/purpose_setting_building_muscle_view"
-                        app:layout_constraintTop_toBottomOf="@+id/purpose_setting_building_muscle_iv" />
+                        app:layout_constraintBottom_toBottomOf="@+id/join_goal_building_muscle_view"
+                        app:layout_constraintEnd_toEndOf="@+id/join_goal_building_muscle_view"
+                        app:layout_constraintStart_toStartOf="@+id/join_goal_building_muscle_view"
+                        app:layout_constraintTop_toBottomOf="@+id/join_goal_building_muscle_iv" />
 
                     <ImageView
-                        android:id="@+id/purpose_setting_trainer_preparation_iv"
+                        android:id="@+id/join_goal_trainer_preparation_iv"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="48dp"
@@ -248,13 +248,13 @@
                         android:background="@android:color/transparent"
                         android:scaleType="centerCrop"
                         android:src="@drawable/ic_trainer_preparation"
-                        app:layout_constraintBottom_toTopOf="@+id/purpose_setting_trainer_preparation_tv"
-                        app:layout_constraintEnd_toEndOf="@+id/purpose_setting_trainer_preparation_view"
-                        app:layout_constraintStart_toStartOf="@+id/purpose_setting_trainer_preparation_view"
-                        app:layout_constraintTop_toTopOf="@+id/purpose_setting_trainer_preparation_view" />
+                        app:layout_constraintBottom_toTopOf="@+id/join_goal_trainer_preparation_tv"
+                        app:layout_constraintEnd_toEndOf="@+id/join_goal_trainer_preparation_view"
+                        app:layout_constraintStart_toStartOf="@+id/join_goal_trainer_preparation_view"
+                        app:layout_constraintTop_toTopOf="@+id/join_goal_trainer_preparation_view" />
 
                     <TextView
-                        android:id="@+id/purpose_setting_trainer_preparation_tv"
+                        android:id="@+id/join_goal_trainer_preparation_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="14dp"
@@ -263,10 +263,10 @@
                         android:text="#트레이너 준비"
                         android:textColor="#464646"
                         android:textSize="16sp"
-                        app:layout_constraintBottom_toBottomOf="@+id/purpose_setting_trainer_preparation_view"
-                        app:layout_constraintEnd_toEndOf="@+id/purpose_setting_trainer_preparation_view"
-                        app:layout_constraintStart_toStartOf="@+id/purpose_setting_trainer_preparation_view"
-                        app:layout_constraintTop_toBottomOf="@+id/purpose_setting_trainer_preparation_iv" />
+                        app:layout_constraintBottom_toBottomOf="@+id/join_goal_trainer_preparation_view"
+                        app:layout_constraintEnd_toEndOf="@+id/join_goal_trainer_preparation_view"
+                        app:layout_constraintStart_toStartOf="@+id/join_goal_trainer_preparation_view"
+                        app:layout_constraintTop_toBottomOf="@+id/join_goal_trainer_preparation_iv" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -279,35 +279,35 @@
                 android:orientation="horizontal">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/purpose_setting_third_btn_layout"
+                    android:id="@+id/join_goal_third_btn_layout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <View
-                        android:id="@+id/purpose_setting_health_care_view"
+                        android:id="@+id/join_goal_health_care_view"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginEnd="15dp"
                         android:background="@drawable/purpose_setting_btn_unselected"
                         android:clickable="true"
-                        app:layout_constraintBottom_toBottomOf="@+id/purpose_setting_third_btn_layout"
-                        app:layout_constraintEnd_toStartOf="@+id/purpose_setting_body_profile_view"
-                        app:layout_constraintStart_toStartOf="@+id/purpose_setting_third_btn_layout"
-                        app:layout_constraintTop_toTopOf="@+id/purpose_setting_third_btn_layout" />
+                        app:layout_constraintBottom_toBottomOf="@+id/join_goal_third_btn_layout"
+                        app:layout_constraintEnd_toStartOf="@+id/join_goal_body_profile_view"
+                        app:layout_constraintStart_toStartOf="@+id/join_goal_third_btn_layout"
+                        app:layout_constraintTop_toTopOf="@+id/join_goal_third_btn_layout" />
 
                     <View
-                        android:id="@+id/purpose_setting_body_profile_view"
+                        android:id="@+id/join_goal_body_profile_view"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:background="@drawable/purpose_setting_btn_unselected"
                         android:clickable="true"
-                        app:layout_constraintBottom_toBottomOf="@+id/purpose_setting_third_btn_layout"
-                        app:layout_constraintEnd_toEndOf="@+id/purpose_setting_third_btn_layout"
-                        app:layout_constraintStart_toEndOf="@+id/purpose_setting_health_care_view"
-                        app:layout_constraintTop_toTopOf="@+id/purpose_setting_third_btn_layout" />
+                        app:layout_constraintBottom_toBottomOf="@+id/join_goal_third_btn_layout"
+                        app:layout_constraintEnd_toEndOf="@+id/join_goal_third_btn_layout"
+                        app:layout_constraintStart_toEndOf="@+id/join_goal_health_care_view"
+                        app:layout_constraintTop_toTopOf="@+id/join_goal_third_btn_layout" />
 
                     <ImageView
-                        android:id="@+id/purpose_setting_health_care_iv"
+                        android:id="@+id/join_goal_health_care_iv"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="54dp"
@@ -317,13 +317,13 @@
                         android:padding="0dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/ic_health_care"
-                        app:layout_constraintBottom_toTopOf="@+id/purpose_setting_health_care_tv"
-                        app:layout_constraintEnd_toEndOf="@+id/purpose_setting_health_care_view"
-                        app:layout_constraintStart_toStartOf="@+id/purpose_setting_health_care_view"
-                        app:layout_constraintTop_toTopOf="@+id/purpose_setting_health_care_view" />
+                        app:layout_constraintBottom_toTopOf="@+id/join_goal_health_care_tv"
+                        app:layout_constraintEnd_toEndOf="@+id/join_goal_health_care_view"
+                        app:layout_constraintStart_toStartOf="@+id/join_goal_health_care_view"
+                        app:layout_constraintTop_toTopOf="@+id/join_goal_health_care_view" />
 
                     <TextView
-                        android:id="@+id/purpose_setting_health_care_tv"
+                        android:id="@+id/join_goal_health_care_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="13dp"
@@ -332,13 +332,13 @@
                         android:text="#건강관리"
                         android:textColor="#464646"
                         android:textSize="16sp"
-                        app:layout_constraintBottom_toBottomOf="@+id/purpose_setting_health_care_view"
-                        app:layout_constraintEnd_toEndOf="@+id/purpose_setting_health_care_view"
-                        app:layout_constraintStart_toStartOf="@+id/purpose_setting_health_care_view"
-                        app:layout_constraintTop_toBottomOf="@+id/purpose_setting_health_care_iv" />
+                        app:layout_constraintBottom_toBottomOf="@+id/join_goal_health_care_view"
+                        app:layout_constraintEnd_toEndOf="@+id/join_goal_health_care_view"
+                        app:layout_constraintStart_toStartOf="@+id/join_goal_health_care_view"
+                        app:layout_constraintTop_toBottomOf="@+id/join_goal_health_care_iv" />
 
                     <ImageView
-                        android:id="@+id/purpose_setting_body_profile_iv"
+                        android:id="@+id/join_goal_body_profile_iv"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="50dp"
@@ -348,13 +348,13 @@
                         android:padding="0dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/ic_body_profile"
-                        app:layout_constraintBottom_toTopOf="@+id/purpose_setting_body_profile_tv"
-                        app:layout_constraintEnd_toEndOf="@+id/purpose_setting_body_profile_view"
-                        app:layout_constraintStart_toStartOf="@+id/purpose_setting_body_profile_view"
-                        app:layout_constraintTop_toTopOf="@+id/purpose_setting_body_profile_view" />
+                        app:layout_constraintBottom_toTopOf="@+id/join_goal_body_profile_tv"
+                        app:layout_constraintEnd_toEndOf="@+id/join_goal_body_profile_view"
+                        app:layout_constraintStart_toStartOf="@+id/join_goal_body_profile_view"
+                        app:layout_constraintTop_toTopOf="@+id/join_goal_body_profile_view" />
 
                     <TextView
-                        android:id="@+id/purpose_setting_body_profile_tv"
+                        android:id="@+id/join_goal_body_profile_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -363,10 +363,10 @@
                         android:text="#바디프로필"
                         android:textColor="#464646"
                         android:textSize="16sp"
-                        app:layout_constraintBottom_toBottomOf="@+id/purpose_setting_body_profile_view"
-                        app:layout_constraintEnd_toEndOf="@+id/purpose_setting_body_profile_view"
-                        app:layout_constraintStart_toStartOf="@+id/purpose_setting_body_profile_view"
-                        app:layout_constraintTop_toBottomOf="@+id/purpose_setting_body_profile_iv" />
+                        app:layout_constraintBottom_toBottomOf="@+id/join_goal_body_profile_view"
+                        app:layout_constraintEnd_toEndOf="@+id/join_goal_body_profile_view"
+                        app:layout_constraintStart_toStartOf="@+id/join_goal_body_profile_view"
+                        app:layout_constraintTop_toBottomOf="@+id/join_goal_body_profile_iv" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
