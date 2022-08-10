@@ -57,23 +57,11 @@ class JoinPhoneActivity : AppCompatActivity(), VerificationCodeView, View.OnClic
 
         // 회원가입 버튼 클릭 시
         binding.joinJoinBtn.setOnClickListener {
+            timerTask?.cancel()
+
             val phone: String = binding.joinPhoneEt.text.toString().replace("-", "")
 
             sendJoinPhone(phone)
-
-//            // 모든 조건 충족 시
-//            if (binding.joinPhoneEt.text.isNotEmpty() && binding.joinVerificationCodeEt.text.isNotEmpty() &&
-//                (binding.joinPhoneErrorTv.visibility == View.GONE) && (binding.joinVerificationCodeErrorTv.visibility == View.GONE) &&
-//                isVerified
-//            ) {
-//                binding.joinJoinBtn.isEnabled = true
-//
-//                val phone: String = binding.joinPhoneEt.text.toString().replace("-", "")
-//
-//                sendJoinPhone(phone)
-//            } else {
-//                binding.joinJoinBtn.isEnabled = false
-//            }
         }
 
         checkPhone()
