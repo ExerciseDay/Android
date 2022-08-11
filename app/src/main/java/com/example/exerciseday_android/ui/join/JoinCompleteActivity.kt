@@ -46,10 +46,10 @@ class JoinCompleteActivity : AppCompatActivity(), JoinView, View.OnClickListener
         val joinInfoList = intent.extras!!.getStringArrayList("join")
 
         val email: String = joinInfoList!![0]
-        val nickname: String = joinInfoList!![1]
-        val password: String = joinInfoList!![2]
-        val phone: String = joinInfoList!![3]
-        val goal: String = joinInfoList!![4]
+        val nickname: String = joinInfoList[1]
+        val password: String = joinInfoList[2]
+        val phone: String = joinInfoList[3]
+        val goal: String = joinInfoList[4]
 
         Log.d("join_getUser", User(email, password, nickname, phone, goal).toString())
 

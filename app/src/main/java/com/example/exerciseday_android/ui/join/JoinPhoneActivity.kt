@@ -79,7 +79,7 @@ class JoinPhoneActivity : AppCompatActivity(), VerificationCodeView, View.OnClic
     }
 
     private fun checkPhone(): Boolean {
-        binding.joinPhoneEt.setOnFocusChangeListener { v, hasFocus ->
+        binding.joinPhoneEt.setOnFocusChangeListener { _, hasFocus ->
             if (hasFocus) {
                 if (binding.joinPhoneEt.text.isNotEmpty()) {
                     binding.joinPhoneRemoveBtn.visibility = View.VISIBLE
@@ -160,7 +160,7 @@ class JoinPhoneActivity : AppCompatActivity(), VerificationCodeView, View.OnClic
     }
 
     private fun checkVerificationCode(): Boolean {
-        binding.joinVerificationCodeEt.setOnFocusChangeListener { v, hasFocus ->
+        binding.joinVerificationCodeEt.setOnFocusChangeListener { _, hasFocus ->
             if (hasFocus) {
                 if (binding.joinVerificationCodeEt.text.isNotEmpty()) {
                     binding.joinVerificationCodeRemoveBtn.visibility = View.VISIBLE
@@ -341,9 +341,9 @@ class JoinPhoneActivity : AppCompatActivity(), VerificationCodeView, View.OnClic
     private fun sendJoinPhone(phone: String) {
         val joinInfoList = intent.extras!!.getStringArrayList("join")
 
-        val phone: String = phone
+        val joinPhone: String = phone
 
-        joinInfoList!!.add(phone)
+        joinInfoList!!.add(joinPhone)
 
         val intent = Intent(this, JoinGoalActivity::class.java)
         intent.putStringArrayListExtra("join", joinInfoList)

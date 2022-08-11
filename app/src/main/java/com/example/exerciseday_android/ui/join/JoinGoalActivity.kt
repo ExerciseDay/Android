@@ -44,7 +44,7 @@ class JoinGoalActivity : AppCompatActivity(), View.OnClickListener {
                 MotionEvent.ACTION_DOWN -> {
                     // PRESSED
                     binding.joinGoalHomeTrainingView.setBackgroundResource(R.drawable.join_goal_btn_selected)
-                    binding.joinGoalHomeTrainingIv.setColorFilter(resources.getColor(R.color.white))
+                    binding.joinGoalHomeTrainingIv.setColorFilter(resources.getColor( R.color.white, null))
                     binding.joinGoalHomeTrainingTv.setTextColor(Color.parseColor("#ffffff"))
 
                     return@OnTouchListener true
@@ -81,7 +81,7 @@ class JoinGoalActivity : AppCompatActivity(), View.OnClickListener {
                 MotionEvent.ACTION_DOWN -> {
                     // PRESSED
                     binding.joinGoalWeightControlView.setBackgroundResource(R.drawable.join_goal_btn_selected)
-                    binding.joinGoalWeightControlIv.setColorFilter(resources.getColor(R.color.white))
+                    binding.joinGoalWeightControlIv.setColorFilter(resources.getColor( R.color.white, null))
                     binding.joinGoalWeightControlTv.setTextColor(Color.parseColor("#ffffff"))
 
                     return@OnTouchListener true
@@ -118,7 +118,7 @@ class JoinGoalActivity : AppCompatActivity(), View.OnClickListener {
                 MotionEvent.ACTION_DOWN -> {
                     // PRESSED
                     binding.joinGoalBuildingMuscleView.setBackgroundResource(R.drawable.join_goal_btn_selected)
-                    binding.joinGoalBuildingMuscleIv.setColorFilter(resources.getColor(R.color.white))
+                    binding.joinGoalBuildingMuscleIv.setColorFilter(resources.getColor( R.color.white, null))
                     binding.joinGoalBuildingMuscleTv.setTextColor(Color.parseColor("#ffffff"))
 
                     return@OnTouchListener true
@@ -155,7 +155,7 @@ class JoinGoalActivity : AppCompatActivity(), View.OnClickListener {
                 MotionEvent.ACTION_DOWN -> {
                     // PRESSED
                     binding.joinGoalTrainerPreparationView.setBackgroundResource(R.drawable.join_goal_btn_selected)
-                    binding.joinGoalTrainerPreparationIv.setColorFilter(resources.getColor(R.color.white))
+                    binding.joinGoalTrainerPreparationIv.setColorFilter(resources.getColor( R.color.white, null))
                     binding.joinGoalTrainerPreparationTv.setTextColor(Color.parseColor("#ffffff"))
 
                     return@OnTouchListener true
@@ -192,7 +192,7 @@ class JoinGoalActivity : AppCompatActivity(), View.OnClickListener {
                 MotionEvent.ACTION_DOWN -> {
                     // PRESSED
                     binding.joinGoalHealthCareView.setBackgroundResource(R.drawable.join_goal_btn_selected)
-                    binding.joinGoalHealthCareIv.setColorFilter(resources.getColor(R.color.white))
+                    binding.joinGoalHealthCareIv.setColorFilter(resources.getColor( R.color.white, null))
                     binding.joinGoalHealthCareTv.setTextColor(Color.parseColor("#ffffff"))
 
                     return@OnTouchListener true
@@ -229,7 +229,7 @@ class JoinGoalActivity : AppCompatActivity(), View.OnClickListener {
                 MotionEvent.ACTION_DOWN -> {
                     // PRESSED
                     binding.joinGoalBodyProfileView.setBackgroundResource(R.drawable.join_goal_btn_selected)
-                    binding.joinGoalBodyProfileIv.setColorFilter(resources.getColor(R.color.white))
+                    binding.joinGoalBodyProfileIv.setColorFilter(resources.getColor( R.color.white, null))
                     binding.joinGoalBodyProfileTv.setTextColor(Color.parseColor("#ffffff"))
 
                     return@OnTouchListener true
@@ -287,9 +287,9 @@ class JoinGoalActivity : AppCompatActivity(), View.OnClickListener {
     private fun sendJoinGoal(goal: String) {
         val joinInfoList = intent.extras!!.getStringArrayList("join")
 
-        val goal: String = goal
+        val joinGoal: String = goal
 
-        joinInfoList!!.add(goal)
+        joinInfoList!!.add(joinGoal)
 
         val intent = Intent(this, JoinCompleteActivity::class.java)
         intent.putStringArrayListExtra("join", joinInfoList)

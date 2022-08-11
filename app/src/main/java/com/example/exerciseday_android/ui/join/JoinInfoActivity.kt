@@ -128,7 +128,7 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
 
 
     private fun checkEmail(): Boolean {
-        binding.joinEmailEt.setOnFocusChangeListener { v, hasFocus ->
+        binding.joinEmailEt.setOnFocusChangeListener { _, hasFocus ->
             if (hasFocus) {
                 if (binding.joinEmailEt.text.isNotEmpty()) {
                     binding.joinEmailRemoveBtn.visibility = View.VISIBLE
@@ -235,7 +235,7 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
     }
 
     private fun checkNickname(): Boolean {
-        binding.joinNicknameEt.setOnFocusChangeListener { v, hasFocus ->
+        binding.joinNicknameEt.setOnFocusChangeListener { _, hasFocus ->
             if (hasFocus) {
                 if (binding.joinNicknameEt.text.isNotEmpty()) {
                     binding.joinNicknameRemoveBtn.visibility = View.VISIBLE
@@ -306,7 +306,7 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
     }
 
     private fun checkPassword(): Boolean {
-        binding.joinPasswordEt.setOnFocusChangeListener { v, hasFocus ->
+        binding.joinPasswordEt.setOnFocusChangeListener { _, hasFocus ->
             if (hasFocus) {
                 if (binding.joinPasswordEt.text.isNotEmpty()) {
                     binding.joinPasswordRemoveBtn.visibility = View.VISIBLE
@@ -389,7 +389,7 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
     }
 
     private fun checkPasswordCheck(): Boolean {
-        binding.joinPasswordCheckEt.setOnFocusChangeListener { v, hasFocus ->
+        binding.joinPasswordCheckEt.setOnFocusChangeListener { _, hasFocus ->
             if (hasFocus) {
 
                 if (binding.joinPasswordCheckEt.text.isNotEmpty()) {
