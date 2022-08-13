@@ -232,7 +232,7 @@ class JoinPhoneActivity : AppCompatActivity(), VerificationCodeView, View.OnClic
 
     // 전화번호 인증번호 받기 Dialog
     private fun showVerificationCodeDialog() {
-        val dialogView = layoutInflater.inflate(R.layout.dialog_custom_join_verification_code, null)
+        val dialogView = layoutInflater.inflate(R.layout.dialog_custom_join_verification_code, binding.root, false)
         val builder = AlertDialog.Builder(this, R.style.CustomAlertDialog).apply {
             setView(dialogView)
         }
@@ -260,8 +260,8 @@ class JoinPhoneActivity : AppCompatActivity(), VerificationCodeView, View.OnClic
 
     // 전화번호 인증번호 시간 만료 Dialog
     private fun showTimeExpiredDialog() {
-        val dialogView = layoutInflater.inflate(R.layout.dialog_custom_join_verification_code, null)
-        dialogView.join_verification_code_dialog_content.text = "제한 시간이 만료되었습니다.\n다시 인증해주세요."
+        val dialogView = layoutInflater.inflate(R.layout.dialog_custom_join_verification_code, binding.root, false)
+        dialogView.join_verification_code_dialog_content.text = getString(R.string.join_phone_verification_code_time_out)
         val builder = AlertDialog.Builder(this, R.style.CustomAlertDialog).apply {
             setView(dialogView)
         }
@@ -302,8 +302,8 @@ class JoinPhoneActivity : AppCompatActivity(), VerificationCodeView, View.OnClic
     private fun start() {
         timerTask = timer(period = 1000) {
             try {
-                var min: Int = time / 60
-                var sec: Int = time % 60
+                val min: Int = time / 60
+                val sec: Int = time % 60
 
                 time--
 
