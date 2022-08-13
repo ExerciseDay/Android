@@ -4,21 +4,23 @@ import retrofit2.Call
 import retrofit2.http.*
 
 interface APIS {
-//    @FormUrlEncoded
-//    @Headers("accept: application/json", "content-type: application/json")
     @POST("/auth/login")
     fun login(
         @Body postLogin: PostLogin
     ): Call<LoginResponse>
 
-//    @Headers("accept: application/json",
-//        "content-type: application/json")
-
-
+    @GET("/users/findId")
+    fun findId(
+        @Query("phone") phone : String,
+    ): Call<FindIdResponse>
 }
 
 data class PostLogin(
     val email: String,
     val password: String
+)
+
+data class GetFindId(
+    val phone: String,
 )
 

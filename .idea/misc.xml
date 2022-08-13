@@ -9,8 +9,17 @@
         <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/btn_gray50_border18.xml" value="0.115" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/btn_gray50_border18_gray800.xml" value="0.1595" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/btn_gray50_border18_gray800_2.xml" value="0.114" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/btn_gray50_border18_pink0.xml" value="0.1" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/btn_pink0_border12.xml" value="0.116" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/btn_pink0_border18.xml" value="0.1145" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/btn_pink0_border18_pink0.xml" value="0.1145" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/btn_text_color.xml" value="0.1915" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/color_pink0_gray800.xml" value="0.1915" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/dialog_bg.xml" value="0.1355" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/dialog_btn.xml" value="0.1355" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/div_gray_bottom.xml" value="0.2" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/et_gray800_pink0.xml" value="0.1" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/et_pink0.xml" value="0.1395" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/ic_arrow_back.xml" value="0.1" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.24" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/ic_baseline_check_24.xml" value="0.1605" />
@@ -25,14 +34,17 @@
         <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/textview_background_radius.xml" value="0.1605" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/font/font.xml" value="0.12447916666666667" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_condition_location.xml" value="0.16" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_find_id.xml" value="0.264" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_find_id_result.xml" value="0.4" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_login.xml" value="0.176" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_login_access.xml" value="0.264" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_select_course.xml" value="0.38207547169811323" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_splash.xml" value="0.10546875" />
-        <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_start.xml" value="0.264" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_start.xml" value="0.152" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_term_location.xml" value="0.11251664447403462" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_term_personal.xml" value="0.1" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/dialog_default.xml" value="0.264" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/fragment_community.xml" value="0.24427083333333333" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/fragment_record.xml" value="0.24427083333333333" />

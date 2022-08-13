@@ -65,5 +65,11 @@
         <activity
             android:name=".ui.terms.TermPersonalActivity"
             android:exported="true"/>
+        <activity
+            android:name=".ui.find.FindIdActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".ui.find.FindIdResultActivity"
+            android:exported="true"/>
     </application>
 </manifest>

@@ -13,6 +13,7 @@ import com.example.exerciseday_android.LoginResponse
 import com.example.exerciseday_android.PostLogin
 import com.example.exerciseday_android.SignUpActivity
 import com.example.exerciseday_android.databinding.ActivityLoginBinding
+import com.example.exerciseday_android.ui.find.FindIdActivity
 import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -36,6 +37,11 @@ class LoginActivity : AppCompatActivity() {
 
         binding.loginBtn.setOnClickListener {
             login()
+        }
+
+        binding.loginFindIdBtn.setOnClickListener {
+            val intent = Intent(this, FindIdActivity::class.java)
+            startActivity(intent)
         }
 
         binding.loginSignInBtn.setOnClickListener {
