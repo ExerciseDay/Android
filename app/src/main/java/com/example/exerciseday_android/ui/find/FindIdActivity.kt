@@ -36,6 +36,7 @@ class FindIdActivity : AppCompatActivity() {
 
         /*전화번호 입력*/
         binding.findIdPhoneEt.addTextChangedListener(PhoneNumberFormattingTextWatcher())
+
         binding.findIdPhoneEt.addTextChangedListener(object: TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
             }
@@ -56,8 +57,18 @@ class FindIdActivity : AppCompatActivity() {
             }
 
             override fun afterTextChanged(p0: Editable?) {
+
             }
         })
+
+        binding.findIdPhoneEt.onFocusChangeListener =
+            View.OnFocusChangeListener { _, hasFocus ->
+                if(hasFocus){
+                    binding.findIdPhoneDeleteBtn.visibility = View.VISIBLE
+                } else {
+                    binding.findIdPhoneDeleteBtn.visibility = View.INVISIBLE
+                }
+            }
 
         binding.findIdPhoneDeleteBtn.setOnClickListener {
             binding.findIdPhoneEt.setText("")

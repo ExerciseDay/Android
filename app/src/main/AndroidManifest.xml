@@ -71,5 +71,8 @@
         <activity
             android:name=".ui.find.FindIdResultActivity"
             android:exported="true"/>
+        <activity
+            android:name=".ui.find.FindPwActivity"
+            android:exported="true"/>
     </application>
 </manifest>

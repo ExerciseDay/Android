@@ -11,6 +11,8 @@ class DefaultDialog(private val context: AppCompatActivity) {
     private lateinit var binding: DialogDefaultBinding
     private val dialog = Dialog(context)
 
+    private lateinit var listener : AuthBtnClickedListener
+
     fun show(text: String) {
         binding = DialogDefaultBinding.inflate(context.layoutInflater)
         dialog.setContentView(binding.root)
@@ -29,7 +31,20 @@ class DefaultDialog(private val context: AppCompatActivity) {
         binding.dialogDefaultContentTv.text = text
 
         binding.dialogDefaultBtn.setOnClickListener {
+           listener.onClicked(true)
             dialog.dismiss()
         }
+    }
+
+    fun btnClickListener(listener: (Boolean) -> Unit) {
+        this.listener = object: AuthBtnClickedListener {
+            override fun onClicked(content: Boolean) {
+                listener(content)
+            }
+        }
+    }
+
+    interface AuthBtnClickedListener {
+        fun onClicked(content: Boolean)
     }
 }

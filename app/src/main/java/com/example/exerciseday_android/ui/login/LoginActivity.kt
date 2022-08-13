@@ -14,6 +14,7 @@ import com.example.exerciseday_android.PostLogin
 import com.example.exerciseday_android.SignUpActivity
 import com.example.exerciseday_android.databinding.ActivityLoginBinding
 import com.example.exerciseday_android.ui.find.FindIdActivity
+import com.example.exerciseday_android.ui.find.FindPwActivity
 import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -41,6 +42,11 @@ class LoginActivity : AppCompatActivity() {
 
         binding.loginFindIdBtn.setOnClickListener {
             val intent = Intent(this, FindIdActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.loginFindPasswordBtn.setOnClickListener {
+            val intent = Intent(this, FindPwActivity::class.java)
             startActivity(intent)
         }
 
@@ -83,25 +89,23 @@ class LoginActivity : AppCompatActivity() {
             }
         })
 
-        binding.loginEmailEt.setOnFocusChangeListener(object: View.OnFocusChangeListener{
-            override fun onFocusChange(v: View?, hasFocus: Boolean) {
+        binding.loginEmailEt.onFocusChangeListener =
+            View.OnFocusChangeListener { _, hasFocus ->
                 if(hasFocus){
                     binding.loginEmailDeleteBtn.visibility = View.VISIBLE
                 } else {
                     binding.loginEmailDeleteBtn.visibility = View.INVISIBLE
                 }
             }
-        })
 
-        binding.loginPasswordEt.setOnFocusChangeListener(object: View.OnFocusChangeListener{
-            override fun onFocusChange(v: View?, hasFocus: Boolean) {
+        binding.loginPasswordEt.onFocusChangeListener =
+            View.OnFocusChangeListener { _, hasFocus ->
                 if(hasFocus){
                     binding.loginPasswordDeleteBtn.visibility = View.VISIBLE
                 } else {
                     binding.loginPasswordDeleteBtn.visibility = View.INVISIBLE
                 }
             }
-        })
 
         binding.loginEmailDeleteBtn.setOnClickListener {
             binding.loginEmailEt.setText("")

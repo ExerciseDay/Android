@@ -27,8 +27,8 @@ class FindIdResultActivity : AppCompatActivity() {
         }
 
         binding.resultPwBtn.setOnClickListener {
-//            val intent = Intent(this, findctivity::class.java)
-//            startActivity(intent)
+            val intent = Intent(this, FindPwActivity::class.java)
+            startActivity(intent)
         }
     }
 
