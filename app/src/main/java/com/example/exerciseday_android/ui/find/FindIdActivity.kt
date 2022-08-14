@@ -72,6 +72,7 @@ class FindIdActivity : AppCompatActivity() {
 
         binding.findIdPhoneDeleteBtn.setOnClickListener {
             binding.findIdPhoneEt.setText("")
+            binding.findIdNextBtn.isEnabled = false
         }
 
         binding.findIdNextBtn.setOnClickListener {

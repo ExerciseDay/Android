@@ -19,6 +19,7 @@
         <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/dialog_bg.xml" value="0.1355" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/dialog_btn.xml" value="0.1355" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/div_gray_bottom.xml" value="0.2" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/et_gray200_border43.xml" value="0.171" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/et_gray800_pink0.xml" value="0.1" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/et_gray800_to_gray950.xml" value="0.131" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/et_pink0.xml" value="0.1395" />
@@ -30,6 +31,8 @@
         <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/ic_navigate_next.xml" value="0.1" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/ic_navigate_prev.xml" value="0.1755" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/ic_note.xml" value="0.1" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/ic_search.xml" value="0.172" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/ic_search_gray700.xml" value="0.172" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/sign_up_edittext_shape.xml" value="0.1" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/sign_up_email_check_btn_shape.xml" value="0.1" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/sign_up_next_btn_border.xml" value="0.1" />
@@ -37,11 +40,13 @@
         <entry key="..\:/project/Exercise/Android/app/src/main/res/font/font.xml" value="0.12447916666666667" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_condition_location.xml" value="0.16" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_find_id.xml" value="0.156" />
-        <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_find_id_result.xml" value="0.4" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_find_id_result.xml" value="0.16" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_find_pw.xml" value="0.38293216630196936" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_gym_search.xml" value="0.152" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_login.xml" value="0.176" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_login_access.xml" value="0.264" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_new_pw.xml" value="0.176" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_select_course.xml" value="0.38207547169811323" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_splash.xml" value="0.10546875" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_start.xml" value="0.152" />
@@ -52,10 +57,12 @@
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/fragment_record.xml" value="0.24427083333333333" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/fragment_select_course.xml" value="0.16875" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/item_gym_search_result.xml" value="0.6" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/item_plus_course_dialog.xml" value="0.27395833333333336" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/item_select_course.xml" value="0.4217252396166134" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/item_user_course.xml" value="0.176" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/plus_course_dialog.xml" value="0.19270833333333334" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/menu/bottom_nav.xml" value="0.23125" />
       </map>
     </option>
   </component>

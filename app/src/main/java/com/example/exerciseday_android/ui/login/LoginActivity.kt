@@ -109,10 +109,12 @@ class LoginActivity : AppCompatActivity() {
 
         binding.loginEmailDeleteBtn.setOnClickListener {
             binding.loginEmailEt.setText("")
+            binding.loginBtn.isEnabled = false
         }
 
         binding.loginPasswordDeleteBtn.setOnClickListener {
             binding.loginPasswordEt.setText("")
+            binding.loginBtn.isEnabled = false
         }
 
     }

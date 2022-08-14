@@ -13,6 +13,17 @@ interface APIS {
     fun findId(
         @Query("phone") phone : String,
     ): Call<FindIdResponse>
+
+    @POST("/users/findPwd")
+    fun findPw(
+        @Body postFindPw: PostFindPw
+    ): Call<FindPwResponse>
+
+    @PATCH("/users/edit/pwd")
+    fun editPw(
+        @Header("X-ACCESS-TOKEN") token: String,
+        @Body patchEditPw: PatchEditPw
+    ): Call<NewPwResponse>
 }
 
 data class PostLogin(
@@ -20,7 +31,12 @@ data class PostLogin(
     val password: String
 )
 
-data class GetFindId(
-    val phone: String,
+data class PostFindPw(
+    val email: String,
+    val phone: String
 )
 
+data class PatchEditPw(
+    val userIdx: Int,
+    val password: String
+)
