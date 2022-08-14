@@ -345,7 +345,7 @@ class JoinPhoneActivity : AppCompatActivity(), VerificationCodeView, View.OnClic
 
         joinInfoList!!.add(joinPhone)
 
-        val intent = Intent(this, JoinGoalActivity::class.java)
+        val intent = Intent(this, JoinGenderActivity::class.java)
         intent.putStringArrayListExtra("join", joinInfoList)
 
         startActivity(intent)

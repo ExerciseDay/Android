@@ -49,11 +49,12 @@ class JoinCompleteActivity : AppCompatActivity(), JoinView, View.OnClickListener
         val nickname: String = joinInfoList[1]
         val password: String = joinInfoList[2]
         val phone: String = joinInfoList[3]
-        val goal: String = joinInfoList[4]
+        val gender: String = joinInfoList[4]
+        val goal: String = joinInfoList[5]
 
-        Log.d("join_getUser", User(email, password, nickname, phone, goal).toString())
+        Log.d("join_getUser", User(email, password, nickname, phone, gender, goal).toString())
 
-        return User(email, password, nickname, phone, goal)
+        return User(email, password, nickname, phone, gender, goal)
     }
 
     private fun join() {
