@@ -9,7 +9,6 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
 
-
     <application
         android:name=".GlobalApplication"
         android:allowBackup="true"
@@ -17,18 +16,23 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ExerciseDay_Android"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ui.join.JoinGenderActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.join.JoinCompleteActivity"
             android:exported="false"
             android:parentActivityName=".ui.join.JoinGoalActivity" />
         <activity
             android:name=".ui.join.JoinGoalActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".ui.join.JoinGenderActivity" />
         <activity
             android:name=".ui.join.JoinPhoneActivity"
             android:exported="true"
