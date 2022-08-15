@@ -52,7 +52,7 @@
     <View
         android:id="@+id/gym_result_div_v"
         android:layout_width="match_parent"
-        android:layout_height="2px"
+        android:layout_height="2dp"
         android:background="@color/gray_200"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
