@@ -9,7 +9,6 @@
     <string name="login_find_id"><u>아이디 찾기</u></string>
     <string name="login_find_password"><u>비밀번호 찾기</u></string>
     <string name="login_sign_in"><u>회원가입</u></string>
-
     <string name="join_phone_verification_code_time_out">제한 시간이 만료되었습니다.\n다시 인증해주세요.</string>
 
     <string-array name="map_university_entries">

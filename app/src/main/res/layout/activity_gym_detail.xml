@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".GymDetailActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/FirstFrame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imgGym"
+                    android:layout_width="413dp"
+                    android:layout_height="329dp"
+                    app:srcCompat="@drawable/gymimg"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:layout_editor_absoluteY="0dp" />
+
+                <ImageButton
+                    android:id="@+id/btnBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="이전 페이지로 이동"
+                    app:srcCompat="@drawable/ic_arrow_back"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <ImageButton
+                    android:id="@+id/btnImgNext"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="다음 이미지로 넘기기"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/btn_img_next" />
+
+                <ImageButton
+                    android:id="@+id/btnImgBack"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:backgroundTint="#00FFFFFF"
+                    android:contentDescription="이전 이미지로 돌아가기"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/btn_img_back" />
+
+                <TextView
+                    android:id="@+id/textImgNumber"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="290dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/bg_facilities"
+                    android:gravity="center"
+                    android:text="1/1"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/SecondFrame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="25dp"
+                android:paddingTop="25dp"
+                android:paddingBottom="25dp">
+
+                <TextView
+                    android:id="@+id/textGymName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard"
+                    android:paddingBottom="2dp"
+                    android:text="작심삼일 PT"
+                    android:textColor="#121212"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textGymAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textGymName"
+                    android:fontFamily="@font/pretendard"
+                    android:paddingBottom="2dp"
+                    android:text="서울특별시 동작구 노량진동 ㅇㅇ로 XX"
+                    android:textColor="#121212"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/textGymDistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textGymAdd"
+                    android:layout_alignParentBottom="true"
+                    android:fontFamily="@font/pretendard"
+                    android:text="광운대에서 383m"
+                    android:textColor="#63666A"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/textGymStar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/textGymName"
+                    android:fontFamily="@font/pretendard"
+                    android:paddingLeft="200dp"
+                    android:text="★"
+                    android:textColor="#EEAA46"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textGymStarValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/textGymStar"
+                    android:fontFamily="@font/pretendard"
+                    android:text="3.5"
+                    android:textColor="#EEAA46"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/ThirdFrame"
+                android:layout_width="match_parent"
+                android:layout_height="277dp">
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabLayout"
+                    android:layout_width="409dp"
+                    android:layout_height="wrap_content"
+                    app:tabIndicatorColor="#121212"
+                    tools:layout_editor_absoluteX="1dp"
+                    tools:layout_editor_absoluteY="448dp">
+
+                    <com.google.android.material.tabs.TabItem
+                        android:id="@+id/TabInfoGym"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="헬스장 소개"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:id="@+id/TabInfoTrainer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="트레이너"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                </com.google.android.material.tabs.TabLayout>
+
+                <FrameLayout
+                    android:id="@+id/frameLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/tabLayout" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

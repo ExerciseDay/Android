@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TrainerInfoFragment">
+
+    <LinearLayout
+        android:id="@+id/mainTrainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="30dp"
+        android:paddingTop="30dp"
+        android:paddingRight="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard"
+            android:paddingBottom="15dp"
+            android:text="대표 트레이너"
+            android:textColor="#121212"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imgTrainer"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:scaleType="matrix"
+            android:src="@drawable/ex_trainer_img" />
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard"
+            android:paddingTop="20dp"
+            android:text="최보디 트레이너"
+            android:textColor="#121212"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard"
+            android:paddingTop="25dp"
+            android:text="자격 및 수상"
+            android:textColor="#121212"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textTrainerAward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard"
+            android:paddingTop="2dp"
+            android:text="생활 스포츠 지도사(보디빌딩) 2급 \n정교사 2급 \n스포츠마사지 1급 \n스포츠테이핑 1급 \n2019피트니 스타 서울 피지크 톨 TOP 6"
+            android:textColor="#121212"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/text4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard"
+            android:paddingTop="25dp"
+            android:text="경력"
+            android:textColor="#121212"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textTrainerCareer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard"
+            android:paddingTop="2dp"
+            android:text="현)작심삼일 PT 대표 트레이너 \n2018~2020 애플짐 휘트니스 트레이너"
+            android:textColor="#121212"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/notMainTrainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="28dp"
+        android:paddingTop="30dp"
+        android:paddingRight="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainTrainer">
+
+        <TextView
+            android:id="@+id/text2_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard"
+            android:paddingBottom="15dp"
+            android:text="강사소개"
+            android:textColor="#121212"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imgTrainer2"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:scaleType="matrix"
+            android:src="@drawable/ex_trainer2_img" />
+
+        <TextView
+            android:id="@+id/text2_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard"
+            android:paddingTop="20dp"
+            android:text="박빌더 트레이너"
+            android:textColor="#121212"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text2_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard"
+            android:paddingTop="25dp"
+            android:text="자격 및 수상"
+            android:textColor="#121212"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textTrainerAward2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard"
+            android:paddingTop="2dp"
+            android:text="생활 스포츠 지도사(보디빌딩) 2급 \n정교사 2급 \n스포츠마사지 1급 \n스포츠테이핑 1급 \n2019피트니 스타 서울 피지크 톨 TOP 6"
+            android:textColor="#121212"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/text2_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard"
+            android:paddingTop="25dp"
+            android:text="경력"
+            android:textColor="#121212"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textTrainerCareer2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard"
+            android:paddingTop="2dp"
+            android:text="현)작심삼일 PT 대표 트레이너 \n2018~2020 애플짐 휘트니스 트레이너"
+            android:textColor="#121212"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
