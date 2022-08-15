@@ -11,4 +11,16 @@
 
     <string name="join_phone_verification_code_time_out">제한 시간이 만료되었습니다.\n다시 인증해주세요.</string>
 
+    <string-array name="map_university_entries">
+        <item>광운대학교</item>
+        <item>서울여자대학교</item>
+        <item>경희대학교</item>
+        <item>동덕여자대학교</item>
+        <item>한국외국어대학교</item>
+    </string-array>
+
+    <string-array name="map_order_entries">
+        <item>최근 등록순</item>
+        <item>별점 높은순</item>
+    </string-array>
 </resources>
