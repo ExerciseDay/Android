@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.exerciseday_android.databinding.FragmentHomeBinding
 import com.example.exerciseday_android.databinding.PlusCourseDialogBinding
+import com.example.exerciseday_android.ui.gym.GymSearchActivity
 import com.example.flo.PlusCourseDialogRVAdapter
 import kotlin.collections.ArrayList
 
@@ -69,6 +70,12 @@ class HomeFragment : Fragment() {
             })
             builder.show()
         }
+
+        binding.searchBtn.setOnClickListener {
+            val intent = Intent(context, GymSearchActivity::class.java)
+            startActivity(intent)
+        }
+
         return binding.root
     }
 

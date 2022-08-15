@@ -8,6 +8,10 @@ plugins {
 android {
     compileSdk 32
 
+    buildFeatures {
+        viewBinding true
+    }
+
     viewBinding {
         enabled true
     }
@@ -69,7 +73,8 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 
-//    //okhttp3
-//    implementation "com.squareup.okhttp3:okhttp3:3.11.0"
+    //CircleImageView
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
 
 }

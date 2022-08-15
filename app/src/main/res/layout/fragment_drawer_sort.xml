@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:id="@+id/sort_type_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:text="정렬"
+        android:fontFamily="@font/pretendard_2"
+        android:textSize="17sp"
+        android:textColor="@color/gray_950"
+        android:gravity="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="8dp"/>
+    <LinearLayout
+        android:id="@+id/sort_select_l"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/sort_type_tv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="최근 등록순"
+            android:textSize="17sp"
+            android:textColor="@color/gray_950"
+            android:fontFamily="@font/pretendard"
+            android:background="@color/white" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="별점 높은순"
+            android:textSize="17sp"
+            android:textColor="@color/gray_950"
+            android:fontFamily="@font/pretendard"
+            android:background="@color/white" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
