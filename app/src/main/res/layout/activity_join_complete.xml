@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.join.JoinCompleteActivity">
+
+    <LinearLayout
+        android:id="@+id/join_complete_group_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="20dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="11dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/join_complete_back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@null"
+            android:src="@drawable/ic_back_arrow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/join_complete_logo_symbol_iv"
+        android:layout_width="0dp"
+        android:layout_height="161dp"
+        android:layout_marginHorizontal="107dp"
+        android:layout_marginTop="132dp"
+        android:src="@drawable/logo_symbol_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/join_complete_group_layout" />
+
+    <TextView
+        android:id="@+id/join_complete_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pretendard_2"
+        android:text="회원가입이 완료되었어요!"
+        android:textAlignment="center"
+        android:textColor="@color/gray_950"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/join_complete_logo_symbol_iv" />
+
+    <TextView
+        android:id="@+id/join_complete_caption_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="하루운동과 함께 즐거운 운동시간 되세요."
+        android:textAlignment="center"
+        android:textColor="@color/gray_950"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/join_complete_title_tv" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/join_complete_check_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginBottom="43dp"
+        android:background="@drawable/btn_gray300_border18"
+        android:stateListAnimator="@null"
+        android:text="확인"
+        android:enabled="true"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:fontFamily="@font/pretendard_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

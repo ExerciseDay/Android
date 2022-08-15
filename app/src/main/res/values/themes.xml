@@ -14,4 +14,25 @@
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <!-- JoinPhoneActivity - Dialog - radius 설정 -->
+    <style name="CustomAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/join_dialog_bg_shape</item>
+    </style>
+
+    <!-- MapFragment - BottomSheetDialog - corner 뒷배경 투명 처리 -->
+    <style name="CustomBottomSheetDialog" parent="android:Theme.Holo.Dialog.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
+
+    <!-- MapFragment - Spinner - Text Custom -->
+    <style name="MapSpinnerTextAppearance" parent="Theme.ExerciseDay_Android">
+        <item name="android:textSize">15sp</item>
+        <item name="fontFamily">@font/pretendard</item>
+        <item name="android:paddingEnd">4dp</item>
+        <item name="android:textColor">@color/gray_950</item>
+    </style>
+
+
 </resources>

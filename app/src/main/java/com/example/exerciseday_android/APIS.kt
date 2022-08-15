@@ -4,17 +4,26 @@ import retrofit2.Call
 import retrofit2.http.*
 
 interface APIS {
-//    @FormUrlEncoded
-//    @Headers("accept: application/json", "content-type: application/json")
     @POST("/auth/login")
     fun login(
         @Body postLogin: PostLogin
     ): Call<LoginResponse>
 
-//    @Headers("accept: application/json",
-//        "content-type: application/json")
+    @GET("/users/findId")
+    fun findId(
+        @Query("phone") phone : String,
+    ): Call<FindIdResponse>
 
+    @POST("/users/findPwd")
+    fun findPw(
+        @Body postFindPw: PostFindPw
+    ): Call<FindPwResponse>
 
+    @PATCH("/users/edit/pwd")
+    fun editPw(
+        @Header("X-ACCESS-TOKEN") token: String,
+        @Body patchEditPw: PatchEditPw
+    ): Call<NewPwResponse>
 }
 
 data class PostLogin(
@@ -22,3 +31,12 @@ data class PostLogin(
     val password: String
 )
 
+data class PostFindPw(
+    val email: String,
+    val phone: String
+)
+
+data class PatchEditPw(
+    val userIdx: Int,
+    val password: String
+)
