@@ -11,11 +11,13 @@ import android.widget.ScrollView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.exerciseday_android.databinding.ActivityGymDetailBinding
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_gym_detail.*
 
 
 class GymDetailActivity : AppCompatActivity() {
+    lateinit var binding: ActivityGymDetailBinding
 
     lateinit var gymInfoFragment: GymInfoFragment
     lateinit var trainerInfoFragment: TrainerInfoFragment

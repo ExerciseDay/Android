@@ -34,7 +34,6 @@ class MainActivity : AppCompatActivity() {
                         .commitAllowingStateLoss()
                     return@setOnItemSelectedListener true
                 }
-
                 R.id.communityFragment -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.main_frm, CommunityFragment())
@@ -43,7 +42,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.homeFragment -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.main_frm, HomeFragment())
+                        .replace(R.id.main_frm, MapFragment())
                         .commitAllowingStateLoss()
                     return@setOnItemSelectedListener true
                 }

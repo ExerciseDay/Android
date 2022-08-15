@@ -186,8 +186,8 @@
             android:text="리뷰 올리기"
             android:fontFamily="@font/pretendard"
             android:textSize="18sp"
-            android:textColor="@color/gray_600"
-            android:background="@drawable/sign_up_next_btn_border"
+            android:textColor="@drawable/btn_text_color"
+            android:background="@drawable/btn_gray300_border18"
             android:layout_marginTop="15dp"/>
 
     </LinearLayout>

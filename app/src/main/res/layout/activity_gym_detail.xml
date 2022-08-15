@@ -186,7 +186,9 @@
                     android:id="@+id/frameLayout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_below="@+id/tabLayout" />
+                    android:layout_below="@+id/tabLayout"
+                    android:background="@color/pink_0"
+                    />
 
             </RelativeLayout>
         </LinearLayout>
