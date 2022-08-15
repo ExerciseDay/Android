@@ -47,18 +47,18 @@ class MainActivity : AppCompatActivity() {
                         .commitAllowingStateLoss()
                     return@setOnItemSelectedListener true
                 }
-                R.id.mapFragment -> {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.main_frm, MapFragment())
-                        .commitAllowingStateLoss()
-                    return@setOnItemSelectedListener true
-                }
-                R.id.settingFragment -> {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.main_frm, SettingFragment())
-                        .commitAllowingStateLoss()
-                    return@setOnItemSelectedListener true
-                }
+//                R.id.mapFragment -> {
+//                    supportFragmentManager.beginTransaction()
+//                        .replace(R.id.main_frm, MapFragment())
+//                        .commitAllowingStateLoss()
+//                    return@setOnItemSelectedListener true
+//                }
+//                R.id.settingFragment -> {
+//                    supportFragmentManager.beginTransaction()
+//                        .replace(R.id.main_frm, SettingFragment())
+//                        .commitAllowingStateLoss()
+//                    return@setOnItemSelectedListener true
+//                }
             }
             false
         }

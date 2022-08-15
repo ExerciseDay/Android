@@ -9,4 +9,5 @@ data class LoginResponse(
 
 data class LoginResult(
     val userIdx: Int,
-    val jwt: String)
+    val jwt: String
+    )

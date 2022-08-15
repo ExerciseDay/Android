@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.exerciseday_android.APIS
@@ -12,6 +13,8 @@ import com.example.exerciseday_android.LoginResponse
 import com.example.exerciseday_android.PostLogin
 import com.example.exerciseday_android.ui.join.JoinInfoActivity
 import com.example.exerciseday_android.databinding.ActivityLoginBinding
+import com.example.exerciseday_android.ui.find.FindIdActivity
+import com.example.exerciseday_android.ui.find.FindPwActivity
 import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -41,22 +44,77 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, JoinInfoActivity::class.java)
             startActivity(intent)
         }
+        
+        binding.loginFindIdBtn.setOnClickListener {
+            val intent = Intent(this, FindIdActivity::class.java)
+            startActivity(intent)
+        }
 
+        binding.loginFindPasswordBtn.setOnClickListener {
+            val intent = Intent(this, FindPwActivity::class.java)
+            startActivity(intent)
+        }
+        binding.loginEmailEt.addTextChangedListener(object: TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                val email = binding.loginEmailEt.text.toString()
+                val password = binding.loginPasswordEt.text.toString()
+                if(email.isNotEmpty() && password.isNotEmpty()){
+                    binding.loginBtn.isEnabled = true
+                }
+            }
+
+            override fun afterTextChanged(p0: Editable?) {
+            }
+        })
+        
         binding.loginPasswordEt.addTextChangedListener(object: TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                val msg = binding.loginPasswordEt.text.toString()
-                binding.loginBtn.isEnabled = msg.isNotEmpty()
-
+                val email = binding.loginEmailEt.text.toString()
+                val password = binding.loginPasswordEt.text.toString()
+                if(email.isNotEmpty() && password.isNotEmpty()){
+                    binding.loginBtn.isEnabled = true
+                }
             }
 
             override fun afterTextChanged(p0: Editable?) {
 
             }
         })
+
+        binding.loginEmailEt.onFocusChangeListener =
+            View.OnFocusChangeListener { _, hasFocus ->
+                if(hasFocus){
+                    binding.loginEmailDeleteBtn.visibility = View.VISIBLE
+                } else {
+                    binding.loginEmailDeleteBtn.visibility = View.INVISIBLE
+                }
+            }
+
+        binding.loginPasswordEt.onFocusChangeListener =
+            View.OnFocusChangeListener { _, hasFocus ->
+                if(hasFocus){
+                    binding.loginPasswordDeleteBtn.visibility = View.VISIBLE
+                } else {
+                    binding.loginPasswordDeleteBtn.visibility = View.INVISIBLE
+                }
+            }
+
+        binding.loginEmailDeleteBtn.setOnClickListener {
+            binding.loginEmailEt.setText("")
+            binding.loginBtn.isEnabled = false
+        }
+
+        binding.loginPasswordDeleteBtn.setOnClickListener {
+            binding.loginPasswordEt.setText("")
+            binding.loginBtn.isEnabled = false
+        }
 
     }
 
@@ -86,4 +144,6 @@ class LoginActivity : AppCompatActivity() {
             }
         })
     }
+
+
 }

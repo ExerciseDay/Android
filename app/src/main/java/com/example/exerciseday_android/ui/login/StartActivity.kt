@@ -6,7 +6,9 @@ import android.util.Log
 //import android.widget.ImageButton
 //import android.widget.Toast
 import com.example.exerciseday_android.databinding.ActivityStartBinding
+import com.example.exerciseday_android.ui.terms.TermPersonalActivity
 import com.kakao.sdk.common.util.Utility
+import com.kakao.sdk.user.UserApi
 //import com.kakao.sdk.auth.LoginClient
 //import com.kakao.sdk.auth.model.OAuthToken
 //import com.kakao.sdk.common.util.Utility
@@ -33,6 +35,16 @@ class StartActivity : AppCompatActivity() {
                         Log.e("login", "로그인 실패", error)
                     } else if (token != null) {
                         Log.i("login", "로그인 성공 ${token.accessToken}")
+                        UserApiClient.instance.me { user, error ->
+                            if(error != null) {
+                                Log.e("fail", "사용자 정보 요청 실패", error)
+                            } else if (user != null) {
+                                Log.e("success", "사용자정보 요청 성공" + "\n회원번호: ${user.id}" +
+                                        "\n이메일: ${user.kakaoAccount?.email}" +
+                                        "\n닉네임: ${user.kakaoAccount?.profile?.nickname}" +
+                                        "\n프로필사진: ${user.kakaoAccount?.profile?.thumbnailImageUrl}")
+                            }
+                        }
                     }
                 }
             } else {
@@ -42,6 +54,11 @@ class StartActivity : AppCompatActivity() {
 
         binding.startNormalLoginBtn.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.startInfoBtn.setOnClickListener {
+            val intent = Intent(this, TermPersonalActivity::class.java)
             startActivity(intent)
         }
     }
