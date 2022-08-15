@@ -18,12 +18,6 @@ class SettingFragment : Fragment() {
     ): View? {
         binding = FragmentSettingBinding.inflate(inflater, container, false)
 
-        // 회원가입 버튼 클릭 시 이동
-        binding.signupBtn.setOnClickListener {
-            val intent = Intent(context, SignUpActivity::class.java)
-            startActivity(intent)
-        }
-
         return binding.root
     }
 }

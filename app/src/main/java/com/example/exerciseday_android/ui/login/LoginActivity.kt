@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.exerciseday_android.APIS
 import com.example.exerciseday_android.LoginResponse
 import com.example.exerciseday_android.PostLogin
-import com.example.exerciseday_android.SignUpActivity
+import com.example.exerciseday_android.ui.join.JoinInfoActivity
 import com.example.exerciseday_android.databinding.ActivityLoginBinding
 import com.example.exerciseday_android.ui.find.FindIdActivity
 import com.example.exerciseday_android.ui.find.FindPwActivity
@@ -40,6 +40,11 @@ class LoginActivity : AppCompatActivity() {
             login()
         }
 
+        binding.loginSignInBtn.setOnClickListener {
+            val intent = Intent(this, JoinInfoActivity::class.java)
+            startActivity(intent)
+        }
+        
         binding.loginFindIdBtn.setOnClickListener {
             val intent = Intent(this, FindIdActivity::class.java)
             startActivity(intent)
@@ -49,12 +54,6 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, FindPwActivity::class.java)
             startActivity(intent)
         }
-
-        binding.loginSignInBtn.setOnClickListener {
-            val intent = Intent(this, SignUpActivity::class.java)
-            startActivity(intent)
-        }
-
         binding.loginEmailEt.addTextChangedListener(object: TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
             }
@@ -70,7 +69,7 @@ class LoginActivity : AppCompatActivity() {
             override fun afterTextChanged(p0: Editable?) {
             }
         })
-
+        
         binding.loginPasswordEt.addTextChangedListener(object: TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 

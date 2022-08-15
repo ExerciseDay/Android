@@ -4,9 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.exerciseday_android.databinding.ActivityMainBinding
 import com.example.exerciseday_android.databinding.ActivitySelectCourseBinding
-import com.example.exerciseday_android.databinding.FragmentHomeBinding
 
 class SelectCourseActivity : AppCompatActivity() {
     lateinit var binding: ActivitySelectCourseBinding
