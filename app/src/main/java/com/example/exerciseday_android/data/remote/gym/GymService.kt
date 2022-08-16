@@ -1,6 +1,8 @@
-package com.example.exerciseday_android
+package com.example.exerciseday_android.data.remote.gym
 
 import android.util.Log
+import com.example.exerciseday_android.GymView
+import com.example.exerciseday_android.getRetrofit
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

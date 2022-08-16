@@ -1,4 +1,4 @@
-package com.example.exerciseday_android
+package com.example.exerciseday_android.data.remote.auth
 
 import com.google.gson.annotations.SerializedName
 
@@ -6,10 +6,10 @@ data class JoinResponse(
     @SerializedName("isSuccess") val isSuccess: Boolean,
     @SerializedName("code") val code: Int,
     @SerializedName("message") val message: String,
-    @SerializedName("result") val result: Result
+    @SerializedName("result") val result: JoinResult
 )
 
-data class Result(
+data class JoinResult(
     @SerializedName("userIdx") var userIdx: Int,
     @SerializedName("jwt") var jwt: String
 )

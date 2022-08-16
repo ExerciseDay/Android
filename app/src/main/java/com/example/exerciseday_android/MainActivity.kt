@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.homeFragment -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.main_frm, MapFragment())
+                        .replace(R.id.main_frm, CourseExpertCheckFragment())
                         .commitAllowingStateLoss()
                     return@setOnItemSelectedListener true
                 }

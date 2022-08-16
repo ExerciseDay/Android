@@ -15,10 +15,6 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <!-- JoinPhoneActivity - Dialog - radius 설정 -->
-    <style name="CustomAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
-        <item name="android:windowBackground">@drawable/join_dialog_bg_shape</item>
-    </style>
 
     <!-- MapFragment - BottomSheetDialog - corner 뒷배경 투명 처리 -->
     <style name="CustomBottomSheetDialog" parent="android:Theme.Holo.Dialog.NoActionBar">

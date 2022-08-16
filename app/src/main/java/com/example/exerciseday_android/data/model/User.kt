@@ -1,4 +1,4 @@
-package com.example.exerciseday_android
+package com.example.exerciseday_android.data.model
 import com.google.gson.annotations.SerializedName
 
 data class User(

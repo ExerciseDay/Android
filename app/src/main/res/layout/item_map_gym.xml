@@ -10,7 +10,7 @@
     android:paddingVertical="20dp">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/item_map_gym_img_cardView"
+        android:id="@+id/item_exercise_list_position_cv"
         android:layout_width="112dp"
         android:layout_height="112dp"
         app:cardCornerRadius="8dp"
@@ -39,8 +39,8 @@
         android:textColor="@color/gray_950"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/item_map_gym_img_cardView"
-        app:layout_constraintTop_toTopOf="@+id/item_map_gym_img_cardView" />
+        app:layout_constraintStart_toEndOf="@id/item_exercise_list_position_cv"
+        app:layout_constraintTop_toTopOf="@+id/item_exercise_list_position_cv" />
 
     <TextView
         android:id="@+id/item_map_gym_address_tv"

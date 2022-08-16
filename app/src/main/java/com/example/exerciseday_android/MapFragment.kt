@@ -15,12 +15,14 @@ import android.widget.TextView
 import androidx.annotation.Dimension
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.exerciseday_android.data.remote.gym.GymMainResult
+import com.example.exerciseday_android.data.remote.gym.GymService
 import com.example.exerciseday_android.databinding.FragmentMapBinding
+import com.example.exerciseday_android.ui.gym.main.GymMainRVAdapter
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.naver.maps.geometry.LatLng
 import com.naver.maps.map.*
 import com.naver.maps.map.NaverMap.OnMapClickListener
-import com.naver.maps.map.NaverMapSdk.NaverCloudPlatformClient
 import com.naver.maps.map.overlay.InfoWindow
 import com.naver.maps.map.overlay.Marker
 import com.naver.maps.map.overlay.Overlay
@@ -29,20 +31,18 @@ import kotlinx.android.synthetic.main.bottom_sheet_map_spinner.view.*
 
 
 class MapFragment : Fragment(), OnMapReadyCallback, GymView {
+
+    lateinit var binding: FragmentMapBinding
+    private var mapGymData = ArrayList<GymMainResult>()
+
     companion object {
         lateinit var naverMap: NaverMap
     }
 
-    lateinit var binding: FragmentMapBinding
-
-    //    private lateinit var mapView: MapView
-    private var mapGymData = ArrayList<GymList>()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        mapView = binding.mapGymMapView
 
-        NaverMapSdk.getInstance(requireContext()).client = NaverCloudPlatformClient("daz8baow16")
+//        NaverMapSdk.getInstance(requireContext()).client = NaverCloudPlatformClient("daz8baow16")
     }
 
     override fun onCreateView(
@@ -106,7 +106,7 @@ class MapFragment : Fragment(), OnMapReadyCallback, GymView {
         // 데이터 리스트 생성 더미 데이터
         mapGymData.apply {
             add(
-                GymList(
+                GymMainResult(
                     0, "머슬PT",
                     "서울 노원구 광운로39 3층",
                     "~",
@@ -119,7 +119,7 @@ class MapFragment : Fragment(), OnMapReadyCallback, GymView {
                 )
             )
             add(
-                GymList(
+                GymMainResult(
                     1, "하루운동 휘트니스",
                     "서울 노원구 광운로39 3층",
                     "~",
@@ -140,17 +140,17 @@ class MapFragment : Fragment(), OnMapReadyCallback, GymView {
 
         getGym()
 
-        val mapGymRVAdapter = MapGymRVAdapter(mapGymData)
+        val gymMainRVAdapter = GymMainRVAdapter(mapGymData)
 
-        mapGymRVAdapter.setMyItemClickListener(object : MapGymRVAdapter.MyItemClickListener {
-            override fun onItemClick(gymList: GymList) {
+        gymMainRVAdapter.setMyItemClickListener(object : GymMainRVAdapter.MyItemClickListener {
+            override fun onItemClick(gymMainResult: GymMainResult) {
                 TODO("Not yet implemented")
                 // Item 클릭 시 헬스장 세부 페이지로 이동
 
             }
         })
 
-        binding.mapGymRv.adapter = mapGymRVAdapter
+        binding.mapGymRv.adapter = gymMainRVAdapter
 
         return binding.root
     }
@@ -191,7 +191,7 @@ class MapFragment : Fragment(), OnMapReadyCallback, GymView {
             bottomSheetListTv.setTypeface(bottomSheetListTv.typeface, Typeface.NORMAL)
             bottomSheetListTv.setTextColor(resources.getColor(R.color.gray_950, null))
             bottomSheetListTv.setPadding(0, dpValue, 0, dpValue)
-            bottomSheetListTv.setBackgroundResource(R.drawable.tv_white_gray300)
+            bottomSheetListTv.setBackgroundResource(R.drawable.tv_white_to_gray300)
 
             bottomSheetListLayout.addView(bottomSheetListTv)
 
@@ -353,7 +353,7 @@ class MapFragment : Fragment(), OnMapReadyCallback, GymView {
         gymService.getGym(univ)
     }
 
-    override fun onGymSuccess(result: ArrayList<GymList>) {
+    override fun onGymSuccess(result: ArrayList<GymMainResult>) {
         mapGymData = result
     }
 
@@ -438,3 +438,8 @@ class PointAdapter(context: Context, parent: ViewGroup) : InfoWindow.ViewAdapter
 //        mParent = parent
 //    }
 //}
+
+interface GymView {
+    fun onGymSuccess(result: ArrayList<GymMainResult>)
+    fun onGymFailure(code: Int, message: String)
+}

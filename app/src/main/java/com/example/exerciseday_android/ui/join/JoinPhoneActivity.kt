@@ -8,13 +8,11 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.View
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.example.exerciseday_android.JoinService
+import com.example.exerciseday_android.data.remote.auth.AuthService
 import com.example.exerciseday_android.R
-import com.example.exerciseday_android.VerificationCodeView
 import com.example.exerciseday_android.databinding.ActivityJoinPhoneBinding
-import kotlinx.android.synthetic.main.dialog_custom_join_verification_code.view.*
+import com.example.exerciseday_android.ui.ChangeDialog
 import java.util.*
 import java.util.regex.Pattern
 import kotlin.concurrent.timer
@@ -232,22 +230,16 @@ class JoinPhoneActivity : AppCompatActivity(), VerificationCodeView, View.OnClic
 
     // 전화번호 인증번호 받기 Dialog
     private fun showVerificationCodeDialog() {
-        val dialogView = layoutInflater.inflate(R.layout.dialog_custom_join_verification_code, binding.root, false)
-        val builder = AlertDialog.Builder(this, R.style.CustomAlertDialog).apply {
-            setView(dialogView)
-        }
-        val dialog = builder.create()
-        dialog.show()
+        val dialog = ChangeDialog(this)
+        dialog.show("인증번호가 발송되었습니다. 3분 안에 \n인증번호를 입력해주세요.")
 
-        dialogView.join_verification_code_dialog_ok_btn.setOnClickListener {
+        dialog.btnClickListener {
             // 인증번호 받기 버튼 숨김, 보여야 할 뷰 표시
             binding.joinVerificationCodeBtn.visibility = View.GONE
             binding.joinVerificationCodeEt.visibility = View.VISIBLE
             binding.joinVerificationCodeAgainBtn.visibility = View.VISIBLE
 
             binding.joinVerificationCodeEt.requestFocus()
-
-            dialog.dismiss()
 
             // 본인인증 문자 전송
             val phone: String = binding.joinPhoneEt.text.toString().replace("-", "")
@@ -258,19 +250,13 @@ class JoinPhoneActivity : AppCompatActivity(), VerificationCodeView, View.OnClic
         }
     }
 
+
     // 전화번호 인증번호 시간 만료 Dialog
     private fun showTimeExpiredDialog() {
-        val dialogView = layoutInflater.inflate(R.layout.dialog_custom_join_verification_code, binding.root, false)
-        dialogView.join_verification_code_dialog_content.text = getString(R.string.join_phone_verification_code_time_out)
-        val builder = AlertDialog.Builder(this, R.style.CustomAlertDialog).apply {
-            setView(dialogView)
-        }
-        val dialog = builder.create()
-        dialog.show()
+        val dialog = ChangeDialog(this)
+        dialog.show(getString(R.string.join_phone_verification_code_time_out))
 
-        dialogView.join_verification_code_dialog_ok_btn.setOnClickListener {
-            dialog.dismiss()
-
+        dialog.btnClickListener {
             // 본인인증 문자 전송
             val phone: String = binding.joinPhoneEt.text.toString().replace("-", "")
             verificationCode(phone)
@@ -281,7 +267,7 @@ class JoinPhoneActivity : AppCompatActivity(), VerificationCodeView, View.OnClic
     }
 
     private fun verificationCode(phone: String) {
-        val joinService = JoinService()
+        val joinService = AuthService()
         joinService.setVerificationCodeView(this)
 
         joinService.verificationCode(phone)
@@ -290,8 +276,6 @@ class JoinPhoneActivity : AppCompatActivity(), VerificationCodeView, View.OnClic
     override fun onVerificationCodeSuccess(result: String) {
         binding.joinVerificationCodeEt.setText(result)
         binding.joinVerificationCodeEt.setSelection(binding.joinVerificationCodeEt.length())
-
-
     }
 
     override fun onVerificationCodeFailure(message: String) {
@@ -350,5 +334,9 @@ class JoinPhoneActivity : AppCompatActivity(), VerificationCodeView, View.OnClic
 
         startActivity(intent)
     }
+}
 
+interface VerificationCodeView {
+    fun onVerificationCodeSuccess(result: String)
+    fun onVerificationCodeFailure(message: String)
 }

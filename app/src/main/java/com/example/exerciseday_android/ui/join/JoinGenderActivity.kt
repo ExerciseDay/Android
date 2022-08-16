@@ -10,6 +10,7 @@ import android.view.View.OnTouchListener
 import com.example.exerciseday_android.R
 import com.example.exerciseday_android.databinding.ActivityJoinGenderBinding
 
+
 class JoinGenderActivity : AppCompatActivity(), View.OnClickListener {
 
     lateinit var binding: ActivityJoinGenderBinding

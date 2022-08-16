@@ -1,5 +1,6 @@
-package com.example.exerciseday_android
+package com.example.exerciseday_android.data.remote.auth
 
+import com.example.exerciseday_android.data.model.User
 import retrofit2.Call
 import retrofit2.http.*
 

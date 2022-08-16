@@ -1,11 +1,16 @@
-package com.example.exerciseday_android
+package com.example.exerciseday_android.data.remote.auth
 
 import android.util.Log
+import com.example.exerciseday_android.ui.join.EmailCheckView
+import com.example.exerciseday_android.ui.join.JoinView
+import com.example.exerciseday_android.ui.join.VerificationCodeView
+import com.example.exerciseday_android.data.model.User
+import com.example.exerciseday_android.getRetrofit
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class JoinService {
+class AuthService {
     private lateinit var joinView: JoinView
     private lateinit var emailCheckView: EmailCheckView
     private lateinit var verificationCodeView: VerificationCodeView
