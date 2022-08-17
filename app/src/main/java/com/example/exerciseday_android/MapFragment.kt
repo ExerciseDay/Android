@@ -25,7 +25,6 @@ import com.naver.maps.map.*
 import com.naver.maps.map.NaverMap.OnMapClickListener
 import com.naver.maps.map.overlay.InfoWindow
 import com.naver.maps.map.overlay.Marker
-import com.naver.maps.map.overlay.Overlay
 import com.naver.maps.map.overlay.OverlayImage
 import kotlinx.android.synthetic.main.bottom_sheet_map_spinner.view.*
 
@@ -37,12 +36,6 @@ class MapFragment : Fragment(), OnMapReadyCallback, GymView {
 
     companion object {
         lateinit var naverMap: NaverMap
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-//        NaverMapSdk.getInstance(requireContext()).client = NaverCloudPlatformClient("daz8baow16")
     }
 
     override fun onCreateView(
@@ -215,6 +208,13 @@ class MapFragment : Fragment(), OnMapReadyCallback, GymView {
     // https://youngest-programming.tistory.com/659 참고
     override fun onMapReady(naverMap: NaverMap) {
         MapFragment.naverMap = naverMap
+
+//        val options = NaverMapOptions()
+//            .camera(CameraPosition(LatLng(37.61979722, 127.05842977), 15.0))
+//            .mapType(NaverMap.MapType.Basic)
+
+//        val mapFragment = MapView.newInstance(options)
+
         // 내장 위치 추적 기능 사용
 //        naverMap.locationSource = locationSource
 
@@ -294,8 +294,21 @@ class MapFragment : Fragment(), OnMapReadyCallback, GymView {
         univMarker.map = naverMap
 
 
+        // 정보 창과 어댑터 연결
+        val infoWindow = InfoWindow()
+        val adapter = PointAdapter(requireContext(), binding.mapGymMapView)
+        infoWindow.adapter = adapter
+
         // 핼스장 표시 마커
-        val gymMarker = Marker()
+        val gymMarker = Marker().apply {
+            setOnClickListener {
+                // 정보 창 표시
+                infoWindow.open(this)
+
+                false
+            }
+        }
+
         // 임시 위치 설정 -> 헬스장 위치 불러와서 위치 설정 필요
         gymMarker.position = LatLng(
             37.62107392,
@@ -304,26 +317,17 @@ class MapFragment : Fragment(), OnMapReadyCallback, GymView {
         gymMarker.icon = OverlayImage.fromResource(R.drawable.ic_location_gym)
         gymMarker.map = naverMap
 
-        val infoWindow = InfoWindow()
 
-        gymMarker.onClickListener = Overlay.OnClickListener {
-            val adapter = PointAdapter(requireContext(), binding.mapGymMapView)
-
-            infoWindow.adapter = adapter
-
-            // 인포창의 우선순위
-            infoWindow.zIndex = 10
-            // 투명도 조정
-            infoWindow.alpha = 0.9f
-            // 인포창 표시
-            infoWindow.open(gymMarker)
-
-            false
-        }
-
-        // 지도를 클릭하면 정보 창 닫기
-//        naverMap.setOnMapClickListener { pointF, latLng ->
+        // 지도를 클릭하면 정보 창을 닫음
+//        naverMap.setOnMapClickListener { _, _ ->
 //            infoWindow.close()
+//        }
+
+//        gymMarker.onClickListener = Overlay.OnClickListener {
+//            // 정보 창 표시
+//            infoWindow.open(gymMarker)
+
+////            false
 //        }
 
 
@@ -331,15 +335,18 @@ class MapFragment : Fragment(), OnMapReadyCallback, GymView {
         리사이클러뷰에 해당 헬스장만 불러오기 */
 
 
-        // 이동 위치 업데이트 (부드럽게 이동 X -> 수정 필요)
+        // 이동 위치 업데이트
         naverMap.onMapClickListener =
-            OnMapClickListener { _, latLng ->
+            OnMapClickListener { PointF, latLng ->
+//                if (gymMarker.position != LatLng(latLng.latitude, latLng.longitude)) {
+//                    infoWindow.close()
+//                }
                 val latitude = latLng.latitude
                 val longitude = latLng.longitude
                 val cameraUpdate = CameraUpdate.scrollTo(LatLng(latitude, longitude))
+                    .animate(CameraAnimation.Easing)
                 naverMap.moveCamera(cameraUpdate)
             }
-
     }
 
 
@@ -358,7 +365,7 @@ class MapFragment : Fragment(), OnMapReadyCallback, GymView {
     }
 
     override fun onGymFailure(code: Int, message: String) {
-        TODO("Not yet implemented")
+        Log.d("GEY_GYM/FAILURE", "$code / $message")
     }
 
 
@@ -391,7 +398,6 @@ class PointAdapter(context: Context, parent: ViewGroup) : InfoWindow.ViewAdapter
     private val mContext: Context
     private val mParent: ViewGroup
 
-
     init {
         mContext = context
         mParent = parent
@@ -400,44 +406,33 @@ class PointAdapter(context: Context, parent: ViewGroup) : InfoWindow.ViewAdapter
     override fun getView(p0: InfoWindow): View {
         val view =
             LayoutInflater.from(mContext)
-                .inflate(R.layout.item_map_gym_point_info, mParent, false) as View
+                .inflate(R.layout.item_gym_map_info_window, mParent, false) as View
 
         val mapGymPointInfoName =
-            view.findViewById<View>(R.id.item_map_gym_point_info_name_tv) as TextView
+            view.findViewById<View>(R.id.item_gym_map_info_window_name_tv) as TextView
 
-        mapGymPointInfoName.text = "엔비짐 PT"
+        mapGymPointInfoName.text = "엔비짐 PT"  // gymName
 
-        view.setBackgroundResource(R.drawable.tv_bg_pink0_border13)
+
+        val layoutParams = LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.WRAP_CONTENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT,
+        )
+
+        val value = 8
+        val dpValue = TypedValue.applyDimension(
+            TypedValue.COMPLEX_UNIT_DIP,
+            value.toFloat(),
+            mContext.resources.displayMetrics
+        ).toInt()
+
+        layoutParams.setMargins(0, 0, 0, dpValue)
+
+        view.layoutParams = layoutParams
 
         return view
     }
 }
-//class PointAdapter(context: Context, parent: ViewGroup) : DefaultViewAdapter(context) {
-//
-//    private val mContext: Context
-//    private val mParent: ViewGroup
-//
-//
-//    override fun getContentView(infoWindow: InfoWindow): View {
-//        val view =
-//            LayoutInflater.from(mContext)
-//                .inflate(R.layout.item_map_gym_point_info, mParent, false) as View
-//
-//        val mapGymPointInfoName =
-//            view.findViewById<View>(R.id.item_map_gym_point_info_name_tv) as TextView
-//
-//        mapGymPointInfoName.text = "엔비짐 PT"
-//
-//        view.setBackgroundResource(R.drawable.tv_bg_pink0_border13)
-//
-//        return view
-//    }
-//
-//    init {
-//        mContext = context
-//        mParent = parent
-//    }
-//}
 
 interface GymView {
     fun onGymSuccess(result: ArrayList<GymMainResult>)

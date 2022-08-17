@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:id="@+id/course_expert_check_layout"
+        android:id="@+id/expert_course_check_layout"
         android:layout_width="match_parent"
         android:layout_height="44dp"
         android:background="@color/white"
@@ -24,7 +24,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/course_expert_check_title_tv"
+                android:id="@+id/expert_course_check_title_tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/pretendard_2"
@@ -37,84 +37,85 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
-                android:id="@+id/map_search_btn"
+                android:id="@+id/expert_course_check_back_btn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:background="@null"
                 android:src="@drawable/ic_navigate_prev"
-                app:layout_constraintBottom_toBottomOf="@+id/course_expert_check_title_tv"
+                app:layout_constraintBottom_toBottomOf="@+id/expert_course_check_title_tv"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/course_expert_check_title_tv" />
+                app:layout_constraintTop_toTopOf="@+id/expert_course_check_title_tv" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 
     <TextView
-        android:id="@+id/course_expert_check_course_tv"
+        android:id="@+id/expert_course_check_course_tv"
         android:layout_width="match_parent"
         android:layout_height="32dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="17dp"
         android:fontFamily="@font/pretendard_2"
-        android:text="A코스"
+        android:text=""
         android:textColor="@color/black"
         android:textSize="22sp"
-        app:layout_constraintTop_toBottomOf="@+id/course_expert_check_layout" />
+        app:layout_constraintTop_toBottomOf="@+id/expert_course_check_layout" />
 
     <ImageView
-        android:id="@+id/course_expert_check_clock_iv"
+        android:id="@+id/expert_course_check_clock_iv"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="3dp"
         android:src="@drawable/ic_clock"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/course_expert_check_course_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/expert_course_check_course_tv" />
 
     <TextView
-        android:id="@+id/course_expert_check_clock_tv"
-        android:layout_width="wrap_content"
+        android:id="@+id/expert_course_check_clock_tv"
+        android:layout_width="44dp"
         android:layout_height="20dp"
         android:gravity="center_vertical"
-        android:text="60분"
+        android:text=""
         android:textColor="@color/gray_950"
         android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="@+id/course_expert_check_clock_iv"
-        app:layout_constraintStart_toEndOf="@+id/course_expert_check_clock_iv"
-        app:layout_constraintTop_toTopOf="@+id/course_expert_check_clock_iv" />
+        app:layout_constraintBottom_toBottomOf="@+id/expert_course_check_clock_iv"
+        app:layout_constraintStart_toEndOf="@+id/expert_course_check_clock_iv"
+        app:layout_constraintTop_toTopOf="@+id/expert_course_check_clock_iv" />
 
     <ImageView
-        android:id="@+id/course_expert_check_calorie_iv"
+        android:id="@+id/expert_course_check_calorie_iv"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="10dp"
         android:src="@drawable/ic_calorie"
-        app:layout_constraintBottom_toBottomOf="@+id/course_expert_check_clock_iv"
-        app:layout_constraintStart_toEndOf="@+id/course_expert_check_clock_tv"
-        app:layout_constraintTop_toTopOf="@+id/course_expert_check_clock_iv" />
+        app:layout_constraintBottom_toBottomOf="@+id/expert_course_check_clock_iv"
+        app:layout_constraintStart_toEndOf="@+id/expert_course_check_clock_tv"
+        app:layout_constraintTop_toTopOf="@+id/expert_course_check_clock_iv" />
 
     <TextView
-        android:id="@+id/course_expert_check_calorie_tv"
-        android:layout_width="wrap_content"
+        android:id="@+id/expert_course_check_calorie_tv"
+        android:layout_width="80dp"
         android:layout_height="20dp"
         android:gravity="center_vertical"
-        android:text="120kcal"
+        android:text=""
         android:textColor="@color/gray_950"
         android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="@+id/course_expert_check_calorie_iv"
-        app:layout_constraintStart_toEndOf="@+id/course_expert_check_calorie_iv"
-        app:layout_constraintTop_toTopOf="@+id/course_expert_check_calorie_iv" />
+        app:layout_constraintBottom_toBottomOf="@+id/expert_course_check_calorie_iv"
+        app:layout_constraintStart_toEndOf="@+id/expert_course_check_calorie_iv"
+        app:layout_constraintTop_toTopOf="@+id/expert_course_check_calorie_iv" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/expert_course_check_rv"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginHorizontal="25dp"
         android:layout_marginBottom="20dp"
         android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/course_expert_check_clock_iv"
+        app:layout_constraintTop_toBottomOf="@+id/expert_course_check_clock_iv"
         tools:listitem="@layout/item_exercise_list" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

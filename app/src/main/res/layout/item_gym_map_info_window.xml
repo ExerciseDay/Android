@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="12dp"
+    android:background="@color/transparent">
+
+    <RelativeLayout
+        android:id="@+id/item_gym_map_info_window_rect_rl"
+        android:layout_width="match_parent"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="1dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/info_window_rectangle">
+
+        <TextView
+            android:id="@+id/item_gym_map_info_window_name_tv"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:fontFamily="@font/pretendard_2"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="헬스장 이름"
+            android:textColor="@color/red_20"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/item_gym_map_info_window_tri_rl"
+        android:layout_width="20dp"
+        android:layout_marginTop="-1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/item_gym_map_info_window_rect_rl"
+        android:layout_height="18dp"
+        android:layout_below="@+id/item_gym_map_info_window_rect_rl"
+        android:background="@drawable/info_window_triangle"
+        android:rotation="180" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

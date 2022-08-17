@@ -6,9 +6,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.exerciseday_android.data.remote.gym.GymMainResult
 import com.example.exerciseday_android.R
-import com.example.exerciseday_android.databinding.ItemMapGymBinding
+import com.example.exerciseday_android.databinding.ItemGymMainBinding
 
-class GymMainRVAdapter(private val mapGymMainResult: ArrayList<GymMainResult>) :
+class GymMainRVAdapter(private val gymMainResult: ArrayList<GymMainResult>) :
     RecyclerView.Adapter<GymMainRVAdapter.ViewHolder>() {
 
     interface MyItemClickListener {
@@ -25,18 +25,18 @@ class GymMainRVAdapter(private val mapGymMainResult: ArrayList<GymMainResult>) :
         viewGroup: ViewGroup,
         viewType: Int
     ): ViewHolder {
-        val binding: ItemMapGymBinding =
-            ItemMapGymBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
+        val binding: ItemGymMainBinding =
+            ItemGymMainBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
 
         return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(mapGymMainResult[position])
-        holder.itemView.setOnClickListener { mItemClickListener.onItemClick(mapGymMainResult[position]) }
+        holder.bind(gymMainResult[position])
+        holder.itemView.setOnClickListener { mItemClickListener.onItemClick(gymMainResult[position]) }
     }
 
-    override fun getItemCount(): Int = mapGymMainResult.size
+    override fun getItemCount(): Int = gymMainResult.size
 
 //    @SuppressLint("NotifyDataSetChanged")
 //    fun addGyms(gyms: ArrayList<Gym>) {
@@ -46,7 +46,7 @@ class GymMainRVAdapter(private val mapGymMainResult: ArrayList<GymMainResult>) :
 //        notifyDataSetChanged()
 //    }
 
-    inner class ViewHolder(val binding: ItemMapGymBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(val binding: ItemGymMainBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(gymMainResult: GymMainResult) {
             binding.itemMapGymImgIv.setImageResource(R.drawable.temp)  // 임시
 //            binding.itemMapGymImgIv.setImageURI(Uri.parse(gym.gymImg))
