@@ -23,4 +23,12 @@
         <item>최근 등록순</item>
         <item>별점 높은순</item>
     </string-array>
+
+    <string-array name="map_university_address_entries">
+        <item>서울특별시 노원구 광운로 20</item>
+        <item>서울특별시 노원구 화랑로 621</item>
+        <item>서울특별시 동대문구 경희대로 26</item>
+        <item>서울특별시 성북구 화랑로13길 60</item>
+        <item>서울특별시 동대문구 이문로 107</item>
+    </string-array>
 </resources>

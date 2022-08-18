@@ -92,7 +92,7 @@
             android:drawablePadding="4dp"
             android:text="광운대학교"
             android:textColorHint="@color/gray_950"
-            android:theme="@style/MapSpinnerTextAppearance"/>
+            android:theme="@style/MapSpinnerTextAppearance" />
 
         <TextView
             android:id="@+id/map_order_spinner"

@@ -20,4 +20,16 @@ data class GymMainResult(
     @SerializedName("gymSauna") var gymSauna: Boolean,
     @SerializedName("gymCloths") var gymCloths: Boolean,
     @SerializedName("gymShower") var gymShower: Boolean,
+    @SerializedName("gymSP") var gymSP: Float
+)
+
+// (NaverMapAPI) 주소 -> 위도, 경도 구하기
+data class AddressResponse(
+    @SerializedName("status") var status: String,
+    @SerializedName("addresses") var addresses: ArrayList<AddressesData>
+)
+
+data class AddressesData(
+    @SerializedName("x") var x: Double,
+    @SerializedName("y") var y: Double,
 )

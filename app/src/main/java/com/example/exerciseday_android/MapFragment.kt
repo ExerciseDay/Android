@@ -15,7 +15,9 @@ import android.widget.TextView
 import androidx.annotation.Dimension
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.exerciseday_android.data.remote.gym.AddressResponse
 import com.example.exerciseday_android.data.remote.gym.GymMainResult
+import com.example.exerciseday_android.data.remote.gym.GymRetrofitInterface
 import com.example.exerciseday_android.data.remote.gym.GymService
 import com.example.exerciseday_android.databinding.FragmentMapBinding
 import com.example.exerciseday_android.ui.gym.main.GymMainRVAdapter
@@ -27,15 +29,21 @@ import com.naver.maps.map.overlay.InfoWindow
 import com.naver.maps.map.overlay.Marker
 import com.naver.maps.map.overlay.OverlayImage
 import kotlinx.android.synthetic.main.bottom_sheet_map_spinner.view.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 
-class MapFragment : Fragment(), OnMapReadyCallback, GymView {
+class MapFragment() : Fragment(), OnMapReadyCallback, GymView {
 
     lateinit var binding: FragmentMapBinding
     private var mapGymData = ArrayList<GymMainResult>()
 
     companion object {
         lateinit var naverMap: NaverMap
+        var univLatLng: LatLng = LatLng(0.0, 0.0)
     }
 
     override fun onCreateView(
@@ -108,7 +116,8 @@ class MapFragment : Fragment(), OnMapReadyCallback, GymView {
                     gymParking = true,
                     gymSauna = true,
                     gymCloths = true,
-                    gymShower = true
+                    gymShower = true,
+                    4.5f
                 )
             )
             add(
@@ -121,13 +130,14 @@ class MapFragment : Fragment(), OnMapReadyCallback, GymView {
                     gymParking = false,
                     gymSauna = true,
                     gymCloths = true,
-                    gymShower = true
+                    gymShower = true,
+                    4.0f
                 )
             )
         }
 
 
-        // RecyclerView 어댑터와 데이터 리스트 연결
+        // 헬스장 RecyclerView 어댑터와 데이터 리스트 연결
         binding.mapGymRv.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
@@ -205,15 +215,8 @@ class MapFragment : Fragment(), OnMapReadyCallback, GymView {
     }
 
 
-    // https://youngest-programming.tistory.com/659 참고
     override fun onMapReady(naverMap: NaverMap) {
         MapFragment.naverMap = naverMap
-
-//        val options = NaverMapOptions()
-//            .camera(CameraPosition(LatLng(37.61979722, 127.05842977), 15.0))
-//            .mapType(NaverMap.MapType.Basic)
-
-//        val mapFragment = MapView.newInstance(options)
 
         // 내장 위치 추적 기능 사용
 //        naverMap.locationSource = locationSource
@@ -240,58 +243,28 @@ class MapFragment : Fragment(), OnMapReadyCallback, GymView {
         binding.mapGymMapScaleBar.map = naverMap
 
 
-        // 광운대로 임시 시작 위치 설정. 추후 자기 위치에서 가까운 대학교로 위치 변경
-        var camPos = CameraPosition(
-            LatLng(37.61979722, 127.05842977),
-            15.0
-        )
-
+        // 대학 주소
+        val univAddressArray = resources.getStringArray(R.array.map_university_address_entries)
 
         // Spinner 설정된 대학으로 위치 설정
         val mapUnivArray = resources.getStringArray(R.array.map_university_entries)
 
         if (binding.mapUniversitySpinner.text.equals(mapUnivArray[0])) {
             // 광운대
-            camPos = CameraPosition(
-                LatLng(37.61979722, 127.05842977),
-                15.0
-            )
+            getLatLng(univAddressArray[0])
         } else if (binding.mapUniversitySpinner.text.equals(mapUnivArray[1])) {
             // 서울여대
-            camPos = CameraPosition(
-                LatLng(37.62803063, 127.09042315),
-                15.0
-            )
+            getLatLng(univAddressArray[1])
         } else if (binding.mapUniversitySpinner.text.equals(mapUnivArray[2])) {
             // 경희대학교
-            camPos = CameraPosition(
-                LatLng(37.59644894, 127.05250817),
-                15.0
-            )
+            getLatLng(univAddressArray[2])
         } else if (binding.mapUniversitySpinner.text.equals(mapUnivArray[3])) {
             // 동덕여자대학교
-            camPos = CameraPosition(
-                LatLng(37.60683620, 127.04197218),
-                15.0
-            )
+            getLatLng(univAddressArray[3])
         } else if (binding.mapUniversitySpinner.text.equals(mapUnivArray[4])) {
             //한국외국어대학교
-            camPos = CameraPosition(
-                LatLng(37.59730773, 127.05828027),
-                15.0
-            )
+            getLatLng(univAddressArray[4])
         }
-
-        naverMap.cameraPosition = camPos
-
-        // 대학 표시 마커
-        val univMarker = Marker()
-        univMarker.position = LatLng(
-            naverMap.cameraPosition.target.latitude,
-            naverMap.cameraPosition.target.longitude
-        )
-        univMarker.icon = OverlayImage.fromResource(R.drawable.ic_location_univ)
-        univMarker.map = naverMap
 
 
         // 정보 창과 어댑터 연결
@@ -300,14 +273,48 @@ class MapFragment : Fragment(), OnMapReadyCallback, GymView {
         infoWindow.adapter = adapter
 
         // 핼스장 표시 마커
-        val gymMarker = Marker().apply {
-            setOnClickListener {
-                // 정보 창 표시
-                infoWindow.open(this)
+        val gymMarker = Marker()
 
-                false
-            }
-        }
+//        val gymMarker = Marker().apply {
+//            setOnClickListener {
+//                // 정보 창 표시
+//                infoWindow.open(this)
+//
+//                true
+//            }
+//        }
+
+        // 헬스장 다중 마커
+//        val gymMarkers = ArrayList<Marker>()
+//
+//        gymMarkers.forEach { marker ->
+//            marker.icon = OverlayImage.fromResource(R.drawable.ic_location_gym)
+//            marker.map = naverMap
+//        }
+
+//        for (i in mapGymData.indices) {
+//            // gym list 항목 수만큼 Marker 동적 생성
+//            gymMarkers[i].position = LatLng(35.0,35.0)
+//            gymMarkers[i].icon = OverlayImage.fromResource(R.drawable.ic_location_gym)
+//            gymMarkers[i].map = naverMap
+//
+//            gymMarkers[i].setOnClickListener {
+//                // 위치 이동
+//                val position = LatLng(
+//                    37.62107392,
+//                    127.05892492
+//                )
+//                val cameraUpdate = CameraUpdate.scrollTo(position)
+//                    .animate(CameraAnimation.Easing)
+//                naverMap.moveCamera(cameraUpdate)
+//
+//                // 정보 창 표시
+//                infoWindow.open(gymMarkers[i])
+//
+//                true
+//            }
+//        }
+
 
         // 임시 위치 설정 -> 헬스장 위치 불러와서 위치 설정 필요
         gymMarker.position = LatLng(
@@ -318,34 +325,39 @@ class MapFragment : Fragment(), OnMapReadyCallback, GymView {
         gymMarker.map = naverMap
 
 
-        // 지도를 클릭하면 정보 창을 닫음
-//        naverMap.setOnMapClickListener { _, _ ->
-//            infoWindow.close()
-//        }
 
-//        gymMarker.onClickListener = Overlay.OnClickListener {
-//            // 정보 창 표시
-//            infoWindow.open(gymMarker)
+        gymMarker.setOnClickListener {
+            // 위치 이동
+            val position = LatLng(
+                37.62107392,
+                127.05892492
+            )
+            val cameraUpdate = CameraUpdate.scrollTo(position)
+                .animate(CameraAnimation.Easing)
+            naverMap.moveCamera(cameraUpdate)
 
-////            false
-//        }
+            // 정보 창 표시
+            infoWindow.open(gymMarker)
+
+            /* 헬스장 마커 클릭 시 헬스장 정보(이름) 띄우고
+            리사이클러뷰에 해당 헬스장만 불러오기 */
 
 
-        /* 헬스장 마커 클릭 시 헬스장 정보(이름) 띄우고
-        리사이클러뷰에 해당 헬스장만 불러오기 */
+            true
+        }
 
 
         // 이동 위치 업데이트
         naverMap.onMapClickListener =
             OnMapClickListener { PointF, latLng ->
-//                if (gymMarker.position != LatLng(latLng.latitude, latLng.longitude)) {
-//                    infoWindow.close()
-//                }
                 val latitude = latLng.latitude
                 val longitude = latLng.longitude
                 val cameraUpdate = CameraUpdate.scrollTo(LatLng(latitude, longitude))
                     .animate(CameraAnimation.Easing)
                 naverMap.moveCamera(cameraUpdate)
+
+                // 정보 창 닫기
+                infoWindow.close()
             }
     }
 
@@ -368,33 +380,96 @@ class MapFragment : Fragment(), OnMapReadyCallback, GymView {
         Log.d("GEY_GYM/FAILURE", "$code / $message")
     }
 
+    // 주소 -> 위도, 경도 구하기
+    private fun getLatLng(address: String): LatLng {
+        val retrofit = Retrofit.Builder()
+            .baseUrl("https://naveropenapi.apigw.ntruss.com")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
 
-    // 좌표 -> 주소 변환
-//    private fun getAddress(lat: Double, lng: Double): String {
-//        val geoCoder = Geocoder(requireContext(), Locale.KOREA)
-//        val address: ArrayList<Address>
-//        var addressResult = "주소를 가져 올 수 없습니다."
-//        try {
-//            // 세 번째 파라미터는 좌표에 대해 주소를 리턴 받는 갯수로
-//            // 한 좌표에 대해 두 개 이상의 이름이 존재할 수 있기에 주소 배열을 리턴받기 위해 최대갯수 설정
-//            address = geoCoder.getFromLocation(lat, lng, 1) as ArrayList<Address>
-//            if (address.size > 0) {
-//                // 주소 받아오기
-//                val currentLocationAddress = address[0].getAddressLine(0)
-//                    .toString()
-//                addressResult = currentLocationAddress
-//            }
-//        } catch (e: IOException) {
-//            e.printStackTrace()
-//        }
-//
-//        return addressResult
-//    }
+        val server: GymRetrofitInterface = retrofit.create(GymRetrofitInterface::class.java)
+
+        server.searchAddress(address).enqueue(object : Callback<AddressResponse> {
+            override fun onResponse(
+                call: Call<AddressResponse>,
+                response: Response<AddressResponse>
+            ) {
+                Log.d("GET_LATLNG/SUCCESS", response.body().toString())
+
+                val resp: AddressResponse = response.body()!!
+
+                when (resp.status) {
+                    "OK" -> {
+                        Log.d("REAL", "$resp.addresses[0].x / $resp.addresses[0].y")
+
+                        var camPos = CameraPosition(
+                            LatLng(resp.addresses[0].y, resp.addresses[0].x),
+                            15.0
+                        )
+                        naverMap.cameraPosition = camPos
+
+                        // 대학 표시 마커
+                        val univMarker = Marker()
+                        univMarker.position = LatLng(
+                            naverMap.cameraPosition.target.latitude,
+                            naverMap.cameraPosition.target.longitude
+                        )
+                        univMarker.icon = OverlayImage.fromResource(R.drawable.ic_location_univ)
+                        univMarker.map = naverMap
+                    }
+                    else -> Log.d("GET_LATLNG/FAILURE", resp.status)
+                }
+            }
+
+            override fun onFailure(call: Call<AddressResponse>, t: Throwable) {
+                Log.d("GET_LATLNG/FAILURE", t.toString())
+            }
+        })
+
+        return MapFragment.univLatLng
+    }
+
+    override fun onStart() {
+        super.onStart()
+        binding.mapGymMapView.onStart()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        binding.mapGymMapView.onResume()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        binding.mapGymMapView.onPause()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        binding.mapGymMapView.onSaveInstanceState(outState)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        binding.mapGymMapView.onStop()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        binding.mapGymMapView.onDestroy()
+    }
+
+    override fun onLowMemory() {
+        super.onLowMemory()
+        binding.mapGymMapView.onLowMemory()
+    }
+
 
 }
 
 class PointAdapter(context: Context, parent: ViewGroup) : InfoWindow.ViewAdapter() {
 
+    /* gymName Data 받아와야함 */
     private val mContext: Context
     private val mParent: ViewGroup
 
