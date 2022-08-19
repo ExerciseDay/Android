@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CheckCourseActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/map_title_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_2"
+            android:gravity="center"
+            android:text="코스/이름"
+            android:textAlignment="center"
+            android:textColor="@color/gray_900"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageButton
+            android:id="@+id/map_search_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="2dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_search"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/map_search_btn2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="3dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintStart_toStartOf="@+id/map_title_tv"
+            app:layout_constraintTop_toTopOf="@+id/map_title_tv"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/main_frm"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav_v"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:in="@+id/Relative1"
+            android:paddingLeft="25sp"
+            android:paddingTop="29sp"
+            android:paddingRight="25sp"
+            android:paddingBottom="18sp">
+
+            <ImageView
+                android:id="@+id/emoji"
+                android:layout_width="140sp"
+                android:layout_height="140sp"
+                android:layout_marginLeft="18sp"
+                android:layout_marginBottom="15dp"
+                android:src="@drawable/icon_emoji_woman" />
+
+            <TextView
+                android:id="@+id/textDay"
+                android:layout_width="96sp"
+                android:layout_height="26sp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="30sp"
+                android:layout_toRightOf="@+id/emoji"
+                android:background="@drawable/btn_gray300_border18"
+                android:fontFamily="@font/pretendard"
+                android:gravity="center"
+                android:text="도전한지 2일째"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <View
+                android:layout_width="12sp"
+                android:layout_height="6.5sp"
+                android:layout_marginLeft="67dp"
+                android:layout_marginTop="55sp"
+                android:layout_marginBottom="95dp"
+                android:layout_toRightOf="@+id/emoji"
+                android:background="@drawable/bg_triangle" />
+
+            <TextView
+                android:id="@+id/textGoal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="65sp"
+                android:layout_toRightOf="@+id/emoji"
+                android:fontFamily="@font/pretendard_2"
+                android:text="#바디프로필"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btnGo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100sp"
+                android:layout_marginTop="120sp"
+                android:layout_toRightOf="@+id/emoji"
+                android:text="코스 확인하기 >"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/btnResetGoal"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_alignBottom="@+id/btnGo"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="-76dp"
+                android:background="@drawable/btn_gray300_border18"
+                android:backgroundTint="@color/gray_950"
+                android:fontFamily="@font/pretendard_2"
+                android:text="목표 수정하기"
+                android:textColor="@drawable/btn_text_color"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/gray200Linn"
+                android:layout_width="match_parent"
+                android:layout_height="8sp"
+                android:layout_alignBottom="@+id/btnResetGoal"
+                android:layout_marginTop="55sp"
+                android:layout_marginBottom="-18dp"
+                android:background="@drawable/gray200_line" />
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/gray200Linn"
+                android:layout_marginTop="30sp"
+                android:layout_marginBottom="-49dp"
+                android:fontFamily="@font/pretendard_2"
+                android:text="보유하고 있는 코스"
+                android:textColor="#464646"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/btnEdit"
+                android:layout_width="77sp"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/text1"
+                android:layout_alignBottom="@+id/gray200Linn"
+                android:layout_marginTop="30sp"
+                android:layout_marginRight="-208dp"
+                android:layout_marginBottom="-48dp"
+                android:background="@drawable/bg_facilities"
+                android:gravity="center"
+                android:text="편집하기"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/text1"
+                android:layout_marginTop="23sp"
+                android:layout_marginBottom="-47dp"
+                android:fontFamily="@font/pretendard_2"
+                android:text="커스텀 코스"
+                android:textColor="#464646"
+                android:textSize="18sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/customRecycleView"
+                android:layout_width="356dp"
+                android:layout_height="86dp"
+                android:layout_below="@id/text2"
+                android:layout_marginTop="60sp"
+                tools:listitem="@layout/activity_custom_course" />
+
+            <Button
+                android:id="@+id/btnCustomPlus"
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:layout_alignBottom="@+id/customRecycleView"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="-60dp"
+                android:background="@drawable/btn_gray300_border18"
+                android:backgroundTint="@color/gray_400"
+                android:fontFamily="@font/pretendard"
+                android:text="추가하기 +"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/btnCustomPlus"
+                android:layout_marginTop="23sp"
+                android:layout_marginBottom="-47dp"
+                android:fontFamily="@font/pretendard_2"
+                android:text="전문가 코스"
+                android:textColor="#464646"
+                android:textSize="18sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/expertRecycleView"
+                android:layout_width="356dp"
+                android:layout_height="86dp"
+                android:layout_alignBottom="@id/text3"
+                android:layout_marginTop="31dp"
+                android:layout_marginBottom="-98dp"
+                tools:listitem="@layout/activity_expert_course" />
+
+            <Button
+                android:id="@+id/btnExpertPlus"
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:layout_alignBottom="@+id/expertRecycleView"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="-60dp"
+                android:background="@drawable/btn_gray300_border18"
+                android:backgroundTint="@color/gray_400"
+                android:fontFamily="@font/pretendard"
+                android:text="추가하기 +"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+
+
+        </RelativeLayout>
+    </FrameLayout>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav_v"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:background="@color/white"
+        app:menu="@menu/bottom_nav"
+        app:labelVisibilityMode="labeled"
+        app:itemTextColor="@drawable/nav_color"
+        app:itemIconTint="@drawable/nav_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditProfileActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/map_title_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_2"
+            android:gravity="center"
+            android:text="마이페이지"
+            android:textAlignment="center"
+            android:textColor="@color/gray_900"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageButton
+            android:id="@+id/map_search_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="2dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_setting"
+            android:scaleType="centerInside"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/map_search_btn2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="3dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintStart_toStartOf="@+id/map_title_tv"
+            app:layout_constraintTop_toTopOf="@+id/map_title_tv"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/main_frm"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav_v"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        android:layout_marginLeft="25sp"
+        android:layout_marginRight="25sp"
+        android:layout_marginBottom="25sp">
+
+        <RelativeLayout
+            android:id="@+id/RelativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/emoji"
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:layout_marginLeft="133sp"
+                android:layout_marginTop="24sp"
+                android:src="@drawable/icon_emoji_woman" />
+
+            <TextView
+                android:id="@+id/test1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/emoji"
+                android:text="프로필 정보"
+                android:textSize="16sp"
+                android:textColor="#464646"
+                android:fontFamily="@font/pretendard_2"
+                android:layout_marginTop="31sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/emoji"
+                android:text="이메일"
+                android:layout_marginTop="72dp"
+                android:layout_marginLeft="13sp"
+                android:textSize="13sp"
+                android:textColor="#464646"
+                android:fontFamily="@font/pretendard"/>
+
+            <TextView
+                android:id="@+id/userEmail"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@+id/emoji"
+                android:layout_marginTop="92dp"
+                android:background="@drawable/join_edittext_shape"
+                android:gravity="center_vertical"
+                android:inputType="text"
+                android:text="abcd1234@haruwundong.com"
+                android:textColor="@color/gray_900"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/emoji"
+                android:text="닉네임"
+                android:layout_marginTop="179dp"
+                android:layout_marginLeft="13sp"
+                android:textSize="13sp"
+                android:textColor="#464646"
+                android:fontFamily="@font/pretendard"/>
+
+            <TextView
+                android:id="@+id/userNickname"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@+id/emoji"
+                android:layout_marginTop="199dp"
+                android:background="@drawable/join_edittext_shape"
+                android:gravity="center_vertical"
+                android:inputType="text"
+                android:text="하루"
+                android:textColor="@color/gray_900"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/btnEdit"
+                android:layout_width="51sp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/emoji"
+                android:layout_marginLeft="290dp"
+                android:layout_marginTop="216sp"
+                android:background="@drawable/bg_facilities"
+                android:gravity="center"
+                android:text="변경"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+
+        </RelativeLayout>
+    </FrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav_v"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:background="@color/white"
+        app:menu="@menu/bottom_nav"
+        app:labelVisibilityMode="labeled"
+        app:itemTextColor="@drawable/nav_color"
+        app:itemIconTint="@drawable/nav_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
