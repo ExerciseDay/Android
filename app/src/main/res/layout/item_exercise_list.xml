@@ -7,7 +7,7 @@
     android:paddingStart="25dp"
     android:paddingTop="17dp"
     android:paddingEnd="21dp"
-    android:background="@drawable/btn_gray50_border18_gray500"
+    android:background="@drawable/exercise_list_rv_selector"
     android:paddingBottom="18dp">
 
     <TextView

@@ -31,4 +31,40 @@
         <item>서울특별시 성북구 화랑로13길 60</item>
         <item>서울특별시 동대문구 이문로 107</item>
     </string-array>
+
+    <string-array name="body_detail_part_arm_entries">
+        <item>팔 이두</item>
+        <item>팔 삼두</item>
+        <item>팔 전완</item>
+    </string-array>
+
+    <string-array name="body_detail_part_lower_body_entries">
+        <item>하체 전면</item>
+        <item>하체 후면</item>
+    </string-array>
+
+    <string-array name="body_detail_part_abdomen_entries">
+        <item>복부 상부</item>
+        <item>복부 하부</item>
+        <item>복부 측부</item>
+    </string-array>
+
+    <string-array name="body_detail_part_chest_entries">
+        <item>가슴 상부</item>
+        <item>가슴 중부</item>
+        <item>가슴 하부</item>
+    </string-array>
+
+    <string-array name="body_detail_part_shoulder_entries">
+        <item>어깨 전면</item>
+        <item>어깨 후면</item>
+        <item>어깨 측면</item>
+    </string-array>
+
+    <string-array name="body_detail_part_back_entries">
+        <item>등 상부</item>
+        <item>등 중부</item>
+        <item>등 하부</item>
+    </string-array>
+
 </resources>

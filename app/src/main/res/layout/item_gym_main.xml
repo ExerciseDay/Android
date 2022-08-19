@@ -80,6 +80,8 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="4dp"
             android:background="@drawable/tv_gray300_border18"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="2dp"
             android:text="주차"
             android:textColor="@color/gray_900"
             android:textSize="13sp" />
@@ -90,6 +92,8 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="4dp"
             android:background="@drawable/tv_gray300_border18"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="2dp"
             android:text="사우나"
             android:textColor="@color/gray_900"
             android:textSize="13sp" />
@@ -100,6 +104,8 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="4dp"
             android:background="@drawable/tv_gray300_border18"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="2dp"
             android:text="운동복"
             android:textColor="@color/gray_900"
             android:textSize="13sp" />
@@ -109,6 +115,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/tv_gray300_border18"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="2dp"
             android:text="샤워"
             android:textColor="@color/gray_900"
             android:textSize="13sp" />

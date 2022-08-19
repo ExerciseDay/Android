@@ -3,6 +3,7 @@ package com.example.exerciseday_android
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.exerciseday_android.databinding.ActivityMainBinding
+import com.example.exerciseday_android.ui.expert.SelectBodyPartFragment
 
 class MainActivity : AppCompatActivity() {
 

@@ -194,7 +194,7 @@ class MapFragment() : Fragment(), OnMapReadyCallback, GymView {
             bottomSheetListTv.setTypeface(bottomSheetListTv.typeface, Typeface.NORMAL)
             bottomSheetListTv.setTextColor(resources.getColor(R.color.gray_950, null))
             bottomSheetListTv.setPadding(0, dpValue, 0, dpValue)
-            bottomSheetListTv.setBackgroundResource(R.drawable.tv_white_to_gray300)
+            bottomSheetListTv.setBackgroundResource(R.drawable.tv_gray50_to_gray300)
 
             bottomSheetListLayout.addView(bottomSheetListTv)
 
