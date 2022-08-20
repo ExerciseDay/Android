@@ -18,6 +18,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.bottomNavV.selectedItemId = R.id.homeFragment
+
         initBottomNavigation()
     }
 
