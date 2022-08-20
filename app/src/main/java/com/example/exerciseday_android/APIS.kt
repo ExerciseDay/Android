@@ -24,6 +24,11 @@ interface APIS {
         @Header("X-ACCESS-TOKEN") token: String,
         @Body patchEditPw: PatchEditPw
     ): Call<NewPwResponse>
+
+    @GET("/exercise/search")
+    fun searchExercise(
+        @Query("what") what : String,
+    ): Call<SearchExerciseRes>
 }
 
 data class PostLogin(

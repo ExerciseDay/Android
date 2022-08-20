@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="85dp"
+    android:paddingVertical="18dp"
+    android:paddingRight="18dp"
+    android:layout_marginBottom="12dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/btn_gray50_border18_gray500">
+    <TextView
+        android:id="@+id/exercise_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="벤치 프레스"
+        android:fontFamily="@font/pretendard"
+        android:textColor="@color/gray_950"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/exercise_introduce_tv"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="26dp"/>
+    <TextView
+        android:id="@+id/exercise_introduce_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="볼륨감 있는 가슴 만들기"
+        android:fontFamily="@font/pretendard"
+        android:textColor="@color/gray_950"
+        android:textSize="13sp"
+        app:layout_constraintTop_toBottomOf="@id/exercise_name_tv"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/exercise_name_tv" />
+    <LinearLayout
+        android:id="@+id/exercise_type_l"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_pink20_border13"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="@id/exercise_name_tv"
+        app:layout_constraintBottom_toBottomOf="@id/exercise_name_tv"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="8dp">
+        <TextView
+            android:id="@+id/exercise_type_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="27dp"
+            android:text="등"
+            android:fontFamily="@font/pretendard"
+            android:textColor="@color/red_20"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:layout_marginHorizontal="12dp"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
