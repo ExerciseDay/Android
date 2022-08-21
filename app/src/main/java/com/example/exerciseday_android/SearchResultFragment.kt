@@ -54,7 +54,6 @@ class SearchResultFragment : Fragment() {
         exerciseSearchRVAdapter.setMyITemClickListener(object :
             ExerciseSearchRVAdapter.MyItemClickListener {
             override fun onItemClick(exerciseSearch: ExerciseSearch) {
-                Log.d("아이템클릭", exerciseSearch.name)
                 val exerciseFragment = CustomExerciseFragment()
                 val bundle = Bundle()
                 bundle.putString("keyword", binding.searchResultSearchEt.text.toString())

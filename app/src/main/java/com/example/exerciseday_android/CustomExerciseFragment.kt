@@ -7,7 +7,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.exerciseday_android.databinding.FragmentCustomExerciseBinding
@@ -36,13 +35,14 @@ class CustomExerciseFragment : Fragment() {
         //fragment 전환을 위한 초기화
         val mainActivity = activity as MainActivity
         val prevFragment = SearchResultFragment()
+        val nextFragment = CustomOptionFragment()
 
         binding.customExerciseBackBtn.setOnClickListener {
             mainActivity.replaceFragment(prevFragment)
         }
 
         binding.customExerciseOptionBtn.setOnClickListener {
-
+            mainActivity.replaceFragment(nextFragment)
         }
 
         return binding.root
