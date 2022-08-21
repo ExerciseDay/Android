@@ -29,6 +29,11 @@ interface APIS {
     fun searchExercise(
         @Query("what") what : String,
     ): Call<SearchExerciseRes>
+
+    @GET("/exercise/{exerciseIdx}")
+    fun getExercise(
+        @Path("exerciseIdx") num : Int,
+    ): Call<ExerciseRes>
 }
 
 data class PostLogin(

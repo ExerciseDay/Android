@@ -1,28 +1,32 @@
 package com.example.exerciseday_android
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.exerciseday_android.databinding.ItemExerciseBinding
 import com.example.exerciseday_android.databinding.ItemSelectCourseBinding
 import okhttp3.internal.notify
+import com.example.exerciseday_android.ExerciseSearchRVAdapter.MyItemClickListener as MyItemClickListener1
 
-class ExerciseSearchRVAdapter(private val exerciseSearchList: ArrayList<ExerciseSearch>): RecyclerView.Adapter<ExerciseSearchRVAdapter.ViewHolder>() {
-    interface MyItemClickListener{
-        fun onItemClick(exercise: Exercise)
+class ExerciseSearchRVAdapter(private val exerciseSearchList: ArrayList<ExerciseSearch>) :
+    RecyclerView.Adapter<ExerciseSearchRVAdapter.ViewHolder>() {
+    interface MyItemClickListener {
+        fun onItemClick(exercise: ExerciseSearch)
     }
 
-    private lateinit var mItemClickListener: MyItemClickListener
-    fun setMyITemClickListener(itemClickListener: MyItemClickListener){
+    private lateinit var mItemClickListener: MyItemClickListener1
+
+    fun setMyITemClickListener(itemClickListener: MyItemClickListener1) {
         mItemClickListener = itemClickListener
     }
 
-    fun addItem(exercise: ExerciseSearch){
+    fun addItem(exercise: ExerciseSearch) {
         exerciseSearchList.add(exercise)
         notifyDataSetChanged()
     }
 
-    fun removeItem(position: Int){
+    fun removeItem(position: Int) {
         exerciseSearchList.removeAt(position)
         notifyDataSetChanged()
     }
@@ -42,15 +46,16 @@ class ExerciseSearchRVAdapter(private val exerciseSearchList: ArrayList<Exercise
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(exerciseSearchList[position])
-        holder.itemView.setOnClickListener{
+        holder.itemView.setOnClickListener { mItemClickListener.onItemClick(exerciseSearchList[position]) }
 
-        }
     }
 
     override fun getItemCount(): Int = exerciseSearchList.size
 
-    inner class ViewHolder(val binding: ItemExerciseBinding): RecyclerView.ViewHolder(binding.root){
-        fun bind(exercise: ExerciseSearch){
+    inner class ViewHolder(val binding: ItemExerciseBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+
+        fun bind(exercise: ExerciseSearch) {
             binding.exerciseNameTv.text = exercise.name
             binding.exerciseIntroduceTv.text = exercise.description
             binding.exerciseTypeTv.text = exercise.part

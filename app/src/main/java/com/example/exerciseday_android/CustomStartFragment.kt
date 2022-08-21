@@ -21,6 +21,7 @@ class CustomStartFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        var index = arguments?.getInt("index")
         binding = FragmentCustomStartBinding.inflate(inflater, container, false)
 
         val mainActivity = activity as MainActivity

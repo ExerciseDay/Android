@@ -51,6 +51,7 @@
         <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/sign_up_edittext_shape.xml" value="0.1" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/sign_up_email_check_btn_shape.xml" value="0.1" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/sign_up_next_btn_border.xml" value="0.1" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/tag_gray50_border13.xml" value="0.1" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/drawable/textview_background_radius.xml" value="0.1605" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/font/font.xml" value="0.12447916666666667" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_condition_location.xml" value="0.16" />
@@ -58,8 +59,9 @@
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_find_id_result.xml" value="0.16" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_find_pw.xml" value="0.38293216630196936" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_gym_detail.xml" value="0.16770833333333332" />
-        <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_gym_search.xml" value="0.176" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_gym_search.xml" value="0.264" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_join_gender.xml" value="0.1890625" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_join_phone.xml" value="0.1" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_login.xml" value="0.176" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_login_access.xml" value="0.264" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/activity_main.xml" value="0.2" />
@@ -72,6 +74,9 @@
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/dialog_default.xml" value="0.264" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/fragment_community.xml" value="0.24427083333333333" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/fragment_course_make.xml" value="0.2" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/fragment_custom_exercise.xml" value="0.2" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/fragment_custom_exercise_opt_tab.xml" value="0.3235294117647059" />
+        <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/fragment_custom_option.xml" value="0.12552083333333333" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/fragment_custom_start.xml" value="0.22636103151862463" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/fragment_drawer_uni.xml" value="0.19010416666666666" />
         <entry key="..\:/project/Exercise/Android/app/src/main/res/layout/fragment_gym_info.xml" value="0.1515625" />
