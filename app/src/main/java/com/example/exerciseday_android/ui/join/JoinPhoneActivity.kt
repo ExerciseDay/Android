@@ -9,7 +9,7 @@ import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.example.exerciseday_android.data.remote.auth.AuthService
+import com.example.exerciseday_android.data.remote.users.UsersService
 import com.example.exerciseday_android.R
 import com.example.exerciseday_android.databinding.ActivityJoinPhoneBinding
 import com.example.exerciseday_android.ui.ChangeDialog
@@ -267,7 +267,7 @@ class JoinPhoneActivity : AppCompatActivity(), VerificationCodeView, View.OnClic
     }
 
     private fun verificationCode(phone: String) {
-        val joinService = AuthService()
+        val joinService = UsersService()
         joinService.setVerificationCodeView(this)
 
         joinService.verificationCode(phone)

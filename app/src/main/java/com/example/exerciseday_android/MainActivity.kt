@@ -1,8 +1,11 @@
 package com.example.exerciseday_android
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.exerciseday_android.databinding.ActivityMainBinding
+import com.example.exerciseday_android.ui.expert.ExpertExerciseInfoFragment
+import com.example.exerciseday_android.ui.expert.PutExpertFragment
 import com.example.exerciseday_android.ui.expert.SelectBodyPartFragment
 
 class MainActivity : AppCompatActivity() {
@@ -15,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         initBottomNavigation()
+        sendUserResult(loadUserResult())
     }
 
     private fun initBottomNavigation() {
@@ -59,4 +63,28 @@ class MainActivity : AppCompatActivity() {
             false
         }
     }
+
+    // 로그인한 유저의 userIdx, jwt 받기
+    private fun loadUserResult(): ArrayList<String> {
+        var pref = applicationContext.getSharedPreferences("jwt", 0)
+        var jwt = pref?.getString("jwt", "")
+        var userIdx = pref?.getInt("userIdx",0)
+
+        var userResult = arrayListOf<String>(jwt.toString(), userIdx.toString())
+
+        return userResult
+    }
+
+    // 로그인한 유저의 userIdx, jwt 전달
+    private fun sendUserResult(userResult: ArrayList<String>) {
+        var pref = applicationContext.getSharedPreferences("jwt", 0)
+        var editor = pref?.edit()
+        editor?.putString("jwt", userResult[0])?.apply()
+
+        pref = applicationContext.getSharedPreferences("userIdx", 0)
+        editor = pref?.edit()
+        editor?.putInt("userIdx", userResult[1].toInt())?.apply()
+
+    }
+
 }

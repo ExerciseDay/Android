@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.exerciseday_android.ExpertExerciseFragment
 import com.example.exerciseday_android.MainActivity
 import com.example.exerciseday_android.R
 import com.example.exerciseday_android.databinding.FragmentSelectBodyPartBinding
@@ -26,7 +25,6 @@ class SelectBodyPartFragment : Fragment(), View.OnClickListener {
         binding.selectBodyPartArmBtn.setOnClickListener(this)
         binding.selectBodyPartLowerBodyBtn.setOnClickListener(this)
         binding.selectBodyPartAbdomenBtn.setOnClickListener(this)
-        binding.selectBodyPartNeckBtn.setOnClickListener(this)
         binding.selectBodyPartChestBtn.setOnClickListener(this)
         binding.selectBodyPartShoulderBtn.setOnClickListener(this)
         binding.selectBodyPartBodyBackBtn.setOnClickListener(this)
@@ -37,7 +35,7 @@ class SelectBodyPartFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
 
         when (v) {
-//            binding.selectBodyPartBackBtn ->
+//            binding.selectBodyPartBackBtn -> 코스(전문가, 커스텀) 선택 페이지로 이동!!
             binding.selectBodyPartArmBtn -> {
                 sendBodyPart(binding.selectBodyPartArmBtn.text.toString())
                 (context as MainActivity).supportFragmentManager.beginTransaction()
@@ -54,12 +52,6 @@ class SelectBodyPartFragment : Fragment(), View.OnClickListener {
                 sendBodyPart(binding.selectBodyPartAbdomenBtn.text.toString())
                 (context as MainActivity).supportFragmentManager.beginTransaction()
                     .replace(R.id.main_frm, SelectBodyDetailPartFragment())
-                    .commitAllowingStateLoss()
-            }
-            binding.selectBodyPartNeckBtn -> {
-                sendBodyPart(binding.selectBodyPartNeckBtn.text.toString())
-                (context as MainActivity).supportFragmentManager.beginTransaction()
-                    .replace(R.id.main_frm, ExpertExerciseFragment())
                     .commitAllowingStateLoss()
             }
             binding.selectBodyPartChestBtn -> {

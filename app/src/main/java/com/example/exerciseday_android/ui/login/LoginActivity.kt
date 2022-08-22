@@ -10,7 +10,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.exerciseday_android.APIS
 import com.example.exerciseday_android.LoginResponse
+import com.example.exerciseday_android.MainActivity
 import com.example.exerciseday_android.PostLogin
+import com.example.exerciseday_android.data.remote.course.ExpertResponse
 import com.example.exerciseday_android.ui.join.JoinInfoActivity
 import com.example.exerciseday_android.databinding.ActivityLoginBinding
 import com.example.exerciseday_android.ui.find.FindIdActivity
@@ -141,6 +143,20 @@ class LoginActivity : AppCompatActivity() {
 
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                 Log.d("server", response.body().toString())
+
+
+                // PutExpertFragment(전문가 코스 담기)에 로그인한 유저의 userIdx, jwt 전달
+                val resp: LoginResponse = response.body()!!
+                var jwt = resp.result.jwt
+                var userIdx = resp.result.userIdx
+
+                var pref = applicationContext.getSharedPreferences("jwt", 0)
+                var editor = pref?.edit()
+                editor?.putString("jwt", jwt)?.apply()
+
+                pref = applicationContext.getSharedPreferences("userIdx", 0)
+                editor = pref?.edit()
+                editor?.putInt("userIdx", userIdx)?.apply()
             }
         })
     }

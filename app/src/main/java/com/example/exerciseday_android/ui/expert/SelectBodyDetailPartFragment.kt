@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.exerciseday_android.ExpertExerciseFragment
 import com.example.exerciseday_android.MainActivity
 import com.example.exerciseday_android.R
 import com.example.exerciseday_android.databinding.FragmentSelectBodyDetailPartBinding
@@ -36,7 +35,10 @@ class SelectBodyDetailPartFragment : Fragment(), View.OnClickListener {
         bodyDetailPartRVAdapter.setMyItemClickListener(object : BodyDetailPartRVAdapter.MyItemClickListener {
             override fun onItemClick(bodyDetailPartList: String) {
                 // 세부 부위 버튼 선택 시, 선택한 부위의 코스 조회 페이지로 이동
-
+                sendBodyDetailPart(bodyDetailPartList)
+                (context as MainActivity).supportFragmentManager.beginTransaction()
+                    .replace(R.id.main_frm, CheckBodyExpertCourseFragment())
+                    .commitAllowingStateLoss()
             }
 
         })
@@ -63,7 +65,7 @@ class SelectBodyDetailPartFragment : Fragment(), View.OnClickListener {
             bodyDetailData = resources.getStringArray(R.array.body_detail_part_arm_entries)
         } else if (bodyPart.equals("하체")) {
             bodyDetailData = resources.getStringArray(R.array.body_detail_part_lower_body_entries)
-        } else if (bodyPart.equals("복부")) {
+        } else if (bodyPart.equals("복근")) {
             bodyDetailData = resources.getStringArray(R.array.body_detail_part_abdomen_entries)
         } else if (bodyPart.equals("가슴")) {
             bodyDetailData = resources.getStringArray(R.array.body_detail_part_chest_entries)
@@ -77,4 +79,13 @@ class SelectBodyDetailPartFragment : Fragment(), View.OnClickListener {
 
         }
     }
+
+    // 선택한 신체 부위 전달
+    private fun sendBodyDetailPart(bodyDetailPart: String) {
+        var pref = this.activity?.getPreferences(0)
+        var editor = pref?.edit()
+
+        editor?.putString("bodyDetailPart", bodyDetailPart)?.apply()
+    }
+
 }

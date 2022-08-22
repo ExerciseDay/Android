@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import com.example.exerciseday_android.data.remote.auth.AuthService
+import com.example.exerciseday_android.data.remote.users.UsersService
 import com.example.exerciseday_android.R
 import com.example.exerciseday_android.data.model.User
 import com.example.exerciseday_android.databinding.ActivityJoinCompleteBinding
@@ -58,7 +58,7 @@ class JoinCompleteActivity : AppCompatActivity(), JoinView, View.OnClickListener
     }
 
     private fun join() {
-        val joinService = AuthService()
+        val joinService = UsersService()
         joinService.setJoinView(this)
 
         joinService.join(getUser())

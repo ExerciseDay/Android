@@ -26,13 +26,14 @@ class ExpertCourseFragment : Fragment(), CheckExpertView {
 
         checkExpert()
 
-        // 전문가 코스 RecyclerView 어댑터와 데이터 리스트 연결
+        // 전문가 코스의 운동 RecyclerView 어댑터와 데이터 리스트 연결
         binding.expertCourseCheckRv.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
-        val expertCourseRVAdapter = ExpertCourseRVAdapter(expertRoutineInfosData)
+        val expertExerciseRVAdapter = ExpertExerciseRVAdapter(expertRoutineInfosData)
 
-        expertCourseRVAdapter.setMyITemClickListener(object : ExpertCourseRVAdapter.MyItemClickListener {
+        expertExerciseRVAdapter.setMyITemClickListener(object :
+            ExpertExerciseRVAdapter.MyItemClickListener {
             override fun onItemClick(expertRoutineInfos: ExpertRoutineInfos) {
                 TODO("Not yet implemented")
                 // Item 클릭 시 운동 세부 페이지로 이동
@@ -40,7 +41,7 @@ class ExpertCourseFragment : Fragment(), CheckExpertView {
             }
         })
 
-        binding.expertCourseCheckRv.adapter = expertCourseRVAdapter
+        binding.expertCourseCheckRv.adapter = expertExerciseRVAdapter
 
         return binding.root
     }
@@ -55,12 +56,15 @@ class ExpertCourseFragment : Fragment(), CheckExpertView {
         expertService.checkExpert(0)  // 0 -> 클릭한 전문가 코스의 expertIdx
     }
 
-    override fun onCheckExpertSuccess(resultNTC: ExpertNTC, resultRoutineInfo: ArrayList<ExpertRoutineInfos>) {
+    override fun onCheckExpertSuccess(
+        resultNTC: ExpertNTC,
+        resultRoutineInfo: ArrayList<ExpertRoutineInfos>
+    ) {
         expertRoutineInfosData = resultRoutineInfo
 
         binding.expertCourseCheckCourseTv.text = resultNTC.expertName
-        binding.expertCourseCheckClockTv.text = resultNTC.expertTime.toString()
-        binding.expertCourseCheckCalorieTv.text = resultNTC.expertCalory.toString()
+        binding.expertCourseCheckClockTv.text = (resultNTC.expertTime / 60).toString() + "분"
+        binding.expertCourseCheckCalorieTv.text = resultNTC.expertCalory.toString() + "kcal"
     }
 
 

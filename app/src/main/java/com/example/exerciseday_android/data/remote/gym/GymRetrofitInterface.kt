@@ -6,7 +6,7 @@ import retrofit2.http.Headers
 import retrofit2.http.Query
 
 interface GymRetrofitInterface {
-    @GET("/gyms/univ")
+    @GET("/gyms")
     fun getGym(@Query("univ") univ: String): Call<GymResponse>
 
     // NaverMapAPI

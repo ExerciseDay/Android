@@ -44,9 +44,9 @@
     </string-array>
 
     <string-array name="body_detail_part_abdomen_entries">
-        <item>복부 상부</item>
-        <item>복부 하부</item>
-        <item>복부 측부</item>
+        <item>복근 상부</item>
+        <item>복근 하부</item>
+        <item>복근 측부</item>
     </string-array>
 
     <string-array name="body_detail_part_chest_entries">
@@ -65,6 +65,10 @@
         <item>등 상부</item>
         <item>등 중부</item>
         <item>등 하부</item>
+    </string-array>
+
+    <string-array name="check_body_expert_course_order_entries">
+        <item>전문가 추천순</item>
     </string-array>
 
 </resources>

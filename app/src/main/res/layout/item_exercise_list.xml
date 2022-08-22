@@ -13,7 +13,7 @@
     <TextView
         android:id="@+id/item_exercise_list_name_tv"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="28dp"
         android:text="벤치 프레스"
         android:textColor="@color/black"
         android:textSize="18sp"
@@ -23,7 +23,7 @@
     <TextView
         android:id="@+id/item_exercise_list_description_tv"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="20dp"
         android:layout_marginTop="2dp"
         android:text="볼륨감 있는 가슴 만들기"
         android:textColor="@color/gray_950"
@@ -34,7 +34,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/item_exercise_list_position_cv"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="27dp"
         android:background="@null"
         android:backgroundTint="#FFEBEE"
         app:cardCornerRadius="13dp"

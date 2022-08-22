@@ -1,9 +1,13 @@
 package com.example.exerciseday_android.ui.gym.main
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.exerciseday_android.MainActivity
+import com.example.exerciseday_android.MapFragment
 import com.example.exerciseday_android.data.remote.gym.GymMainResult
 import com.example.exerciseday_android.R
 import com.example.exerciseday_android.databinding.ItemGymMainBinding
@@ -38,24 +42,18 @@ class GymMainRVAdapter(private val gymMainResult: ArrayList<GymMainResult>) :
 
     override fun getItemCount(): Int = gymMainResult.size
 
-//    @SuppressLint("NotifyDataSetChanged")
-//    fun addGyms(gyms: ArrayList<Gym>) {
-//        this.gyms.clear()
-//        this.gyms.addAll(gyms)
-//
-//        notifyDataSetChanged()
-//    }
-
-    inner class ViewHolder(val binding: ItemGymMainBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(val binding: ItemGymMainBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(gymMainResult: GymMainResult) {
-            binding.itemMapGymImgIv.setImageResource(R.drawable.temp)  // 임시
-//            binding.itemMapGymImgIv.setImageURI(Uri.parse(gym.gymImg))
+            Glide.with(binding.root).load("http://3.39.184.186:8080" + gymMainResult.gymImg).into(binding.itemMapGymImgIv)
+
+//            binding.itemMapGymImgIv.setImageResource(R.drawable.temp)  // 임시
             binding.itemMapGymNameTv.text = gymMainResult.gymName
             binding.itemMapGymAddressTv.text = gymMainResult.gymIntroduce
             binding.itemMapGymDistanceTv.text = gymMainResult.gymDistance.toString()
 
             // 시설 유무 표시
-            if(gymMainResult.gymParking) {
+            if (gymMainResult.gymParking) {
                 binding.itemMapGymParkingTv.visibility = View.VISIBLE
             } else {
                 binding.itemMapGymParkingTv.visibility = View.GONE
@@ -65,12 +63,12 @@ class GymMainRVAdapter(private val gymMainResult: ArrayList<GymMainResult>) :
             } else {
                 binding.itemMapGymSaunaTv.visibility = View.GONE
             }
-            if(gymMainResult.gymCloths) {
+            if (gymMainResult.gymCloths) {
                 binding.itemMapGymClothsTv.visibility = View.VISIBLE
             } else {
                 binding.itemMapGymClothsTv.visibility = View.GONE
             }
-            if(gymMainResult.gymShower) {
+            if (gymMainResult.gymShower) {
                 binding.itemMapGymShowerTv.visibility = View.VISIBLE
             } else {
                 binding.itemMapGymShowerTv.visibility = View.GONE

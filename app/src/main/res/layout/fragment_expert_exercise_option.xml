@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="25dp"
+    tools:context=".ui.expert.ExpertExerciseOptionFragment">
+
+    <View
+        android:id="@+id/expert_exercise_option_count_view"
+        android:layout_width="78dp"
+        android:layout_height="78dp"
+        android:layout_marginVertical="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/view_oval_pink0"
+        app:layout_constraintEnd_toStartOf="@+id/expert_exercise_option_weight_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/expert_exercise_option_count_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:text="횟수"
+        android:textColor="@color/pink_0"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/expert_exercise_option_count_content_tv"
+        app:layout_constraintEnd_toEndOf="@+id/expert_exercise_option_count_view"
+        app:layout_constraintStart_toStartOf="@+id/expert_exercise_option_count_view"
+        app:layout_constraintTop_toTopOf="@+id/expert_exercise_option_count_view" />
+
+    <TextView
+        android:id="@+id/expert_exercise_option_count_content_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="13dp"
+        android:text="10회"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/expert_exercise_option_count_view"
+        app:layout_constraintEnd_toEndOf="@+id/expert_exercise_option_count_view"
+        app:layout_constraintStart_toStartOf="@+id/expert_exercise_option_count_view"
+        app:layout_constraintTop_toBottomOf="@+id/expert_exercise_option_count_tv" />
+
+
+    <View
+        android:id="@+id/expert_exercise_option_weight_view"
+        android:layout_width="78dp"
+        android:layout_height="78dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginVertical="25dp"
+        android:background="@drawable/view_oval_pink0"
+        app:layout_constraintEnd_toStartOf="@+id/expert_exercise_option_repeat_view"
+        app:layout_constraintStart_toEndOf="@+id/expert_exercise_option_count_view"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/expert_exercise_option_weight_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:text="무게"
+        android:textColor="@color/pink_0"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/expert_exercise_option_weight_content_tv"
+        app:layout_constraintEnd_toEndOf="@+id/expert_exercise_option_weight_view"
+        app:layout_constraintStart_toStartOf="@+id/expert_exercise_option_weight_view"
+        app:layout_constraintTop_toTopOf="@+id/expert_exercise_option_weight_view" />
+
+    <TextView
+        android:id="@+id/expert_exercise_option_weight_content_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="13dp"
+        android:text="10KG"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/expert_exercise_option_weight_view"
+        app:layout_constraintEnd_toEndOf="@+id/expert_exercise_option_weight_view"
+        app:layout_constraintStart_toStartOf="@+id/expert_exercise_option_weight_view"
+        app:layout_constraintTop_toBottomOf="@+id/expert_exercise_option_weight_tv" />
+
+
+    <View
+        android:id="@+id/expert_exercise_option_repeat_view"
+        android:layout_width="78dp"
+        android:layout_height="78dp"
+        android:layout_marginVertical="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/view_oval_pink0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/expert_exercise_option_weight_view"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/expert_exercise_option_repeat_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:text="반복"
+        android:textColor="@color/pink_0"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/expert_exercise_option_repeat_content_tv"
+        app:layout_constraintEnd_toEndOf="@+id/expert_exercise_option_repeat_view"
+        app:layout_constraintStart_toStartOf="@+id/expert_exercise_option_repeat_view"
+        app:layout_constraintTop_toTopOf="@+id/expert_exercise_option_repeat_view" />
+
+    <TextView
+        android:id="@+id/expert_exercise_option_repeat_content_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="13dp"
+        android:text="20세트"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/expert_exercise_option_repeat_view"
+        app:layout_constraintStart_toStartOf="@+id/expert_exercise_option_repeat_view"
+        app:layout_constraintTop_toBottomOf="@+id/expert_exercise_option_repeat_tv" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

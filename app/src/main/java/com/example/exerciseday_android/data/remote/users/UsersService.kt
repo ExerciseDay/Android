@@ -1,4 +1,4 @@
-package com.example.exerciseday_android.data.remote.auth
+package com.example.exerciseday_android.data.remote.users
 
 import android.util.Log
 import com.example.exerciseday_android.ui.join.EmailCheckView
@@ -6,14 +6,17 @@ import com.example.exerciseday_android.ui.join.JoinView
 import com.example.exerciseday_android.ui.join.VerificationCodeView
 import com.example.exerciseday_android.data.model.User
 import com.example.exerciseday_android.getRetrofit
+import com.example.exerciseday_android.ui.expert.PutExpertCourseView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class AuthService {
+class UsersService {
     private lateinit var joinView: JoinView
     private lateinit var emailCheckView: EmailCheckView
     private lateinit var verificationCodeView: VerificationCodeView
+    private lateinit var putExpertCourseView: PutExpertCourseView
+
 
     fun setJoinView(joinView: JoinView) {
         this.joinView = joinView
@@ -27,9 +30,14 @@ class AuthService {
         this.verificationCodeView = verificationCodeView
     }
 
+    fun setPutExpertCourseView(putExpertCourseView: PutExpertCourseView) {
+        this.putExpertCourseView = putExpertCourseView
+    }
+
+
     // 회원가입
     fun join(user: User) {
-        val joinService = getRetrofit().create(AuthRetrofitInterface::class.java)
+        val joinService = getRetrofit().create(UsersRetrofitInterface::class.java)
         joinService.join(user).enqueue(object : Callback<JoinResponse> {
             override fun onResponse(call: Call<JoinResponse>, response: Response<JoinResponse>) {
                 Log.d("JOIN/SUCCESS", response.toString())
@@ -54,7 +62,7 @@ class AuthService {
 
     // 이메일 중복 확인
     fun emailCheck(email: String) {
-        val joinService = getRetrofit().create(AuthRetrofitInterface::class.java)
+        val joinService = getRetrofit().create(UsersRetrofitInterface::class.java)
         joinService.emailCheck(email).enqueue(object : Callback<EmailCheckResponse> {
             override fun onResponse(
                 call: Call<EmailCheckResponse>,
@@ -86,7 +94,7 @@ class AuthService {
 
     // 본인인증
     fun verificationCode(phone: String) {
-        val joinService = getRetrofit().create(AuthRetrofitInterface::class.java)
+        val joinService = getRetrofit().create(UsersRetrofitInterface::class.java)
         joinService.verificationCode(phone).enqueue(object : Callback<VerificationCodeResponse> {
             override fun onResponse(
                 call: Call<VerificationCodeResponse>,
@@ -110,4 +118,31 @@ class AuthService {
         })
     }
 
+
+    // 전문가 코스 목록에 담기
+    fun putExpertCourse(jwt: String, userIdx: Int, expertIdx: Int) {
+        val joinService = getRetrofit().create(UsersRetrofitInterface::class.java)
+        joinService.putExpertCourse(jwt, userIdx, expertIdx)
+            .enqueue(object : Callback<PutExpertCourseResponse> {
+                override fun onResponse(
+                    call: Call<PutExpertCourseResponse>,
+                    response: Response<PutExpertCourseResponse>
+                ) {
+                    Log.d("PUT_EXPERT_COURSE/SUCCESS", response.toString())
+
+                    val resp: PutExpertCourseResponse = response.body()!!
+
+                    // 서버 response 중 code 값에 따른 결과
+                    when (resp.code) {
+                        1000 -> putExpertCourseView.onPutExpertCourseSuccess()
+                        else -> putExpertCourseView.onPutExpertCourseFailure(resp.code, resp.message)
+                    }
+
+                }
+
+                override fun onFailure(call: Call<PutExpertCourseResponse>, t: Throwable) {
+                    Log.d("PUT_EXPERT_COURSE/FAILURE", t.message.toString())
+                }
+            })
+    }
 }

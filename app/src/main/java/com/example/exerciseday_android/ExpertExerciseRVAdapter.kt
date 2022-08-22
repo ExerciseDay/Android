@@ -6,8 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.exerciseday_android.data.remote.course.ExpertRoutineInfos
 import com.example.exerciseday_android.databinding.ItemExerciseListBinding
 
-class ExpertCourseRVAdapter(private val expertExerciseList: ArrayList<ExpertRoutineInfos>) :
-    RecyclerView.Adapter<ExpertCourseRVAdapter.ViewHolder>() {
+class ExpertExerciseRVAdapter(private val expertExerciseList: ArrayList<ExpertRoutineInfos>) :
+    RecyclerView.Adapter<ExpertExerciseRVAdapter.ViewHolder>() {
 
     interface MyItemClickListener {
         fun onItemClick(expertRoutineInfos: ExpertRoutineInfos)
@@ -31,7 +31,7 @@ class ExpertCourseRVAdapter(private val expertExerciseList: ArrayList<ExpertRout
     override fun onCreateViewHolder(
         viewGroup: ViewGroup,
         viewType: Int
-    ): ExpertCourseRVAdapter.ViewHolder {
+    ): ExpertExerciseRVAdapter.ViewHolder {
         val binding: ItemExerciseListBinding =
             ItemExerciseListBinding.inflate(
                 LayoutInflater.from(viewGroup.context),

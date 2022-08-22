@@ -120,7 +120,7 @@
             android:text="하체"
             android:textColor="@drawable/tv_gray950_to_white"
             android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/select_body_part_neck_btn"
+            app:layout_constraintBottom_toTopOf="@+id/select_body_part_body_back_btn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/select_body_part_arm_btn"
             app:layout_constraintTop_toTopOf="parent" />
@@ -135,16 +135,16 @@
             android:fontFamily="@font/pretendard_2"
             android:paddingVertical="28dp"
             android:stateListAnimator="@null"
-            android:text="복부"
+            android:text="복근"
             android:textColor="@drawable/tv_gray950_to_white"
             android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@+id/select_body_part_chest_btn"
-            app:layout_constraintEnd_toStartOf="@+id/select_body_part_neck_btn"
+            app:layout_constraintEnd_toStartOf="@+id/select_body_part_body_back_btn"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/select_body_part_arm_btn" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/select_body_part_neck_btn"
+            android:id="@+id/select_body_part_body_back_btn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
@@ -153,7 +153,7 @@
             android:fontFamily="@font/pretendard_2"
             android:paddingVertical="28dp"
             android:stateListAnimator="@null"
-            android:text="목"
+            android:text="등"
             android:textColor="@drawable/tv_gray950_to_white"
             android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@+id/select_body_part_shoulder_btn"
@@ -173,7 +173,7 @@
             android:text="가슴"
             android:textColor="@drawable/tv_gray950_to_white"
             android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/select_body_part_body_back_btn"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/select_body_part_shoulder_btn"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/select_body_part_abdomen_btn" />
@@ -191,26 +191,10 @@
             android:text="어깨"
             android:textColor="@drawable/tv_gray950_to_white"
             android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/select_body_part_body_back_btn"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/select_body_part_chest_btn"
-            app:layout_constraintTop_toBottomOf="@+id/select_body_part_neck_btn" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/select_body_part_body_back_btn"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/btn_gray50_to_pink0_selector"
-            android:fontFamily="@font/pretendard_2"
-            android:paddingVertical="28dp"
-            android:stateListAnimator="@null"
-            android:text="등"
-            android:textColor="@drawable/tv_gray950_to_white"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/select_body_part_chest_btn"
-            app:layout_constraintStart_toStartOf="@+id/select_body_part_chest_btn"
-            app:layout_constraintTop_toBottomOf="@+id/select_body_part_chest_btn" />
+            app:layout_constraintTop_toBottomOf="@+id/select_body_part_body_back_btn" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
