@@ -28,6 +28,7 @@ class CustomExerciseFragment : Fragment() {
 
         //이전 fragment에서 넘겨 받기
         val keyword = arguments?.getString("keyword")
+        val exerciseName = requireArguments().getString("exerciseName")
         val exerciseIdx = requireArguments().getInt("exerciseIdx")
 
         initContent(requireContext(), exerciseIdx)
@@ -38,10 +39,20 @@ class CustomExerciseFragment : Fragment() {
         val nextFragment = CustomOptionFragment()
 
         binding.customExerciseBackBtn.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putString("keyword", keyword)
+
+            prevFragment.arguments = bundle
             mainActivity.replaceFragment(prevFragment)
         }
 
         binding.customExerciseOptionBtn.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putString("keyword", keyword)
+            bundle.putInt("exerciseIdx", exerciseIdx)
+            bundle.putString("exerciseName", exerciseName)
+
+            nextFragment.arguments = bundle
             mainActivity.replaceFragment(nextFragment)
         }
 

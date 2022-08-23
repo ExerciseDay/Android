@@ -57,6 +57,7 @@ class SearchResultFragment : Fragment() {
                 val exerciseFragment = CustomExerciseFragment()
                 val bundle = Bundle()
                 bundle.putString("keyword", binding.searchResultSearchEt.text.toString())
+                bundle.putString("exerciseName", exerciseSearch.name)
                 bundle.putInt("exerciseIdx", exerciseSearch.index)
 
                 exerciseFragment.arguments = bundle

@@ -25,13 +25,19 @@ class CustomStartFragment : Fragment() {
         binding = FragmentCustomStartBinding.inflate(inflater, container, false)
 
         val mainActivity = activity as MainActivity
+        val prevFragment = HomeFragment() //뒤로가기
         val defaultFragment = SearchTypeFragment()
         val focusFragment = SearchLateFragment()
         val searchResultFragment = SearchResultFragment()
+        val customDoneFragment = CustomDoneFragment()
 
         parentFragmentManager.beginTransaction()
             .replace(R.id.search_type_frm, defaultFragment)
             .commit()
+
+        binding.customStartBackBtn.setOnClickListener {
+            mainActivity.replaceFragment(prevFragment)
+        }
 
         binding.customStartSearchEt.onFocusChangeListener =
             View.OnFocusChangeListener { _, hasFocus ->
@@ -62,6 +68,10 @@ class CustomStartFragment : Fragment() {
                 return false
             }
         })
+
+        binding.fabBag.setOnClickListener {
+            mainActivity.replaceFragment(customDoneFragment)
+        }
 
         return binding.root
     }
