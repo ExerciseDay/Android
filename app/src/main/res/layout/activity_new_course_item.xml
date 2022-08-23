@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewCourseItem">
+
+    <View
+        android:id="@+id/box"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:layout_marginBottom="14sp"
+        android:background="@drawable/join_view_btn_unselected"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/pretendard"
+        android:text="벤치 프레스"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/box"
+        app:layout_constraintTop_toTopOf="@+id/box" />
+
+    <TextView
+        android:id="@+id/explanation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginBottom="21dp"
+        android:fontFamily="@font/pretendard"
+        android:text="볼륨감 있는 가슴 만들기"
+        android:textColor="#464646"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/box"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/part"
+        android:layout_width="wrap_content"
+        android:layout_height="27sp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="21dp"
+        android:background="@drawable/tv_gray300_border18"
+        android:backgroundTint="@color/pink_35"
+        android:text="가슴"
+        android:textColor="#D00127"
+        android:textSize="15sp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="@+id/box"
+        app:layout_constraintTop_toTopOf="@+id/box" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

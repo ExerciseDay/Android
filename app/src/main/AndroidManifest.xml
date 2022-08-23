@@ -23,13 +23,86 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".MyReviewItem"
+            android:exported="false" />
+        <activity
+            android:name=".MyReviewEmptyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MyReviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SettingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MypageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MyPageActivity"
+            android:exported="false"
+            android:label="@string/title_activity_my_page"
+            android:theme="@style/Theme.ExerciseDay_Android.NoActionBar" />
+        <activity
+            android:name=".NewCourseEdit"
+            android:exported="false" />
+        <activity
+            android:name=".NewCourseItem"
+            android:exported="false" />
+        <activity
+            android:name=".NewCourseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DibsEdit"
+            android:exported="false" />
+        <activity
+            android:name=".DibsDelete"
+            android:exported="false" />
+        <activity
+            android:name=".DibsItem"
+            android:exported="false" />
+        <activity
+            android:name=".DibsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditCourseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ExpertCourse"
+            android:exported="false" />
+        <activity
+            android:name=".CustomCourse"
+            android:exported="false" />
+        <activity
+            android:name=".CheckCourseNewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CheckCourseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecommendActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GymImgChecked"
+            android:exported="false" />
+        <activity
+            android:name=".MainPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GymImgItem"
+            android:exported="false" />
+        <activity
+            android:name=".GymImgDetail"
+            android:exported="false" />
+        <activity
             android:name=".GymDetailActivity"
-            android:exported="true" />
+            android:exported="true">
+        </activity>
         <activity
             android:name=".SplashActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".ui.join.JoinGenderActivity"
             android:exported="false" />

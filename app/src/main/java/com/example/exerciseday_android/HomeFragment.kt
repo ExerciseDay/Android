@@ -26,6 +26,8 @@ class HomeFragment : Fragment() {
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
+        val mainActivity = activity as MainActivity
+
         userCourseDatas.apply {
             add(UserCourse("하체 운동 코스", 60, 120))
             add(UserCourse("상체 운동 코스", 40, 180))
@@ -76,6 +78,16 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         }
 
+        binding.courseBtn.setOnClickListener {
+            val courseMakeFragment = CourseMakeFragment()
+            mainActivity.replaceFragment(courseMakeFragment)
+//            val courseMakeFragment = CourseMakeFragment()
+//            childFragmentManager.beginTransaction()
+//                .replace(R.id.main_frm, courseMakeFragment)
+//                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+//                .commitAllowingStateLoss()
+        }
+
         return binding.root
     }
 
@@ -83,4 +95,5 @@ class HomeFragment : Fragment() {
         val intent = Intent(context, SelectCourseActivity::class.java)
         startActivity(intent)
     }
+
 }

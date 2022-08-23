@@ -3,6 +3,7 @@ package com.example.exerciseday_android
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.example.exerciseday_android.databinding.ActivityMainBinding
 import com.example.exerciseday_android.ui.expert.ExpertExerciseInfoFragment
 import com.example.exerciseday_android.ui.expert.PutExpertFragment
@@ -16,6 +17,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.bottomNavV.selectedItemId = R.id.homeFragment
 
         initBottomNavigation()
         sendUserResult(loadUserResult())
@@ -31,7 +34,7 @@ class MainActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.recordFragment -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.main_frm, RecordFragment())
+                        .replace(R.id.main_frm, MapFragment())
                         .commitAllowingStateLoss()
                     return@setOnItemSelectedListener true
                 }
@@ -43,7 +46,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.homeFragment -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.main_frm, MapFragment())
+                        .replace(R.id.main_frm, HomeFragment())
                         .commitAllowingStateLoss()
                     return@setOnItemSelectedListener true
                 }
@@ -63,6 +66,7 @@ class MainActivity : AppCompatActivity() {
             false
         }
     }
+
 
     // 로그인한 유저의 userIdx, jwt 받기
     private fun loadUserResult(): ArrayList<String> {
@@ -87,4 +91,9 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.main_frm, fragment)
+            .commit()
+    }
 }
