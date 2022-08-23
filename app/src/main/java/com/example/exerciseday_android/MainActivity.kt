@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.example.exerciseday_android.databinding.ActivityMainBinding
 
 import com.kakao.sdk.common.util.Utility
@@ -16,6 +17,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.bottomNavV.selectedItemId = R.id.homeFragment
 
         initBottomNavigation()
     }
@@ -30,7 +33,7 @@ class MainActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.recordFragment -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.main_frm, RecordFragment())
+                        .replace(R.id.main_frm, MapFragment())
                         .commitAllowingStateLoss()
                     return@setOnItemSelectedListener true
                 }
@@ -42,7 +45,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.homeFragment -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.main_frm, MapFragment())
+                        .replace(R.id.main_frm, HomeFragment())
                         .commitAllowingStateLoss()
                     return@setOnItemSelectedListener true
                 }
@@ -61,5 +64,11 @@ class MainActivity : AppCompatActivity() {
             }
             false
         }
+    }
+
+    fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.main_frm, fragment)
+            .commit()
     }
 }
