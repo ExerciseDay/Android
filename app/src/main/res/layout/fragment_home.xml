@@ -44,4 +44,13 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
 
+    <Button
+        android:id="@+id/course_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="코스만들기"
+        app:layout_constraintTop_toBottomOf="@id/search_btn"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

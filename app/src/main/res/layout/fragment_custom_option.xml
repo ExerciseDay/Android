@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/custom_option_appbar_cl"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/white"
+        android:elevation="1dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/custom_option_back_btn"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="6dp"
+            android:background="@color/transparent"
+            android:src="@drawable/ic_navigate_prev"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_2"
+            android:text="운동/코스"
+            android:textColor="@color/gray_950"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingHorizontal="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/custom_option_appbar_cl">
+
+        <TextView
+            android:id="@+id/custom_option_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/pretendard_2"
+            android:text="운동 옵션을 설정해주세요!"
+            android:textColor="@color/gray_950"
+            android:textSize="26sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/custom_optionQ_subtitle_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:fontFamily="@font/pretendard"
+            android:text="무게 / 횟수 / 세트를 원하는대로 기재해주세요!"
+            android:textColor="@color/gray_700"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/custom_option_title_tv" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_2"
+            android:text="횟수"
+            android:textColor="@color/gray_950"
+            android:textSize="18sp"
+            app:layout_constraintTop_toTopOf="@id/custom_option_rep_et"
+            app:layout_constraintBottom_toBottomOf="@id/custom_option_rep_et"
+            app:layout_constraintRight_toLeftOf="@id/custom_option_rep_et"
+            android:layout_marginRight="28dp"/>
+        <EditText
+            android:id="@+id/custom_option_rep_et"
+            android:layout_width="50dp"
+            android:layout_height="44dp"
+            android:background="@drawable/et_gray50_border18_gray500"
+            android:fontFamily="@font/pretendard"
+            android:textSize="15sp"
+            android:textColor="@color/gray_950"
+            android:textAlignment="center"
+            android:maxLines="1"
+            android:inputType="number"
+            app:layout_constraintBottom_toTopOf="@id/custom_option_weight_et"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginBottom="44dp" />
+        <TextView
+            android:id="@+id/custom_option_rep_unit_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="회"
+            android:fontFamily="@font/pretendard"
+            android:textSize="15sp"
+            android:textColor="@color/gray_950"
+            app:layout_constraintTop_toTopOf="@id/custom_option_rep_et"
+            app:layout_constraintBottom_toBottomOf="@id/custom_option_rep_et"
+            app:layout_constraintLeft_toRightOf="@id/custom_option_rep_et"
+            android:layout_marginLeft="14dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_2"
+            android:text="무게"
+            android:textColor="@color/gray_950"
+            android:textSize="18sp"
+            app:layout_constraintTop_toTopOf="@id/custom_option_weight_et"
+            app:layout_constraintBottom_toBottomOf="@id/custom_option_weight_et"
+            app:layout_constraintRight_toLeftOf="@id/custom_option_weight_et"
+            android:layout_marginRight="28dp"/>
+        <EditText
+            android:id="@+id/custom_option_weight_et"
+            android:layout_width="50dp"
+            android:layout_height="44dp"
+            android:background="@drawable/et_gray50_border18_gray500"
+            android:fontFamily="@font/pretendard"
+            android:textSize="15sp"
+            android:textColor="@color/gray_950"
+            android:textAlignment="center"
+            android:maxLines="1"
+            android:inputType="number"
+            app:layout_constraintTop_toTopOf="@id/custom_optionQ_subtitle_tv"
+            app:layout_constraintBottom_toTopOf="@id/custom_option_get_btn"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+        <TextView
+            android:id="@+id/custom_option_weight_unit_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="KG"
+            android:fontFamily="@font/pretendard"
+            android:textSize="15sp"
+            android:textColor="@color/gray_950"
+            app:layout_constraintTop_toTopOf="@id/custom_option_weight_et"
+            app:layout_constraintBottom_toBottomOf="@id/custom_option_weight_et"
+            app:layout_constraintLeft_toRightOf="@id/custom_option_weight_et"
+            android:layout_marginLeft="14dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_2"
+            android:text="반복"
+            android:textColor="@color/gray_950"
+            android:textSize="18sp"
+            app:layout_constraintTop_toTopOf="@id/custom_option_set_et"
+            app:layout_constraintBottom_toBottomOf="@id/custom_option_set_et"
+            app:layout_constraintRight_toLeftOf="@id/custom_option_set_et"
+            android:layout_marginRight="28dp"/>
+        <EditText
+            android:id="@+id/custom_option_set_et"
+            android:layout_width="50dp"
+            android:layout_height="44dp"
+            android:background="@drawable/et_gray50_border18_gray500"
+            android:fontFamily="@font/pretendard"
+            android:textSize="15sp"
+            android:textColor="@color/gray_950"
+            android:textAlignment="center"
+            android:maxLines="1"
+            android:inputType="number"
+            app:layout_constraintTop_toBottomOf="@id/custom_option_weight_et"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="44dp"/>
+        <TextView
+            android:id="@+id/custom_option_set_unit_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="세트"
+            android:fontFamily="@font/pretendard"
+            android:textSize="15sp"
+            android:textColor="@color/gray_950"
+            app:layout_constraintTop_toTopOf="@id/custom_option_set_et"
+            app:layout_constraintBottom_toBottomOf="@id/custom_option_set_et"
+            app:layout_constraintLeft_toRightOf="@id/custom_option_set_et"
+            android:layout_marginLeft="14dp"/>
+
+    <Button
+        android:id="@+id/custom_option_get_btn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/btn_pink0_border18"
+        android:fontFamily="@font/pretendard_2"
+        android:text="담기"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout></androidx.constraintlayout.widget.ConstraintLayout>
