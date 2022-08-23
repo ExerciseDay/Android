@@ -34,7 +34,6 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-
             <ImageButton
                 android:id="@+id/map_search_btn"
                 android:layout_width="0dp"
@@ -93,9 +92,7 @@
             android:drawablePadding="4dp"
             android:text="광운대학교"
             android:textColorHint="@color/gray_950"
-            android:theme="@style/MapSpinnerTextAppearance"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/map_gym_map_view" />
+            android:theme="@style/MapSpinnerTextAppearance" />
 
         <TextView
             android:id="@+id/map_order_spinner"
@@ -106,9 +103,7 @@
             android:drawablePadding="4dp"
             android:text="최근 등록순"
             android:textColorHint="@color/gray_950"
-            android:theme="@style/MapSpinnerTextAppearance"
-            app:layout_constraintStart_toEndOf="@+id/map_university_spinner"
-            app:layout_constraintTop_toBottomOf="@+id/map_gym_map_view" />
+            android:theme="@style/MapSpinnerTextAppearance" />
 
     </LinearLayout>
 
@@ -119,6 +114,6 @@
         android:background="@color/gray_200"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/map_spinner_group_layout"
-        tools:listitem="@layout/item_map_gym" />
+        tools:listitem="@layout/item_gym_main" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

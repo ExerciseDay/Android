@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/select_body_part_group_layout"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/white"
+        android:elevation="1dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="9dp"
+        android:paddingBottom="11dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/select_body_part_top_title_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/pretendard_2"
+                android:gravity="center"
+                android:text="코스/운동"
+                android:textAlignment="center"
+                android:textColor="@color/gray_950"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/select_body_part_back_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:src="@drawable/ic_navigate_prev"
+                app:layout_constraintBottom_toBottomOf="@+id/select_body_part_top_title_tv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/select_body_part_top_title_tv" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/select_body_part_title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/pretendard_2"
+        android:lineHeight="34sp"
+        android:text="운동하실 신체 부위를 \n선택해주세요!"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/select_body_part_group_layout" />
+
+    <TextView
+        android:id="@+id/select_body_part_caption_tv"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="9dp"
+        android:lineHeight="20sp"
+        android:text="전문가 코스는 한 부위만 선택 가능합니다."
+        android:textAlignment="textStart"
+        android:textColor="@color/gray_700"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/select_body_part_title_tv" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="29dp"
+        app:layout_constraintTop_toBottomOf="@+id/select_body_part_caption_tv">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/select_body_part_arm_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/btn_gray50_to_pink0_selector"
+            android:fontFamily="@font/pretendard_2"
+            android:paddingVertical="28dp"
+            android:stateListAnimator="@null"
+            android:text="팔"
+            android:textColor="@drawable/tv_gray950_to_white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/select_body_part_abdomen_btn"
+            app:layout_constraintEnd_toStartOf="@+id/select_body_part_lower_body_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/select_body_part_lower_body_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/btn_gray50_to_pink0_selector"
+            android:fontFamily="@font/pretendard_2"
+            android:paddingVertical="28dp"
+            android:stateListAnimator="@null"
+            android:text="하체"
+            android:textColor="@drawable/tv_gray950_to_white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/select_body_part_body_back_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/select_body_part_arm_btn"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/select_body_part_abdomen_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/btn_gray50_to_pink0_selector"
+            android:fontFamily="@font/pretendard_2"
+            android:paddingVertical="28dp"
+            android:stateListAnimator="@null"
+            android:text="복근"
+            android:textColor="@drawable/tv_gray950_to_white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/select_body_part_chest_btn"
+            app:layout_constraintEnd_toStartOf="@+id/select_body_part_body_back_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/select_body_part_arm_btn" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/select_body_part_body_back_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/btn_gray50_to_pink0_selector"
+            android:fontFamily="@font/pretendard_2"
+            android:paddingVertical="28dp"
+            android:stateListAnimator="@null"
+            android:text="등"
+            android:textColor="@drawable/tv_gray950_to_white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/select_body_part_shoulder_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/select_body_part_abdomen_btn"
+            app:layout_constraintTop_toBottomOf="@+id/select_body_part_lower_body_btn" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/select_body_part_chest_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/btn_gray50_to_pink0_selector"
+            android:fontFamily="@font/pretendard_2"
+            android:paddingVertical="28dp"
+            android:stateListAnimator="@null"
+            android:text="가슴"
+            android:textColor="@drawable/tv_gray950_to_white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/select_body_part_shoulder_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/select_body_part_abdomen_btn" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/select_body_part_shoulder_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/btn_gray50_to_pink0_selector"
+            android:fontFamily="@font/pretendard_2"
+            android:paddingVertical="28dp"
+            android:stateListAnimator="@null"
+            android:text="어깨"
+            android:textColor="@drawable/tv_gray950_to_white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/select_body_part_chest_btn"
+            app:layout_constraintTop_toBottomOf="@+id/select_body_part_body_back_btn" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

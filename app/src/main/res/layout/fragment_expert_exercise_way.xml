@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="25dp"
+    tools:context=".ui.expert.ExpertExerciseWayFragment">
+
+    <TextView
+        android:id="@+id/expert_exercise_way_title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="방법 안내"
+        android:layout_marginTop="25dp"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/expert_exercise_way_content_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:lineHeight="23sp"
+        android:text="1. 호흡을 가다듬습니다 \n2. 대충 모시깽이하게 움직여줍니다\n3. 암튼 모시꺵이"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@+id/expert_exercise_way_title_tv" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

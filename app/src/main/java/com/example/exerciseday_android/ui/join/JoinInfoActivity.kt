@@ -8,8 +8,7 @@ import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.example.exerciseday_android.EmailCheckView
-import com.example.exerciseday_android.JoinService
+import com.example.exerciseday_android.data.remote.users.UsersService
 import com.example.exerciseday_android.R
 import com.example.exerciseday_android.databinding.ActivityJoinInfoBinding
 import java.util.regex.Pattern
@@ -45,7 +44,7 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
     private fun emailCheck() {
         val email: String = binding.joinEmailEt.text.toString()
 
-        val joinService = JoinService()
+        val joinService = UsersService()
         joinService.setEmailCheckView(this)
 
         joinService.emailCheck(email)
@@ -473,4 +472,9 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
 
         startActivity(intent)
     }
+}
+
+interface EmailCheckView {
+    fun onEmailCheckSuccess()
+    fun onEmailCheckFailure(message: String)
 }

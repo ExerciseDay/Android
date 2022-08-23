@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/btn_pink0_border18" android:state_pressed="true" />
+    <item android:drawable="@drawable/btn_gray50_border18_gray500" android:state_pressed="false" />
+</selector>

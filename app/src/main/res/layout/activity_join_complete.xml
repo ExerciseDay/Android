@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:background="@null"
-            android:src="@drawable/ic_back_arrow"
+            android:src="@drawable/ic_navigate_prev"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,11 +31,11 @@
 
     <ImageView
         android:id="@+id/join_complete_logo_symbol_iv"
-        android:layout_width="0dp"
+        android:layout_width="161dp"
         android:layout_height="161dp"
         android:layout_marginHorizontal="107dp"
         android:layout_marginTop="132dp"
-        android:src="@drawable/logo_symbol_img"
+        android:src="@drawable/logo_symbol"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/join_complete_group_layout" />

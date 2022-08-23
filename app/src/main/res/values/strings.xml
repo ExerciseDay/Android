@@ -23,6 +23,54 @@
         <item>최근 등록순</item>
         <item>별점 높은순</item>
     </string-array>
+
+    <string-array name="map_university_address_entries">
+        <item>서울특별시 노원구 광운로 20</item>
+        <item>서울특별시 노원구 화랑로 621</item>
+        <item>서울특별시 동대문구 경희대로 26</item>
+        <item>서울특별시 성북구 화랑로13길 60</item>
+        <item>서울특별시 동대문구 이문로 107</item>
+    </string-array>
+
+    <string-array name="body_detail_part_arm_entries">
+        <item>팔 이두</item>
+        <item>팔 삼두</item>
+        <item>팔 전완</item>
+    </string-array>
+
+    <string-array name="body_detail_part_lower_body_entries">
+        <item>하체 전면</item>
+        <item>하체 후면</item>
+    </string-array>
+
+    <string-array name="body_detail_part_abdomen_entries">
+        <item>복근 상부</item>
+        <item>복근 하부</item>
+        <item>복근 측부</item>
+    </string-array>
+
+    <string-array name="body_detail_part_chest_entries">
+        <item>가슴 상부</item>
+        <item>가슴 중부</item>
+        <item>가슴 하부</item>
+    </string-array>
+
+    <string-array name="body_detail_part_shoulder_entries">
+        <item>어깨 전면</item>
+        <item>어깨 후면</item>
+        <item>어깨 측면</item>
+    </string-array>
+
+    <string-array name="body_detail_part_back_entries">
+        <item>등 상부</item>
+        <item>등 중부</item>
+        <item>등 하부</item>
+    </string-array>
+
+    <string-array name="check_body_expert_course_order_entries">
+        <item>전문가 추천순</item>
+    </string-array>
+
     <string name="title_activity_my_page">MyPageActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -32,4 +80,5 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
 </resources>
