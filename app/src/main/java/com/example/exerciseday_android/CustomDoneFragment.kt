@@ -35,7 +35,9 @@ class CustomDoneFragment : Fragment() {
         }
 
         binding.customDoneSaveBtn.setOnClickListener {
-
+            Log.d("hi",customResult.toString())
+            val spf = activity?.getSharedPreferences("custom_bag", Context.MODE_PRIVATE)
+            val editor = spf!!.edit()
         }
 
         val customDoneRVAdapter = CustomDoneRVAdapter(customResult)
@@ -44,8 +46,6 @@ class CustomDoneFragment : Fragment() {
         binding.customDoneBagRv.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         binding.customDoneBagRv.adapter = customDoneRVAdapter
-
-
 
         return binding.root
     }
@@ -69,5 +69,9 @@ class CustomDoneFragment : Fragment() {
                 )
             )
         }
+    }
+
+    private fun saveCustomCourse() {
+
     }
 }

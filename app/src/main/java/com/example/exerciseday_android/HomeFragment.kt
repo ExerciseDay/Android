@@ -2,6 +2,7 @@ package com.example.exerciseday_android
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,14 +11,20 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.exerciseday_android.databinding.FragmentHomeBinding
 import com.example.exerciseday_android.databinding.PlusCourseDialogBinding
+import com.example.exerciseday_android.ui.expert.ExpertCourseRVAdapter
 import com.example.exerciseday_android.ui.gym.GymSearchActivity
 import com.example.flo.PlusCourseDialogRVAdapter
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import kotlin.collections.ArrayList
 
 class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
-    private var courseDatas = ArrayList<Course>()
-    private var userCourseDatas = ArrayList<UserCourse>()
+    private var customList = ArrayList<SimpleCourse>()
+    private var expertList = ArrayList<SimpleCourse>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,72 +35,80 @@ class HomeFragment : Fragment() {
 
         val mainActivity = activity as MainActivity
 
-        userCourseDatas.apply {
-            add(UserCourse("하체 운동 코스", 60, 120))
-            add(UserCourse("상체 운동 코스", 40, 180))
-            add(UserCourse("주말 운동 코스", 80, 250))
-            add(UserCourse("많이 먹은 날 운동 코스", 120, 400))
-        }
+//        binding.searchBtn.setOnClickListener {
+//            val intent = Intent(context, GymSearchActivity::class.java)
+//            startActivity(intent)
+//        }
 
-        val homeCourseRVAdapter = HomeCourseRVAdapter(userCourseDatas)
-        binding.homeCourseListRv.layoutManager = LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false)
-        binding.homeCourseListRv.adapter = homeCourseRVAdapter
+        //RV
+        val courseCustomListRVAdapter = CourseCustomListRVAdapter(customList)
+        val courseExpertListRVAdapter = CourseExpertListRVAdapter(expertList)
+        getCourseList(courseCustomListRVAdapter, courseExpertListRVAdapter)
 
-        // 데이터 리스트 생성 더머 데이터
-        courseDatas.apply {
-            add(Course("커스텀 운동 코스"))
-            add(Course("커스텀 운동 코스"))
-            add(Course("커스텀 운동 코스"))
-        }
+        binding.customRecycleView.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        binding.customRecycleView.adapter = courseCustomListRVAdapter
 
-        binding.fabMain.setOnClickListener {
-            var builder = AlertDialog.Builder(requireContext())
-            val dialogBinding: PlusCourseDialogBinding = PlusCourseDialogBinding.inflate(layoutInflater)
-            builder.setView(dialogBinding.root)
-
-            // 어댑터와 데이터 리스트 연결
-            val plusCourseDialogRVAdapter = PlusCourseDialogRVAdapter(courseDatas)
-            dialogBinding.plusCourseRecyclerView.adapter = plusCourseDialogRVAdapter
-            dialogBinding.plusCourseRecyclerView.layoutManager =
-                LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        binding.expertRecycleView.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        binding.expertRecycleView.adapter = courseExpertListRVAdapter
 
 
-            plusCourseDialogRVAdapter.setMyItemClickListener(object :
-                PlusCourseDialogRVAdapter.MyItemClickListener {
-                override fun onItemClick(course: Course) {
-                    // 운동 선택으로 액티비티 이동
-                    changeSelectCourseActivity(course)
-                }
 
-                override fun onRemoveCourse(position: Int) {
-                    TODO("Not yet implemented")
-                }
-
-            })
-            builder.show()
-        }
-
-        binding.searchBtn.setOnClickListener {
-            val intent = Intent(context, GymSearchActivity::class.java)
-            startActivity(intent)
-        }
-
-        binding.courseBtn.setOnClickListener {
+        binding.makeCourseBtn.setOnClickListener {
             val courseMakeFragment = CourseMakeFragment()
             mainActivity.replaceFragment(courseMakeFragment)
-//            val courseMakeFragment = CourseMakeFragment()
-//            childFragmentManager.beginTransaction()
-//                .replace(R.id.main_frm, courseMakeFragment)
-//                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-//                .commitAllowingStateLoss()
         }
 
         return binding.root
     }
 
-    private fun changeSelectCourseActivity(course: Course) {
-        val intent = Intent(context, SelectCourseActivity::class.java)
-        startActivity(intent)
+//    private fun changeSelectCourseActivity(course: Course) {
+//        val intent = Intent(context, SelectCourseActivity::class.java)
+//        startActivity(intent)
+//    }
+    private fun getCourseList(courseCustomListRVAdapter: CourseCustomListRVAdapter, courseExpertListRVAdapter: CourseExpertListRVAdapter) {
+        val userIdx = 1
+        val jwt = "eyJ0eXBlIjoiand0IiwiYWxnIjoiSFMyNTYifQ.eyJ1c2VySWR4IjoxLCJpYXQiOjE2NjEzMjg0MDksImV4cCI6MTY2Mjc5OTYzOH0._QOQPrXkRkrKhq1SCB-eMej-tfBcrxjsi3zNAsPFOzU"
+
+        val retrofit = Retrofit.Builder()
+            .baseUrl("http://3.39.184.186:8080")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        val server: APIS = retrofit.create(APIS::class.java)
+
+        server.getCourse(jwt ,userIdx).enqueue(object :
+            Callback<GetCourseRes> {
+            override fun onFailure(call: Call<GetCourseRes>, t: Throwable) {
+                Log.d("server", t.toString())
+            }
+
+            override fun onResponse(
+                call: Call<GetCourseRes>,
+                response: Response<GetCourseRes>
+            ) {
+                Log.d("server", response.body().toString())
+                if (response.body()!!.isSuccess){
+                    val getCustomList = response.body()!!.result.customList
+                    val getExpertList = response.body()!!.result.expertList
+                    Log.d("custom", getCustomList.toString())
+                    Log.d("expert", getExpertList.toString())
+
+                    for(i in getCustomList){
+                        courseCustomListRVAdapter.addItem(
+                            SimpleCourse(i.customIdx, i.customName, i.customTime, i.customCalory)
+                        )
+                    }
+
+                    for(j in getExpertList){
+                        courseExpertListRVAdapter.addItem(
+                            SimpleCourse(j.expertIdx, j.expertName, j.expertTime, j.expertCalory)
+                        )
+                    }
+                }
+            }
+        })
     }
 
 }

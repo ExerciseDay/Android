@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="85dp"
+    android:paddingVertical="18dp"
+    android:paddingRight="26dp"
+    android:layout_marginBottom="12dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/btn_gray50_border18_gray500">
+    <TextView
+        android:id="@+id/course_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="하체 운동 코스"
+
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:fontFamily="@font/pretendard"
+        android:textColor="@color/gray_950"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/course_time_l"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="26dp"/>
+    <LinearLayout
+        android:id="@+id/course_time_l"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/course_title_tv"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/course_title_tv">
+        <TextView
+            android:id="@+id/course_time_emoji_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🕔  "
+            android:fontFamily="@font/pretendard"
+            android:textColor="@color/gray_950"
+            android:textSize="13sp" />
+        <TextView
+            android:id="@+id/course_time_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="60"
+            android:fontFamily="@font/pretendard"
+            android:textColor="@color/gray_950"
+            android:textSize="13sp" />
+        <TextView
+            android:id="@+id/course_time_unit_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="분"
+            android:fontFamily="@font/pretendard"
+            android:textColor="@color/gray_950"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/course_calorie_l"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/course_title_tv"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/course_time_l"
+        android:layout_marginLeft="8dp">
+        <TextView
+            android:id="@+id/course_calorie_emoji_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="❤  "
+            android:fontFamily="@font/pretendard"
+            android:textColor="@color/gray_950"
+            android:textSize="13sp" />
+        <TextView
+            android:id="@+id/course_calorie_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1200"
+            android:fontFamily="@font/pretendard"
+            android:textColor="@color/gray_950"
+            android:textSize="13sp" />
+        <TextView
+            android:id="@+id/course_calorie_unit_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="kcal"
+            android:fontFamily="@font/pretendard"
+            android:textColor="@color/gray_950"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

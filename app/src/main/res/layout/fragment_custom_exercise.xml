@@ -10,7 +10,6 @@
         android:layout_height="350dp"
         app:layout_constraintVertical_weight="1"
         android:scaleType="centerInside"
-        android:src="@drawable/temp_exercise"
         android:background="#FEFEFE"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

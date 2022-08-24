@@ -34,6 +34,12 @@ interface APIS {
     fun getExercise(
         @Path("exerciseIdx") num : Int,
     ): Call<ExerciseRes>
+
+    @GET("/users/{userIdx}/course")
+    fun getCourse(
+        @Header("X-ACCESS-TOKEN") token: String,
+        @Path("userIdx") userIdx : Int,
+    ): Call<GetCourseRes>
 }
 
 data class PostLogin(

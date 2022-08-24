@@ -39,9 +39,6 @@
             android:exported="false" />
         <activity
             android:name=".MypageActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MyPageActivity"
             android:exported="false"
             android:label="@string/title_activity_my_page"
             android:theme="@style/Theme.ExerciseDay_Android.NoActionBar" />
@@ -57,9 +54,9 @@
         <activity
             android:name=".DibsEdit"
             android:exported="false" />
-        <activity
-            android:name=".DibsDelete"
-            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".DibsDelete"-->
+<!--            android:exported="false" />-->
         <activity
             android:name=".DibsItem"
             android:exported="false" />
@@ -75,12 +72,12 @@
         <activity
             android:name=".CustomCourse"
             android:exported="false" />
-        <activity
-            android:name=".CheckCourseNewActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CheckCourseActivity"
-            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".CheckCourseNewActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".CheckCourseActivity"-->
+<!--            android:exported="false" />-->
         <activity
             android:name=".RecommendActivity"
             android:exported="false" />
@@ -102,7 +99,8 @@
         </activity>
         <activity
             android:name=".SplashActivity"
-            android:exported="true" />
+            android:exported="true" >
+        </activity>
         <activity
             android:name=".ui.join.JoinGenderActivity"
             android:exported="false" />
