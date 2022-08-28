@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.exerciseday_android.*
+import com.example.exerciseday_android.data.remote.find.NewPwResponse
 import com.example.exerciseday_android.databinding.ActivityNewPwBinding
 import com.example.exerciseday_android.ui.ChangeDialog
 import com.example.exerciseday_android.ui.DefaultDialog

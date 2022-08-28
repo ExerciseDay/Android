@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.exerciseday_android.HomeCourseRVAdapter
 import com.example.exerciseday_android.databinding.ActivityGymSearchBinding
 
 class GymSearchActivity : AppCompatActivity() {

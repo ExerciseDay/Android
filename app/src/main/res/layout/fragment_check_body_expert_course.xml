@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.expert.CheckBodyExpertCourseFragment">
+    tools:context=".ui.course.expert.CheckBodyExpertCourseFragment">
 
     <LinearLayout
         android:id="@+id/check_body_expert_course_group_layout"

@@ -3,7 +3,7 @@ package com.example.exerciseday_android.data.remote.course
 import android.util.Log
 import com.example.exerciseday_android.CheckExpertView
 import com.example.exerciseday_android.getRetrofit
-import com.example.exerciseday_android.ui.expert.CheckExpertBodyCourseView
+import com.example.exerciseday_android.ui.course.expert.CheckExpertBodyCourseView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

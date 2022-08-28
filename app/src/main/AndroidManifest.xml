@@ -23,54 +23,54 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".MyReviewItem"
+            android:name=".ui.temp.MyReviewItem"
             android:exported="false" />
         <activity
-            android:name=".MyReviewEmptyActivity"
+            android:name=".ui.temp.MyReviewEmptyActivity"
             android:exported="false" />
         <activity
-            android:name=".MyReviewActivity"
+            android:name=".ui.temp.MyReviewActivity"
             android:exported="false" />
         <activity
-            android:name=".SettingActivity"
+            android:name=".ui.temp.SettingActivity"
             android:exported="false" />
         <activity
-            android:name=".EditProfileActivity"
+            android:name=".ui.temp.EditProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".MypageActivity"
+            android:name=".ui.temp.MypageActivity"
             android:exported="false"
             android:label="@string/title_activity_my_page"
             android:theme="@style/Theme.ExerciseDay_Android.NoActionBar" />
         <activity
-            android:name=".NewCourseEdit"
+            android:name=".ui.temp.NewCourseEdit"
             android:exported="false" />
         <activity
-            android:name=".NewCourseItem"
+            android:name=".ui.temp.NewCourseItem"
             android:exported="false" />
         <activity
-            android:name=".NewCourseActivity"
+            android:name=".ui.temp.NewCourseActivity"
             android:exported="false" />
         <activity
-            android:name=".DibsEdit"
+            android:name=".ui.temp.DibsEdit"
             android:exported="false" />
 <!--        <activity-->
 <!--            android:name=".DibsDelete"-->
 <!--            android:exported="false" />-->
         <activity
-            android:name=".DibsItem"
+            android:name=".ui.temp.DibsItem"
             android:exported="false" />
         <activity
-            android:name=".DibsActivity"
+            android:name=".ui.temp.DibsActivity"
             android:exported="false" />
         <activity
-            android:name=".EditCourseActivity"
+            android:name=".ui.temp.EditCourseActivity"
             android:exported="false" />
         <activity
-            android:name=".ExpertCourse"
+            android:name=".ui.temp.ExpertCourse"
             android:exported="false" />
         <activity
-            android:name=".CustomCourse"
+            android:name=".ui.course.custom.CustomCourse"
             android:exported="false" />
 <!--        <activity-->
 <!--            android:name=".CheckCourseNewActivity"-->
@@ -79,27 +79,32 @@
 <!--            android:name=".CheckCourseActivity"-->
 <!--            android:exported="false" />-->
         <activity
-            android:name=".RecommendActivity"
+            android:name=".ui.temp.RecommendActivity"
             android:exported="false" />
         <activity
-            android:name=".GymImgChecked"
+            android:name=".ui.temp.GymImgChecked"
             android:exported="false" />
         <activity
-            android:name=".MainPageActivity"
+            android:name=".ui.temp.MainPageActivity"
             android:exported="false" />
         <activity
-            android:name=".GymImgItem"
+            android:name=".ui.temp.GymImgItem"
             android:exported="false" />
         <activity
-            android:name=".GymImgDetail"
+            android:name=".ui.temp.GymImgDetail"
             android:exported="false" />
         <activity
-            android:name=".GymDetailActivity"
+            android:name=".ui.temp.GymDetailActivity"
             android:exported="true">
         </activity>
         <activity
             android:name=".SplashActivity"
             android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".ui.join.JoinGenderActivity"
@@ -140,11 +145,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ui.login.StartActivity"

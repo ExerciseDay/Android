@@ -1,19 +1,17 @@
 package com.example.exerciseday_android
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.exerciseday_android.databinding.FragmentHomeBinding
-import com.example.exerciseday_android.databinding.PlusCourseDialogBinding
-import com.example.exerciseday_android.ui.expert.ExpertCourseRVAdapter
-import com.example.exerciseday_android.ui.gym.GymSearchActivity
-import com.example.flo.PlusCourseDialogRVAdapter
+import com.example.exerciseday_android.ui.course.CourseCustomListRVAdapter
+import com.example.exerciseday_android.ui.course.CourseExpertListRVAdapter
+import com.example.exerciseday_android.ui.course.CourseMakeFragment
+import com.example.exerciseday_android.ui.course.SimpleCourse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

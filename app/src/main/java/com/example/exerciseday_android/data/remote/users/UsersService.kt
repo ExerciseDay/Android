@@ -6,7 +6,7 @@ import com.example.exerciseday_android.ui.join.JoinView
 import com.example.exerciseday_android.ui.join.VerificationCodeView
 import com.example.exerciseday_android.data.model.User
 import com.example.exerciseday_android.getRetrofit
-import com.example.exerciseday_android.ui.expert.PutExpertCourseView
+import com.example.exerciseday_android.ui.course.expert.PutExpertCourseView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

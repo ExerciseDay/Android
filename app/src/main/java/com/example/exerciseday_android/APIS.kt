@@ -1,5 +1,6 @@
 package com.example.exerciseday_android
 
+import com.example.exerciseday_android.data.remote.find.NewPwResponse
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -40,6 +41,13 @@ interface APIS {
         @Header("X-ACCESS-TOKEN") token: String,
         @Path("userIdx") userIdx : Int,
     ): Call<GetCourseRes>
+
+    @POST("/users/{userIdx}/custom")
+    fun saveCourse(
+        @Header("X-ACCESS-TOKEN") token: String,
+        @Path("userIdx") userIdx : Int,
+        @Body saveCourseBody: SaveCourseBody
+    ): Call<SaveCourseRes>
 }
 
 data class PostLogin(
@@ -55,4 +63,17 @@ data class PostFindPw(
 data class PatchEditPw(
     val userIdx: Int,
     val password: String
+)
+
+data class SaveCourseBody(
+    val customName: String,
+    val customIntroduce: String,
+    val exercises: ArrayList<Course2>
+)
+
+data class Course2(
+    val exerciseIdx: Int,
+    val rep: Int,
+    val weight: Int,
+    val set: Int,
 )

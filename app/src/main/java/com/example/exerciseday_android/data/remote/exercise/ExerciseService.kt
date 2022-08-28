@@ -1,11 +1,6 @@
 package com.example.exerciseday_android.data.remote.exercise
 
-import android.util.Log
-import com.example.exerciseday_android.getRetrofit
-import com.example.exerciseday_android.ui.expert.LikeExerciseView
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.example.exerciseday_android.ui.course.expert.LikeExerciseView
 
 class ExerciseService {
     private lateinit var likeExerciseView: LikeExerciseView

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingHorizontal="25dp"
-    tools:context=".ui.expert.ExpertExerciseOptionFragment">
+    tools:context=".ui.course.expert.ExpertExerciseOptionFragment">
 
     <View
         android:id="@+id/expert_exercise_option_count_view"
