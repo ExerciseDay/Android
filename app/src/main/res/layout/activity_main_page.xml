@@ -99,7 +99,7 @@
                 android:layout_below="@+id/text1"
                 android:layout_marginTop="15sp"
                 android:layout_marginBottom="15sp"
-                android:background="@drawable/join_view_btn_unselected" />
+                android:background="@drawable/img_and_text_btn_unselected" />
 
             <ImageView
                 android:id="@+id/emoji"
@@ -181,7 +181,7 @@
                 android:layout_alignBottom="@+id/btnMakeCourse"
                 android:layout_marginTop="-2dp"
                 android:layout_marginBottom="-99dp"
-                android:background="@drawable/join_view_btn_unselected"
+                android:background="@drawable/img_and_text_btn_unselected"
                 android:fillColor="#F8F8F8" />
 
             <TextView

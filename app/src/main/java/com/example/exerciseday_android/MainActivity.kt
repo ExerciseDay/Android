@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
     private fun loadUserResult(): ArrayList<String> {
         var pref = applicationContext.getSharedPreferences("jwt", 0)
         var jwt = pref?.getString("jwt", "")
-        var userIdx = pref?.getInt("userIdx",0)
+        var userIdx = pref?.getInt("userIdx", 0)
 
         var userResult = arrayListOf<String>(jwt.toString(), userIdx.toString())
 

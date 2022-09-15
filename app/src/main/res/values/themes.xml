@@ -14,6 +14,10 @@
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
 
         <!-- Customize your theme here. -->
+        <item name="android:windowActivityTransitions">true</item>
+
+<!--        <item name="android:windowTranslucentStatus">false</item>-->
+<!--        <item name="android:windowDrawsSystemBarBackgrounds">true</item>-->
     </style>
 
 
@@ -30,17 +34,22 @@
         <item name="android:paddingEnd">4dp</item>
         <item name="android:textColor">@color/gray_950</item>
     </style>
-    <style name="Theme.ExerciseDay_Android.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-    <style name="Theme.ExerciseDay_Android.AppBarOverlay"
-        parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-    <style name="Theme.ExerciseDay_Android.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <!-- TabLayout - Text Custom -->
     <style name="ExerciseTabTextAppearance" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">17sp</item>
         <item name="fontFamily">@font/pretendard_2</item>
     </style>
+
+    <!-- 별점 Custom -->
+    <style name="StarRatingBar" parent="android:Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/rating_bar_selector</item>
+    </style>
+
+
+    <style name="Theme.ExerciseDay_Android.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.ExerciseDay_Android.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 
 </resources>

@@ -1,14 +1,12 @@
 package com.example.exerciseday_android
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Typeface
 import android.os.Bundle
 import android.util.Log
 import android.util.TypedValue
-import android.view.Gravity
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -20,6 +18,8 @@ import com.example.exerciseday_android.data.remote.gym.GymMainResult
 import com.example.exerciseday_android.data.remote.gym.GymRetrofitInterface
 import com.example.exerciseday_android.data.remote.gym.GymService
 import com.example.exerciseday_android.databinding.FragmentMapBinding
+import com.example.exerciseday_android.ui.gym.GymSearchActivity
+import com.example.exerciseday_android.ui.gym.detail.GymDetailFragment
 import com.example.exerciseday_android.ui.gym.main.GymMainRVAdapter
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.naver.maps.geometry.LatLng
@@ -52,10 +52,13 @@ class MapFragment() : Fragment(), OnMapReadyCallback, GymView {
     ): View {
         binding = FragmentMapBinding.inflate(inflater, container, false)
 
+
         // 검색 버튼 클릭 시
         binding.mapSearchBtn.setOnClickListener {
-            // 검색 페이지로 이동
-
+            // 헬스장 검색 페이지(GymSearchActivity)로 이동
+            val intent = Intent(activity, GymSearchActivity::class.java)
+            startActivity(intent)
+            activity?.overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
 
 
@@ -145,15 +148,25 @@ class MapFragment() : Fragment(), OnMapReadyCallback, GymView {
 
         val gymMainRVAdapter = GymMainRVAdapter(mapGymData)
 
+        // 헬스장 리사이클러뷰 클릭 시
         gymMainRVAdapter.setMyItemClickListener(object : GymMainRVAdapter.MyItemClickListener {
             override fun onItemClick(gymMainResult: GymMainResult) {
-                TODO("Not yet implemented")
-                // Item 클릭 시 헬스장 세부 페이지로 이동
+//                val intent = Intent(activity, GymDetailActivity::class.java)
+//                startActivity(intent)
+//                activity?.overridePendingTransition(R.anim.fade_in, R.anim.none)
 
+
+                // Item 클릭 시 헬스장 세부 페이지(GymDetailFragment)로 이동
+                (context as MainActivity).supportFragmentManager.beginTransaction()
+                    .setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_in, R.anim.fade_out)
+                    .replace(R.id.main_frm, GymDetailFragment())
+                    .commitAllowingStateLoss()
             }
         })
 
         binding.mapGymRv.adapter = gymMainRVAdapter
+
+
 
         return binding.root
     }

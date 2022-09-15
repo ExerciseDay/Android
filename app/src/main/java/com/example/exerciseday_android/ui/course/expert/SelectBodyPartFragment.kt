@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.example.exerciseday_android.MainActivity
 import com.example.exerciseday_android.R
 import com.example.exerciseday_android.databinding.FragmentSelectBodyPartBinding
+import com.example.exerciseday_android.ui.course.CourseMakeFragment
 
 
 class SelectBodyPartFragment : Fragment(), View.OnClickListener {
@@ -20,6 +21,8 @@ class SelectBodyPartFragment : Fragment(), View.OnClickListener {
     ): View? {
         binding = FragmentSelectBodyPartBinding.inflate(inflater, container, false)
 
+        // 뒤로 가기
+        binding.selectBodyPartBackBtn.setOnClickListener(this)
 
         // 운동할 신체 부위 버튼 선택 시, 세부 부위 선택 페이지로 이동
         binding.selectBodyPartArmBtn.setOnClickListener(this)
@@ -35,40 +38,51 @@ class SelectBodyPartFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
 
         when (v) {
-//            binding.selectBodyPartBackBtn -> 코스(전문가, 커스텀) 선택 페이지로 이동!!
+            binding.selectBodyPartBackBtn -> {
+                (context as MainActivity).supportFragmentManager.beginTransaction()
+                    .setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_in, R.anim.fade_out)
+                    .replace(R.id.main_frm, CourseMakeFragment())
+                    .commitAllowingStateLoss()
+            }
             binding.selectBodyPartArmBtn -> {
                 sendBodyPart(binding.selectBodyPartArmBtn.text.toString())
                 (context as MainActivity).supportFragmentManager.beginTransaction()
+                    .setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_in, R.anim.fade_out)
                     .replace(R.id.main_frm, SelectBodyDetailPartFragment())
                     .commitAllowingStateLoss()
             }
             binding.selectBodyPartLowerBodyBtn -> {
                 sendBodyPart(binding.selectBodyPartLowerBodyBtn.text.toString())
                 (context as MainActivity).supportFragmentManager.beginTransaction()
+                    .setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_in, R.anim.fade_out)
                     .replace(R.id.main_frm, SelectBodyDetailPartFragment())
                     .commitAllowingStateLoss()
             }
             binding.selectBodyPartAbdomenBtn -> {
                 sendBodyPart(binding.selectBodyPartAbdomenBtn.text.toString())
                 (context as MainActivity).supportFragmentManager.beginTransaction()
+                    .setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_in, R.anim.fade_out)
                     .replace(R.id.main_frm, SelectBodyDetailPartFragment())
                     .commitAllowingStateLoss()
             }
             binding.selectBodyPartChestBtn -> {
                 sendBodyPart(binding.selectBodyPartChestBtn.text.toString())
                 (context as MainActivity).supportFragmentManager.beginTransaction()
+                    .setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_in, R.anim.fade_out)
                     .replace(R.id.main_frm, SelectBodyDetailPartFragment())
                     .commitAllowingStateLoss()
             }
             binding.selectBodyPartShoulderBtn -> {
                 sendBodyPart(binding.selectBodyPartShoulderBtn.text.toString())
                 (context as MainActivity).supportFragmentManager.beginTransaction()
+                    .setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_in, R.anim.fade_out)
                     .replace(R.id.main_frm, SelectBodyDetailPartFragment())
                     .commitAllowingStateLoss()
             }
             binding.selectBodyPartBodyBackBtn -> {
                 sendBodyPart(binding.selectBodyPartBodyBackBtn.text.toString())
                 (context as MainActivity).supportFragmentManager.beginTransaction()
+                    .setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_in, R.anim.fade_out)
                     .replace(R.id.main_frm, SelectBodyDetailPartFragment())
                     .commitAllowingStateLoss()
             }

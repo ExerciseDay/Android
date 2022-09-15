@@ -20,7 +20,6 @@ class GymMainRVAdapter(private val gymMainResult: ArrayList<GymMainResult>) :
     }
 
     private lateinit var mItemClickListener: MyItemClickListener
-
     fun setMyItemClickListener(itemClickListener: MyItemClickListener) {
         mItemClickListener = itemClickListener
     }

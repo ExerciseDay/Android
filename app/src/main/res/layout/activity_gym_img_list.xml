@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.gym.detail.GymImgListActivity">
+
+    <LinearLayout
+        android:id="@+id/gym_img_list_group_layout"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/white"
+        android:elevation="1dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="9dp"
+        android:paddingBottom="11dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/gym_img_list_gym_name_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/pretendard_2"
+                android:gravity="center"
+                android:text="헬스장 이름"
+                android:textAlignment="center"
+                android:textColor="@color/gray_950"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/gym_img_list_back_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:src="@drawable/ic_navigate_prev"
+                app:layout_constraintBottom_toBottomOf="@+id/gym_img_list_gym_name_tv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/gym_img_list_gym_name_tv" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gym_img_list_group_layout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            android:paddingHorizontal="25dp"
+            android:paddingTop="22dp"
+            android:paddingBottom="40dp">
+
+            <TextView
+                android:id="@+id/gym_img_list_represent_title_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/pretendard_2"
+                android:text="대표 사진"
+                android:textColor="@color/gray_950"
+                android:textSize="18sp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/gym_img_list_represent_iv"
+                android:layout_width="match_parent"
+                android:layout_height="325dp"
+                android:layout_marginTop="12dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/temp"
+                app:layout_constraintTop_toBottomOf="@+id/gym_img_list_represent_title_tv" />
+
+            <TextView
+                android:id="@+id/gym_img_list_health_facilities_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/pretendard_2"
+                android:text="헬스 시설 사진"
+                android:textColor="@color/gray_950"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gym_img_list_represent_iv" />
+
+            <TextView
+                android:id="@+id/gym_img_list_health_facilities_position_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1/7"
+                android:textColor="@color/gray_900"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="@+id/gym_img_list_health_facilities_title_tv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/gym_img_list_health_facilities_title_tv" />
+
+            <ImageView
+                android:id="@+id/gym_img_list_health_facilities_iv"
+                android:layout_width="match_parent"
+                android:layout_height="325dp"
+                android:layout_marginTop="12dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/temp"
+                app:layout_constraintTop_toBottomOf="@+id/gym_img_list_health_facilities_title_tv" />
+
+            <ImageButton
+                android:id="@+id/gym_img_list_health_facilities_img_prev_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:background="@null"
+                android:elevation="4dp"
+                android:src="@drawable/ic_img_prev"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/gym_img_list_health_facilities_iv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/gym_img_list_health_facilities_iv" />
+
+            <ImageButton
+                android:id="@+id/gym_img_list_health_facilities_img_next_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:background="@null"
+                android:elevation="4dp"
+                android:src="@drawable/ic_img_next"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/gym_img_list_health_facilities_iv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/gym_img_list_health_facilities_iv" />
+
+            <TextView
+                android:id="@+id/gym_img_list_common_facilities_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/pretendard_2"
+                android:text="공용 시설 사진"
+                android:textColor="@color/gray_950"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gym_img_list_health_facilities_iv" />
+
+            <TextView
+                android:id="@+id/gym_img_list_common_facilities_position_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1/7"
+                android:textColor="@color/gray_900"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="@+id/gym_img_list_common_facilities_title_tv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/gym_img_list_common_facilities_title_tv" />
+
+            <ImageView
+                android:id="@+id/gym_img_list_common_facilities_iv"
+                android:layout_width="match_parent"
+                android:layout_height="325dp"
+                android:layout_marginTop="12dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/temp"
+                app:layout_constraintTop_toBottomOf="@+id/gym_img_list_common_facilities_title_tv" />
+
+            <ImageButton
+                android:id="@+id/gym_img_list_common_facilities_img_prev_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:background="@null"
+                android:elevation="4dp"
+                android:src="@drawable/ic_img_prev"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/gym_img_list_common_facilities_iv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/gym_img_list_common_facilities_iv" />
+
+            <ImageButton
+                android:id="@+id/gym_img_list_common_facilities_img_next_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:background="@null"
+                android:elevation="4dp"
+                android:src="@drawable/ic_img_next"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/gym_img_list_common_facilities_iv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/gym_img_list_common_facilities_iv" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

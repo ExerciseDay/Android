@@ -23,6 +23,15 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ui.gym.detail.GymDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.gym.detail.GymImgDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.gym.detail.GymImgListActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.temp.MyReviewItem"
             android:exported="false" />
         <activity
@@ -40,8 +49,7 @@
         <activity
             android:name=".ui.temp.MypageActivity"
             android:exported="false"
-            android:label="@string/title_activity_my_page"
-            android:theme="@style/Theme.ExerciseDay_Android.NoActionBar" />
+            android:label="@string/title_activity_my_page" />
         <activity
             android:name=".ui.temp.NewCourseEdit"
             android:exported="false" />
@@ -53,10 +61,9 @@
             android:exported="false" />
         <activity
             android:name=".ui.temp.DibsEdit"
-            android:exported="false" />
-<!--        <activity-->
-<!--            android:name=".DibsDelete"-->
-<!--            android:exported="false" />-->
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".DibsDelete" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name=".ui.temp.DibsItem"
             android:exported="false" />
@@ -71,41 +78,18 @@
             android:exported="false" />
         <activity
             android:name=".ui.course.custom.CustomCourse"
-            android:exported="false" />
-<!--        <activity-->
-<!--            android:name=".CheckCourseNewActivity"-->
-<!--            android:exported="false" />-->
-<!--        <activity-->
-<!--            android:name=".CheckCourseActivity"-->
-<!--            android:exported="false" />-->
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".CheckCourseNewActivity" -->
+        <!-- android:exported="false" /> -->
+        <!-- <activity -->
+        <!-- android:name=".CheckCourseActivity" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name=".ui.temp.RecommendActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.temp.GymImgChecked"
-            android:exported="false" />
-        <activity
-            android:name=".ui.temp.MainPageActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.temp.GymImgItem"
-            android:exported="false" />
-        <activity
-            android:name=".ui.temp.GymImgDetail"
-            android:exported="false" />
-        <activity
-            android:name=".ui.temp.GymDetailActivity"
-            android:exported="true">
-        </activity>
-        <activity
             android:name=".SplashActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".ui.join.JoinGenderActivity"
             android:exported="false" />
@@ -124,10 +108,9 @@
         <activity
             android:name=".ui.join.JoinInfoActivity"
             android:exported="false"
-            android:parentActivityName=".ui.login.LoginActivity" />
-        <activity
-            android:name=".SelectCourseActivity"
-            android:exported="false" />
+            android:parentActivityName=".ui.login.LoginActivity" /> <!-- <activity -->
+        <!-- android:name=".SelectCourseActivity" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
             android:exported="true">
@@ -145,6 +128,11 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".ui.login.StartActivity"

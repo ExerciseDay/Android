@@ -37,6 +37,7 @@ class SelectBodyDetailPartFragment : Fragment(), View.OnClickListener {
                 // 세부 부위 버튼 선택 시, 선택한 부위의 코스 조회 페이지로 이동
                 sendBodyDetailPart(bodyDetailPartList)
                 (context as MainActivity).supportFragmentManager.beginTransaction()
+                    .setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_in, R.anim.fade_out)
                     .replace(R.id.main_frm, CheckBodyExpertCourseFragment())
                     .commitAllowingStateLoss()
             }

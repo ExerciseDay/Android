@@ -38,7 +38,7 @@ class JoinGenderActivity : AppCompatActivity(), View.OnClickListener {
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     // PRESSED
-                    binding.joinGenderMaleView.setBackgroundResource(R.drawable.join_view_btn_selected)
+                    binding.joinGenderMaleView.setBackgroundResource(R.drawable.img_and_text_btn_selected)
                     binding.joinGenderMaleIv.setColorFilter(
                         resources.getColor(
                             R.color.white,
@@ -52,7 +52,7 @@ class JoinGenderActivity : AppCompatActivity(), View.OnClickListener {
 
                 MotionEvent.ACTION_UP -> {
                     // RELEASED
-                    binding.joinGenderMaleView.setBackgroundResource(R.drawable.join_view_btn_unselected)
+                    binding.joinGenderMaleView.setBackgroundResource(R.drawable.img_and_text_btn_unselected)
                     binding.joinGenderMaleIv.setColorFilter(R.color.black)
                     binding.joinGenderMaleTv.setTextColor(Color.parseColor("#000000"))
 
@@ -60,7 +60,7 @@ class JoinGenderActivity : AppCompatActivity(), View.OnClickListener {
                 }
 
                 MotionEvent.ACTION_CANCEL -> {
-                    binding.joinGenderMaleView.setBackgroundResource(R.drawable.join_view_btn_unselected)
+                    binding.joinGenderMaleView.setBackgroundResource(R.drawable.img_and_text_btn_unselected)
                     binding.joinGenderMaleIv.setColorFilter(R.color.black)
                     binding.joinGenderMaleTv.setTextColor(Color.parseColor("#000000"))
 
@@ -80,7 +80,7 @@ class JoinGenderActivity : AppCompatActivity(), View.OnClickListener {
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     // PRESSED
-                    binding.joinGenderFemaleView.setBackgroundResource(R.drawable.join_view_btn_selected)
+                    binding.joinGenderFemaleView.setBackgroundResource(R.drawable.img_and_text_btn_selected)
                     binding.joinGenderFemaleIv.setColorFilter(
                         resources.getColor(
                             R.color.white,
@@ -94,7 +94,7 @@ class JoinGenderActivity : AppCompatActivity(), View.OnClickListener {
 
                 MotionEvent.ACTION_UP -> {
                     // RELEASED
-                    binding.joinGenderFemaleView.setBackgroundResource(R.drawable.join_view_btn_unselected)
+                    binding.joinGenderFemaleView.setBackgroundResource(R.drawable.img_and_text_btn_unselected)
                     binding.joinGenderFemaleIv.setColorFilter(R.color.black)
                     binding.joinGenderFemaleTv.setTextColor(Color.parseColor("#000000"))
 
@@ -102,7 +102,7 @@ class JoinGenderActivity : AppCompatActivity(), View.OnClickListener {
                 }
 
                 MotionEvent.ACTION_CANCEL -> {
-                    binding.joinGenderFemaleView.setBackgroundResource(R.drawable.join_view_btn_unselected)
+                    binding.joinGenderFemaleView.setBackgroundResource(R.drawable.img_and_text_btn_unselected)
                     binding.joinGenderFemaleIv.setColorFilter(R.color.black)
                     binding.joinGenderFemaleTv.setTextColor(Color.parseColor("#000000"))
 

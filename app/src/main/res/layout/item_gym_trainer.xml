@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="40dp">
+
+    <ImageView
+        android:id="@+id/item_gym_trainer_trainer_iv"
+        android:layout_width="match_parent"
+        android:layout_height="325dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/temp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/item_gym_trainer_trainer_name_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/pretendard_2"
+        android:text="트레이너 이름"
+        android:textColor="@color/gray_950"
+        android:textSize="17sp"
+        app:layout_constraintTop_toBottomOf="@+id/item_gym_trainer_trainer_iv" />
+
+    <TextView
+        android:id="@+id/item_gym_trainer_trainer_award_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/pretendard_2"
+        android:text="자격 및 수상"
+        android:textColor="@color/gray_950"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@+id/item_gym_trainer_trainer_name_tv" />
+
+    <TextView
+        android:id="@+id/item_gym_trainer_trainer_award_content_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="자격 및 수상 내역입니다."
+        android:textColor="@color/gray_950"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@+id/item_gym_trainer_trainer_award_tv" />
+
+    <TextView
+        android:id="@+id/item_gym_trainer_trainer_career_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/pretendard_2"
+        android:text="경력"
+        android:textColor="@color/gray_950"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@+id/item_gym_trainer_trainer_award_content_tv" />
+
+    <TextView
+        android:id="@+id/item_gym_trainer_trainer_career_content_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="경력 내역입니다."
+        android:textColor="@color/gray_950"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@+id/item_gym_trainer_trainer_career_tv" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
