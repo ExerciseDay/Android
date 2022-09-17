@@ -109,40 +109,48 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/gym_img_list_health_facilities_title_tv" />
 
-            <ImageView
-                android:id="@+id/gym_img_list_health_facilities_iv"
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/gym_img_list_health_facilities_vp"
                 android:layout_width="match_parent"
                 android:layout_height="325dp"
                 android:layout_marginTop="12dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/temp"
+                android:clickable="true"
                 app:layout_constraintTop_toBottomOf="@+id/gym_img_list_health_facilities_title_tv" />
+
+            <!--            <ImageView-->
+            <!--                android:id="@+id/gym_img_list_health_facilities_iv"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="325dp"-->
+            <!--                android:layout_marginTop="12dp"-->
+            <!--                android:scaleType="centerCrop"-->
+            <!--                android:src="@drawable/temp"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/gym_img_list_health_facilities_title_tv" />-->
 
             <ImageButton
                 android:id="@+id/gym_img_list_health_facilities_img_prev_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:background="@null"
+                android:background="@color/transparent"
                 android:elevation="4dp"
                 android:src="@drawable/ic_img_prev"
                 android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="@+id/gym_img_list_health_facilities_iv"
+                app:layout_constraintBottom_toBottomOf="@+id/gym_img_list_health_facilities_vp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/gym_img_list_health_facilities_iv" />
+                app:layout_constraintTop_toTopOf="@+id/gym_img_list_health_facilities_vp" />
 
             <ImageButton
                 android:id="@+id/gym_img_list_health_facilities_img_next_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
-                android:background="@null"
+                android:background="@color/transparent"
                 android:elevation="4dp"
                 android:src="@drawable/ic_img_next"
                 android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="@+id/gym_img_list_health_facilities_iv"
+                app:layout_constraintBottom_toBottomOf="@+id/gym_img_list_health_facilities_vp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/gym_img_list_health_facilities_iv" />
+                app:layout_constraintTop_toTopOf="@+id/gym_img_list_health_facilities_vp" />
 
             <TextView
                 android:id="@+id/gym_img_list_common_facilities_title_tv"
@@ -154,7 +162,7 @@
                 android:textColor="@color/gray_950"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/gym_img_list_health_facilities_iv" />
+                app:layout_constraintTop_toBottomOf="@+id/gym_img_list_health_facilities_vp" />
 
             <TextView
                 android:id="@+id/gym_img_list_common_facilities_position_tv"
@@ -167,14 +175,22 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/gym_img_list_common_facilities_title_tv" />
 
-            <ImageView
-                android:id="@+id/gym_img_list_common_facilities_iv"
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/gym_img_list_common_facilities_vp"
                 android:layout_width="match_parent"
                 android:layout_height="325dp"
                 android:layout_marginTop="12dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/temp"
+                android:clickable="true"
                 app:layout_constraintTop_toBottomOf="@+id/gym_img_list_common_facilities_title_tv" />
+
+            <!--            <ImageView-->
+            <!--                android:id="@+id/gym_img_list_common_facilities_iv"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="325dp"-->
+            <!--                android:layout_marginTop="12dp"-->
+            <!--                android:scaleType="centerCrop"-->
+            <!--                android:src="@drawable/temp"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/gym_img_list_common_facilities_title_tv" />-->
 
             <ImageButton
                 android:id="@+id/gym_img_list_common_facilities_img_prev_btn"
@@ -185,9 +201,9 @@
                 android:elevation="4dp"
                 android:src="@drawable/ic_img_prev"
                 android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="@+id/gym_img_list_common_facilities_iv"
+                app:layout_constraintBottom_toBottomOf="@+id/gym_img_list_common_facilities_vp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/gym_img_list_common_facilities_iv" />
+                app:layout_constraintTop_toTopOf="@+id/gym_img_list_common_facilities_vp" />
 
             <ImageButton
                 android:id="@+id/gym_img_list_common_facilities_img_next_btn"
@@ -198,9 +214,9 @@
                 android:elevation="4dp"
                 android:src="@drawable/ic_img_next"
                 android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="@+id/gym_img_list_common_facilities_iv"
+                app:layout_constraintBottom_toBottomOf="@+id/gym_img_list_common_facilities_vp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/gym_img_list_common_facilities_iv" />
+                app:layout_constraintTop_toTopOf="@+id/gym_img_list_common_facilities_vp" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

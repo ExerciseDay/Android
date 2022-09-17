@@ -221,7 +221,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="58dp"
             android:fontFamily="@font/pretendard_2"
-            android:text="4.5"
+            android:text="0.0"
             android:textColor="@color/gray_950"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@+id/gym_info_star_rating_bar"
@@ -230,7 +230,7 @@
             app:layout_constraintTop_toTopOf="@+id/gym_info_star_rating_bar" />
 
         <EditText
-            android:id="@+id/gym_info_review_content_tv"
+            android:id="@+id/gym_info_review_content_et"
             android:layout_width="match_parent"
             android:layout_height="160dp"
             android:layout_marginTop="24dp"
@@ -248,20 +248,34 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginTop="16dp"
+            android:stateListAnimator="@null"
             android:background="@drawable/btn_gray300_border18"
             android:enabled="false"
             android:fontFamily="@font/pretendard_2"
             android:text="리뷰 올리기"
             android:textColor="@drawable/btn_text_color"
             android:textSize="18sp"
-            app:layout_constraintTop_toBottomOf="@+id/gym_info_review_content_tv" />
+            app:layout_constraintTop_toBottomOf="@+id/gym_info_review_content_et" />
 
-        <!--        <androidx.viewpager2.widget.ViewPager2-->
-        <!--            android:id="@+id/gym_info_review_vp"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="match_parent"-->
-        <!--            android:layout_marginTop="28dp"-->
-        <!--            app:layout_constraintTop_toBottomOf="@+id/gym_info_review_upload_btn" />-->
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/gym_info_review_vp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="28dp"
+            app:layout_constraintBottom_toTopOf="@+id/gym_info_review_tb"
+            app:layout_constraintTop_toBottomOf="@+id/gym_info_review_upload_btn" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/gym_info_review_tb"
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            app:tabIndicatorColor="@color/gray_950"
+            app:tabIndicatorHeight="2dp"
+            app:tabRippleColor="@color/transparent"
+            app:tabTextAppearance="@style/TabTextAppearance"
+            app:tabTextColor="@color/gray_950"
+            app:layout_constraintTop_toBottomOf="@+id/gym_info_review_vp"
+            android:layout_height="wrap_content"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

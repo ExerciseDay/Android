@@ -11,6 +11,7 @@ import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.Dimension
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.exerciseday_android.data.remote.gym.AddressResponse
@@ -52,13 +53,17 @@ class MapFragment() : Fragment(), OnMapReadyCallback, GymView {
     ): View {
         binding = FragmentMapBinding.inflate(inflater, container, false)
 
+        val window = requireActivity().window
+        window.statusBarColor =
+            ContextCompat.getColor(requireActivity(), R.color.transparent)
+
 
         // 검색 버튼 클릭 시
         binding.mapSearchBtn.setOnClickListener {
             // 헬스장 검색 페이지(GymSearchActivity)로 이동
             val intent = Intent(activity, GymSearchActivity::class.java)
             startActivity(intent)
-            activity?.overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+//            activity?.overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
 
 

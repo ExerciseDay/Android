@@ -214,7 +214,7 @@
             app:tabIndicatorColor="@color/gray_950"
             app:tabIndicatorHeight="2dp"
             app:tabRippleColor="@color/transparent"
-            app:tabTextAppearance="@style/ExerciseTabTextAppearance"
+            app:tabTextAppearance="@style/TabTextAppearance"
             app:tabTextColor="@color/gray_950" />
 
         <androidx.viewpager2.widget.ViewPager2

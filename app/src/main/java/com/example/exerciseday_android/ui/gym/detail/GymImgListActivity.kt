@@ -1,10 +1,12 @@
 package com.example.exerciseday_android.ui.gym.detail
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.exerciseday_android.R
 import com.example.exerciseday_android.databinding.ActivityGymImgListBinding
 import com.example.exerciseday_android.databinding.ActivityJoinCompleteBinding
+import com.example.exerciseday_android.ui.join.JoinInfoActivity
 
 class GymImgListActivity : AppCompatActivity() {
 
@@ -23,16 +25,23 @@ class GymImgListActivity : AppCompatActivity() {
 
         // 이미지 클릭 시
         binding.gymImgListRepresentIv.setOnClickListener {
-
+            val intent = Intent(this, GymImgDetailActivity::class.java)
+            startActivity(intent)
         }
 
-        binding.gymImgListHealthFacilitiesIv.setOnClickListener {
-
+        binding.gymImgListHealthFacilitiesVp.setOnClickListener {
+            val intent = Intent(this, GymImgDetailActivity::class.java)
+            startActivity(intent)
         }
 
-        binding.gymImgListHealthFacilitiesIv.setOnClickListener {
-
+        binding.gymImgListCommonFacilitiesVp.setOnClickListener {
+            val intent = Intent(this, GymImgDetailActivity::class.java)
+            startActivity(intent)
         }
+
+
+        //TDL
+        // 이미지 넘기기 버튼 설정
 
     }
 }

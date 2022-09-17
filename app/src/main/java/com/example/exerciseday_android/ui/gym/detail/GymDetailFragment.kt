@@ -2,25 +2,26 @@ package com.example.exerciseday_android.ui.gym.detail
 
 import android.content.Intent
 import android.graphics.Color
+import android.graphics.Typeface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.core.content.ContextCompat
-import androidx.core.view.OnApplyWindowInsetsListener
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
-import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import androidx.viewpager2.widget.ViewPager2
 import com.example.exerciseday_android.MainActivity
 import com.example.exerciseday_android.MapFragment
 import com.example.exerciseday_android.R
 import com.example.exerciseday_android.databinding.FragmentGymDetailBinding
 import com.google.android.material.appbar.AppBarLayout
+import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlin.math.abs
 
@@ -38,43 +39,28 @@ class GymDetailFragment : Fragment() {
     ): View? {
         binding = FragmentGymDetailBinding.inflate(inflater, container, false)
 
+
+
         // 뒤로 가기
         binding.gymDetailBackBtn.setOnClickListener {
             // 헬스장 메인 페이지(MapFragment)로 이동
             (context as MainActivity).supportFragmentManager.beginTransaction()
-                .setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_in, R.anim.fade_out)
+                .setCustomAnimations(
+                    R.anim.fade_in,
+                    R.anim.fade_out,
+                    R.anim.fade_in,
+                    R.anim.fade_out
+                )
                 .replace(R.id.main_frm, MapFragment())
                 .commitAllowingStateLoss()
         }
 
-        //TDL
-
-        // 사진 넘기기 버튼
-//        binding.gymDetailImgNextBtn.setOnClickListener {
-//            if (currentImgIndex == gymImageViews.size - 1) {
-//                binding.gymDetailImgNextBtn.visibility = View.GONE
-//            } else {
-//                binding.gymDetailImgNextBtn.visibility = View.VISIBLE
-//                currentImgIndex++
-//            }
-//        }
-//
-//        binding.gymDetailImgPrevBtn.setOnClickListener {
-//            if (currentImgIndex == 0) {
-//                binding.gymDetailImgPrevBtn.visibility = View.GONE
-//            } else {
-//                binding.gymDetailImgPrevBtn.visibility = View.VISIBLE
-//                currentImgIndex--
-//            }
-//        }
-
-        //사진 위치 표시 텍스트
 
         initView()
 
 
         // 헬스장 이미지 클릭 시
-        binding.gymDetailGymIv.setOnClickListener {
+        binding.gymDetailGymImgVp.setOnClickListener {
             val intent = Intent(activity, GymImgListActivity::class.java)
             startActivity(intent)
         }
@@ -89,6 +75,31 @@ class GymDetailFragment : Fragment() {
         TabLayoutMediator(binding.gymDetailGymTb, binding.gymDetailGymVp) { tab, position ->
             tab.text = gymDetailTab[position]
         }.attach()
+
+
+        // Tab 커스텀
+        val selectedTab: TabLayout.Tab? = binding.gymDetailGymTb.getTabAt(0)
+        setTabTypeface(
+            selectedTab!!,
+            ResourcesCompat.getFont(requireContext(), R.font.pretendard_2)!!
+        )
+
+        binding.gymDetailGymTb.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab) {
+                setTabTypeface(tab, ResourcesCompat.getFont(tab.view.context, R.font.pretendard_2))
+                binding.appBarLayout.setExpanded(false, true)
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab) {
+                setTabTypeface(tab, ResourcesCompat.getFont(tab.view.context, R.font.pretendard))
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab) {
+                binding.appBarLayout.setExpanded(false, true)
+            }
+        })
+
+
 
         return binding.root
     }
@@ -121,7 +132,6 @@ class GymDetailFragment : Fragment() {
         })
 
 
-
         // 헬스장 이미지 설정
         getGymImg()
 
@@ -139,7 +149,7 @@ class GymDetailFragment : Fragment() {
         gymImgVPAdapter.addFragment(GymImgFragment(R.drawable.temp))
         gymImgVPAdapter.addFragment(GymImgFragment(R.drawable.ex_gym_img))
 
-        binding.gymDetailGymIv.adapter = gymImgVPAdapter
+        binding.gymDetailGymImgVp.adapter = gymImgVPAdapter
 
         // 초기 설정
         currentImgIndex = 0
@@ -148,10 +158,11 @@ class GymDetailFragment : Fragment() {
         binding.gymDetailImgPositionTv.text =
             "${currentImgIndex + 1}/${gymImgVPAdapter.itemCount}"
 
-        // 버튼 클릭 시
+
+        // 이미지 넘기기 버튼 클릭 시
         binding.gymDetailImgNextBtn.setOnClickListener {
             currentImgIndex++
-            binding.gymDetailGymIv.currentItem = currentImgIndex
+            binding.gymDetailGymImgVp.currentItem = currentImgIndex
             binding.gymDetailImgPositionTv.text =
                 "${currentImgIndex + 1}/${gymImgVPAdapter.itemCount}"
 
@@ -166,7 +177,7 @@ class GymDetailFragment : Fragment() {
 
         binding.gymDetailImgPrevBtn.setOnClickListener {
             currentImgIndex--
-            binding.gymDetailGymIv.currentItem = currentImgIndex
+            binding.gymDetailGymImgVp.currentItem = currentImgIndex
             binding.gymDetailImgPositionTv.text =
                 "${currentImgIndex + 1}/${gymImgVPAdapter.itemCount}"
 
@@ -179,7 +190,43 @@ class GymDetailFragment : Fragment() {
             }
         }
 
+        binding.gymDetailGymImgVp.registerOnPageChangeCallback(object :
+            ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
 
+                currentImgIndex = position
+
+                binding.gymDetailImgPositionTv.text =
+                    "${currentImgIndex + 1}/${gymImgVPAdapter.itemCount}"
+
+                when (position) {
+                    0 -> {
+                        // First Page
+                        binding.gymDetailImgPrevBtn.visibility = View.GONE
+                        binding.gymDetailImgNextBtn.visibility = View.VISIBLE
+                    }
+                    gymImgVPAdapter.itemCount - 1 -> {
+                        // Last Page
+                        binding.gymDetailImgNextBtn.visibility = View.GONE
+                        binding.gymDetailImgPrevBtn.visibility = View.VISIBLE
+                    }
+                    else -> {
+                        binding.gymDetailImgPrevBtn.visibility = View.VISIBLE
+                        binding.gymDetailImgNextBtn.visibility = View.VISIBLE
+                    }
+                }
+            }
+        })
+
+    }
+
+
+    private fun setTabTypeface(tab: TabLayout.Tab, typeface: Typeface?) {
+        for (i in 0 until tab.view.childCount) {
+            val tabViewChild = tab.view.getChildAt(i)
+            if (tabViewChild is TextView) tabViewChild.typeface = typeface
+        }
     }
 
     private inner class GymImgVPAdapter(
@@ -197,7 +244,6 @@ class GymDetailFragment : Fragment() {
         fun addFragment(fragment: Fragment) {
             fragmentList.add(fragment)
             notifyItemInserted(fragmentList.size - 1)
-
         }
 
     }

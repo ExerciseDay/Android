@@ -15,9 +15,7 @@
 
         <!-- Customize your theme here. -->
         <item name="android:windowActivityTransitions">true</item>
-
-<!--        <item name="android:windowTranslucentStatus">false</item>-->
-<!--        <item name="android:windowDrawsSystemBarBackgrounds">true</item>-->
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
     </style>
 
 
@@ -36,9 +34,9 @@
     </style>
 
     <!-- TabLayout - Text Custom -->
-    <style name="ExerciseTabTextAppearance" parent="TextAppearance.Design.Tab">
+    <style name="TabTextAppearance" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">17sp</item>
-        <item name="fontFamily">@font/pretendard_2</item>
+        <item name="fontFamily">@font/pretendard</item>
     </style>
 
     <!-- 별점 Custom -->
