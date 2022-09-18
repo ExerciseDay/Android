@@ -23,22 +23,10 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".ui.gym.detail.GymDetailActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.gym.detail.GymImgDetailActivity"
             android:exported="false" />
         <activity
             android:name=".ui.gym.detail.GymImgListActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.temp.MyReviewItem"
-            android:exported="false" />
-        <activity
-            android:name=".ui.temp.MyReviewEmptyActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.temp.MyReviewActivity"
             android:exported="false" />
         <activity
             android:name=".ui.temp.SettingActivity"

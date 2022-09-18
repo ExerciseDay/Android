@@ -146,8 +146,6 @@ class MapFragment() : Fragment(), OnMapReadyCallback, GymView {
 
 
         // 헬스장 RecyclerView 어댑터와 데이터 리스트 연결
-        binding.mapGymRv.layoutManager =
-            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
         getGym()
 

@@ -40,7 +40,6 @@ class GymDetailFragment : Fragment() {
         binding = FragmentGymDetailBinding.inflate(inflater, container, false)
 
 
-
         // 뒤로 가기
         binding.gymDetailBackBtn.setOnClickListener {
             // 헬스장 메인 페이지(MapFragment)로 이동
@@ -65,7 +64,7 @@ class GymDetailFragment : Fragment() {
             startActivity(intent)
         }
 
-        // [운동 세부 페이지] 헬스장 소개, 트레이너 - TabLayout, ViewPager2 연결
+        // [헬스장 세부 페이지] 헬스장 소개, 트레이너 - TabLayout, ViewPager2 연결
         val gymDetailFm = childFragmentManager
         val gymDetailLifecycle = viewLifecycleOwner.lifecycle
         val gymDetailVPAdapter =
@@ -84,10 +83,14 @@ class GymDetailFragment : Fragment() {
             ResourcesCompat.getFont(requireContext(), R.font.pretendard_2)!!
         )
 
+
         binding.gymDetailGymTb.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
                 setTabTypeface(tab, ResourcesCompat.getFont(tab.view.context, R.font.pretendard_2))
                 binding.appBarLayout.setExpanded(false, true)
+
+                val fragment = childFragmentManager.findFragmentByTag("f" + binding.gymDetailGymVp.currentItem)
+                fragment?.requireView()?.scrollTo(0,0)
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab) {
@@ -96,6 +99,9 @@ class GymDetailFragment : Fragment() {
 
             override fun onTabReselected(tab: TabLayout.Tab) {
                 binding.appBarLayout.setExpanded(false, true)
+
+                val fragment = childFragmentManager.findFragmentByTag("f" + binding.gymDetailGymVp.currentItem)
+                fragment?.requireView()?.scrollTo(0,0)
             }
         })
 

@@ -1,15 +1,11 @@
 package com.example.exerciseday_android.ui.gym.main
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.exerciseday_android.MainActivity
-import com.example.exerciseday_android.MapFragment
 import com.example.exerciseday_android.data.remote.gym.GymMainResult
-import com.example.exerciseday_android.R
 import com.example.exerciseday_android.databinding.ItemGymMainBinding
 
 class GymMainRVAdapter(private val gymMainResult: ArrayList<GymMainResult>) :

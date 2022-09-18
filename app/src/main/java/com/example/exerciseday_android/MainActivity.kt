@@ -1,9 +1,11 @@
 package com.example.exerciseday_android
 
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.exerciseday_android.databinding.ActivityMainBinding
+import com.example.exerciseday_android.ui.MyReviewFragment
 import com.example.exerciseday_android.ui.temp.CommunityFragment
 
 class MainActivity : AppCompatActivity() {
@@ -16,6 +18,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.bottomNavV.selectedItemId = R.id.homeFragment
+
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
 
         initBottomNavigation()
         sendUserResult(loadUserResult())
