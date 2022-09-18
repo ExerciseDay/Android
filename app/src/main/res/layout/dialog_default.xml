@@ -1,48 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/dialog_bg"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="@drawable/dialog_bg">
 
-        <TextView
-            android:id="@+id/dialog_default_content_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:fontFamily="@font/pretendard"
-            android:text="일치하는 계정이 없습니다.\n다시 입력해주세요."
-            android:textAlignment="center"
-            android:textColor="@color/gray_950"
-            android:textSize="18sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/dialog_default_content_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/pretendard"
+        android:text="일치하는 계정이 없습니다.\n다시 입력해주세요."
+        android:textAlignment="center"
+        android:textColor="@color/gray_950"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <View
-            android:background="@color/gray_400"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            app:layout_constraintBottom_toTopOf="@id/dialog_default_btn"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_400"
+        app:layout_constraintBottom_toTopOf="@id/dialog_default_btn"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/dialog_default_btn"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_marginTop="28dp"
-            android:background="@drawable/dialog_btn"
-            android:elevation="0dp"
-            android:fontFamily="@font/pretendard_2"
-            android:text="확인"
-            android:textColor="@color/gray_950"
-            android:textSize="18sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/dialog_default_content_tv" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/dialog_default_btn"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/dialog_btn"
+        android:elevation="0dp"
+        android:fontFamily="@font/pretendard_2"
+        android:text="확인"
+        android:textColor="@color/gray_950"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dialog_default_content_tv" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

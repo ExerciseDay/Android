@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.exerciseday_android.databinding.ActivityMainBinding
-import com.example.exerciseday_android.ui.temp.CommunityFragment
+import com.example.exerciseday_android.ui.mypage.MyPageFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavV.selectedItemId = R.id.homeFragment
 
         initBottomNavigation()
-        sendUserResult(loadUserResult())
+        //sendUserResult(loadUserResult())
     }
 
     private fun initBottomNavigation() {
@@ -29,21 +29,21 @@ class MainActivity : AppCompatActivity() {
 
         binding.bottomNavV.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.recordFragment -> {
+                R.id.gymFragment -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.main_frm, MapFragment())
-                        .commitAllowingStateLoss()
-                    return@setOnItemSelectedListener true
-                }
-                R.id.communityFragment -> {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.main_frm, CommunityFragment())
                         .commitAllowingStateLoss()
                     return@setOnItemSelectedListener true
                 }
                 R.id.homeFragment -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.main_frm, HomeFragment())
+                        .commitAllowingStateLoss()
+                    return@setOnItemSelectedListener true
+                }
+                R.id.mypageFragment -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.main_frm, MyPageFragment())
                         .commitAllowingStateLoss()
                     return@setOnItemSelectedListener true
                 }
@@ -65,16 +65,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     // 로그인한 유저의 userIdx, jwt 전달
-    private fun sendUserResult(userResult: ArrayList<String>) {
-        var pref = applicationContext.getSharedPreferences("jwt", 0)
-        var editor = pref?.edit()
-        editor?.putString("jwt", userResult[0])?.apply()
-
-        pref = applicationContext.getSharedPreferences("userIdx", 0)
-        editor = pref?.edit()
-        editor?.putInt("userIdx", userResult[1].toInt())?.apply()
-
-    }
+//    private fun sendUserResult(userResult: ArrayList<String>) {
+//        var pref = applicationContext.getSharedPreferences("jwt", 0)
+//        var editor = pref?.edit()
+//        editor?.putString("jwt", userResult[0])?.apply()
+//
+//        pref = applicationContext.getSharedPreferences("userIdx", 0)
+//        editor = pref?.edit()
+//        editor?.putInt("userIdx", userResult[1].toInt())?.apply()
+//
+//    }
 
     fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
