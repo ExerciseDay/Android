@@ -71,6 +71,14 @@
         <item>전문가 추천순</item>
     </string-array>
 
+    <string-array name="withdraw_reasons">
+        <item>새로운 계정을 만들고 싶어요</item>
+        <item>저에게 불필요한 기능이 많아요</item>
+        <item>하루운동 앱이 불편해요</item>
+        <item>더 이상 사용하지 않아요</item>
+        <item>기타</item>
+    </string-array>
+
     <string name="title_activity_my_page">MyPageActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
