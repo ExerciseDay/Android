@@ -1,6 +1,8 @@
 package com.example.exerciseday_android
 
+import com.example.exerciseday_android.data.remote.WithdrawRes
 import com.example.exerciseday_android.data.remote.find.NewPwResponse
+import com.example.exerciseday_android.data.remote.logout.LogoutRes
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -48,6 +50,18 @@ interface APIS {
         @Path("userIdx") userIdx : Int,
         @Body saveCourseBody: SaveCourseBody
     ): Call<SaveCourseRes>
+
+    @PATCH("/auth/logout/{userIdx}")
+    fun logout(
+        @Header("X-ACCESS-TOKEN") token: String,
+        @Path("userIdx") userIdx : Int,
+    ): Call<LogoutRes>
+
+    @PATCH("/users/delete/{userIdx}")
+    fun withdraw(
+        @Header("X-ACCESS-TOKEN") token: String,
+        @Path("userIdx") userIdx : Int,
+    ): Call<WithdrawRes>
 }
 
 data class PostLogin(

@@ -116,11 +116,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ui.login.StartActivity"
@@ -157,6 +152,12 @@
         <activity
             android:name=".ui.gym.GymSearchActivity"
             android:exported="true" />
+        <activity
+            android:name=".ui.mypage.withdraw.WithdrawReasonActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".ui.mypage.withdraw.WithdrawCompleteActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>

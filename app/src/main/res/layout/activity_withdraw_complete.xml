@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/withdraw_appbar_cl"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/white"
+        android:elevation="1dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/withdraw_back_btn"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/transparent"
+            android:src="@drawable/ic_navigate_prev"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/withdraw_appbar_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_2"
+            android:text="탈퇴하기"
+            android:textColor="@color/gray_950"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/withdraw_alert_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="잠깐만요! 삭제하기 전에 확인해주세요.\n계정 삭제 후에는,"
+        android:fontFamily="@font/pretendard_2"
+        android:textSize="20sp"
+        android:textColor="@color/gray_950"
+        android:lineSpacingExtra="10sp"
+        app:layout_constraintTop_toBottomOf="@id/withdraw_appbar_cl"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="25dp"/>
+    <TextView
+        android:id="@+id/withdraw_remove1_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="* 회원님의 모든 정보는 삭제됩니다."
+        android:fontFamily="@font/pretendard"
+        android:textSize="15sp"
+        android:textColor="@color/gray_950"
+        app:layout_constraintTop_toBottomOf="@id/withdraw_alert_tv"
+        app:layout_constraintLeft_toLeftOf="@id/withdraw_alert_tv"
+        android:layout_marginTop="12dp"/>
+
+    <TextView
+        android:id="@+id/withdraw_dot2_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="* "
+        android:fontFamily="@font/pretendard"
+        android:textSize="15sp"
+        android:textColor="@color/gray_950"
+        app:layout_constraintTop_toBottomOf="@id/withdraw_remove1_tv"
+        app:layout_constraintLeft_toLeftOf="@id/withdraw_alert_tv"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/withdraw_remove2_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="계정이 삭제 된 후에는 계정을 다시 살리거나 보유하고 계신 모든 코스 데이터들은 복구할 수 없습니다."
+        android:fontFamily="@font/pretendard"
+        android:textSize="15sp"
+        android:textColor="@color/gray_950"
+        android:lineSpacingExtra="8sp"
+        app:layout_constraintTop_toTopOf="@id/withdraw_dot2_tv"
+        app:layout_constraintLeft_toRightOf="@id/withdraw_dot2_tv"
+        android:paddingRight="55dp"/>
+
+    <TextView
+        android:id="@+id/withdraw_dot3_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="* "
+        android:fontFamily="@font/pretendard"
+        android:textSize="15sp"
+        android:textColor="@color/gray_950"
+        app:layout_constraintTop_toBottomOf="@id/withdraw_remove2_tv"
+        app:layout_constraintLeft_toLeftOf="@id/withdraw_alert_tv"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/withdraw_remove3_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="7일 동안 재가입할 수 없습니다."
+        android:fontFamily="@font/pretendard"
+        android:textSize="15sp"
+        android:textColor="@color/gray_950"
+        android:lineSpacingExtra="8sp"
+        app:layout_constraintTop_toTopOf="@id/withdraw_dot3_tv"
+        app:layout_constraintLeft_toRightOf="@id/withdraw_dot3_tv"
+        android:paddingRight="55dp"/>
+
+    <TextView
+        android:id="@+id/withdraw_dot4_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="* "
+        android:fontFamily="@font/pretendard"
+        android:textSize="15sp"
+        android:textColor="@color/gray_950"
+        app:layout_constraintTop_toBottomOf="@id/withdraw_remove3_tv"
+        app:layout_constraintLeft_toLeftOf="@id/withdraw_alert_tv"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/withdraw_remove4_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="헬스장 후기 등 일부 정보는 계속 남아있을 수 있습니다."
+        android:fontFamily="@font/pretendard"
+        android:textSize="15sp"
+        android:textColor="@color/gray_950"
+        android:lineSpacingExtra="8sp"
+        app:layout_constraintTop_toTopOf="@id/withdraw_dot4_tv"
+        app:layout_constraintLeft_toRightOf="@id/withdraw_dot4_tv"
+        android:paddingRight="55dp"/>
+
+    <TextView
+        android:id="@+id/withdraw_dot5_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="* "
+        android:fontFamily="@font/pretendard"
+        android:textSize="15sp"
+        android:textColor="@color/gray_950"
+        app:layout_constraintTop_toBottomOf="@id/withdraw_remove4_tv"
+        app:layout_constraintLeft_toLeftOf="@id/withdraw_alert_tv"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/withdraw_remove5_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="현재 계정으로는 다시 로그인할 수 없습니다."
+        android:fontFamily="@font/pretendard"
+        android:textSize="15sp"
+        android:textColor="@color/gray_950"
+        android:lineSpacingExtra="8sp"
+        app:layout_constraintTop_toTopOf="@id/withdraw_dot5_tv"
+        app:layout_constraintLeft_toRightOf="@id/withdraw_dot5_tv"
+        android:paddingRight="55dp"/>
+
+    <TextView
+        android:id="@+id/withdraw_alert2_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="아래의 계정 삭제 버튼을 누르면 모든 정보와 활동이 영구히 삭제되며,"
+        android:fontFamily="@font/pretendard_2"
+        android:textSize="15sp"
+        android:textColor="@color/gray_950"
+        android:lineSpacingExtra="8sp"
+        app:layout_constraintTop_toBottomOf="@id/withdraw_dot5_tv"
+        app:layout_constraintLeft_toLeftOf="@id/withdraw_remove1_tv"
+        android:layout_marginTop="30dp"
+        android:paddingRight="50dp"/>
+
+    <TextView
+        android:id="@+id/withdraw_alert3_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="7일 동안 다시 가입할 수 없어요."
+        android:fontFamily="@font/pretendard_2"
+        android:textSize="15sp"
+        android:textColor="@color/form_error"
+        android:lineSpacingExtra="8sp"
+        app:layout_constraintTop_toBottomOf="@id/withdraw_alert2_tv"
+        app:layout_constraintLeft_toLeftOf="@id/withdraw_alert2_tv"/>
+
+    <Button
+        android:id="@+id/withdraw_remove_btn"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="계정 삭제"
+        android:fontFamily="@font/pretendard_2"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:background="@drawable/btn_pink0_border18"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginBottom="44dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

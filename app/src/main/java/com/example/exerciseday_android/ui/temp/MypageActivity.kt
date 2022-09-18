@@ -7,6 +7,6 @@ import com.example.exerciseday_android.R
 class MypageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_mypage)
+        setContentView(R.layout.activity_my_page)
     }
 }

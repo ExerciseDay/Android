@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/recordFragment"
+        android:id="@+id/gymFragment"
         android:icon="@drawable/ic_nav_location"
         app:showAsAction="always"
         android:title="헬스장 탐색"
@@ -14,18 +14,8 @@
         app:showAsAction="always"
         android:title="운동 코스" />
     <item
-        android:id="@+id/communityFragment"
+        android:id="@+id/mypageFragment"
         android:icon="@drawable/ic_nav_mypage"
         app:showAsAction="always"
         android:title="마이페이지" />
-<!--    <item-->
-<!--        android:id="@+id/mapFragment"-->
-<!--        android:icon="@drawable/ic_map"-->
-<!--        app:showAsAction="always"-->
-<!--        android:title="지도" />-->
-<!--    <item-->
-<!--        android:id="@+id/settingFragment"-->
-<!--        android:icon="@drawable/ic_setting"-->
-<!--        app:showAsAction="always"-->
-<!--        android:title="설정" />-->
 </menu>
