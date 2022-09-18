@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_marginHorizontal="25dp"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp">
+
+    <TextView
+        android:id="@+id/item_gym_review_nickname_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pretendard_2"
+        android:text="김하루"
+        android:textColor="@color/gray_950"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pretendard_2"
+        android:text="님"
+        android:textColor="@color/gray_950"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="@+id/item_gym_review_nickname_tv"
+        app:layout_constraintStart_toEndOf="@+id/item_gym_review_nickname_tv"
+        app:layout_constraintTop_toTopOf="@+id/item_gym_review_nickname_tv" />
+
+    <TextView
+        android:id="@+id/item_gym_review_content_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:lineHeight="25sp"
+        android:text="PT비용이 어쩌구 저쩌구 "
+        android:textColor="@color/gray_950"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/item_gym_review_nickname_tv" />
+
+    <ImageView
+        android:id="@+id/item_gym_review_star_point_iv"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/ic_star_point"
+        app:layout_constraintBottom_toBottomOf="@+id/item_gym_review_star_point_tv"
+        app:layout_constraintEnd_toStartOf="@+id/item_gym_review_star_point_tv"
+        app:layout_constraintTop_toTopOf="@+id/item_gym_review_star_point_tv" />
+
+    <TextView
+        android:id="@+id/item_gym_review_star_point_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.0"
+        android:textColor="@color/gray_950"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

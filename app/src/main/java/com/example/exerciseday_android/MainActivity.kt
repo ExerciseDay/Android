@@ -1,9 +1,12 @@
 package com.example.exerciseday_android
 
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.exerciseday_android.databinding.ActivityMainBinding
+import com.example.exerciseday_android.ui.MyReviewFragment
+import com.example.exerciseday_android.ui.temp.CommunityFragment
 import com.example.exerciseday_android.ui.mypage.MyPageFragment
 
 class MainActivity : AppCompatActivity() {
@@ -16,6 +19,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.bottomNavV.selectedItemId = R.id.homeFragment
+
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
 
         initBottomNavigation()
         //sendUserResult(loadUserResult())
@@ -57,7 +62,7 @@ class MainActivity : AppCompatActivity() {
     private fun loadUserResult(): ArrayList<String> {
         var pref = applicationContext.getSharedPreferences("jwt", 0)
         var jwt = pref?.getString("jwt", "")
-        var userIdx = pref?.getInt("userIdx",0)
+        var userIdx = pref?.getInt("userIdx", 0)
 
         var userResult = arrayListOf<String>(jwt.toString(), userIdx.toString())
 

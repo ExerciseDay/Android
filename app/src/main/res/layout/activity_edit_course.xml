@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="85dp"
         android:layout_marginBottom="14sp"
-        android:background="@drawable/join_view_btn_unselected"
+        android:background="@drawable/img_and_text_btn_unselected"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

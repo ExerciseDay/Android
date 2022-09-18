@@ -133,7 +133,7 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_below="@+id/recyclerView"
-            android:background="@drawable/join_view_btn_unselected"
+            android:background="@drawable/img_and_text_btn_unselected"
             android:fontFamily="@font/pretendard"
             android:text="더 담을래요"
             android:textColor="@color/black"

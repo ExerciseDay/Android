@@ -43,7 +43,7 @@ class JoinGoalActivity : AppCompatActivity(), View.OnClickListener {
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     // PRESSED
-                    binding.joinGoalHomeTrainingView.setBackgroundResource(R.drawable.join_view_btn_selected)
+                    binding.joinGoalHomeTrainingView.setBackgroundResource(R.drawable.img_and_text_btn_selected)
                     binding.joinGoalHomeTrainingIv.setColorFilter(resources.getColor( R.color.white, null))
                     binding.joinGoalHomeTrainingTv.setTextColor(Color.parseColor("#ffffff"))
 
@@ -52,7 +52,7 @@ class JoinGoalActivity : AppCompatActivity(), View.OnClickListener {
 
                 MotionEvent.ACTION_UP -> {
                     // RELEASED
-                    binding.joinGoalHomeTrainingView.setBackgroundResource(R.drawable.join_view_btn_unselected)
+                    binding.joinGoalHomeTrainingView.setBackgroundResource(R.drawable.img_and_text_btn_unselected)
                     binding.joinGoalHomeTrainingIv.setColorFilter(R.color.black)
                     binding.joinGoalHomeTrainingTv.setTextColor(Color.parseColor("#000000"))
 
@@ -60,7 +60,7 @@ class JoinGoalActivity : AppCompatActivity(), View.OnClickListener {
                 }
 
                 MotionEvent.ACTION_CANCEL -> {
-                    binding.joinGoalHomeTrainingView.setBackgroundResource(R.drawable.join_view_btn_unselected)
+                    binding.joinGoalHomeTrainingView.setBackgroundResource(R.drawable.img_and_text_btn_unselected)
                     binding.joinGoalHomeTrainingIv.setColorFilter(R.color.black)
                     binding.joinGoalHomeTrainingTv.setTextColor(Color.parseColor("#000000"))
 
@@ -80,7 +80,7 @@ class JoinGoalActivity : AppCompatActivity(), View.OnClickListener {
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     // PRESSED
-                    binding.joinGoalWeightControlView.setBackgroundResource(R.drawable.join_view_btn_selected)
+                    binding.joinGoalWeightControlView.setBackgroundResource(R.drawable.img_and_text_btn_selected)
                     binding.joinGoalWeightControlIv.setColorFilter(resources.getColor( R.color.white, null))
                     binding.joinGoalWeightControlTv.setTextColor(Color.parseColor("#ffffff"))
 
@@ -89,7 +89,7 @@ class JoinGoalActivity : AppCompatActivity(), View.OnClickListener {
 
                 MotionEvent.ACTION_UP -> {
                     // RELEASED
-                    binding.joinGoalWeightControlView.setBackgroundResource(R.drawable.join_view_btn_unselected)
+                    binding.joinGoalWeightControlView.setBackgroundResource(R.drawable.img_and_text_btn_unselected)
                     binding.joinGoalWeightControlIv.setColorFilter(R.color.black)
                     binding.joinGoalWeightControlTv.setTextColor(Color.parseColor("#000000"))
 
@@ -97,7 +97,7 @@ class JoinGoalActivity : AppCompatActivity(), View.OnClickListener {
                 }
 
                 MotionEvent.ACTION_CANCEL -> {
-                    binding.joinGoalWeightControlView.setBackgroundResource(R.drawable.join_view_btn_unselected)
+                    binding.joinGoalWeightControlView.setBackgroundResource(R.drawable.img_and_text_btn_unselected)
                     binding.joinGoalWeightControlIv.setColorFilter(R.color.black)
                     binding.joinGoalWeightControlTv.setTextColor(Color.parseColor("#000000"))
 
@@ -117,7 +117,7 @@ class JoinGoalActivity : AppCompatActivity(), View.OnClickListener {
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     // PRESSED
-                    binding.joinGoalBuildingMuscleView.setBackgroundResource(R.drawable.join_view_btn_selected)
+                    binding.joinGoalBuildingMuscleView.setBackgroundResource(R.drawable.img_and_text_btn_selected)
                     binding.joinGoalBuildingMuscleIv.setColorFilter(resources.getColor( R.color.white, null))
                     binding.joinGoalBuildingMuscleTv.setTextColor(Color.parseColor("#ffffff"))
 
@@ -126,7 +126,7 @@ class JoinGoalActivity : AppCompatActivity(), View.OnClickListener {
 
                 MotionEvent.ACTION_UP -> {
                     // RELEASED
-                    binding.joinGoalBuildingMuscleView.setBackgroundResource(R.drawable.join_view_btn_unselected)
+                    binding.joinGoalBuildingMuscleView.setBackgroundResource(R.drawable.img_and_text_btn_unselected)
                     binding.joinGoalBuildingMuscleIv.setColorFilter(R.color.black)
                     binding.joinGoalBuildingMuscleTv.setTextColor(Color.parseColor("#000000"))
 
@@ -134,7 +134,7 @@ class JoinGoalActivity : AppCompatActivity(), View.OnClickListener {
                 }
 
                 MotionEvent.ACTION_CANCEL -> {
-                    binding.joinGoalBuildingMuscleView.setBackgroundResource(R.drawable.join_view_btn_unselected)
+                    binding.joinGoalBuildingMuscleView.setBackgroundResource(R.drawable.img_and_text_btn_unselected)
                     binding.joinGoalBuildingMuscleIv.setColorFilter(R.color.black)
                     binding.joinGoalBuildingMuscleTv.setTextColor(Color.parseColor("#000000"))
 
@@ -154,7 +154,7 @@ class JoinGoalActivity : AppCompatActivity(), View.OnClickListener {
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     // PRESSED
-                    binding.joinGoalTrainerPreparationView.setBackgroundResource(R.drawable.join_view_btn_selected)
+                    binding.joinGoalTrainerPreparationView.setBackgroundResource(R.drawable.img_and_text_btn_selected)
                     binding.joinGoalTrainerPreparationIv.setColorFilter(resources.getColor( R.color.white, null))
                     binding.joinGoalTrainerPreparationTv.setTextColor(Color.parseColor("#ffffff"))
 
@@ -163,7 +163,7 @@ class JoinGoalActivity : AppCompatActivity(), View.OnClickListener {
 
                 MotionEvent.ACTION_UP -> {
                     // RELEASED
-                    binding.joinGoalTrainerPreparationView.setBackgroundResource(R.drawable.join_view_btn_unselected)
+                    binding.joinGoalTrainerPreparationView.setBackgroundResource(R.drawable.img_and_text_btn_unselected)
                     binding.joinGoalTrainerPreparationIv.setColorFilter(R.color.black)
                     binding.joinGoalTrainerPreparationTv.setTextColor(Color.parseColor("#000000"))
 
@@ -171,7 +171,7 @@ class JoinGoalActivity : AppCompatActivity(), View.OnClickListener {
                 }
 
                 MotionEvent.ACTION_CANCEL -> {
-                    binding.joinGoalTrainerPreparationView.setBackgroundResource(R.drawable.join_view_btn_unselected)
+                    binding.joinGoalTrainerPreparationView.setBackgroundResource(R.drawable.img_and_text_btn_unselected)
                     binding.joinGoalTrainerPreparationIv.setColorFilter(R.color.black)
                     binding.joinGoalTrainerPreparationTv.setTextColor(Color.parseColor("#000000"))
 
@@ -191,7 +191,7 @@ class JoinGoalActivity : AppCompatActivity(), View.OnClickListener {
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     // PRESSED
-                    binding.joinGoalHealthCareView.setBackgroundResource(R.drawable.join_view_btn_selected)
+                    binding.joinGoalHealthCareView.setBackgroundResource(R.drawable.img_and_text_btn_selected)
                     binding.joinGoalHealthCareIv.setColorFilter(resources.getColor( R.color.white, null))
                     binding.joinGoalHealthCareTv.setTextColor(Color.parseColor("#ffffff"))
 
@@ -200,7 +200,7 @@ class JoinGoalActivity : AppCompatActivity(), View.OnClickListener {
 
                 MotionEvent.ACTION_UP -> {
                     // RELEASED
-                    binding.joinGoalHealthCareView.setBackgroundResource(R.drawable.join_view_btn_unselected)
+                    binding.joinGoalHealthCareView.setBackgroundResource(R.drawable.img_and_text_btn_unselected)
                     binding.joinGoalHealthCareIv.setColorFilter(R.color.black)
                     binding.joinGoalHealthCareTv.setTextColor(Color.parseColor("#000000"))
 
@@ -208,7 +208,7 @@ class JoinGoalActivity : AppCompatActivity(), View.OnClickListener {
                 }
 
                 MotionEvent.ACTION_CANCEL -> {
-                    binding.joinGoalHealthCareView.setBackgroundResource(R.drawable.join_view_btn_unselected)
+                    binding.joinGoalHealthCareView.setBackgroundResource(R.drawable.img_and_text_btn_unselected)
                     binding.joinGoalHealthCareIv.setColorFilter(R.color.black)
                     binding.joinGoalHealthCareTv.setTextColor(Color.parseColor("#000000"))
 
@@ -228,7 +228,7 @@ class JoinGoalActivity : AppCompatActivity(), View.OnClickListener {
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     // PRESSED
-                    binding.joinGoalBodyProfileView.setBackgroundResource(R.drawable.join_view_btn_selected)
+                    binding.joinGoalBodyProfileView.setBackgroundResource(R.drawable.img_and_text_btn_selected)
                     binding.joinGoalBodyProfileIv.setColorFilter(resources.getColor( R.color.white, null))
                     binding.joinGoalBodyProfileTv.setTextColor(Color.parseColor("#ffffff"))
 
@@ -237,7 +237,7 @@ class JoinGoalActivity : AppCompatActivity(), View.OnClickListener {
 
                 MotionEvent.ACTION_UP -> {
                     // RELEASED
-                    binding.joinGoalBodyProfileView.setBackgroundResource(R.drawable.join_view_btn_unselected)
+                    binding.joinGoalBodyProfileView.setBackgroundResource(R.drawable.img_and_text_btn_unselected)
                     binding.joinGoalBodyProfileIv.setColorFilter(R.color.black)
                     binding.joinGoalBodyProfileTv.setTextColor(Color.parseColor("#000000"))
 
@@ -245,7 +245,7 @@ class JoinGoalActivity : AppCompatActivity(), View.OnClickListener {
                 }
 
                 MotionEvent.ACTION_CANCEL -> {
-                    binding.joinGoalBodyProfileView.setBackgroundResource(R.drawable.join_view_btn_unselected)
+                    binding.joinGoalBodyProfileView.setBackgroundResource(R.drawable.img_and_text_btn_unselected)
                     binding.joinGoalBodyProfileIv.setColorFilter(R.color.black)
                     binding.joinGoalBodyProfileTv.setTextColor(Color.parseColor("#000000"))
 

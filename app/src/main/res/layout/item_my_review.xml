@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="24dp"
+    android:layout_marginEnd="19dp"
+    android:layout_marginBottom="33dp">
+
+    <TextView
+        android:id="@+id/item_my_review_gym_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:fontFamily="@font/pretendard_2"
+        android:text="헬스장 이름"
+        android:textColor="@color/gray_900"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/item_my_review_edit_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:src="@drawable/ic_pencil"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/item_my_review_date_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="5dp"
+        android:text="작성일: "
+        android:textColor="@color/gray_700"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/item_my_review_gym_name_tv" />
+
+    <TextView
+        android:id="@+id/item_my_review_date_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:inputType="date"
+        android:text="2022/00/00"
+        android:textColor="@color/gray_700"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/item_my_review_date_title_tv"
+        app:layout_constraintStart_toEndOf="@+id/item_my_review_date_title_tv"
+        app:layout_constraintTop_toTopOf="@+id/item_my_review_date_title_tv" />
+
+    <TextView
+        android:id="@+id/item_my_review_content_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginTop="1dp"
+        android:lineHeight="25sp"
+        android:text="PT 받고 살 많이 빠진거 같아요 추천!"
+        android:textColor="@color/gray_950"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_my_review_date_tv" />
+
+    <ImageView
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/ic_star_point"
+        app:layout_constraintBottom_toBottomOf="@+id/item_my_review_star_point_tv"
+        app:layout_constraintEnd_toStartOf="@+id/item_my_review_star_point_tv"
+        app:layout_constraintTop_toTopOf="@+id/item_my_review_star_point_tv" />
+
+    <TextView
+        android:id="@+id/item_my_review_star_point_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:text="3.5"
+        android:textColor="@color/gray_950"
+        android:gravity="center"
+        android:textSize="13sp"
+        app:layout_constraintTop_toTopOf="@+id/item_my_review_content_tv"
+        app:layout_constraintBottom_toBottomOf="@id/item_my_review_content_tv"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

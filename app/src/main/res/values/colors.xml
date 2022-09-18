@@ -33,5 +33,7 @@
     <color name="red_40">#FF6A0114</color>
     <color name="red_50">#FF38000A</color>
 
+    <color name="yellow">#EEAA46</color>
+
     <color name="transparent">#00FF0000</color>
 </resources>

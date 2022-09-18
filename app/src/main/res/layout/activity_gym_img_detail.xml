@@ -4,65 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.temp.GymImgDetail">
+    android:fitsSystemWindows="true"
+    android:background="@color/black"
+    tools:context=".ui.gym.detail.GymImgDetailActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="0dp"
-        android:layout_height="35dp"
+    <ImageButton
+        android:id="@+id/gym_img_detail_close_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="17dp"
+        android:background="@color/transparent"
+        android:src="@drawable/ic_close"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
 
-        <TextView
-            android:id="@+id/map_title_tv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/pretendard_2"
-            android:gravity="center"
-            android:text="헬스장 이름"
-            android:textAlignment="center"
-            android:textColor="@color/gray_900"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <ImageButton
-            android:id="@+id/map_search_btn"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginTop="2dp"
-            android:background="@color/white"
-            android:src="@drawable/ic_search"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <ImageButton
-            android:id="@+id/map_search_btn2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="3dp"
-            android:background="@color/white"
-            android:src="@drawable/ic_arrow_back"
-            app:layout_constraintStart_toStartOf="@+id/map_title_tv"
-            app:layout_constraintTop_toTopOf="@+id/map_title_tv"
-            tools:ignore="TouchTargetSizeCheck" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/map_gym_rv"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/gym_img_detail_vp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        app:layout_constraintVertical_bias="0.0"
-        tools:listitem="@layout/activity_gym_img_item" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/gym_img_detail_img_prev_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:background="@color/transparent"
+        android:elevation="4dp"
+        android:src="@drawable/ic_img_prev"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/gym_img_detail_vp"
+        app:layout_constraintStart_toStartOf="@+id/gym_img_detail_vp"
+        app:layout_constraintTop_toTopOf="@+id/gym_img_detail_vp" />
+
+    <ImageButton
+        android:id="@+id/gym_img_detail_img_next_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:background="@color/transparent"
+        android:elevation="4dp"
+        android:src="@drawable/ic_img_next"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/gym_img_detail_vp"
+        app:layout_constraintEnd_toEndOf="@+id/gym_img_detail_vp"
+        app:layout_constraintTop_toTopOf="@+id/gym_img_detail_vp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
