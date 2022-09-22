@@ -13,7 +13,7 @@ import com.example.exerciseday_android.data.model.GymReview
 import com.example.exerciseday_android.databinding.FragmentGymReviewBinding
 
 
-class GymReviewFragment : Fragment() {
+open class GymReviewFragment : Fragment() {
 
     lateinit var binding: FragmentGymReviewBinding
     private var gymReviewData = ArrayList<GymReview>()
@@ -75,7 +75,6 @@ class GymReviewFragment : Fragment() {
             ResourcesCompat.getDrawable(resources, R.drawable.rv_devider, null)!!
         )
         binding.gymReviewRv.addItemDecoration(dividerItemDecoration)
-
 
 
         return binding.root

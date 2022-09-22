@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:overScrollMode="never"
     android:scrollbars="vertical"
     tools:context=".ui.gym.detail.GymInfoFragment">
 
@@ -260,7 +259,6 @@
             android:background="@drawable/btn_gray300_border18"
             android:enabled="false"
             android:fontFamily="@font/pretendard_2"
-            android:stateListAnimator="@null"
             android:text="리뷰 올리기"
             android:textColor="@drawable/btn_text_color"
             android:textSize="18sp"

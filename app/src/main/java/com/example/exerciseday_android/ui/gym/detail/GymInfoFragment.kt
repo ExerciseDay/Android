@@ -12,6 +12,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.exerciseday_android.R
 import com.example.exerciseday_android.databinding.FragmentGymInfoBinding
+import com.example.exerciseday_android.databinding.FragmentGymReviewBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
 
@@ -43,6 +44,7 @@ class GymInfoFragment : Fragment() {
 
             // 리뷰 개수 증가
 //            binding.gymInfoReviewCountTv.text = "($)"
+            binding.gymInfoReviewContentEt.text.clear()
         }
 
         // 헬스장 리뷰 - TabLayout, ViewPager2 연결
