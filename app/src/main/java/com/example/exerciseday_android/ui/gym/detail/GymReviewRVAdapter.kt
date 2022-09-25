@@ -1,9 +1,12 @@
 package com.example.exerciseday_android.ui.gym.detail
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.exerciseday_android.data.model.GymReview
+import com.example.exerciseday_android.databinding.FragmentGymInfoBinding
+import com.example.exerciseday_android.databinding.FragmentGymReviewBinding
 import com.example.exerciseday_android.databinding.ItemGymReviewBinding
 
 class GymReviewRVAdapter(private val gymReviewList: ArrayList<GymReview>) :

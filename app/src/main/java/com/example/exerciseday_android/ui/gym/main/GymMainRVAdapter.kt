@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.exerciseday_android.R
 import com.example.exerciseday_android.data.remote.gym.GymMainResult
 import com.example.exerciseday_android.databinding.ItemGymMainBinding
 
@@ -40,9 +41,9 @@ class GymMainRVAdapter(private val gymMainResult: ArrayList<GymMainResult>) :
     inner class ViewHolder(val binding: ItemGymMainBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(gymMainResult: GymMainResult) {
-            Glide.with(binding.root).load("http://3.39.184.186:8080" + gymMainResult.gymImg).into(binding.itemMapGymImgIv)
+//            Glide.with(binding.root).load("http://3.39.184.186:8080" + gymMainResult.gymImg).into(binding.itemMapGymImgIv)
 
-//            binding.itemMapGymImgIv.setImageResource(R.drawable.temp)  // 임시
+            binding.itemMapGymImgIv.setImageResource(R.drawable.temp)  // 임시
             binding.itemMapGymNameTv.text = gymMainResult.gymName
             binding.itemMapGymAddressTv.text = gymMainResult.gymIntroduce
             binding.itemMapGymDistanceTv.text = gymMainResult.gymDistance.toString()

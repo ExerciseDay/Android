@@ -7,6 +7,7 @@ import com.example.exerciseday_android.R
 import com.example.exerciseday_android.databinding.ActivityGymImgListBinding
 import com.example.exerciseday_android.databinding.ActivityJoinCompleteBinding
 import com.example.exerciseday_android.ui.join.JoinInfoActivity
+import com.example.exerciseday_android.ui.join.JoinPhoneActivity
 
 class GymImgListActivity : AppCompatActivity() {
 
@@ -38,6 +39,8 @@ class GymImgListActivity : AppCompatActivity() {
             val intent = Intent(this, GymImgDetailActivity::class.java)
             startActivity(intent)
         }
+
+
 
 
         //TDL

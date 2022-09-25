@@ -49,14 +49,9 @@ class GymTrainerFragment : Fragment() {
         }
 
         // 트레이너 RecyclerView 어댑터와 데이터 리스트 연결
-        binding.gymTrainerRepresentTrainerRv.layoutManager =
-            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         val gymTrainerRVAdapter = GymTrainerRVAdapter(gymTrainerData)
         binding.gymTrainerRepresentTrainerRv.adapter = gymTrainerRVAdapter
 
-
-        binding.gymTrainerIntroRv.layoutManager =
-            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         binding.gymTrainerIntroRv.adapter =  GymTrainerRVAdapter(gymTrainerData)
 
 

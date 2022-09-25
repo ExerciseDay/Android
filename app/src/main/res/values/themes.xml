@@ -16,6 +16,7 @@
         <!-- Customize your theme here. -->
         <item name="android:windowActivityTransitions">true</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:colorEdgeEffect">@color/white</item>  // overscroll effect color
     </style>
 
 
