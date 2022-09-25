@@ -10,6 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.exerciseday_android.APIS
 import com.example.exerciseday_android.Exercise
+import com.example.exerciseday_android.HomeFragment
+import com.example.exerciseday_android.MainActivity
 import com.example.exerciseday_android.data.remote.GetDibsRes
 import com.example.exerciseday_android.databinding.FragmentDibsBinding
 import retrofit2.Call
@@ -27,6 +29,8 @@ class DibsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val mainActivity = activity as MainActivity
+
         binding = FragmentDibsBinding.inflate(inflater, container, false)
 
         val dibsListRVAdapter = DibsRVAdapter(dibsList)
@@ -35,6 +39,11 @@ class DibsFragment : Fragment() {
         binding.dibsExerciseListRv.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         binding.dibsExerciseListRv.adapter = dibsListRVAdapter
+
+        binding.dibsBackBtn.setOnClickListener {
+            val homeFragment = HomeFragment()
+            mainActivity.replaceFragment(homeFragment)
+        }
 
         return binding.root
     }
