@@ -1,8 +1,9 @@
 package com.example.exerciseday_android
 
-import com.example.exerciseday_android.data.remote.WithdrawRes
+import com.example.exerciseday_android.data.remote.GetDibsRes
+import com.example.exerciseday_android.data.remote.mypage.WithdrawRes
 import com.example.exerciseday_android.data.remote.find.NewPwResponse
-import com.example.exerciseday_android.data.remote.logout.LogoutRes
+import com.example.exerciseday_android.data.remote.mypage.LogoutRes
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -62,6 +63,12 @@ interface APIS {
         @Header("X-ACCESS-TOKEN") token: String,
         @Path("userIdx") userIdx : Int,
     ): Call<WithdrawRes>
+
+    @GET("/exercise/dibs")
+    fun getDibs(
+        @Header("X-ACCESS-TOKEN") token: String,
+        @Query("userIdx") userIdx: Int,
+    ): Call<GetDibsRes>
 }
 
 data class PostLogin(

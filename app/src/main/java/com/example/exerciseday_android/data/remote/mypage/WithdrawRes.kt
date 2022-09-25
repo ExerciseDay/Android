@@ -1,4 +1,4 @@
-package com.example.exerciseday_android.data.remote
+package com.example.exerciseday_android.data.remote.mypage
 
 data class WithdrawRes(
     val isSuccess: Boolean,
