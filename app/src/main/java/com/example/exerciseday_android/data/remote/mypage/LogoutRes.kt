@@ -1,4 +1,4 @@
-package com.example.exerciseday_android.data.remote.logout
+package com.example.exerciseday_android.data.remote.mypage
 
 import com.example.exerciseday_android.LoginResult
 

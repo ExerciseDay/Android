@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.exerciseday_android.databinding.FragmentHomeBinding
@@ -12,6 +13,7 @@ import com.example.exerciseday_android.ui.course.CourseCustomListRVAdapter
 import com.example.exerciseday_android.ui.course.CourseExpertListRVAdapter
 import com.example.exerciseday_android.ui.course.CourseMakeFragment
 import com.example.exerciseday_android.ui.course.SimpleCourse
+import com.example.exerciseday_android.ui.dibs.DibsFragment
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -51,23 +53,27 @@ class HomeFragment : Fragment() {
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         binding.expertRecycleView.adapter = courseExpertListRVAdapter
 
-
-
         binding.makeCourseBtn.setOnClickListener {
             val courseMakeFragment = CourseMakeFragment()
             mainActivity.replaceFragment(courseMakeFragment)
         }
 
+        binding.dipsListBtn.setOnClickListener {
+            val dibsFragment = DibsFragment()
+            mainActivity.replaceFragment(dibsFragment)
+        }
+
         return binding.root
     }
 
-//    private fun changeSelectCourseActivity(course: Course) {
-//        val intent = Intent(context, SelectCourseActivity::class.java)
-//        startActivity(intent)
-//    }
     private fun getCourseList(courseCustomListRVAdapter: CourseCustomListRVAdapter, courseExpertListRVAdapter: CourseExpertListRVAdapter) {
-        val userIdx = 1
-        val jwt = "eyJ0eXBlIjoiand0IiwiYWxnIjoiSFMyNTYifQ.eyJ1c2VySWR4IjoxLCJpYXQiOjE2NjEzMjg0MDksImV4cCI6MTY2Mjc5OTYzOH0._QOQPrXkRkrKhq1SCB-eMej-tfBcrxjsi3zNAsPFOzU"
+        var spf = this.activity?.getSharedPreferences("jwt", AppCompatActivity.MODE_PRIVATE)
+        var jwt = spf!!.getString("jwt", "none").toString()
+
+        spf = this.activity?.getSharedPreferences("userIdx", AppCompatActivity.MODE_PRIVATE)
+        var userIdx = spf!!.getInt("userIdx", 0)
+
+        Log.d("jwt", jwt)
 
         val retrofit = Retrofit.Builder()
             .baseUrl("http://3.39.184.186:8080")

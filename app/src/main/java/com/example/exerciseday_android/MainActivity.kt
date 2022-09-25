@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity() {
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
 
         initBottomNavigation()
-        //sendUserResult(loadUserResult())
     }
 
     private fun initBottomNavigation() {
@@ -68,18 +67,6 @@ class MainActivity : AppCompatActivity() {
 
         return userResult
     }
-
-    // 로그인한 유저의 userIdx, jwt 전달
-//    private fun sendUserResult(userResult: ArrayList<String>) {
-//        var pref = applicationContext.getSharedPreferences("jwt", 0)
-//        var editor = pref?.edit()
-//        editor?.putString("jwt", userResult[0])?.apply()
-//
-//        pref = applicationContext.getSharedPreferences("userIdx", 0)
-//        editor = pref?.edit()
-//        editor?.putInt("userIdx", userResult[1].toInt())?.apply()
-//
-//    }
 
     fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()

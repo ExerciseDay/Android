@@ -5,13 +5,10 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.exerciseday_android.APIS
-import com.example.exerciseday_android.FindIdResponse
-import com.example.exerciseday_android.data.remote.WithdrawRes
-import com.example.exerciseday_android.data.remote.logout.LogoutRes
+import com.example.exerciseday_android.data.remote.mypage.WithdrawRes
 import com.example.exerciseday_android.databinding.ActivityWithdrawCompleteBinding
 import com.example.exerciseday_android.ui.ChangeDialog
 import com.example.exerciseday_android.ui.DefaultDialog
-import com.example.exerciseday_android.ui.find.FindIdResultActivity
 import com.example.exerciseday_android.ui.login.StartActivity
 import retrofit2.Call
 import retrofit2.Callback
@@ -39,7 +36,7 @@ class WithdrawCompleteActivity : AppCompatActivity() {
         var jwt = spf.getString("jwt", "none").toString()
 
         spf = this.getSharedPreferences("userIdx", MODE_PRIVATE)
-        var userIdx = spf?.getInt("userIdx", 3)
+        var userIdx = spf?.getInt("userIdx", 0)
 
         Log.d("server", userIdx.toString()+"-------"+jwt)
 
