@@ -1,4 +1,4 @@
-package com.example.exerciseday_android.ui
+package com.example.exerciseday_android.ui.mypage
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

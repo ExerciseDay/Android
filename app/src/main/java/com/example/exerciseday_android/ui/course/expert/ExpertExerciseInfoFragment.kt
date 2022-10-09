@@ -8,7 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.exerciseday_android.MainActivity
 import com.example.exerciseday_android.R
-import com.example.exerciseday_android.data.remote.course.*
+import com.example.exerciseday_android.data.remote.course.expert.ExpertResponse
+import com.example.exerciseday_android.data.remote.course.expert.ExpertRetrofitInterface
+import com.example.exerciseday_android.data.remote.course.expert.ExpertRoutineInfos
 import com.example.exerciseday_android.data.remote.exercise.ExerciseService
 import com.example.exerciseday_android.databinding.FragmentExpertExerciseInfoBinding
 import com.google.android.material.tabs.TabLayoutMediator

@@ -7,9 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.exerciseday_android.data.remote.course.ExpertNTC
-import com.example.exerciseday_android.data.remote.course.ExpertRoutineInfos
-import com.example.exerciseday_android.data.remote.course.ExpertService
+import com.example.exerciseday_android.data.remote.course.expert.ExpertNTC
+import com.example.exerciseday_android.data.remote.course.expert.ExpertRoutineInfos
+import com.example.exerciseday_android.data.remote.course.expert.ExpertService
 import com.example.exerciseday_android.databinding.FragmentExpertCourseBinding
 import com.example.exerciseday_android.ui.course.expert.ExpertExerciseRVAdapter
 
@@ -33,7 +33,7 @@ class ExpertCourseFragment : Fragment(), CheckExpertView {
 
         val expertExerciseRVAdapter = ExpertExerciseRVAdapter(expertRoutineInfosData)
 
-        expertExerciseRVAdapter.setMyITemClickListener(object :
+        expertExerciseRVAdapter.setMyItemClickListener(object :
             ExpertExerciseRVAdapter.MyItemClickListener {
             override fun onItemClick(expertRoutineInfos: ExpertRoutineInfos) {
                 TODO("Not yet implemented")

@@ -1,6 +1,5 @@
 package com.example.exerciseday_android.ui.login
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
@@ -13,13 +12,11 @@ import com.example.exerciseday_android.APIS
 import com.example.exerciseday_android.LoginResponse
 import com.example.exerciseday_android.MainActivity
 import com.example.exerciseday_android.PostLogin
-import com.example.exerciseday_android.data.remote.course.ExpertResponse
 import com.example.exerciseday_android.ui.join.JoinInfoActivity
 import com.example.exerciseday_android.databinding.ActivityLoginBinding
 import com.example.exerciseday_android.ui.DefaultDialog
 import com.example.exerciseday_android.ui.find.FindIdActivity
 import com.example.exerciseday_android.ui.find.FindPwActivity
-import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

@@ -5,8 +5,6 @@ import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.exerciseday_android.databinding.ActivityMainBinding
-import com.example.exerciseday_android.ui.MyReviewFragment
-import com.example.exerciseday_android.ui.temp.CommunityFragment
 import com.example.exerciseday_android.ui.mypage.MyPageFragment
 
 class MainActivity : AppCompatActivity() {

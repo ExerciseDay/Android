@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.exerciseday_android.*
 import com.example.exerciseday_android.data.remote.users.UsersService
-import com.example.exerciseday_android.data.remote.course.*
+import com.example.exerciseday_android.data.remote.course.expert.*
 import com.example.exerciseday_android.databinding.FragmentPutExpertBinding
 import com.example.exerciseday_android.ui.DefaultDialog
 import retrofit2.Call
@@ -165,7 +165,7 @@ class PutExpertFragment : Fragment(), PutExpertCourseView, View.OnClickListener 
 
                     binding.putExpertExerciseRv.adapter = expertExerciseRVAdapter
 
-                    expertExerciseRVAdapter.setMyITemClickListener(object :
+                    expertExerciseRVAdapter.setMyItemClickListener(object :
                         ExpertExerciseRVAdapter.MyItemClickListener {
                         override fun onItemClick(realExpertRoutineInfosData: ExpertRoutineInfos) {
                             // Item 클릭 시 운동 세부 페이지로 이동

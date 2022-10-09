@@ -1,4 +1,4 @@
-package com.example.exerciseday_android.data.remote.course
+package com.example.exerciseday_android.data.remote.course.expert
 
 import com.google.gson.annotations.SerializedName
 
