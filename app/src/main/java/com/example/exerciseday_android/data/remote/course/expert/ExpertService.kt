@@ -1,4 +1,4 @@
-package com.example.exerciseday_android.data.remote.course
+package com.example.exerciseday_android.data.remote.course.expert
 
 import android.util.Log
 import com.example.exerciseday_android.CheckExpertView

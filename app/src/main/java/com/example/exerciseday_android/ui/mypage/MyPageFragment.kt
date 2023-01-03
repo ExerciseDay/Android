@@ -30,6 +30,16 @@ class MyPageFragment : Fragment() {
             mainActivity.replaceFragment(settingFragment)
         }
 
+        binding.myReviewBtn.setOnClickListener {
+            val reviewFragment = MyReviewFragment()
+            mainActivity.replaceFragment(reviewFragment)
+        }
+
+        binding.myLastGymBtn.setOnClickListener {
+            val lastGymFragment = MyLastGymFragment()
+            mainActivity.replaceFragment(lastGymFragment)
+        }
+
         return binding.root
     }
 }

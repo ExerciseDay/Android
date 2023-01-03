@@ -1,4 +1,4 @@
-package com.example.exerciseday_android.data.remote.course
+package com.example.exerciseday_android.data.remote.course.expert
 
 import retrofit2.Call
 import retrofit2.http.*

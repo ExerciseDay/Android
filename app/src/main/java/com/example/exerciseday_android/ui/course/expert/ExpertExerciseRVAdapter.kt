@@ -3,7 +3,7 @@ package com.example.exerciseday_android.ui.course.expert
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.exerciseday_android.data.remote.course.ExpertRoutineInfos
+import com.example.exerciseday_android.data.remote.course.expert.ExpertRoutineInfos
 import com.example.exerciseday_android.databinding.ItemExerciseListBinding
 
 class ExpertExerciseRVAdapter(private val expertExerciseList: ArrayList<ExpertRoutineInfos>) :
@@ -14,7 +14,7 @@ class ExpertExerciseRVAdapter(private val expertExerciseList: ArrayList<ExpertRo
     }
 
     private lateinit var mItemClickListener: MyItemClickListener
-    fun setMyITemClickListener(itemClickListener: MyItemClickListener) {
+    fun setMyItemClickListener(itemClickListener: MyItemClickListener) {
         mItemClickListener = itemClickListener
     }
 

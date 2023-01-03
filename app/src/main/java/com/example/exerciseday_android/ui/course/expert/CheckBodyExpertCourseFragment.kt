@@ -9,8 +9,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.exerciseday_android.MainActivity
 import com.example.exerciseday_android.R
-import com.example.exerciseday_android.data.remote.course.ExpertListInfo
-import com.example.exerciseday_android.data.remote.course.ExpertService
+import com.example.exerciseday_android.data.remote.course.expert.ExpertListInfo
+import com.example.exerciseday_android.data.remote.course.expert.ExpertService
 import com.example.exerciseday_android.databinding.FragmentCheckBodyExpertCourseBinding
 
 
@@ -72,7 +72,7 @@ class CheckBodyExpertCourseFragment : Fragment(), CheckExpertBodyCourseView, Vie
 
         val expertCourseRVAdapter = ExpertCourseRVAdapter(expertListInfoData)
 
-        expertCourseRVAdapter.setMyITemClickListener(object :
+        expertCourseRVAdapter.setMyItemClickListener(object :
             ExpertCourseRVAdapter.MyItemClickListener {
             override fun onItemClick(expertListInfoData: ExpertListInfo) {
                 // Item 클릭 시 전문가 코스 담기 페이지로 이동

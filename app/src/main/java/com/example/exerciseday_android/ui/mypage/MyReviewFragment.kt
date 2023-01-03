@@ -1,4 +1,4 @@
-package com.example.exerciseday_android.ui
+package com.example.exerciseday_android.ui.mypage
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,12 +8,11 @@ import android.view.ViewGroup
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.exerciseday_android.MainActivity
 import com.example.exerciseday_android.R
-import com.example.exerciseday_android.data.model.GymReview
 import com.example.exerciseday_android.data.model.MyReview
-import com.example.exerciseday_android.databinding.FragmentGymInfoBinding
 import com.example.exerciseday_android.databinding.FragmentMyReviewBinding
-import com.example.exerciseday_android.ui.gym.detail.GymReviewRVAdapter
+import com.example.exerciseday_android.ui.course.expert.CheckBodyExpertCourseFragment
 
 
 class MyReviewFragment : Fragment() {
@@ -31,6 +30,9 @@ class MyReviewFragment : Fragment() {
         // 뒤로 가기
         binding.myReviewBackBtn.setOnClickListener {
             // 마이페이지 메인으로 이동
+            (context as MainActivity).supportFragmentManager.beginTransaction()
+                .replace(R.id.main_frm, MyPageFragment())
+                .commitAllowingStateLoss()
         }
 
         // 데이터 리스트 생성 더미 데이터
