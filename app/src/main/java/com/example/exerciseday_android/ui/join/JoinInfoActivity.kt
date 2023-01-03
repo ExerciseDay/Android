@@ -25,6 +25,8 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
         binding = ActivityJoinInfoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        overridePendingTransition(R.anim.slide_in, R.anim.fade_out)
+
 
         // 뒤로 가기
         binding.joinInfoBackBtn.setOnClickListener(this)
@@ -39,6 +41,12 @@ class JoinInfoActivity : AppCompatActivity(), EmailCheckView, View.OnClickListen
         checkNickname()
         checkPassword()
         checkPasswordCheck()
+    }
+
+    override fun finish() {
+        super.finish()
+        overridePendingTransition(R.anim.fade_in, R.anim.slide_out)
+
     }
 
     private fun emailCheck() {

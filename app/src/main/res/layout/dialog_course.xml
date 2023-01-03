@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_bg">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
+        android:layout_marginBottom="35dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginEnd="35dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/dialog_course_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:fontFamily="@font/pretendard_2"
+            android:text="코스 기능이 궁금해요!"
+            android:textColor="@color/gray_900"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/dialog_course_content_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginTop="19dp"
+            android:fontFamily="@font/pretendard_2"
+            android:text="커스텀 코스"
+            android:textColor="@color/gray_900"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/pretendard"
+            android:lineHeight="20dp"
+            android:text="자신이 원하는 부위와 코스를 \n설정할 수 있어요!"
+            android:textAlignment="textStart"
+            android:textColor="@color/gray_700"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/pretendard_2"
+            android:text="전문가 코스"
+            android:textColor="@color/gray_900"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/pretendard"
+            android:lineHeight="20dp"
+            android:text="전문가가 추천하는 코스대로 \n운동할 수 있어요!"
+            android:textAlignment="textStart"
+            android:textColor="@color/gray_700"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

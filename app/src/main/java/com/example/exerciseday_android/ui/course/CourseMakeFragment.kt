@@ -1,21 +1,22 @@
 package com.example.exerciseday_android.ui.course
 
+import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.MotionEvent
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.Fragment
 import com.example.exerciseday_android.HomeFragment
 import com.example.exerciseday_android.MainActivity
 import com.example.exerciseday_android.R
 import com.example.exerciseday_android.databinding.FragmentCourseMakeBinding
+import com.example.exerciseday_android.ui.CourseDialog
 import com.example.exerciseday_android.ui.course.custom.CustomStartFragment
 import com.example.exerciseday_android.ui.course.expert.SelectBodyPartFragment
 
+
 class CourseMakeFragment : Fragment() {
     lateinit var binding: FragmentCourseMakeBinding
+    private var fabIsClicked = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,7 +41,12 @@ class CourseMakeFragment : Fragment() {
 //            val selectBodyPartFragment = SelectBodyPartFragment()
 //            mainActivity.replaceFragment(selectBodyPartFragment)
             (context as MainActivity).supportFragmentManager.beginTransaction()
-                .setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_in, R.anim.fade_out)
+                .setCustomAnimations(
+                    R.anim.fade_in,
+                    R.anim.fade_out,
+                    R.anim.fade_in,
+                    R.anim.fade_out
+                )
                 .replace(R.id.main_frm, SelectBodyPartFragment())
                 .commitAllowingStateLoss()
         }
@@ -129,6 +135,28 @@ class CourseMakeFragment : Fragment() {
             false
         })
 
+
+        // 물음표 fab click event
+        binding.courseMakeFab.setOnClickListener {
+            val dialog = CourseDialog(context as MainActivity, binding.courseMakeFab)
+            if (!fabIsClicked) {
+                fabIsClicked = true
+                binding.courseMakeFab.imageTintList = ColorStateList.valueOf(resources.getColor(R.color.gray_700, null))
+                binding.courseMakeFab.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.white, null))
+
+                val layoutParams: WindowManager.LayoutParams =
+                    (activity as MainActivity).window.attributes
+                layoutParams.dimAmount = 0.75f
+                (activity as MainActivity).window.addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND)
+                (activity as MainActivity).window.attributes = layoutParams
+                dialog.show()
+
+            } else {
+                binding.courseMakeFab.imageTintList = ColorStateList.valueOf(resources.getColor(R.color.white, null))
+                binding.courseMakeFab.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.gray_500, null))
+            }
+            fabIsClicked = false
+        }
 
         return binding.root
     }

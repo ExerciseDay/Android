@@ -20,6 +20,8 @@ class JoinGenderActivity : AppCompatActivity(), View.OnClickListener {
         binding = ActivityJoinGenderBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        overridePendingTransition(R.anim.slide_in, R.anim.fade_out)
+
         // 뒤로 가기
         binding.joinGenderBackBtn.setOnClickListener(this)
 
@@ -111,6 +113,11 @@ class JoinGenderActivity : AppCompatActivity(), View.OnClickListener {
             }
             false
         })
+    }
+
+    override fun finish() {
+        super.finish()
+        overridePendingTransition(R.anim.fade_in, R.anim.slide_out)
     }
 
     override fun onClick(v: View?) {

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -36,10 +37,20 @@ class MyLastGymFragment : Fragment() {
         -  SharedPreferences 로 최근 본 헬스장 리스트 가져오는 작업
          */
 
+        requireActivity().onBackPressedDispatcher.addCallback(object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                // 뒤로가기 눌렀을 때 동작할 코드
+                (context as MainActivity).supportFragmentManager.beginTransaction()
+                    .setCustomAnimations(R.anim.fade_in, R.anim.slide_out, R.anim.fade_in, R.anim.slide_out)
+                    .replace(R.id.main_frm, MyPageFragment())
+                    .commitAllowingStateLoss()
+            }
+        })
 
         // 뒤로 가기
         binding.myLastGymBackBtn.setOnClickListener {
             (context as MainActivity).supportFragmentManager.beginTransaction()
+                .setCustomAnimations(R.anim.fade_in, R.anim.slide_out, R.anim.fade_in, R.anim.slide_out)
                 .replace(R.id.main_frm, MyPageFragment())
                 .commitAllowingStateLoss()
         }

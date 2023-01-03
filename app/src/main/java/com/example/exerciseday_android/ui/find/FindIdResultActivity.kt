@@ -3,6 +3,7 @@ package com.example.exerciseday_android.ui.find
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.exerciseday_android.R
 import com.example.exerciseday_android.databinding.ActivityFindIdResultBinding
 import com.example.exerciseday_android.ui.login.LoginActivity
 
@@ -13,6 +14,8 @@ class FindIdResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityFindIdResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        overridePendingTransition(R.anim.slide_in, R.anim.fade_out)
 
         binding.resultBackBtn.setOnClickListener {
             finish()
@@ -30,6 +33,11 @@ class FindIdResultActivity : AppCompatActivity() {
             val intent = Intent(this, FindPwActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    override fun finish() {
+        super.finish()
+        overridePendingTransition(R.anim.fade_in, R.anim.slide_out)
     }
 
 }

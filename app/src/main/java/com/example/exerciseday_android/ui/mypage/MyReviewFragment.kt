@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -26,11 +27,20 @@ class MyReviewFragment : Fragment() {
     ): View? {
         binding = FragmentMyReviewBinding.inflate(inflater, container, false)
 
+        requireActivity().onBackPressedDispatcher.addCallback(object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                // 뒤로가기 눌렀을 때 동작할 코드
+                (context as MainActivity).supportFragmentManager.beginTransaction()
+                    .setCustomAnimations(R.anim.fade_in, R.anim.slide_out, R.anim.fade_in, R.anim.slide_out)
+                    .replace(R.id.main_frm, MyPageFragment())
+                    .commitAllowingStateLoss()
+            }
+        })
 
         // 뒤로 가기
         binding.myReviewBackBtn.setOnClickListener {
-            // 마이페이지 메인으로 이동
             (context as MainActivity).supportFragmentManager.beginTransaction()
+                .setCustomAnimations(R.anim.fade_in, R.anim.slide_out, R.anim.fade_in, R.anim.slide_out)
                 .replace(R.id.main_frm, MyPageFragment())
                 .commitAllowingStateLoss()
         }

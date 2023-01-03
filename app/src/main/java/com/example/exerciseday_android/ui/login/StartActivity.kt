@@ -3,6 +3,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.example.exerciseday_android.R
 //import android.widget.ImageButton
 //import android.widget.Toast
 import com.example.exerciseday_android.databinding.ActivityStartBinding
@@ -23,6 +24,8 @@ class StartActivity : AppCompatActivity() {
         binding = ActivityStartBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        overridePendingTransition(R.anim.fade_in, R.anim.none)
 
         var keyHash = Utility.getKeyHash(this)
         Log.e("hash", "해시 키 값 : ${keyHash}")
@@ -61,6 +64,11 @@ class StartActivity : AppCompatActivity() {
             val intent = Intent(this, TermPersonalActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    override fun finish() {
+        super.finish()
+        overridePendingTransition(R.anim.none, R.anim.fade_out)
     }
 }
 //    override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,158 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    >
+    android:layout_height="match_parent">
+
     <ImageView
         android:id="@+id/login_access_logo_iv"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:src="@drawable/logo_horizontal"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
-    
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <View
         android:id="@+id/login_access_div_v"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/gray_400"
-        app:layout_constraintTop_toBottomOf="@+id/login_access_logo_iv"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/login_access_logo_iv" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/login_access_content_cl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingHorizontal="25dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_access_logo_iv"
-        android:paddingHorizontal="25dp"
-        >
+        app:layout_constraintTop_toBottomOf="@+id/login_access_logo_iv">
 
         <TextView
             android:id="@+id/login_access_title_tv"
             android:layout_width="wrap_content"
             android:layout_height="44sp"
-            android:gravity="center"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/pretendard_2"
+            android:gravity="center"
             android:lineSpacingExtra="6sp"
             android:text="앱 접근권한 안내"
             android:textColor="@color/gray_950"
             android:textSize="20sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="@id/login_access_content_cl"
-            android:layout_marginTop="20dp"
 
             />
+
         <LinearLayout
             android:id="@+id/login_access_subtitle_ll"
-            android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/login_access_title_tv"
-            app:layout_constraintLeft_toLeftOf="parent"
             android:layout_marginTop="4dp"
-            >
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/login_access_title_tv">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/pretendard_2"
                 android:text="선택적 "
-                android:fontFamily="@font/pretendard_2"
-                android:textSize="15sp"
                 android:textColor="@color/pink_0"
-                />
+                android:textSize="15sp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="접근권한"
                 android:fontFamily="@font/pretendard_2"
-                android:textSize="15sp"
-                android:textColor="@color/gray_950"/>
+                android:text="접근권한"
+                android:textColor="@color/gray_950"
+                android:textSize="15sp" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/login_access_intro_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="미동의 시에도 하루운동 서비스를 이용할 수 있으나, 일부 서비스의 이용이 제한 될 수 있습니다."
-            android:fontFamily="@font/pretendard"
-            android:textSize="15sp"
-            android:textColor="@color/gray_800"
-            android:lineSpacingExtra="5sp"
-            app:layout_constraintTop_toBottomOf="@+id/login_access_subtitle_ll"
-            app:layout_constraintLeft_toLeftOf="parent"
             android:layout_marginTop="6sp"
-            />
+            android:fontFamily="@font/pretendard"
+            android:lineSpacingExtra="5sp"
+            android:text="미동의 시에도 하루운동 서비스를 이용할 수 있으나, 일부 서비스의 이용이 제한 될 수 있습니다."
+            android:textColor="@color/gray_800"
+            android:textSize="15sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_access_subtitle_ll" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/login_access_storage_cl"
-                android:layout_width="match_parent"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/login_access_storage_cl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_access_intro_tv">
+
+            <ImageView
+                android:id="@+id/login_access_storage_ic_iv"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/login_access_intro_tv"
+                android:src="@drawable/ic_access_storage"
                 app:layout_constraintLeft_toLeftOf="parent"
-                android:layout_marginTop="15dp">
-                <ImageView
-                    android:id="@+id/login_access_storage_ic_iv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_access_storage"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    />
-                <TextView
-                    android:id="@+id/login_access_storage_title_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="저장공간"
-                    android:fontFamily="@font/pretendard_2"
-                    android:textColor="@color/gray_900"
-                    android:textSize="15sp"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintLeft_toLeftOf="@+id/login_access_storage_content_tv" />
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/login_access_storage_content_tv"
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:fontFamily="@font/pretendard"
-                    android:lineSpacingExtra="5sp"
-                    android:text="사용자 식별 정보 등 앱 사용 관련 정보를 사용합니다."
-                    android:textColor="@color/gray_800"
-                    android:textSize="15sp"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/login_access_storage_title_tv" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/login_access_storage_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/pretendard_2"
+                android:text="저장공간"
+                android:textColor="@color/gray_900"
+                android:textSize="15sp"
+                app:layout_constraintLeft_toLeftOf="@+id/login_access_storage_content_tv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/login_access_storage_content_tv"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/pretendard"
+                android:lineSpacingExtra="5sp"
+                android:text="사용자 식별 정보 등 앱 사용 관련 정보를 사용합니다."
+                android:textColor="@color/gray_800"
+                android:textSize="15sp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/login_access_storage_title_tv" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/login_access_location_cl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/login_access_storage_cl"
+            android:layout_marginTop="20dp"
             app:layout_constraintLeft_toLeftOf="parent"
-            android:layout_marginTop="20dp">
+            app:layout_constraintTop_toBottomOf="@+id/login_access_storage_cl">
+
             <ImageView
                 android:id="@+id/login_access_location_ic_iv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_access_location"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                />
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/login_access_location_title_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="위치정보"
                 android:fontFamily="@font/pretendard_2"
+                android:text="위치정보"
                 android:textColor="@color/gray_900"
                 android:textSize="15sp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintLeft_toLeftOf="@+id/login_access_location_content_tv" />
+                app:layout_constraintLeft_toLeftOf="@+id/login_access_location_content_tv"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/login_access_location_content_tv"
                 android:layout_width="300dp"
@@ -168,86 +170,90 @@
                 app:layout_constraintHorizontal_weight="1"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/login_access_location_title_tv" />
-                <Button
-                    android:id="@+id/login_access_location_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="23dp"
-                    android:text="@string/login_access_location"
-                    android:fontFamily="@font/pretendard"
-                    android:textSize="13sp"
-                    android:textColor="@color/gray_800"
-                    android:background="@color/transparent"
-                    app:layout_constraintTop_toBottomOf="@id/login_access_location_content_tv"
-                    app:layout_constraintLeft_toLeftOf="@id/login_access_location_content_tv"/>
+
+            <Button
+                android:id="@+id/login_access_location_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="23dp"
+                android:background="@color/transparent"
+                android:fontFamily="@font/pretendard"
+                android:text="@string/login_access_location"
+                android:textColor="@color/gray_800"
+                android:textSize="13sp"
+                app:layout_constraintLeft_toLeftOf="@id/login_access_location_content_tv"
+                app:layout_constraintTop_toBottomOf="@id/login_access_location_content_tv" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/login_access_camera_cl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/login_access_location_cl"
+            android:layout_marginTop="20dp"
             app:layout_constraintBottom_toTopOf="@id/login_access_msg_tv"
             app:layout_constraintLeft_toLeftOf="parent"
-            android:layout_marginTop="20dp">
+            app:layout_constraintTop_toBottomOf="@+id/login_access_location_cl">
+
             <ImageView
                 android:id="@+id/login_access_camera_ic_iv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_access_camera"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                />
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/login_access_camera_title_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="카메라"
                 android:fontFamily="@font/pretendard_2"
+                android:text="카메라"
                 android:textColor="@color/gray_900"
                 android:textSize="15sp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintLeft_toLeftOf="@+id/login_access_camera_content_tv" />
+                app:layout_constraintLeft_toLeftOf="@+id/login_access_camera_content_tv"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/login_access_camera_content_tv"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:text="사용자 프로필, 리뷰를 작성하며 카메라 및 앨범을 사용합니다."
+                android:layout_marginTop="4dp"
                 android:fontFamily="@font/pretendard"
+                android:lineSpacingExtra="5sp"
+                android:text="사용자 프로필, 리뷰를 작성하며 카메라 및 앨범을 사용합니다."
                 android:textColor="@color/gray_800"
                 android:textSize="15sp"
-                android:lineSpacingExtra="5sp"
-                app:layout_constraintTop_toBottomOf="@id/login_access_camera_title_tv"
                 app:layout_constraintRight_toRightOf="parent"
-                android:layout_marginTop="4dp"/>
+                app:layout_constraintTop_toBottomOf="@id/login_access_camera_title_tv" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <TextView
             android:id="@+id/login_access_msg_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="※ 설정 > 애플리케이션 > 하루운동 > 권한 메뉴에서도 설정하실 수 있습니다."
-            android:fontFamily="@font/pretendard"
-            android:textSize="13sp"
-            android:textColor="@color/gray_600"
-            app:layout_constraintTop_toBottomOf="@id/login_access_camera_cl"
-            app:layout_constraintLeft_toLeftOf="parent"
             android:layout_marginTop="15dp"
-            />
+            android:fontFamily="@font/pretendard"
+            android:text="※ 설정 > 애플리케이션 > 하루운동 > 권한 메뉴에서도 설정하실 수 있습니다."
+            android:textColor="@color/gray_600"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/login_access_camera_cl" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
         android:id="@+id/login_access_check_btn"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:text="확인"
-        android:fontFamily="@font/pretendard_2"
-        android:textSize="18sp"
-        android:textColor="@color/white"
-        android:background="@drawable/btn_pink0_border12"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginHorizontal="25dp"
         android:layout_marginBottom="44dp"
-        />
+        android:background="@drawable/btn_pink0_border12"
+        android:fontFamily="@font/pretendard_2"
+        android:stateListAnimator="@null"
+        android:text="확인"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

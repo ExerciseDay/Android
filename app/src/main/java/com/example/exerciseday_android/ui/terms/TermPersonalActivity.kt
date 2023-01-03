@@ -12,7 +12,7 @@ class TermPersonalActivity : AppCompatActivity() {
         binding = ActivityTermPersonalBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.locationConditionBackBtn.setOnClickListener {
+        binding.termPersonalBackBtn.setOnClickListener {
             finish()
         }
     }

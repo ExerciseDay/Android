@@ -26,6 +26,8 @@
             android:layout_gravity="top"
             android:background="@color/white"
             android:overScrollMode="never"
+            app:contentInsetStart="0dp"
+            app:contentInsetStartWithNavigation="0dp"
             app:layout_collapseMode="pin">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -34,8 +36,6 @@
                 android:layout_height="44dp"
                 android:background="@color/white"
                 android:elevation="1dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageButton

@@ -28,6 +28,8 @@ class NewPwActivity : AppCompatActivity() {
         binding = ActivityNewPwBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        overridePendingTransition(R.anim.slide_in, R.anim.fade_out)
+
         var newPwValid = false
         var checkValid = false
 
@@ -105,6 +107,12 @@ class NewPwActivity : AppCompatActivity() {
             binding.newPwNextBtn.isEnabled = false
         }
     }
+
+    override fun finish() {
+        super.finish()
+        overridePendingTransition(R.anim.fade_in, R.anim.slide_out)
+    }
+
     private fun editPw(jwt: String, userIdx: Int, pw: String) {
         Log.d("jwt", jwt)
         val dialog = DefaultDialog(this)

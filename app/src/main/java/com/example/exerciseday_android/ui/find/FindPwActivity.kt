@@ -28,6 +28,8 @@ class FindPwActivity : AppCompatActivity() {
         binding = ActivityFindPwBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        overridePendingTransition(R.anim.slide_in, R.anim.fade_out)
+
         var emailValid = false
         var phoneValid = false
 
@@ -188,6 +190,11 @@ class FindPwActivity : AppCompatActivity() {
                 dialog.show("잘못된 인증번호입니다.\n다시 입력해주세요.")
             }
         }
+    }
+
+    override fun finish() {
+        super.finish()
+        overridePendingTransition(R.anim.fade_in, R.anim.slide_out)
     }
 
     private fun sendAuthNumber() {

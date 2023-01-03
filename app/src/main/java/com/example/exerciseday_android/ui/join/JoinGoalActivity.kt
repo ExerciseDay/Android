@@ -20,6 +20,7 @@ class JoinGoalActivity : AppCompatActivity(), View.OnClickListener {
         binding = ActivityJoinGoalBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        overridePendingTransition(R.anim.slide_in, R.anim.fade_out)
 
         // 뒤로 가기
         binding.joinGoalBackBtn.setOnClickListener(this)
@@ -257,6 +258,10 @@ class JoinGoalActivity : AppCompatActivity(), View.OnClickListener {
 
     }
 
+    override fun finish() {
+        super.finish()
+        overridePendingTransition(R.anim.fade_in, R.anim.slide_out)
+    }
 
     override fun onClick(v: View?) {
         when (v?.id) {

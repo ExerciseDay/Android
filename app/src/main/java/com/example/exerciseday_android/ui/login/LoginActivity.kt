@@ -8,10 +8,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.exerciseday_android.APIS
-import com.example.exerciseday_android.LoginResponse
-import com.example.exerciseday_android.MainActivity
-import com.example.exerciseday_android.PostLogin
+import com.example.exerciseday_android.*
 import com.example.exerciseday_android.ui.join.JoinInfoActivity
 import com.example.exerciseday_android.databinding.ActivityLoginBinding
 import com.example.exerciseday_android.ui.DefaultDialog
@@ -30,6 +27,8 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        overridePendingTransition(R.anim.slide_in, R.anim.none)
 
         binding.loginBtn.isEnabled = false
 
@@ -117,6 +116,11 @@ class LoginActivity : AppCompatActivity() {
             binding.loginBtn.isEnabled = false
         }
 
+    }
+
+    override fun finish() {
+        super.finish()
+        overridePendingTransition(R.anim.none, R.anim.slide_out)
     }
 
     private fun login() {

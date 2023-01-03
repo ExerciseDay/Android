@@ -21,6 +21,7 @@ class JoinCompleteActivity : AppCompatActivity(), JoinView, View.OnClickListener
         binding = ActivityJoinCompleteBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        overridePendingTransition(R.anim.slide_in, R.anim.fade_out)
 
         // 뒤로 가기
         binding.joinCompleteBackBtn.setOnClickListener(this)
@@ -28,6 +29,11 @@ class JoinCompleteActivity : AppCompatActivity(), JoinView, View.OnClickListener
         // 확인 버튼 클릭 시
         binding.joinCompleteCheckBtn.setOnClickListener(this)
 
+    }
+
+    override fun finish() {
+        super.finish()
+        overridePendingTransition(R.anim.fade_in, R.anim.slide_out)
     }
 
     override fun onClick(v: View?) {

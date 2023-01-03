@@ -28,6 +28,8 @@ class FindIdActivity : AppCompatActivity() {
         binding = ActivityFindIdBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        overridePendingTransition(R.anim.slide_in, R.anim.fade_out)
+
         binding.findIdNextBtn.isEnabled = false
 
         binding.findIdBackBtn.setOnClickListener {
@@ -78,6 +80,11 @@ class FindIdActivity : AppCompatActivity() {
         binding.findIdNextBtn.setOnClickListener {
             findId()
         }
+    }
+
+    override fun finish() {
+        super.finish()
+        overridePendingTransition(R.anim.fade_in, R.anim.slide_out)
     }
 
     private fun findId() {
