@@ -1,20 +1,65 @@
 <resources>
     <string name="app_name">하루운동</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- 시작 화면 -->
     <string name="start_info"><u>개인정보 취급 방침</u></string>
     <string name="start_another_login"><u>다른 방법으로 시작하기</u></string>
     <string name="login_access_location"><u>위치기반 서비스 이용약관 자세히 보기</u></string>
 
+    <!-- 로그인 -->
     <string name="login_find_id"><u>아이디 찾기</u></string>
     <string name="login_find_password"><u>비밀번호 찾기</u></string>
+
+    <!-- 회원가입 -->
     <string name="login_sign_in"><u>회원가입</u></string>
     <string name="join_phone_verification_code_time_out">제한 시간이 만료되었습니다.\n다시 인증해주세요.</string>
 
+    <!-- 공통 -->
+    <string name="go_back">뒤로 가기</string>
+    <string name="bullet_point">글머리 기호</string>
+
+    <!-- 마이페이지 -->
+    <string name="my_page">마이페이지</string>
+
+    <string name="my_page_setting">설정</string>
+    <string name="my_page_profile_image">프로필 이미지</string>
+    <string name="my_page_profile_edit">프로필 편집</string>
+    <string name="my_page_last_gym">최근 본 헬스장</string>
+    <string name="my_page_last_exercise_course">최근에 본 운동/코스</string>
+    <string name="my_page_course_collection">나만의 코스 모아보기</string>
+    <string name="my_page_review_check">나의 리뷰 확인하기</string>
+
+    <!-- 마이페이지 - 설정 -->
+    <string name="my_page_setting_notification_setting">알림 설정</string>
+    <string name="my_page_setting_dib_exercise_popup">찜한 운동 팝업창</string>
+    <string name="my_page_setting_user_setting">사용자 설정</string>
+    <string name="my_page_setting_account_info_management">계정 및 정보 관리</string>
+    <string name="my_page_setting_etc">기타</string>
+    <string name="my_page_setting_logout">로그아웃</string>
+    <string name="my_page_setting_withdraw">탈퇴하기</string>
+
+    <!-- 마이페이지 - 프로필 편집 -->
+    <string name="my_page_profile_edit_info">프로필 정보</string>
+    <string name="email">이메일</string>
+    <string name="nickname">닉네임</string>
+    <string name="complete">완료</string>
+    <string name="change">변경</string>
+
+    <!-- 마이페이지 - 최근 본 헬스장 -->
+    <string name="my_page_last_gym_blank">최근 본 헬스장&#160;</string>
+    <string name="my_page_last_gym_count">개</string>
+    <string name="edit">편집하기</string>
+    <string name="my_page_last_gym_no_such_gym">최근 본 헬스장이 없습니다.</string>
+
+    <!-- 마이페이지 - 나의 리뷰 -->
+    <string name="my_page_review">나의 리뷰</string>
     <string name="my_review_info_first">후기는 작성 후 48시간 이내에 본문만 수정이 가능하며, \n작성자는 현재 닉네임으로 등록됩니다.</string>
     <string name="my_review_info_second">삭제된 후기는 복구할 수 없습니다.</string>
     <string name="my_review_info_last">후기 삭제는 후기 작성일로부터 30일 이후에 가능합니다.</string>
+    <string name="my_page_review_no_such_review">작성된 리뷰가 없습니다.</string>
 
+
+    <!-- 헬스장 검색 -->
     <string-array name="map_university_entries">
         <item>광운대학교</item>
         <item>서울여자대학교</item>
@@ -36,6 +81,7 @@
         <item>서울특별시 동대문구 이문로 107</item>
     </string-array>
 
+    <!-- 전문가 코스 -->
     <string-array name="body_detail_part_arm_entries">
         <item>팔 이두</item>
         <item>팔 삼두</item>
@@ -83,15 +129,6 @@
         <item>기타</item>
     </string-array>
 
-    <string name="title_activity_my_page">MyPageActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
 
 </resources>

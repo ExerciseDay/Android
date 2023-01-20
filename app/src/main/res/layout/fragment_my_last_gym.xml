@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.mypage.MyLastGymFragment">
+    tools:context=".ui.mypage.lastgym.MyLastGymFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/my_last_gym_app_bar_cl"
@@ -25,14 +25,15 @@
             android:background="@color/transparent"
             android:src="@drawable/ic_navigate_prev"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/go_back" />
 
         <TextView
             android:id="@+id/my_last_gym_title_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/pretendard_2"
-            android:text="최근 본 헬스장"
+            android:text="@string/my_page_last_gym"
             android:textColor="@color/gray_950"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -54,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="21dp"
-            android:text="최근 본 헬스장 "
+            android:text="@string/my_page_last_gym_blank"
             android:textColor="@color/gray_600"
             android:textSize="13sp"
             android:visibility="visible"
@@ -65,13 +66,25 @@
             android:id="@+id/my_last_gym_count_content_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0개"
+            android:text="0"
             android:textColor="@color/gray_600"
             android:textSize="13sp"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="@+id/my_last_gym_count_title_tv"
             app:layout_constraintStart_toEndOf="@+id/my_last_gym_count_title_tv"
             app:layout_constraintTop_toTopOf="@+id/my_last_gym_count_title_tv" />
+
+        <TextView
+            android:id="@+id/my_last_gym_count_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/my_page_last_gym_count"
+            android:textColor="@color/gray_600"
+            android:textSize="13sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/my_last_gym_count_content_tv"
+            app:layout_constraintStart_toEndOf="@+id/my_last_gym_count_content_tv"
+            app:layout_constraintTop_toTopOf="@+id/my_last_gym_count_content_tv" />
 
         <Button
             android:id="@+id/my_last_gym_edit_btn"
@@ -81,7 +94,7 @@
             android:background="@drawable/btn_gray800_border13"
             android:minWidth="0dp"
             android:paddingHorizontal="12dp"
-            android:text="편집하기"
+            android:text="@string/edit"
             android:textColor="@color/white"
             android:textSize="15sp"
             android:visibility="visible"
@@ -101,36 +114,22 @@
             app:layout_constraintTop_toBottomOf="@+id/my_last_gym_edit_btn"
             tools:listitem="@layout/item_my_last_gym" />
 
-        <LinearLayout
-            android:id="@+id/my_last_gym_empty_layout"
+        <TextView
+            android:id="@+id/my_last_gym_empty_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:drawablePadding="16dp"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/my_last_gym_empty_iv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_my_last_gym_empty" />
-
-            <TextView
-                android:id="@+id/my_last_gym_empty_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="16dp"
-                android:fontFamily="@font/pretendard_2"
-                android:text="최근 본 헬스장이 없습니다."
-                android:textColor="@color/gray_500"
-                android:textSize="18sp" />
-
-        </LinearLayout>
+            app:layout_constraintTop_toTopOf="parent"
+            android:fontFamily="@font/pretendard_2"
+            android:text="@string/my_page_last_gym_no_such_gym"
+            android:textColor="@color/gray_500"
+            android:textSize="18sp"
+            app:drawableTopCompat="@drawable/ic_my_last_gym_empty" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

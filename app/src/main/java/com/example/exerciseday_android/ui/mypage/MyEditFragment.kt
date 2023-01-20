@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.exerciseday_android.MainActivity
 import com.example.exerciseday_android.databinding.FragmentMyProfileEditBinding
-import com.example.exerciseday_android.databinding.FragmentMySettingBinding
+
 
 class MyEditFragment : Fragment() {
 
@@ -17,7 +17,7 @@ class MyEditFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentMyProfileEditBinding.inflate(inflater, container, false)
 
         val mainActivity = activity as MainActivity

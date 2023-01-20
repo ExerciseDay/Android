@@ -9,6 +9,9 @@ import androidx.fragment.app.FragmentManager
 import com.example.exerciseday_android.MainActivity
 import com.example.exerciseday_android.R
 import com.example.exerciseday_android.databinding.FragmentMyPageBinding
+import com.example.exerciseday_android.ui.mypage.lastgym.MyLastGymFragment
+import com.example.exerciseday_android.ui.mypage.review.MyReviewFragment
+
 
 class MyPageFragment : Fragment() {
 
@@ -17,7 +20,7 @@ class MyPageFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentMyPageBinding.inflate(inflater, container, false)
 
         (context as MainActivity).supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)

@@ -2,8 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/course_appbar_cl"
@@ -14,17 +14,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-        <!--        <ImageButton-->
-        <!--            android:id="@+id/course_back_btn"-->
-        <!--            android:layout_width="28dp"-->
-        <!--            android:layout_height="28dp"-->
-        <!--            android:layout_marginLeft="20dp"-->
-        <!--            android:layout_marginTop="6dp"-->
-        <!--            android:background="@color/transparent"-->
-        <!--            android:src="@drawable/ic_navigate_prev"-->
-        <!--            app:layout_constraintLeft_toLeftOf="parent"-->
-        <!--            app:layout_constraintTop_toTopOf="parent" />-->
 
         <TextView
             android:id="@+id/course_appbar_title_tv"
@@ -38,6 +27,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.core.widget.NestedScrollView
@@ -156,28 +146,28 @@
                 android:textColor="#464646"
                 android:textSize="20sp" />
 
-<!--            <TextView-->
-<!--                android:id="@+id/btnEdit"-->
-<!--                android:layout_width="77sp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_alignRight="@+id/text1"-->
-<!--                android:layout_alignBottom="@+id/gray200Linn"-->
-<!--                android:layout_marginTop="30sp"-->
-<!--                android:layout_marginLeft="25dp"-->
-<!--                android:layout_marginBottom="-48dp"-->
-<!--                android:background="@drawable/bg_facilities"-->
-<!--                android:gravity="center"-->
-<!--                android:text="편집하기"-->
-<!--                android:textColor="@color/white"-->
-<!--                android:textSize="15sp" />-->
+            <!--            <TextView-->
+            <!--                android:id="@+id/btnEdit"-->
+            <!--                android:layout_width="77sp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_alignRight="@+id/text1"-->
+            <!--                android:layout_alignBottom="@+id/gray200Linn"-->
+            <!--                android:layout_marginTop="30sp"-->
+            <!--                android:layout_marginLeft="25dp"-->
+            <!--                android:layout_marginBottom="-48dp"-->
+            <!--                android:background="@drawable/bg_facilities"-->
+            <!--                android:gravity="center"-->
+            <!--                android:text="편집하기"-->
+            <!--                android:textColor="@color/white"-->
+            <!--                android:textSize="15sp" />-->
 
             <TextView
                 android:id="@+id/text2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/text1"
-                android:layout_marginTop="10dp"
                 android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
                 android:fontFamily="@font/pretendard_2"
                 android:text="커스텀 코스"
                 android:textColor="#464646"
@@ -189,20 +179,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="10dp" />
-
-            <!--                <Button-->
-            <!--                    android:id="@+id/course_btn"-->
-            <!--                    android:layout_width="match_parent"-->
-            <!--                    android:layout_height="47dp"-->
-            <!--                    android:layout_alignBottom="@+id/customRecycleView"-->
-            <!--                    android:layout_marginTop="14dp"-->
-            <!--                    android:layout_marginBottom="-60dp"-->
-            <!--                    android:background="@drawable/btn_gray300_border18"-->
-            <!--                    android:backgroundTint="@color/gray_400"-->
-            <!--                    android:fontFamily="@font/pretendard"-->
-            <!--                    android:text="추가하기 +"-->
-            <!--                    android:textColor="@color/black"-->
-            <!--                    android:textSize="17sp" />-->
 
             <TextView
                 android:id="@+id/text3"
@@ -219,34 +195,12 @@
                 android:id="@+id/expertRecycleView"
                 android:layout_width="356dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:layout_marginLeft="25dp"
-                android:layout_marginBottom="40dp"/>
-
-            <!--                <Button-->
-            <!--                    android:id="@+id/btnExpertPlus"-->
-            <!--                    android:layout_width="match_parent"-->
-            <!--                    android:layout_height="47dp"-->
-            <!--                    android:layout_alignBottom="@+id/expertRecycleView"-->
-            <!--                    android:layout_marginTop="14dp"-->
-            <!--                    android:layout_marginBottom="-60dp"-->
-            <!--                    android:background="@drawable/btn_gray300_border18"-->
-            <!--                    android:backgroundTint="@color/gray_400"-->
-            <!--                    android:fontFamily="@font/pretendard"-->
-            <!--                    android:text="추가하기 +"-->
-            <!--                    android:textColor="@color/black"-->
-            <!--                    android:textSize="17sp" />-->
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="40dp" />
 
         </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
 
-    <!--    <Button-->
-    <!--        android:id="@+id/search_btn"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:text="검색창"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/home_course_list_rv"-->
-    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
-    <!--        app:layout_constraintRight_toRightOf="parent"/>-->
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

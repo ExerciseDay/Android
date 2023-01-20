@@ -1,4 +1,4 @@
-package com.example.exerciseday_android.ui.mypage
+package com.example.exerciseday_android.ui.mypage.review
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -13,7 +13,7 @@ import com.example.exerciseday_android.MainActivity
 import com.example.exerciseday_android.R
 import com.example.exerciseday_android.data.model.MyReview
 import com.example.exerciseday_android.databinding.FragmentMyReviewBinding
-import com.example.exerciseday_android.ui.course.expert.CheckBodyExpertCourseFragment
+import com.example.exerciseday_android.ui.mypage.MyPageFragment
 
 
 class MyReviewFragment : Fragment() {
@@ -24,7 +24,7 @@ class MyReviewFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentMyReviewBinding.inflate(inflater, container, false)
 
         requireActivity().onBackPressedDispatcher.addCallback(object : OnBackPressedCallback(true) {
@@ -93,9 +93,9 @@ class MyReviewFragment : Fragment() {
         if(myReviewData.size == 0) {
             binding.myReviewRv.visibility = View.GONE
             binding.myReviewInfoCl.visibility = View.GONE
-            binding.myReviewEmptyLayout.visibility = View.VISIBLE
+            binding.myReviewEmptyTv.visibility = View.VISIBLE
         } else {
-            binding.myReviewEmptyLayout.visibility = View.GONE
+            binding.myReviewEmptyTv.visibility = View.GONE
             binding.myReviewInfoCl.visibility = View.VISIBLE
             binding.myReviewRv.visibility = View.VISIBLE
         }

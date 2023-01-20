@@ -35,10 +35,6 @@
             android:name=".ui.temp.EditProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.temp.MypageActivity"
-            android:exported="false"
-            android:label="@string/title_activity_my_page" />
-        <activity
             android:name=".ui.temp.NewCourseEdit"
             android:exported="false" />
         <activity

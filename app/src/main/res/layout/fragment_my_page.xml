@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/my_appbar_cl"
@@ -19,8 +20,9 @@
             android:layout_width="28dp"
             android:layout_height="28dp"
             android:layout_marginTop="7dp"
-            android:layout_marginRight="19dp"
+            android:layout_marginEnd="19dp"
             android:background="@color/transparent"
+            android:contentDescription="@string/my_page_setting"
             android:src="@drawable/ic_setting"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -30,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/pretendard_2"
-            android:text="마이페이지"
+            android:text="@string/my_page"
             android:textColor="@color/gray_950"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -44,8 +46,9 @@
         android:id="@+id/my_emoji_iv"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginLeft="42dp"
+        android:layout_marginStart="42dp"
         android:layout_marginTop="30dp"
+        android:contentDescription="@string/my_page_profile_image"
         android:src="@drawable/icon_emoji_woman"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/my_appbar_cl" />
@@ -54,7 +57,7 @@
         android:id="@+id/my_name_cl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="1dp"
+        android:layout_marginStart="1dp"
         android:layout_marginTop="26dp"
         app:layout_constraintLeft_toRightOf="@id/my_emoji_iv"
         app:layout_constraintTop_toTopOf="@id/my_emoji_iv">
@@ -81,6 +84,7 @@
             app:layout_constraintBottom_toBottomOf="@id/my_name_tv"
             app:layout_constraintLeft_toRightOf="@id/my_name_tv"
             app:layout_constraintTop_toTopOf="@id/my_name_tv" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
@@ -104,7 +108,7 @@
         android:layout_marginRight="25dp"
         android:background="@drawable/btn_gray50_border12_gray950"
         android:fontFamily="@font/pretendard"
-        android:text="프로필 편집"
+        android:text="@string/my_page_profile_edit"
         android:textColor="@color/gray_950"
         android:textSize="15sp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -126,7 +130,8 @@
             android:id="@+id/my_last_gym_iv"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:layout_marginLeft="3dp"
+            android:layout_marginStart="3dp"
+            android:contentDescription="@string/my_page_last_gym"
             android:src="@drawable/ic_my_location"
             app:layout_constraintBottom_toBottomOf="@id/my_last_gym_btn"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -136,14 +141,15 @@
             android:id="@+id/my_last_gym_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
             android:fontFamily="@font/pretendard"
-            android:text="최근 본 헬스장"
+            android:text="@string/my_page_last_gym"
             android:textColor="@color/gray_950"
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="@id/my_last_gym_btn"
             app:layout_constraintLeft_toRightOf="@id/my_last_gym_iv"
             app:layout_constraintTop_toTopOf="@id/my_last_gym_btn" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <View
@@ -169,7 +175,8 @@
             android:id="@+id/my_last_course_iv"
             android:layout_width="28dp"
             android:layout_height="28dp"
-            android:layout_marginLeft="3dp"
+            android:layout_marginStart="3dp"
+            android:contentDescription="@string/my_page_last_exercise_course"
             android:src="@drawable/ic_my_exercise"
             app:layout_constraintBottom_toBottomOf="@id/my_last_course_btn"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -179,14 +186,15 @@
             android:id="@+id/my_last_course_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="18dp"
+            android:layout_marginStart="18dp"
             android:fontFamily="@font/pretendard"
-            android:text="최근에 본 운동/코스"
+            android:text="@string/my_page_last_exercise_course"
             android:textColor="@color/gray_950"
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="@id/my_last_course_btn"
             app:layout_constraintLeft_toRightOf="@id/my_last_course_iv"
             app:layout_constraintTop_toTopOf="@id/my_last_course_btn" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <View
@@ -212,7 +220,8 @@
             android:id="@+id/my_course_iv"
             android:layout_width="28dp"
             android:layout_height="28dp"
-            android:layout_marginLeft="3dp"
+            android:layout_marginStart="3dp"
+            android:contentDescription="@string/my_page_course_collection"
             android:src="@drawable/ic_my_course"
             app:layout_constraintBottom_toBottomOf="@id/my_course_btn"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -222,14 +231,15 @@
             android:id="@+id/my_course_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="18dp"
+            android:layout_marginStart="18dp"
             android:fontFamily="@font/pretendard"
-            android:text="나만의 코스 모아보기"
+            android:text="@string/my_page_course_collection"
             android:textColor="@color/gray_950"
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="@id/my_course_btn"
             app:layout_constraintLeft_toRightOf="@id/my_course_iv"
             app:layout_constraintTop_toTopOf="@id/my_course_btn" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <View
@@ -255,7 +265,8 @@
             android:id="@+id/my_review_iv"
             android:layout_width="28dp"
             android:layout_height="28dp"
-            android:layout_marginLeft="3dp"
+            android:layout_marginStart="3dp"
+            android:contentDescription="@string/my_page_review_check"
             android:src="@drawable/icon_review"
             app:layout_constraintBottom_toBottomOf="@id/my_review_btn"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -265,14 +276,15 @@
             android:id="@+id/my_review_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="18dp"
+            android:layout_marginStart="18dp"
             android:fontFamily="@font/pretendard"
-            android:text="나의 리뷰 확인하기"
+            android:text="@string/my_page_review_check"
             android:textColor="@color/gray_950"
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="@id/my_review_btn"
             app:layout_constraintLeft_toRightOf="@id/my_review_iv"
             app:layout_constraintTop_toTopOf="@id/my_review_btn" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <View

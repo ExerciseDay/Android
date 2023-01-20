@@ -1,6 +1,5 @@
 package com.example.exerciseday_android.ui.mypage
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,6 +13,7 @@ import com.example.exerciseday_android.databinding.FragmentMySettingBinding
 import com.example.exerciseday_android.ui.LogoutDialog
 import com.example.exerciseday_android.ui.mypage.withdraw.WithdrawReasonActivity
 
+
 class MySettingFragment : Fragment() {
 
     lateinit var binding: FragmentMySettingBinding
@@ -22,7 +22,7 @@ class MySettingFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentMySettingBinding.inflate(inflater, container, false)
 
         val mainActivity = activity as MainActivity

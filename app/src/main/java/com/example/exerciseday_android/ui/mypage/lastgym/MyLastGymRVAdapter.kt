@@ -1,4 +1,4 @@
-package com.example.exerciseday_android.ui.mypage
+package com.example.exerciseday_android.ui.mypage.lastgym
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -9,17 +9,16 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.bumptech.glide.Glide
 import com.example.exerciseday_android.R
 import com.example.exerciseday_android.data.model.MyLastGym
 import com.example.exerciseday_android.databinding.ItemMyLastGymBinding
 import com.example.exerciseday_android.databinding.ItemMyLastGymEditBinding
-import kotlinx.android.synthetic.main.item_my_last_gym_edit.view.*
 import java.util.*
 import kotlin.collections.ArrayList
 
+
 class MyLastGymRVAdapter(private var myLastGymList: ArrayList<MyLastGym>) :
-    RecyclerView.Adapter<RecyclerView.ViewHolder>(),
+    RecyclerView.Adapter<ViewHolder>(),
     ItemTouchHelperCallback.OnItemMoveListener {
 
     private lateinit var dragListener: OnStartDragListener
@@ -42,7 +41,7 @@ class MyLastGymRVAdapter(private var myLastGymList: ArrayList<MyLastGym>) :
     override fun onCreateViewHolder(
         viewGroup: ViewGroup,
         viewType: Int
-    ): RecyclerView.ViewHolder {
+    ): ViewHolder {
         when (viewType) {
             GymViewType.EDIT -> {
                 return GymEditViewHolder(
@@ -66,7 +65,7 @@ class MyLastGymRVAdapter(private var myLastGymList: ArrayList<MyLastGym>) :
     }
 
     @SuppressLint("ClickableViewAccessibility")
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         when (myLastGymList[position].viewType) {
             GymViewType.EDIT -> {
                 (holder as GymEditViewHolder).bind(myLastGymList[position])
@@ -87,7 +86,7 @@ class MyLastGymRVAdapter(private var myLastGymList: ArrayList<MyLastGym>) :
     }
 
     interface OnStartDragListener {
-        fun onStartDrag(viewHolder: RecyclerView.ViewHolder)
+        fun onStartDrag(viewHolder: ViewHolder)
     }
 
     fun startDrag(listener: OnStartDragListener) {
@@ -156,7 +155,7 @@ class MyLastGymRVAdapter(private var myLastGymList: ArrayList<MyLastGym>) :
             gymName.text = item.gymName
             gymAddress.text = item.gymAddress
             gymUniv.text = item.univ
-            gymDistance.text = "에서 ${item.distance}m"
+            "에서 ${item.distance}m".also { gymDistance.text = it }
         }
     }
 
@@ -174,7 +173,7 @@ class MyLastGymRVAdapter(private var myLastGymList: ArrayList<MyLastGym>) :
             gymName.text = item.gymName
             gymAddress.text = item.gymAddress
             gymUniv.text = item.univ
-            gymDistance.text = "에서 ${item.distance}m"
+            "에서 ${item.distance}m".also { gymDistance.text = it }
 
             binding.itemMyLastGymRemoveBtn.setOnClickListener {
                 removeGym(this.layoutPosition)
@@ -196,7 +195,7 @@ class ItemTouchHelperCallback(
 
     override fun getMovementFlags(
         recyclerView: RecyclerView,
-        viewHolder: RecyclerView.ViewHolder
+        viewHolder: ViewHolder
     ): Int {
         return if (recyclerView.layoutManager is GridLayoutManager) {
             // GridLayout 형식인 경우
@@ -213,14 +212,14 @@ class ItemTouchHelperCallback(
 
     override fun onMove(
         recyclerView: RecyclerView,
-        viewHolder: RecyclerView.ViewHolder,
-        target: RecyclerView.ViewHolder
+        viewHolder: ViewHolder,
+        target: ViewHolder
     ): Boolean {
         itemMoveListener.onItemMoved(viewHolder.adapterPosition, target.adapterPosition)
         return true
     }
 
-    override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+    override fun onSwiped(viewHolder: ViewHolder, direction: Int) {
         itemMoveListener.onItemSwiped(viewHolder.adapterPosition)
     }
 

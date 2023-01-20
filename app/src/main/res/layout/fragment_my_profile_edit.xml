@@ -18,36 +18,27 @@
             android:id="@+id/my_back_btn"
             android:layout_width="28dp"
             android:layout_height="28dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:background="@color/transparent"
             android:src="@drawable/ic_navigate_prev"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageButton
-            android:id="@+id/my_setting_btn"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginRight="19dp"
-            android:background="@color/transparent"
-            android:src="@drawable/ic_setting"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/go_back" />
 
         <TextView
             android:id="@+id/my_appbar_title_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/pretendard_2"
-            android:text="마이페이지"
+            android:text="@string/my_page_profile_edit"
             android:textColor="@color/gray_950"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <View
@@ -64,21 +55,22 @@
         android:id="@+id/my_profile_iv"
         android:layout_width="84dp"
         android:layout_height="84dp"
-        android:layout_marginLeft="4dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="6dp"
         android:src="@drawable/icon_emoji_woman"
         app:layout_constraintLeft_toLeftOf="@id/my_profile_bg_v"
         app:layout_constraintRight_toRightOf="@id/my_profile_bg_v"
-        app:layout_constraintTop_toTopOf="@id/my_profile_bg_v" />
+        app:layout_constraintTop_toTopOf="@id/my_profile_bg_v"
+        android:contentDescription="@string/my_page_profile_image" />
 
     <TextView
         android:id="@+id/my_profile_title_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
+        android:layout_marginStart="25dp"
         android:layout_marginTop="30dp"
         android:fontFamily="@font/pretendard_2"
-        android:text="프로필 정보"
+        android:text="@string/my_page_profile_edit_info"
         android:textColor="#464646"
         android:textSize="16sp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -88,10 +80,10 @@
         android:id="@+id/my_email_title_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
         android:layout_marginTop="18dp"
         android:fontFamily="@font/pretendard"
-        android:text="이메일"
+        android:text="@string/email"
         android:textColor="#464646"
         android:textSize="16sp"
         app:layout_constraintLeft_toLeftOf="@id/my_email_tv"
@@ -118,10 +110,10 @@
         android:id="@+id/my_nickname_title_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
         android:layout_marginTop="18dp"
         android:fontFamily="@font/pretendard"
-        android:text="닉네임"
+        android:text="@string/nickname"
         android:textColor="#464646"
         android:textSize="16sp"
         app:layout_constraintLeft_toLeftOf="@id/my_nickname_et"
@@ -154,17 +146,19 @@
         app:layout_constraintBottom_toBottomOf="@id/my_nickname_et"
         android:paddingHorizontal="12dp"
         android:paddingVertical="2dp"
-        android:layout_marginRight="19dp"
+        android:layout_marginEnd="19dp"
         android:visibility="visible">
+
         <TextView
             android:id="@+id/my_nickname_edit_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="변경"
+            android:text="@string/change"
             android:fontFamily="@font/pretendard"
             android:textColor="@color/white"
             android:textSize="15sp"
             android:visibility="visible"/>
+
     </LinearLayout>
 
     <LinearLayout
@@ -177,16 +171,19 @@
         app:layout_constraintBottom_toBottomOf="@id/my_nickname_et"
         android:paddingHorizontal="12dp"
         android:paddingVertical="2dp"
-        android:layout_marginRight="19dp"
+        android:layout_marginEnd="19dp"
         android:visibility="invisible">
+
         <TextView
             android:id="@+id/my_nickname_complete_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="완료"
+            android:text="@string/complete"
             android:fontFamily="@font/pretendard"
             android:textColor="@color/white"
             android:textSize="15sp"
             android:visibility="invisible"/>
+
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

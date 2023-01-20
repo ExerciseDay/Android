@@ -1,4 +1,4 @@
-package com.example.exerciseday_android.ui.mypage
+package com.example.exerciseday_android.ui.mypage.lastgym
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -18,6 +18,7 @@ import com.example.exerciseday_android.MainActivity
 import com.example.exerciseday_android.R
 import com.example.exerciseday_android.data.model.MyLastGym
 import com.example.exerciseday_android.databinding.FragmentMyLastGymBinding
+import com.example.exerciseday_android.ui.mypage.MyPageFragment
 
 
 class MyLastGymFragment : Fragment() {
@@ -29,7 +30,7 @@ class MyLastGymFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentMyLastGymBinding.inflate(inflater, container, false)
 
 
@@ -132,23 +133,23 @@ class MyLastGymFragment : Fragment() {
 
 
         // 헬스장 RecyclerView 어댑터와 데이터 리스트 연결
-        var myLastGymRVAdapter = MyLastGymRVAdapter(myLastGymData)
+        val myLastGymRVAdapter = MyLastGymRVAdapter(myLastGymData)
         myLastGymRVAdapter.setData(items = myLastGymData)
 
         myLastGymRVAdapter.registerAdapterDataObserver(object : RecyclerView.AdapterDataObserver() {
             // 데이터의 개수에 따른 View Visibility 설정
             private fun checkIfEmpty() {
-                if (binding.myLastGymEmptyLayout != null && binding.myLastGymRv!!.adapter != null) {
+                if (binding.myLastGymRv.adapter != null) {
                     // 데이터의 개수가 0인지
-                    val emptyViewVisible = binding.myLastGymRv!!.adapter!!.itemCount == 0
+                    val emptyViewVisible = binding.myLastGymRv.adapter!!.itemCount == 0
 
                     if(emptyViewVisible){
-                        binding.myLastGymCountContentTv.text = myLastGymRVAdapter.itemCount.toString() + "개"
+                        binding.myLastGymCountContentTv.text = myLastGymRVAdapter.itemCount.toString()
                     }else {
-                        binding.myLastGymEmptyLayout!!.visibility = View.INVISIBLE
+                        binding.myLastGymEmptyTv.visibility = View.INVISIBLE
                         binding.myLastGymCountContentTv.visibility = View.VISIBLE
                         binding.myLastGymCountTitleTv.visibility = View.VISIBLE
-                        binding.myLastGymCountContentTv.text = myLastGymRVAdapter.itemCount.toString() + "개"
+                        binding.myLastGymCountContentTv.text = myLastGymRVAdapter.itemCount.toString()
                     }
                 }
             }
@@ -165,15 +166,15 @@ class MyLastGymFragment : Fragment() {
             binding.myLastGymCountTitleTv.visibility = View.INVISIBLE
             binding.myLastGymCountContentTv.visibility = View.INVISIBLE
             binding.myLastGymEditBtn.visibility = View.INVISIBLE
-            binding.myLastGymEmptyLayout.visibility = View.VISIBLE
-            binding.myLastGymCountContentTv.text = myLastGymRVAdapter.itemCount.toString() + "개"
+            binding.myLastGymEmptyTv.visibility = View.VISIBLE
+            binding.myLastGymCountContentTv.text = myLastGymRVAdapter.itemCount.toString()
         } else {
-            binding.myLastGymEmptyLayout.visibility = View.INVISIBLE
+            binding.myLastGymEmptyTv.visibility = View.INVISIBLE
             binding.myLastGymCountTitleTv.visibility = View.VISIBLE
             binding.myLastGymCountContentTv.visibility = View.VISIBLE
             binding.myLastGymEditBtn.visibility = View.VISIBLE
             binding.myLastGymRv.visibility = View.VISIBLE
-            binding.myLastGymCountContentTv.text = myLastGymRVAdapter.itemCount.toString() + "개"
+            binding.myLastGymCountContentTv.text = myLastGymRVAdapter.itemCount.toString()
         }
 
         // 편집하기 버튼 클릭 이벤트
@@ -181,12 +182,12 @@ class MyLastGymFragment : Fragment() {
             if (gymViewModel.mode.value == 0) {
                 // 현재 일반모드 > 편집모드로 변경
                 gymViewModel.setMode(mode = 1)
-                binding.myLastGymEmptyLayout.visibility = View.GONE
+                binding.myLastGymEmptyTv.visibility = View.GONE
                 binding.myLastGymCountTitleTv.visibility = View.VISIBLE
                 binding.myLastGymCountContentTv.visibility = View.VISIBLE
                 binding.myLastGymEditBtn.visibility = View.VISIBLE
                 binding.myLastGymRv.visibility = View.VISIBLE
-                binding.myLastGymCountContentTv.text = myLastGymRVAdapter.itemCount.toString() + "개"
+                binding.myLastGymCountContentTv.text = myLastGymRVAdapter.itemCount.toString()
             } else {
                 // 현재 편집모드 > 일반모드로 변경
                 gymViewModel.setMode(mode = 0)
@@ -195,7 +196,7 @@ class MyLastGymFragment : Fragment() {
                     binding.myLastGymCountTitleTv.visibility = View.GONE
                     binding.myLastGymCountContentTv.visibility = View.GONE
                     binding.myLastGymEditBtn.visibility = View.GONE
-                    binding.myLastGymEmptyLayout.visibility = View.VISIBLE
+                    binding.myLastGymEmptyTv.visibility = View.VISIBLE
                 }
             }
         }

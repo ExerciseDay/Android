@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ui.mypage.MyReviewFragment">
+    tools:context=".ui.mypage.review.MyReviewFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/my_review_app_bar_cl"
@@ -24,6 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@color/transparent"
+            android:contentDescription="@string/go_back"
             android:src="@drawable/ic_navigate_prev"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -33,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/pretendard_2"
-            android:text="나의 리뷰"
+            android:text="@string/my_page_review"
             android:textColor="@color/gray_950"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -42,7 +43,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -68,6 +68,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
+                android:contentDescription="@string/bullet_point"
                 android:src="@drawable/ic_text_dot"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -86,6 +87,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:contentDescription="@string/bullet_point"
                 android:src="@drawable/ic_text_dot"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/my_review_info_first_tv" />
@@ -105,6 +107,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:contentDescription="@string/bullet_point"
                 android:src="@drawable/ic_text_dot"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/my_review_info_second_tv" />
@@ -119,7 +122,6 @@
                 app:layout_constraintStart_toEndOf="@+id/my_review_info_last_dot_iv"
                 app:layout_constraintTop_toBottomOf="@+id/my_review_info_second_tv" />
 
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -127,46 +129,32 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="15dp"
-            android:overScrollMode="ifContentScrolls"
-            android:scrollbars="vertical"
-            android:requiresFadingEdge="vertical"
             android:fadingEdgeLength="40dp"
+            android:overScrollMode="ifContentScrolls"
+            android:requiresFadingEdge="vertical"
+            android:scrollbars="vertical"
             android:visibility="visible"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/my_review_info_cl"
             tools:listitem="@layout/item_my_review" />
 
-        <LinearLayout
-            android:id="@+id/my_review_empty_layout"
+        <TextView
+            android:id="@+id/my_review_empty_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:drawablePadding="11dp"
+            android:fontFamily="@font/pretendard_2"
+            android:text="@string/my_page_review_no_such_review"
+            android:textColor="@color/gray_500"
+            android:textSize="18sp"
             android:visibility="visible"
+            app:drawableTopCompat="@drawable/ic_review_empty"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/my_review_empty_iv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_review_empty" />
-
-            <TextView
-                android:id="@+id/my_review_empty_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="11dp"
-                android:fontFamily="@font/pretendard_2"
-                android:text="작성된 리뷰가 없습니다."
-                android:textColor="@color/gray_500"
-                android:textSize="18sp" />
-
-        </LinearLayout>
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
