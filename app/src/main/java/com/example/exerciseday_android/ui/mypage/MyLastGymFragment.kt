@@ -108,6 +108,26 @@ class MyLastGymFragment : Fragment() {
                     viewType = MyLastGymRVAdapter.GymViewType.DEFAULT
                 )
             )
+            add(
+                MyLastGym(
+                    "~",
+                    "작심삼일 PT",
+                    "어딘가에",
+                    "광운대",
+                    "100",
+                    viewType = MyLastGymRVAdapter.GymViewType.DEFAULT
+                )
+            )
+            add(
+                MyLastGym(
+                    "~",
+                    "작심삼일 PT",
+                    "어딘가에",
+                    "광운대",
+                    "100",
+                    viewType = MyLastGymRVAdapter.GymViewType.DEFAULT
+                )
+            )
         }
 
 

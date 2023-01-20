@@ -18,8 +18,8 @@
             android:id="@+id/my_setting_btn"
             android:layout_width="28dp"
             android:layout_height="28dp"
-            android:layout_marginRight="19dp"
             android:layout_marginTop="7dp"
+            android:layout_marginRight="19dp"
             android:background="@color/transparent"
             android:src="@drawable/ic_setting"
             app:layout_constraintRight_toRightOf="parent"
@@ -37,236 +37,251 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
         android:id="@+id/my_emoji_iv"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/icon_emoji_woman"
-        app:layout_constraintTop_toBottomOf="@id/my_appbar_cl"
-        app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginLeft="42dp"
         android:layout_marginTop="30dp"
-        />
+        android:src="@drawable/icon_emoji_woman"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/my_appbar_cl" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/my_name_cl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toRightOf="@id/my_emoji_iv"
-        app:layout_constraintTop_toTopOf="@id/my_emoji_iv"
         android:layout_marginLeft="1dp"
-        android:layout_marginTop="26dp">
+        android:layout_marginTop="26dp"
+        app:layout_constraintLeft_toRightOf="@id/my_emoji_iv"
+        app:layout_constraintTop_toTopOf="@id/my_emoji_iv">
+
         <TextView
             android:id="@+id/my_name_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="하루"
             android:fontFamily="@font/pretendard_2"
+            android:text="하루"
             android:textColor="@color/gray_950"
             android:textSize="22sp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"/>
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/my_name_unit_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="님"
             android:fontFamily="@font/pretendard"
+            android:text="님"
             android:textColor="@color/gray_950"
             android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="@id/my_name_tv"
             app:layout_constraintLeft_toRightOf="@id/my_name_tv"
-            app:layout_constraintTop_toTopOf="@id/my_name_tv"
-            app:layout_constraintBottom_toBottomOf="@id/my_name_tv"/>
+            app:layout_constraintTop_toTopOf="@id/my_name_tv" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <TextView
         android:id="@+id/my_id_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="example@haruwoundong.kr"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/pretendard"
+        android:text="example@haruwoundong.kr"
         android:textColor="@color/gray_950"
         android:textSize="13sp"
         app:layout_constraintLeft_toLeftOf="@id/my_name_cl"
-        app:layout_constraintTop_toBottomOf="@id/my_name_cl"
-        android:layout_marginTop="4dp"/>
+        app:layout_constraintTop_toBottomOf="@id/my_name_cl" />
 
     <Button
         android:id="@+id/my_edit_btn"
         android:layout_width="match_parent"
         android:layout_height="46dp"
-        android:text="프로필 편집"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/btn_gray50_border12_gray950"
         android:fontFamily="@font/pretendard"
+        android:text="프로필 편집"
         android:textColor="@color/gray_950"
         android:textSize="15sp"
-        android:background="@drawable/btn_gray50_border12_gray950"
-        app:layout_constraintTop_toBottomOf="@id/my_emoji_iv"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="27dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"/>
+        app:layout_constraintTop_toBottomOf="@id/my_emoji_iv" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/my_last_gym_btn"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        app:layout_constraintTop_toBottomOf="@id/my_edit_btn"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="25dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp">
+        app:layout_constraintTop_toBottomOf="@id/my_edit_btn">
+
         <ImageView
             android:id="@+id/my_last_gym_iv"
             android:layout_width="32dp"
             android:layout_height="32dp"
+            android:layout_marginLeft="3dp"
             android:src="@drawable/ic_my_location"
-            app:layout_constraintTop_toTopOf="@id/my_last_gym_btn"
             app:layout_constraintBottom_toBottomOf="@id/my_last_gym_btn"
             app:layout_constraintLeft_toLeftOf="parent"
-            android:layout_marginLeft="3dp"/>
+            app:layout_constraintTop_toTopOf="@id/my_last_gym_btn" />
+
         <TextView
             android:id="@+id/my_last_gym_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="최근 본 헬스장"
+            android:layout_marginLeft="16dp"
             android:fontFamily="@font/pretendard"
+            android:text="최근 본 헬스장"
             android:textColor="@color/gray_950"
             android:textSize="15sp"
-            app:layout_constraintTop_toTopOf="@id/my_last_gym_btn"
             app:layout_constraintBottom_toBottomOf="@id/my_last_gym_btn"
             app:layout_constraintLeft_toRightOf="@id/my_last_gym_iv"
-            android:layout_marginLeft="16dp"/>
+            app:layout_constraintTop_toTopOf="@id/my_last_gym_btn" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <View
         android:id="@+id/div1_v"
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="@color/gray_200"
-        app:layout_constraintTop_toBottomOf="@id/my_last_gym_btn"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/my_last_gym_btn" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/my_last_course_btn"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        app:layout_constraintTop_toBottomOf="@id/my_last_gym_btn"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp">
+        app:layout_constraintTop_toBottomOf="@id/my_last_gym_btn">
+
         <ImageView
             android:id="@+id/my_last_course_iv"
             android:layout_width="28dp"
             android:layout_height="28dp"
+            android:layout_marginLeft="3dp"
             android:src="@drawable/ic_my_exercise"
-            app:layout_constraintTop_toTopOf="@id/my_last_course_btn"
             app:layout_constraintBottom_toBottomOf="@id/my_last_course_btn"
             app:layout_constraintLeft_toLeftOf="parent"
-            android:layout_marginLeft="3dp"/>
+            app:layout_constraintTop_toTopOf="@id/my_last_course_btn" />
+
         <TextView
             android:id="@+id/my_last_course_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="최근에 본 운동/코스"
+            android:layout_marginLeft="18dp"
             android:fontFamily="@font/pretendard"
+            android:text="최근에 본 운동/코스"
             android:textColor="@color/gray_950"
             android:textSize="15sp"
-            app:layout_constraintTop_toTopOf="@id/my_last_course_btn"
             app:layout_constraintBottom_toBottomOf="@id/my_last_course_btn"
             app:layout_constraintLeft_toRightOf="@id/my_last_course_iv"
-            android:layout_marginLeft="18dp"/>
+            app:layout_constraintTop_toTopOf="@id/my_last_course_btn" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <View
         android:id="@+id/div2_v"
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="@color/gray_200"
-        app:layout_constraintTop_toBottomOf="@id/my_last_course_btn"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/my_last_course_btn" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/my_course_btn"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        app:layout_constraintTop_toBottomOf="@id/my_last_course_btn"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp">
+        app:layout_constraintTop_toBottomOf="@id/my_last_course_btn">
+
         <ImageView
             android:id="@+id/my_course_iv"
             android:layout_width="28dp"
             android:layout_height="28dp"
+            android:layout_marginLeft="3dp"
             android:src="@drawable/ic_my_course"
-            app:layout_constraintTop_toTopOf="@id/my_course_btn"
             app:layout_constraintBottom_toBottomOf="@id/my_course_btn"
             app:layout_constraintLeft_toLeftOf="parent"
-            android:layout_marginLeft="3dp"/>
+            app:layout_constraintTop_toTopOf="@id/my_course_btn" />
+
         <TextView
             android:id="@+id/my_course_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="나만의 코스 모아보기"
+            android:layout_marginLeft="18dp"
             android:fontFamily="@font/pretendard"
+            android:text="나만의 코스 모아보기"
             android:textColor="@color/gray_950"
             android:textSize="15sp"
-            app:layout_constraintTop_toTopOf="@id/my_course_btn"
             app:layout_constraintBottom_toBottomOf="@id/my_course_btn"
             app:layout_constraintLeft_toRightOf="@id/my_course_iv"
-            android:layout_marginLeft="18dp"/>
+            app:layout_constraintTop_toTopOf="@id/my_course_btn" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <View
         android:id="@+id/div3_v"
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="@color/gray_200"
-        app:layout_constraintTop_toBottomOf="@id/my_course_btn"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/my_course_btn" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/my_review_btn"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        app:layout_constraintTop_toBottomOf="@id/my_course_btn"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp">
+        app:layout_constraintTop_toBottomOf="@id/my_course_btn">
+
         <ImageView
             android:id="@+id/my_review_iv"
             android:layout_width="28dp"
             android:layout_height="28dp"
+            android:layout_marginLeft="3dp"
             android:src="@drawable/icon_review"
-            app:layout_constraintTop_toTopOf="@id/my_review_btn"
             app:layout_constraintBottom_toBottomOf="@id/my_review_btn"
             app:layout_constraintLeft_toLeftOf="parent"
-            android:layout_marginLeft="3dp"/>
+            app:layout_constraintTop_toTopOf="@id/my_review_btn" />
+
         <TextView
             android:id="@+id/my_review_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="나의 리뷰 확인하기"
+            android:layout_marginLeft="18dp"
             android:fontFamily="@font/pretendard"
+            android:text="나의 리뷰 확인하기"
             android:textColor="@color/gray_950"
             android:textSize="15sp"
-            app:layout_constraintTop_toTopOf="@id/my_review_btn"
             app:layout_constraintBottom_toBottomOf="@id/my_review_btn"
             app:layout_constraintLeft_toRightOf="@id/my_review_iv"
-            android:layout_marginLeft="18dp"/>
+            app:layout_constraintTop_toTopOf="@id/my_review_btn" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <View
         android:id="@+id/div4_v"
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="@color/gray_200"
-        app:layout_constraintTop_toBottomOf="@id/my_review_btn"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/my_review_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
