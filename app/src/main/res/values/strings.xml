@@ -17,6 +17,7 @@
     <!-- 공통 -->
     <string name="go_back">뒤로 가기</string>
     <string name="bullet_point">글머리 기호</string>
+    <string name="edit">편집하기</string>
 
     <!-- 마이페이지 -->
     <string name="my_page">마이페이지</string>
@@ -48,15 +49,15 @@
     <!-- 마이페이지 - 최근 본 헬스장 -->
     <string name="my_page_last_gym_blank">최근 본 헬스장&#160;</string>
     <string name="my_page_last_gym_count">개</string>
-    <string name="edit">편집하기</string>
     <string name="my_page_last_gym_no_such_gym">최근 본 헬스장이 없습니다.</string>
 
     <!-- 마이페이지 - 나의 리뷰 -->
     <string name="my_page_review">나의 리뷰</string>
-    <string name="my_review_info_first">후기는 작성 후 48시간 이내에 본문만 수정이 가능하며, \n작성자는 현재 닉네임으로 등록됩니다.</string>
+    <string name="my_review_info_first">후기는 작성 후 48시간 이내에 본문만 수정이 가능하며, 작성자는 현재 닉네임으로 등록됩니다.</string>
     <string name="my_review_info_second">삭제된 후기는 복구할 수 없습니다.</string>
     <string name="my_review_info_last">후기 삭제는 후기 작성일로부터 30일 이후에 가능합니다.</string>
-    <string name="my_page_review_no_such_review">작성된 리뷰가 없습니다.</string>
+    <string name="my_review_no_such_review">작성된 리뷰가 없습니다.</string>
+    <string name="my_review_star_point">별점</string>
 
 
     <!-- 헬스장 검색 -->
@@ -121,6 +122,8 @@
         <item>전문가 추천순</item>
     </string-array>
 
+
+    <!-- 마이페이지 - 설정 - 탈퇴하기 -->
     <string-array name="withdraw_reasons">
         <item>새로운 계정을 만들고 싶어요</item>
         <item>저에게 불필요한 기능이 많아요</item>

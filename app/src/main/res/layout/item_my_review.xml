@@ -26,7 +26,8 @@
         android:background="@color/transparent"
         android:src="@drawable/ic_pencil"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/edit" />
 
     <TextView
         android:id="@+id/item_my_review_date_title_tv"
@@ -43,7 +44,6 @@
         android:id="@+id/item_my_review_date_tv"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
-        android:inputType="date"
         android:text="2022/00/00"
         android:textColor="@color/gray_700"
         android:textSize="13sp"
@@ -56,7 +56,6 @@
         android:layout_width="wrap_content"
         android:layout_height="25dp"
         android:layout_marginTop="1dp"
-        android:lineHeight="25sp"
         android:text="PT 받고 살 많이 빠진거 같아요 추천!"
         android:textColor="@color/gray_950"
         android:textSize="17sp"
@@ -70,7 +69,8 @@
         android:src="@drawable/ic_star_point"
         app:layout_constraintBottom_toBottomOf="@+id/item_my_review_star_point_tv"
         app:layout_constraintEnd_toStartOf="@+id/item_my_review_star_point_tv"
-        app:layout_constraintTop_toTopOf="@+id/item_my_review_star_point_tv" />
+        app:layout_constraintTop_toTopOf="@+id/item_my_review_star_point_tv"
+        android:contentDescription="@string/my_review_star_point" />
 
     <TextView
         android:id="@+id/item_my_review_star_point_tv"
