@@ -3,35 +3,36 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/select_body_part_group_layout"
+        android:id="@+id/select_body_part_appbar_cl"
         android:layout_width="match_parent"
         android:layout_height="44dp"
         android:background="@color/white"
         android:elevation="1dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
             android:id="@+id/select_body_part_back_btn"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:background="@color/transparent"
+            android:contentDescription="@string/go_back"
             android:src="@drawable/ic_navigate_prev"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/select_body_part_top_title_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/pretendard_2"
-            android:text="운동/코스"
+            android:text="@string/exercise_and_course"
             android:textColor="@color/gray_950"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -44,7 +45,7 @@
     <TextView
         android:id="@+id/select_body_part_title_tv"
         android:layout_width="match_parent"
-        android:layout_height="68dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="25dp"
         android:layout_marginTop="15dp"
         android:fontFamily="@font/pretendard_2"
@@ -56,15 +57,14 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/select_body_part_group_layout" />
+        app:layout_constraintTop_toBottomOf="@+id/select_body_part_appbar_cl" />
 
     <TextView
         android:id="@+id/select_body_part_caption_tv"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="25dp"
         android:layout_marginTop="9dp"
-        android:lineHeight="20sp"
         android:text="전문가 코스는 한 부위만 선택 가능합니다."
         android:textAlignment="textStart"
         android:textColor="@color/gray_700"

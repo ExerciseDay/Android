@@ -19,6 +19,10 @@
     <string name="bullet_point">글머리 기호</string>
     <string name="edit">편집하기</string>
 
+    <!-- 운동/코스 (Home) -->
+    <string name="exercise_and_course">운동/코스</string>
+
+
     <!-- 마이페이지 -->
     <string name="my_page">마이페이지</string>
 
