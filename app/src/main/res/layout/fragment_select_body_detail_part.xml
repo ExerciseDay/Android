@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/select_body_detail_part_appbar_cl"
@@ -48,7 +49,7 @@
         android:layout_marginHorizontal="25dp"
         android:layout_marginTop="15dp"
         android:fontFamily="@font/pretendard_2"
-        android:text="세부 부위를 선택해주세요!"
+        android:text="@string/expert_select_body_detail_part_title"
         android:textAlignment="textStart"
         android:textColor="@color/black"
         android:textSize="26sp"
@@ -63,7 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="25dp"
         android:layout_marginTop="10dp"
-        android:text="세부 부위를 선택하여 보다 확실하게 코스를 \n짜드립니다!"
+        android:text="@string/expert_select_body_detail_part_subtitle"
         android:textAlignment="textStart"
         android:textColor="@color/gray_700"
         android:textSize="13sp"

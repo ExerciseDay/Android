@@ -26,7 +26,7 @@
             app:titleEnabled="false">
 
             <LinearLayout
-                android:id="@+id/check_body_expert_course_group_layout"
+                android:id="@+id/check_body_expert_course_appbar_cl"
                 android:layout_width="match_parent"
                 android:layout_height="44dp"
                 android:elevation="1dp"

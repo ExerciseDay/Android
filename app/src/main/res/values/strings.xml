@@ -18,10 +18,37 @@
     <string name="go_back">뒤로 가기</string>
     <string name="bullet_point">글머리 기호</string>
     <string name="edit">편집하기</string>
+    <string name="count">개</string>
+    <string name="put">담기</string>
+    <string name="time">시간</string>
 
     <!-- 운동/코스 (Home) -->
     <string name="exercise_and_course">운동/코스</string>
 
+    <!-- 코스 추가하기 -->
+    <string name="course_make_title">만드실 코스 유형을\n선택해주세요!</string>
+    <string name="course_make_subtitle">커스텀 코스, 전문가 코스로 여러분의 운동 루틴을\n만들어보세요</string>
+    <string name="custom_course">커스텀 코스</string>
+    <string name="expert_course">전문가 코스</string>
+    <string name="help">도움말</string>
+
+    <!-- 전문가 코스 -->
+    <string name="expert_select_body_part_title">운동하실 신체 부위를 \n선택해주세요!</string>
+    <string name="expert_select_body_part_subtitle">전문가 코스는 한 부위만 선택 가능합니다.</string>
+    <string name="expert_select_body_part_arm">팔</string>
+    <string name="expert_select_body_part_lower_body">하체</string>
+    <string name="expert_select_body_part_abdomen">복근</string>
+    <string name="expert_select_body_part_back">등</string>
+    <string name="expert_select_body_part_chest">가슴</string>
+    <string name="expert_select_body_part_shoulder">어깨</string>
+
+    <string name="expert_select_body_detail_part_title">세부 부위를 선택해주세요!</string>
+    <string name="expert_select_body_detail_part_subtitle">세부 부위를 선택하여 보다 확실하게 코스를 \n짜드립니다!</string>
+
+    <string name="expert_check_body_expert_course_title">선택하신 부위의 코스입니다</string>
+    <string name="expert_check_body_expert_course_subtitle">전문가가 추천하는 부위별 운동 코스! 담아보시겠어요?</string>
+    <string name="expert_check_body_expert_course_order">전문가 추천순</string>
+    <string name="expert_check_body_expert_recommend_course">추천 코스&#160;</string>
 
     <!-- 마이페이지 -->
     <string name="my_page">마이페이지</string>
@@ -52,7 +79,6 @@
 
     <!-- 마이페이지 - 최근 본 헬스장 -->
     <string name="my_page_last_gym_blank">최근 본 헬스장&#160;</string>
-    <string name="my_page_last_gym_count">개</string>
     <string name="my_page_last_gym_no_such_gym">최근 본 헬스장이 없습니다.</string>
 
     <!-- 마이페이지 - 나의 리뷰 -->

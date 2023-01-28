@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
@@ -61,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="13dp"
             android:fontFamily="@font/pretendard_2"
-            android:text="만드실 코스 유형을\n선택해주세요!"
+            android:text="@string/course_make_title"
             android:textColor="@color/gray_950"
             android:textSize="26sp"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -73,7 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:fontFamily="@font/pretendard"
-            android:text="커스텀코스, 전문가코스로 여러분의 운동루틴을\n만들어보세요"
+            android:text="@string/course_make_subtitle"
             android:textColor="@color/gray_700"
             android:textSize="13sp"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -132,7 +131,8 @@
                     app:layout_constraintBottom_toTopOf="@id/course_make_custom_tv"
                     app:layout_constraintLeft_toLeftOf="@id/course_make_custom_btn"
                     app:layout_constraintRight_toRightOf="@id/course_make_custom_btn"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@string/custom_course" />
 
                 <TextView
                     android:id="@+id/course_make_custom_tv"
@@ -141,7 +141,7 @@
                     android:layout_marginTop="11dp"
                     android:layout_marginBottom="21dp"
                     android:fontFamily="@font/pretendard_2"
-                    android:text="커스텀 코스"
+                    android:text="@string/custom_course"
                     android:textColor="@color/gray_950"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="@id/course_make_custom_btn"
@@ -163,7 +163,8 @@
                     app:layout_constraintHorizontal_bias="0.195"
                     app:layout_constraintLeft_toLeftOf="@id/course_make_expert_btn"
                     app:layout_constraintRight_toRightOf="@id/course_make_expert_btn"
-                    app:layout_constraintTop_toTopOf="@id/course_make_expert_btn" />
+                    app:layout_constraintTop_toTopOf="@id/course_make_expert_btn"
+                    android:contentDescription="@string/expert_course" />
 
                 <TextView
                     android:id="@+id/course_make_expert_tv"
@@ -172,7 +173,7 @@
                     android:layout_marginTop="14dp"
                     android:layout_marginBottom="21dp"
                     android:fontFamily="@font/pretendard_2"
-                    android:text="전문가 코스"
+                    android:text="@string/expert_course"
                     android:textColor="@color/gray_950"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="@id/course_make_expert_btn"
@@ -195,7 +196,9 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:maxImageSize="16dp"
-            app:srcCompat="@drawable/ic_question" />
+            app:srcCompat="@drawable/ic_question"
+            android:focusable="true"
+            android:contentDescription="@string/help" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

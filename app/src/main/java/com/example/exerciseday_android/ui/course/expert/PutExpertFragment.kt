@@ -32,7 +32,7 @@ class PutExpertFragment : Fragment(), PutExpertCourseView, View.OnClickListener 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentPutExpertBinding.inflate(inflater, container, false)
 
         binding.putExpertExerciseRv.layoutManager =
@@ -118,9 +118,7 @@ class PutExpertFragment : Fragment(), PutExpertCourseView, View.OnClickListener 
 
                     binding.putExpertCourseNameTv.text = realExpertListInfosData.expertName
                     binding.putExpertCourseIntroTv.text = realExpertListInfosData.expertIntroduce
-                    binding.putExpertClockTv.text =
-                        (realExpertListInfosData.expertTime / 60).toString() + "분"
-
+                    ((realExpertListInfosData.expertTime / 60).toString() + "분").also { binding.putExpertClockTv.text = it }
                 }
 
                 override fun onFailure(call: Call<ExpertPartCourseResponse>, t: Throwable) {
@@ -167,10 +165,10 @@ class PutExpertFragment : Fragment(), PutExpertCourseView, View.OnClickListener 
 
                     expertExerciseRVAdapter.setMyItemClickListener(object :
                         ExpertExerciseRVAdapter.MyItemClickListener {
-                        override fun onItemClick(realExpertRoutineInfosData: ExpertRoutineInfos) {
+                        override fun onItemClick(expertRoutineInfos: ExpertRoutineInfos) {
                             // Item 클릭 시 운동 세부 페이지로 이동
-                            sendExpertIdx(realExpertRoutineInfosData.expertIdx)
-                            sendExpertRoutineIdx(realExpertRoutineInfosData.expertRoutineIdx)
+                            sendExpertIdx(expertRoutineInfos.expertIdx)
+                            sendExpertRoutineIdx(expertRoutineInfos.expertRoutineIdx)
                             (context as MainActivity).supportFragmentManager.beginTransaction()
                                 .replace(R.id.main_frm, ExpertExerciseInfoFragment())
                                 .commitAllowingStateLoss()
@@ -186,46 +184,46 @@ class PutExpertFragment : Fragment(), PutExpertCourseView, View.OnClickListener 
     }
 
     private fun sendExpertRoutineIdx(expertRoutineIdx: Int) {
-        var pref = this.activity?.getPreferences(0)
-        var editor = pref?.edit()
+        val pref = this.activity?.getPreferences(0)
+        val editor = pref?.edit()
 
         editor?.putInt("expertRoutineIdx", expertRoutineIdx)?.apply()
     }
 
     private fun sendExpertIdx(expertIdx: Int) {
-        var pref = this.activity?.getPreferences(0)
-        var editor = pref?.edit()
+        val pref = this.activity?.getPreferences(0)
+        val editor = pref?.edit()
 
         editor?.putInt("expertIdx", expertIdx)?.apply()
     }
 
     private fun loadExpertIdx(): Int {
-        var pref = this.activity?.getPreferences(0)
-        var expertIdx = pref?.getInt("expertIdx", 0)!!.toInt()
+        val pref = this.activity?.getPreferences(0)
+        val expertIdx = pref?.getInt("expertIdx", 0)!!.toInt()
 
         return expertIdx
     }
 
     private fun loadAllBodyPart(): ArrayList<String> {
-        var pref = this.activity?.getPreferences(0)
-        var bodyPart = pref?.getString("bodyPart", "").toString()
-        var bodyDetailPart = pref?.getString("bodyDetailPart", "").toString()
+        val pref = this.activity?.getPreferences(0)
+        val bodyPart = pref?.getString("bodyPart", "").toString()
+        val bodyDetailPart = pref?.getString("bodyDetailPart", "").toString()
 
-        var bodyArray = arrayListOf(bodyPart, bodyDetailPart)
+        val bodyArray = arrayListOf(bodyPart, bodyDetailPart)
 
         return bodyArray
     }
 
     private fun loadUserJwt(): String {
-        var pref = this.activity?.getSharedPreferences("jwt", 0)
-        var jwt = pref?.getString("jwt", "").toString()
+        val pref = this.activity?.getSharedPreferences("jwt", 0)
+        val jwt = pref?.getString("jwt", "").toString()
 
         return jwt
     }
 
     private fun loadUserIdx(): Int {
-        var pref = this.activity?.getSharedPreferences("userIdx", 0)
-        var userIdx = pref?.getInt("userIdx", 0)!!.toInt()
+        val pref = this.activity?.getSharedPreferences("userIdx", 0)
+        val userIdx = pref?.getInt("userIdx", 0)!!.toInt()
 
         return userIdx
     }

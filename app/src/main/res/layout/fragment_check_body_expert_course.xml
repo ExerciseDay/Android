@@ -4,79 +4,68 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".ui.course.expert.CheckBodyExpertCourseFragment">
 
-    <LinearLayout
-        android:id="@+id/check_body_expert_course_group_layout"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/check_body_expert_course_appbar_cl"
         android:layout_width="match_parent"
         android:layout_height="44dp"
         android:background="@color/white"
         android:elevation="1dp"
-        android:orientation="horizontal"
         android:paddingHorizontal="20dp"
-        android:paddingTop="9dp"
-        android:paddingBottom="11dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <ImageButton
+            android:id="@+id/check_body_expert_course_back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@color/transparent"
+            android:contentDescription="@string/go_back"
+            android:src="@drawable/ic_navigate_prev"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/check_body_expert_course_top_title_tv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/pretendard_2"
-                android:gravity="center"
-                android:text="코스/운동"
-                android:textAlignment="center"
-                android:textColor="@color/gray_950"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_2"
+            android:text="@string/exercise_and_course"
+            android:textColor="@color/gray_950"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageButton
-                android:id="@+id/check_body_expert_course_back_btn"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:background="@null"
-                android:src="@drawable/ic_navigate_prev"
-                app:layout_constraintBottom_toBottomOf="@+id/check_body_expert_course_top_title_tv"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/check_body_expert_course_top_title_tv" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/check_body_expert_course_title_tv"
         android:layout_width="match_parent"
-        android:layout_height="34dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="25dp"
         android:layout_marginTop="15dp"
         android:fontFamily="@font/pretendard_2"
-        android:lineHeight="34sp"
-        android:text="선택하신 부위의 코스입니다"
+        android:text="@string/expert_check_body_expert_course_title"
         android:textAlignment="textStart"
         android:textColor="@color/black"
         android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/check_body_expert_course_group_layout" />
+        app:layout_constraintTop_toBottomOf="@+id/check_body_expert_course_appbar_cl" />
 
     <TextView
         android:id="@+id/check_body_expert_course_caption_tv"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="25dp"
         android:layout_marginTop="11dp"
-        android:lineHeight="20sp"
-        android:text="전문가가 추천하는 부위별 운동 코스! 담아보시겠어요?"
+        android:text="@string/expert_check_body_expert_course_subtitle"
         android:textAlignment="textStart"
         android:textColor="@color/gray_700"
         android:textSize="13sp"
@@ -97,7 +86,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/check_body_expert_course_body_part_cv"
             android:layout_width="wrap_content"
-            android:layout_height="27dp"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:background="@null"
             android:backgroundTint="@color/pink_35"
@@ -107,11 +96,11 @@
             <TextView
                 android:id="@+id/check_body_expert_course_body_part_tv"
                 android:layout_width="wrap_content"
-                android:layout_height="23dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:paddingHorizontal="13dp"
                 android:paddingVertical="2dp"
-                android:text="등"
+                android:text=""
                 android:textColor="@color/red_20"
                 android:textSize="15sp" />
 
@@ -120,7 +109,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/check_body_expert_course_body_detail_part_cv"
             android:layout_width="wrap_content"
-            android:layout_height="27dp"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:background="@null"
             android:backgroundTint="@color/pink_35"
@@ -130,11 +119,11 @@
             <TextView
                 android:id="@+id/check_body_expert_course_body_detail_part_tv"
                 android:layout_width="wrap_content"
-                android:layout_height="23dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:paddingHorizontal="13dp"
                 android:paddingVertical="2dp"
-                android:text="등 하부"
+                android:text=""
                 android:textColor="@color/red_20"
                 android:textSize="15sp"
                 android:visibility="visible" />
@@ -144,32 +133,54 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/check_body_expert_course_recommend_count_tv"
+        android:id="@+id/check_body_expert_course_recommend_count_title_tv"
         android:layout_width="wrap_content"
-        android:layout_height="20dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginTop="16dp"
-        android:text="추천 코스 0개"
+        android:text="@string/expert_check_body_expert_recommend_course"
         android:textColor="@color/gray_700"
         android:textSize="13sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/check_body_expert_course_body_part_layout" />
 
     <TextView
+        android:id="@+id/check_body_expert_course_recommend_count_content_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/gray_700"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/check_body_expert_course_recommend_count_title_tv"
+        app:layout_constraintStart_toEndOf="@+id/check_body_expert_course_recommend_count_title_tv"
+        app:layout_constraintTop_toTopOf="@+id/check_body_expert_course_recommend_count_title_tv" />
+
+    <TextView
+        android:id="@+id/check_body_expert_course_recommend_count_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/count"
+        android:textColor="@color/gray_700"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/check_body_expert_course_recommend_count_content_tv"
+        app:layout_constraintStart_toEndOf="@+id/check_body_expert_course_recommend_count_content_tv"
+        app:layout_constraintTop_toTopOf="@+id/check_body_expert_course_recommend_count_content_tv" />
+
+    <TextView
         android:id="@+id/check_body_expert_course_order_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="25dp"
-        android:drawableEnd="@drawable/ic_arrow_down"
         android:drawablePadding="4dp"
-        android:text="전문가 추천순"
+        android:text="@string/expert_check_body_expert_course_order"
         android:textColor="@color/gray_950"
         android:textColorHint="@color/gray_950"
         android:textSize="15sp"
         android:theme="@style/MapSpinnerTextAppearance"
-        app:layout_constraintBottom_toBottomOf="@+id/check_body_expert_course_recommend_count_tv"
+        app:drawableEndCompat="@drawable/ic_arrow_down"
+        app:layout_constraintBottom_toBottomOf="@+id/check_body_expert_course_recommend_count_content_tv"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/check_body_expert_course_recommend_count_tv" />
+        app:layout_constraintTop_toTopOf="@+id/check_body_expert_course_recommend_count_content_tv" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/check_body_expert_course_rv"
@@ -178,10 +189,12 @@
         android:layout_marginHorizontal="25dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="30dp"
-        android:overScrollMode="never"
+        android:fadingEdgeLength="40dp"
+        android:overScrollMode="always"
+        android:requiresFadingEdge="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/check_body_expert_course_recommend_count_tv"
+        app:layout_constraintTop_toBottomOf="@+id/check_body_expert_course_recommend_count_content_tv"
         tools:listitem="@layout/item_course_list" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

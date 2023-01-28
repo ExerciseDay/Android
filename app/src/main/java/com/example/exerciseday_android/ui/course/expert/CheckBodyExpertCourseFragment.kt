@@ -22,7 +22,7 @@ class CheckBodyExpertCourseFragment : Fragment(), CheckExpertBodyCourseView, Vie
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentCheckBodyExpertCourseBinding.inflate(inflater, container, false)
 
         binding.checkBodyExpertCourseRv.layoutManager =
@@ -63,7 +63,7 @@ class CheckBodyExpertCourseFragment : Fragment(), CheckExpertBodyCourseView, Vie
     ) {
         expertListInfoData = resultExpertListInfo
 
-        binding.checkBodyExpertCourseRecommendCountTv.text = "추천 코스 ${resultExpertListInfo.size}개"
+        binding.checkBodyExpertCourseRecommendCountContentTv.text = "${resultExpertListInfo.size}"
 
 
         // 부위별 전문가 코스 RecyclerView 어댑터와 데이터 리스트 연결
@@ -74,10 +74,10 @@ class CheckBodyExpertCourseFragment : Fragment(), CheckExpertBodyCourseView, Vie
 
         expertCourseRVAdapter.setMyItemClickListener(object :
             ExpertCourseRVAdapter.MyItemClickListener {
-            override fun onItemClick(expertListInfoData: ExpertListInfo) {
+            override fun onItemClick(expertListInfo: ExpertListInfo) {
                 // Item 클릭 시 전문가 코스 담기 페이지로 이동
                 sendAllBodyPart(loadAllBodyPart()[0], loadAllBodyPart()[1])
-                sendExpertCourseIdx(expertListInfoData.expertIdx)
+                sendExpertCourseIdx(expertListInfo.expertIdx)
                 (context as MainActivity).supportFragmentManager.beginTransaction()
                     .replace(R.id.main_frm, PutExpertFragment())
                     .commitAllowingStateLoss()
@@ -93,11 +93,11 @@ class CheckBodyExpertCourseFragment : Fragment(), CheckExpertBodyCourseView, Vie
 
 
     private fun loadAllBodyPart(): ArrayList<String> {
-        var pref = this.activity?.getPreferences(0)
-        var bodyPart = pref?.getString("bodyPart", "").toString()
-        var bodyDetailPart = pref?.getString("bodyDetailPart", "").toString()
+        val pref = this.activity?.getPreferences(0)
+        val bodyPart = pref?.getString("bodyPart", "").toString()
+        val bodyDetailPart = pref?.getString("bodyDetailPart", "").toString()
 
-        var bodyArray = arrayListOf(bodyPart, bodyDetailPart)
+        val bodyArray = arrayListOf(bodyPart, bodyDetailPart)
 
         binding.checkBodyExpertCourseBodyPartTv.text = bodyPart
         binding.checkBodyExpertCourseBodyDetailPartTv.text = bodyDetailPart
@@ -106,15 +106,15 @@ class CheckBodyExpertCourseFragment : Fragment(), CheckExpertBodyCourseView, Vie
     }
 
     private fun sendExpertCourseIdx(expertIdx: Int) {
-        var pref = this.activity?.getPreferences(0)
-        var editor = pref?.edit()
+        val pref = this.activity?.getPreferences(0)
+        val editor = pref?.edit()
 
         editor?.putInt("expertIdx", expertIdx)?.apply()
     }
 
     private fun sendAllBodyPart(bodyPart: String, bodyDetailPart: String) {
-        var pref = this.activity?.getPreferences(0)
-        var editor = pref?.edit()
+        val pref = this.activity?.getPreferences(0)
+        val editor = pref?.edit()
 
         editor?.putString("bodyPart", bodyPart)?.apply()
         editor?.putString("bodyDetailPart", bodyDetailPart)?.apply()

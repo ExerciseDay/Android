@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".ui.course.expert.PutExpertFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -78,7 +79,8 @@
         android:src="@drawable/ic_clock"
         app:layout_constraintBottom_toBottomOf="@+id/put_expert_course_intro_tv"
         app:layout_constraintEnd_toStartOf="@+id/put_expert_clock_tv"
-        app:layout_constraintTop_toTopOf="@+id/put_expert_course_intro_tv" />
+        app:layout_constraintTop_toTopOf="@+id/put_expert_course_intro_tv"
+        android:contentDescription="@string/time" />
 
     <TextView
         android:id="@+id/put_expert_clock_tv"
@@ -116,7 +118,7 @@
         android:layout_marginBottom="42dp"
         android:background="@drawable/btn_pink0_border18"
         android:fontFamily="@font/pretendard_2"
-        android:text="담기"
+        android:text="@string/put"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent" />

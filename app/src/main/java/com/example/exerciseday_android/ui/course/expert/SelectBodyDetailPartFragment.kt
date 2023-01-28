@@ -19,7 +19,7 @@ class SelectBodyDetailPartFragment : Fragment(), View.OnClickListener {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentSelectBodyDetailPartBinding.inflate(inflater, container, false)
 
 
@@ -59,8 +59,8 @@ class SelectBodyDetailPartFragment : Fragment(), View.OnClickListener {
     }
 
     private fun loadBodyPart() {
-        var pref = this.activity?.getPreferences(0)
-        var bodyPart = pref?.getString("bodyPart", "")
+        val pref = this.activity?.getPreferences(0)
+        val bodyPart = pref?.getString("bodyPart", "")
 
         if (bodyPart.equals("팔")) {
             bodyDetailData = resources.getStringArray(R.array.body_detail_part_arm_entries)
@@ -83,8 +83,8 @@ class SelectBodyDetailPartFragment : Fragment(), View.OnClickListener {
 
     // 선택한 신체 부위 전달
     private fun sendBodyDetailPart(bodyDetailPart: String) {
-        var pref = this.activity?.getPreferences(0)
-        var editor = pref?.edit()
+        val pref = this.activity?.getPreferences(0)
+        val editor = pref?.edit()
 
         editor?.putString("bodyDetailPart", bodyDetailPart)?.apply()
     }

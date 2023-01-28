@@ -18,7 +18,7 @@ class SelectBodyPartFragment : Fragment(), View.OnClickListener {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentSelectBodyPartBinding.inflate(inflater, container, false)
 
         // 뒤로 가기
@@ -91,8 +91,8 @@ class SelectBodyPartFragment : Fragment(), View.OnClickListener {
 
     // 선택한 신체 부위 전달
     private fun sendBodyPart(bodyPart: String) {
-        var pref = this.activity?.getPreferences(0)
-        var editor = pref?.edit()
+        val pref = this.activity?.getPreferences(0)
+        val editor = pref?.edit()
 
         editor?.putString("bodyPart", bodyPart)?.apply()
     }
